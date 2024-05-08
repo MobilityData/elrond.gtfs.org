@@ -1,3 +1,5 @@
+## Join the Community
+
 <div class="grid cards" markdown>
 
 - :simple-slack: Join [__Slack__](https://share.mobilitydata.org/slack) and introduce yourself to the community.
@@ -7,28 +9,70 @@
 
 </div>
 
+## GTFS Governance
+
+The GTFS Specification is dynamic, evolving through an open process driven by the community. We actively participate in proposing amendments and extensions to the specification.
+
+To formalize this process, we've established the GTFS Governance framework, which includes the Specification Amendment Process (SAP).
+
+<div class="grid cards" markdown>
+
+- :material-newspaper-variant:{ .lg .middle } __GTFS Schedule (SAP)__
+
+  [:octicons-arrow-right-24: Learn more](#)
+
+- :material-newspaper-variant:{ .lg .middle } __GTFS Realtime (SAP)__
+
+  [:octicons-arrow-right-24: Learn more](#)
+
+</div>
+
 ## Active projects
 
 The community is constantly developing new additions to the specification that could require discussions and working group meetings to accomplish their larger goals in an open source setting. Working group meetings are consensus building discussions led by a facilitator, and attended by developpers, and interested contributors.   
 
-### GTFS-Fares v2
-GTFS-Fares v2 aims at improving the current Fares representation in GTFS by introducing new features like: fare products, rider categories, fare media, and more. These concepts will allow data producers to model different fare structures such as: zone-based, time-based, and inter-agency fares. 
+<div class="grid cards" markdown>
 
-[Learn more](#gtfs-fares-v2){ .md-button }
-[Working Group](#){ .md-button } 
+- :material-newspaper-variant:{ .lg .middle } __GTFS-Fares v2__
+
+  ---
+
+  GTFS-Fares v2 aims to enhance fare representation in GTFS, introducing features like fare products and rider categories.
+
+  [:octicons-arrow-right-24: Learn more](#gtfs-fares-v2)
+
+- :material-newspaper-variant:{ .lg .middle } __GTFS-Flex__
+
+  ---
+
+  GTFS-Flex is a project to improve discoverability of Demand Responsive Transportation Services.
+
+  [:octicons-arrow-right-24: Learn more](#gtfs-flex)
+
+- :material-newspaper-variant:{ .lg .middle } __GTFS Trip-Modifications__
+
+  ---
+
+  Trip-Modifications modify trip shapes, remove stops, and add temporary stops, useful in detour cases.
+
+  [:octicons-arrow-right-24: Learn more](#)
+
+- :material-newspaper-variant:{ .lg .middle } __GTFS Governance__
+
+  ---
+
+  A Working Group has been formed to modify the current GTFS Spec Amendment Process.
+
+  [:octicons-arrow-right-24: Learn more](https://github.com/google/transit/issues/436)
+
+</div>
 
 
-### GTFS-Flex
-Flex is a GTFS Schedule extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
+## Community Resources
 
-[Learn more](#gtfs-flex){ .md-button }
+Make sure to check out the Resources section for an extensive selection of tips, tools, and tricks. 
 
-
-### GTFS Trip-Modifications
-Trip-Modifications are modifications done to a trip to modify its shape, remove stops that are not served anymore, and potentially add temporary stops. Trip-Modifications is mainly used in a detour use case.
-
-[Learn more](#){ .md-button }
-
+- [Resources](#)
 
 ### Mailing Lists
 
@@ -49,7 +93,7 @@ There are a number of mailing lists that can be good resources when you have que
 Check with your local transit agency to see if they have a mailing list of their own.
 
 
-###Other Community Resources
+### Other Community Resources
 Find other communities and resourses related to GTFS
 
 - [German Open Transport Meetup](https://github.com/transportkollektiv/meetup/wiki) - You can participate in a [biweekly](https://hackmd.okfn.de/opentransportmeetup#) meetup of the German-speaking open transport community.
