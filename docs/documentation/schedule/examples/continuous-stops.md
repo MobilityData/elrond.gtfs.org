@@ -1,10 +1,4 @@
-<a class="pencil-link" href="https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/continuous-stops.md" title="Edit this page" target="_blank">
-    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-  </a>
-
 # Continuous stops
-
-<hr>
 
 ## Pickup and drop off everywhere
 
@@ -33,7 +27,7 @@ The Local Fare zone and the County Fare zone are separated by the Air Expressway
 
 ![](../../assets/victor-valley-transit.svg)
 
-This is described using the files [stop.txt](../../reference/#stopstxt) and [stop_times.txt](../../reference/#stoptimestxt):
+This is described using the files [stop.txt](../../reference/#stopstxt) and [stop_times.txt](../../reference/#stop_timestxt):
 
 - The first file defines the stops along the route
 - The second file defines the continuous pickup and drop off rules between the stops.
@@ -51,12 +45,12 @@ E,Oro Grande Post Office,34.599292,-117.334452
 F,Silver Lakes Market,34.744662,-117.335407
 ```
  
-In [stop_times.txt](../../reference/#stoptimestxt), for a given trip:
+In [stop_times.txt](../../reference/#stop_timestxt), for a given trip:
 
 - A record with `continuous_pickup=0` indicates that continuous pickups are permitted from that stop until the next stop
 - A record with `continuous_pickup=1` indicates that continuous pickups are forbidden from that stop until the next stop
 
-[**stop_times.txt**](../../reference/#stoptimestxt)
+[**stop_times.txt**](../../reference/#stop_timestxt)
 
 ```
 trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,continuous_drop_off,timepoint
