@@ -1,6 +1,5 @@
 # Base add-ons
-They are generally easy to integrate. They either enhance the comprehensiveness of a GTFS dataset or facilitate collaboration.
-These improvements may involve introducing new fields in the files described in Base, or creating new files.
+These features are typically straightforward to integrate, serving to either enhance the comprehensiveness of a GTFS dataset or facilitate collaboration. These enhancements may entail introducing new fields within the files described in Base, or creating new files.
 
 ## Route Colors
 
