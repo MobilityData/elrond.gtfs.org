@@ -1,43 +1,6 @@
 #  Pathways
 Pathways contains features that allow to model large transit stations, helping riders navigate from station entrances and exists to the location where they board or disambark from a transit vehicle. Some of these features make it possible to communicate a path's physical characteristics and estimated navigation time, and real-world wayfinding systems employed in stations.
 
-## Location types
-
-Location types are used to classify key areas within transit stations such as exits/entrances, nodes or boarding areas, as well as their relationship. Location types serve as a fundation for modeling transit stations using Pathways.
-
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-
-| Files included                   | Fields included   |
-|----------------------------------|-------------------|
-|[stops.txt](/documentation/schedule/reference/#stopstxt)|`location_type`, `parent_station` |
-
-??? note "Sample Data"
-
-    <p style="font-size:16px">
-    The following sample defines multiple locations within a transit station in `stops.txt`: the parent station, representing the main location, and its child locations such as platforms, entrances/exists, and generic nodes.
-    </p>
-    !!! note ""
-        <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
-        </p>
-
-        | stop_id      | stop_name                                             | location_type | parent_station |
-        |--------------|-------------------------------------------------------|---------------|----------------|
-        | Station_A102 | Main Street station                                   |             1 |                |
-        | A102_B01     | Main Street station - North Platform                  |             0 | Station_A102   |
-        | A102_B02     | Main Street station - South Platform                  |             0 | Station_A102   |
-        | A102_E01     | Main Street station - Entrance/Exit                   |             2 | Station_A102   |
-        | A102_S01     | Main Street station - Top of entrance stairs          |             3 | Station_A102   |
-        | A102_S02     | Main Street station - Bottom of entrance stairs       |             3 | Station_A102   |
-        | A102_S03     | Main Street station - Top of north platform stairs    |             3 | Station_A102   |
-        | A102_S04     | Main Street station - Bottom of north platform stairs |             3 | Station_A102   |
-        | A102_S05     | Main Street station - Top of south platform stairs    |             3 | Station_A102   |
-        | A102_S06     | Main Street station - Bottom of south platform stairs |             3 | Station_A102   |
-        | A102_F01     | Main Street station - Paid side of fare gate          |             3 | Station_A102   |
-        | A102_F02     | Main Street station - Unpaid side of fare gate        |             3 | Station_A102   |
-
 ## Pathway connections
 
 At its foundational level, Pathways offers basic functionality to connect key areas defined in Location types within a station. These connections form pathways, enabling users to obtain precise directions (e. g. from an entrance to the boarding area), which is particularly useful in navigating large and complex transit stations.
