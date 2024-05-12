@@ -91,36 +91,6 @@ Location types are used to classify key areas within transit stations such as ex
         | A102_F01     | Main Street station - Paid side of fare gate          |             3 | Station_A102   |
         | A102_F02     | Main Street station - Unpaid side of fare gate        |             3 | Station_A102   |
 
-
-## Translations
-
-Translations allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
-
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-
-| Files included                   | Fields included   |
-|----------------------------------|-------------------|
-|[translations.txt](/documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
-
-??? note "Sample Data"
-
-    <p style="font-size:16px">
-    The following sample provides French and Spanish translations for two fields used in `routes.txt`: `route_long_name` and `route_desc`.
-    </p>
-    !!! note ""
-        <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
-        </p>
-
-        | table_name | field_name      | language | translation                                           | record_id | record_sub_id | field_value |
-        |------------|-----------------|----------|-------------------------------------------------------|-----------|---------------|-------------|
-        | routes     | route_long_name | ES       | Mission - Centro                                      | RA        |               |             |
-        | routes     | route_long_name | FR       | Mission - Centre ville                                | RA        |               |             |
-        | routes     | route_desc      | ES       | La ruta "A" viaja desde Lower Mission hasta el centro | RA        |               |             |
-        | routes     | route_desc      | FR       | La route « A » relie Lower Mission au centre-ville.   | RA        |               |             |
-
 ## Headsigns
 
 Headsigns allows to communicate the signage used by vehicles indicating the trip’s destination, making it easier for users to identify the correct transit service. This feature supports headsign changes along a specific route.
@@ -163,6 +133,56 @@ Headsigns allows to communicate the signage used by vehicles indicating the trip
         | AWE1    |      6:20:00 |        6:20:00 | TAS003  |             3 |                        |
         | AWE1    |      6:23:00 |        6:23:00 | TAS004  |             4 | Downtown - Main Square |
         | AWE1    |      6:25:00 |        6:25:00 | TAS005  |             5 | Downtown - Main Square |
+
+## Shapes
+Shapes can be defined and associated with trips, enabling trip planning applications to display trips on a map and inform riders of the distance they need to travel in a transit vehicle. The `shape_dist_traveled` fields are used to programmatically determine how much of a shape to draw when showing a map to riders.
+When defining shapes, there is a balance between their level of detail (e.g. following the exact curvature of roads) and conveying only the necessary information efficiently.
+
+|Files included                             |Fields included            |
+|----------------------------------|-------------------|
+|[shapes.txt](/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
+|[trips.txt](/schedule/reference/#tripstxt)                         |`shape_id`           |
+|[stop_times.txt](/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
+
+
+??? note "Sample data"
+
+    <p style="font-size:16px">
+    The following table shows a portion of a shape from the TriMet GTFS feed (download it <a     href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+        </p>
+    
+        | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
+        | --------- | ------------- | ------------- | ------------------ | ------------------- |
+        | 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
+        | 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
+        | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
+        | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
+        | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="https://staging.gtfs.org/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
+        </p>
+        
+        |trip_id |shape_id|
+        |--------|--------|
+        |13302375|558674  |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="https://staging.gtfs.org/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
+        </p>
+        
+        |trip_id |stop_sequence|shape_dist_traveled|
+        |--------|-------------|-------------------|
+        |13302375|1            |0                  |
+        |13302375|2            |461.7              |
+        |13302375|3            |1245               |
+
 
 ## Frequency-based services
 
@@ -222,54 +242,35 @@ Transfers provide details about transitions between different travel segments (o
         |              |            |               |             | PL04-003     | DL57-008   |             4 |                   |
         |              |            | BR09          | CR01        | BR09-012     | CR01-005   |             1 |                   |
 
-## Shapes
-Shapes can be defined and associated with trips, enabling trip planning applications to display trips on a map and inform riders of the distance they need to travel in a transit vehicle. The `shape_dist_traveled` fields are used to programmatically determine how much of a shape to draw when showing a map to riders.
-When defining shapes, there is a balance between their level of detail (e.g. following the exact curvature of roads) and conveying only the necessary information efficiently.
+## Translations
 
-|Files included                             |Fields included            |
+Translations allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
+
+**Pre-requirement**: 
+
+- [Base features](/getting_started/features/base)
+
+| Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[shapes.txt](/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
-|[trips.txt](/schedule/reference/#tripstxt)                         |`shape_id`           |
-|[stop_times.txt](/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
+|[translations.txt](/documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
 
-
-??? note "Sample data"
+??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following table shows a portion of a shape from the TriMet GTFS feed (download it <a     href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
+    The following sample provides French and Spanish translations for two fields used in `routes.txt`: `route_long_name` and `route_desc`.
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
         </p>
-    
-        | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
-        | --------- | ------------- | ------------- | ------------------ | ------------------- |
-        | 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
-        | 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
-        | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
-        | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
-        | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
 
-    !!! note ""
-        <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
-        </p>
-        
-        |trip_id |shape_id|
-        |--------|--------|
-        |13302375|558674  |
+        | table_name | field_name      | language | translation                                           | record_id | record_sub_id | field_value |
+        |------------|-----------------|----------|-------------------------------------------------------|-----------|---------------|-------------|
+        | routes     | route_long_name | ES       | Mission - Centro                                      | RA        |               |             |
+        | routes     | route_long_name | FR       | Mission - Centre ville                                | RA        |               |             |
+        | routes     | route_desc      | ES       | La ruta "A" viaja desde Lower Mission hasta el centro | RA        |               |             |
+        | routes     | route_desc      | FR       | La route « A » relie Lower Mission au centre-ville.   | RA        |               |             |
 
-    !!! note ""
-        <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
-        </p>
-        
-        |trip_id |stop_sequence|shape_dist_traveled|
-        |--------|-------------|-------------------|
-        |13302375|1            |0                  |
-        |13302375|2            |461.7              |
-        |13302375|3            |1245               |
 
 ## Feed Information
 
