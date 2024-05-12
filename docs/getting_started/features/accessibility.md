@@ -1,9 +1,9 @@
 # Accessibility
 GTFS contains multiple features intended to assist riders in navigating and accessing public transit services. Such features can communicate route names and colors consistent with the agency's rider-facing materials, indicate wheelchair accessibility for stops or entire trips, or ensure accurate information for riders using assistive technology.
 
-## Wheelchair accessibility
+## Stops Wheelchair Accessibility
 
-Wheelchair accessibility fields make it possible to indicate if a stop and vehicle can accommodate users using wheelchairs, allowing them to plan their trips based on the most convenient option for their needs.
+Stops Wheelchair Accessibility fields make it possible to indicate if a vehicle can accommodate users using wheelchairs.
 
 **Pre-requirements**: 
 
@@ -13,14 +13,11 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`wheelchair_boarding` |
-|[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
 
 ??? note "Sample Data"
 
     <p style="font-size:16px">
     The following sample shows wheelchair boarding is available at stop `TAS001` with  `wheelchair_boarding=1`.
-    The vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
-    Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -31,6 +28,25 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
         |---------|------------|-----------|------------|---------------|---------------------|
         | TAS001  | 5 Av/53 St | 40.760167 | -73.975224 |               |                   1 |
 
+
+## Trips Wheelchair Accessibility
+
+Trips Wheelchair Accessibility fields make it possible to indicate if a vehicle can accommodate users using wheelchairs.
+
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+
+| Files included                   | Fields included   |
+|----------------------------------|-------------------|
+|[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
+
+??? note "Sample Data"
+
+    <p style="font-size:16px">
+    The following sample shows that the vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
+    Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
+    </p>
     !!! note ""
         <p style="font-size:16px">
         <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
@@ -40,7 +56,6 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
         |----------|------------|---------|-----------------------|
         | RA       | WE         | AWE1    |                     1 |
         | RA       | WE         | AWE2    |                     2 |
-
 
 
 ## Text-to-speech
