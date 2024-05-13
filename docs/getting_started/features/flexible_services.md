@@ -1,7 +1,7 @@
 # Flexible services
 Flexible services, also called demand-responsibe services, are services that do not follow the common behavior of scheduled and/or fixed  service. 
 
-## Continuous stops
+## Continuous Stops
 
 Continuous Stops is used when riders can be picked up and/or dropped off between scheduled stops. 
 This can be specified either in `routes.txt`, indicating that riders can be picked up or dropped off at any point along the vehicle’s travel path for every trip of the route, or in `stop_times.txt` for a specific section of a route.  
@@ -19,8 +19,15 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
     <p style="font-size:16px">
     The following sample shows two ways of representing Continuous Stop. 
-The first sample shows that pickups and dropoffs are allowed at any point along route `RA`.
-The second sample shows that pickups and dropoffs are allowed between the third and fifth stops of trip `AWE1`, accomplished by assigning `continuous_pickup` and `continuous_drop_off` values to `stop_sequence=3` and `stop_sequence=4`.
+    </p>
+    
+    <p style="font-size:16px">
+    The first sample shows that pickups and dropoffs are allowed at any point along route `RA`.
+     </p>
+
+    <p style="font-size:16px">
+    The second sample shows that pickups and dropoffs are allowed between the third and fifth stops of trip `AWE1`, accomplished by assigning `continuous_pickup` and `continuous_drop_off` values to `stop_sequence=3` and `stop_sequence=4`.
+    </p>
 
     </p>
     !!! note ""
@@ -45,9 +52,9 @@ The second sample shows that pickups and dropoffs are allowed between the third 
         | AWE1    |      6:23:00 |        6:23:00 | TAS004  |             4 |                 0 |                   0 |
         | AWE1    |      6:25:00 |        6:25:00 | TAS005  |             5 |                   |                     |
 
-##  Booking rules
+##  Booking Rules
 
-Booking rules can be used to enable users to reserve a trip within a demand-responsive. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This should be used in conjunction with the On-demand services feature.
+Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This should be used in conjunction with the On-demand services feature.
 
 **Pre-requirement**: 
 
@@ -60,7 +67,7 @@ Booking rules can be used to enable users to reserve a trip within a demand-resp
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample defines two different set of booking rules, the first one for trips that must be booked at least one day in advance (before 1PM) and no more than 14 days prior, and a second one for trips that can be booked at least 45 minutes prior to the trip and no more than 5 hours before.
+    The following sample shows two different set of booking rules, the first one for trips that must be booked at least one day in advance (before 1PM) and no more than 14 days prior, and a second one for trips that can be booked at least 45 minutes prior to the trip and no more than 5 hours before.
 
     </p>
     !!! note ""
@@ -81,7 +88,7 @@ Predefined routes with deviation can be used to model flexible services where ve
 **Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
-- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) recommended if service requires booking
+- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -91,7 +98,7 @@ Predefined routes with deviation can be used to model flexible services where ve
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample defines a trip with three fixed stops that can also drop-off passengers anywhere within specific areas defined between the fixed stops.
+    The following sample shows a trip with three fixed stops that can also drop-off passengers anywhere within specific areas defined between the fixed stops.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -169,14 +176,14 @@ Predefined routes with deviation can be used to model flexible services where ve
         } 
         ~~~
 
-## On-demand services with zones
+## Zone-based Demand Responsive Services
 
-On-demand services with zones is used to model demand responsive services that allow pick up and/or drop off at any location within a specific area for users that book a trip. These areas are defined using `locations.geojson` so it does not require the use of `stops.txt`, nor `stop_times.arrival_time` & `stop_times.departure_time`.
+Zone-based Demand Responsive Services is used to model services that allow pick up and/or drop off at any location within a specific area for users that book a trip. These areas are defined using `locations.geojson` so it does not require the use of `stops.txt`, nor `stop_times.arrival_time` & `stop_times.departure_time`.
 
 **Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
-- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) recommended if service requires booking 
+- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) if the service requires booking 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -186,7 +193,7 @@ On-demand services with zones is used to model demand responsive services that a
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample defines a service that can pick-up and drop off pre-booked riders anywhere between a specific area between 9am and 6pm.
+    The following sample shows a service that can pick-up and drop off pre-booked riders anywhere between a specific area between 9am and 6pm.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -236,13 +243,13 @@ On-demand services with zones is used to model demand responsive services that a
         }
         ~~~
 
-## On-demand services with fixed stops
-On-demand services with fixed stops is used to model demand responsive services that allow pick up and/or drop off at any location within a group of stops for users that book a trip. These groups of stops are defined using `location_groups.txt` and `location_group_stops.txt`
+## Fixed-Stops Demand Responsive Services
+Fixed-Stops Demand Responsive Services is used to model services that allow pick up and/or drop off at any location within a group of pre-defined stops for users that book a trip. These groups of stops are defined using `location_groups.txt` and `location_group_stops.txt`.
 
 **Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
-- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) recommended if service requires booking
+- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -253,7 +260,7 @@ On-demand services with fixed stops is used to model demand responsive services 
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample defines a service that can pick-up and drop off pre-booked riders at 4 different stops between 7am and 10am.
+    The following sample shows a service that can pick-up and drop off pre-booked riders at 4 different stops between 7am and 10am.
 
     </p>
     !!! note ""
