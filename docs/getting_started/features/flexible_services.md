@@ -18,7 +18,9 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample shows two ways of representing continuous stop, the first one using routes.txt to specify a vehicle that can stop for pick-up and/or drop off at any point along the total length of the route. Secondly, using stop_times.txt to define a specific segment between certain stops where the rider can request to be picked-up and/or dropped off.
+    The following sample shows two ways of representing Continuous Stop. 
+The first sample shows that pickups and dropoffs are allowed at any point along route `RA`.
+The second sample shows that pickups and dropoffs are allowed between the third and fifth stops of trip `AWE1`, accomplished by assigning `continuous_pickup` and `continuous_drop_off` values to `stop_sequence=3` and `stop_sequence=4`.
 
     </p>
     !!! note ""
