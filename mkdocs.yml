@@ -163,6 +163,7 @@ nav:
         - Flexible Services: documentation/schedule/examples/flex.md
         - Frequencies: documentation/schedule/examples/frequencies.md
         - Pathways: documentation/schedule/examples/pathways.md
+        - Routes, Stops & Trips: documentation/schedule/examples/routes-stops-trips.md
         - Text-to-speech: documentation/schedule/examples/text-to-speech.md
         - Transfers: documentation/schedule/examples/transfers.md
         - Translations: documentation/schedule/examples/translations.md
