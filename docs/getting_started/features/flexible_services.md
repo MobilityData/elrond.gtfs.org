@@ -54,7 +54,7 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
 ##  Booking Rules
 
-Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This should be used in conjunction with the On-demand services feature.
+Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This feature should be used in conjunction with [Predefined Routes With Deviation](/getting_started/features/flexible_services/#predefined-routes-with-deviation), [Zone-based Demand Responsive Services](/getting_started/features/flexible_services/#zone-based-demand-responsive-services) and [Fixed-Stops Demand Responsive Services](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services) features, if such services require booking.
 
 **Pre-requirement**: 
 
@@ -81,9 +81,9 @@ Booking rules can be used to enable users to reserve a trip on a demand-responsi
         | route_br_4545   |            1 |                        45 |                       300 |                       |                        |                        |                         |                         | To request a ride, use the official booking system in our website, trips must be booked at least 45 min in advance                                 |                |                  | (123)-111-2233 | flexservice.org/info | flexservice.org/booking |
 
 
-## Predefined routes with deviation
+## Predefined Routes With Deviation
 
-Predefined routes with deviation can be used to model flexible services where vehicles can briefly deviate from a specific route to pick up users that booked a trip within a specific area along the route. This uses a combination of traditional stops (like a regular scheduled service) and zones using `locations.geojson`.
+Predefined Routes With Deviation can be used to model flexible services where vehicles can briefly deviate from a specific route to pick up users that booked a trip within a specific area along the route. This uses a combination of traditional stops (like a regular scheduled service) and zones using `locations.geojson`.
 
 **Pre-requirement**: 
 
