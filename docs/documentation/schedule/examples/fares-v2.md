@@ -2,7 +2,7 @@
 
 Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in iterations. The below examples outline how to model basic concepts, including fare products and how riders can use their fare for transfers. See more information about [the Fares v2 extension project here](/extensions/fares-v2/).
 
-In the interim, producers may implement Fares v2 alongside implementation of Fares v1 in the same dataset as there exists no technical conflict between the two. Consumers will have the choice on which implementation to consume independently from the other. 
+In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there is no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. 
 With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 
 ## Define a transit fare
@@ -66,7 +66,7 @@ The file above represents this in GTFS with the following fields:
 - The `transfer_count` is set to `-1` since there is no limit on the number of transfers permitted
 - The `duration_limit` is set to `5400` seconds,  which is equivalent to 90 minutes
 - The `duration_limit_type` is set to `1` since the transfer time starts when the rider departs on any route in the `core_local_one_way_trip` fare leg and ends when they depart on a different fare leg. 
-- The `fare_transfer_type` is set to `0` since riders only pay for the first fare only. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sums of the transfer fees.
+- The `fare_transfer_type` is set to `0` since riders only pay for the first fare. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sum of the transfer fees.
 - The `transfer_count` is set to `-1` as the rider can transfer an unlimited number of times within the 90 minute `duration_limit` window.
 
 After defining the fare, creating the appropriate `fare_leg_rule`, and defining the `fare_transfer_rule`,  you can see the $2.00 USD `core_local_oneway_fare` appear in trip planners. Here is an example from Transit:

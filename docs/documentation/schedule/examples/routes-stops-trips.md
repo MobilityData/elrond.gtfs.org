@@ -29,7 +29,7 @@ The fifth field (`route_type`) is used to differentiate the types of routes:
 - The second is an LRT, hence `route_type=0`
 - A complete list of values for `route_type` can be found [here](../../reference/#routestxt)
 
-The remaining fields contain additional information such as a URL specific to the route as well as agency-specific colors to represent the service on a map.
+The remaining fields contain additional information, such as a URL specific to the route as well as agency-specific colors to represent the service on a map.
 
 <hr>
 
@@ -50,7 +50,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
 - The exact location is provided using coordinates (`stop_lat` and `stop_lon`)
 - The sixth field (`location_type`) is used to differentiate stops from stations
 - The first record corresponds to a bus stop, hence `location_type=0`
-- The second record corresponds to station, hence `location_type=1`
+- The second record corresponds to a station, hence `location_type=1`
 - A complete list of values for `location_type `can be found [here](../../reference/#stopstxt).
 
 <hr>
@@ -68,7 +68,7 @@ service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,e
 weekend_service,0,0,0,0,0,1,1,20220623,20220903
 ```
 
-Here, a service that runs on Saturdays and Sundays only is being described, so the fields for those days are populated with 1, and the fields for the remaining days are populated with zero. This service runs from June 23 2022 until September 3 2022 as shown under the fields `start_date` and `end_date`. 
+Here, a service that runs on Saturdays and Sundays only is being described, so the fields for those days are populated with 1, and the fields for the remaining days are populated with zero. This service runs from June 23, 2022, until September 3, 2022, as shown under the fields `start_date` and `end_date`. 
 
 In this example, the file [trips.txt](../../reference/#tripstxt) describes 3 weekend trips that are served by the MAX Orange route that was described above.
 
@@ -84,13 +84,13 @@ route_id,service_id,trip_id,trip_headsign,direction_id,shape_id
 - The `route_id` from [routes.txt](../../reference/#routestxt) that corresponds to MAX Orange is listed
 - The `service_id` from [calendar.txt](../../reference/#calendartxt) that corresponds to weekends is listed
 - Each records contains a unique ID for each trip.
-The headsign text is provided, which is what is typically displayed on signs inside and outside the the bus
-- The field `direction_id` allows for a distinction between trips of the same route going in different directions. For example, distinguishing between inbound trips and outbound trips - or southbound trips and northbound trips. 
+The headsign text is provided, which is what is typically displayed on signs inside and outside the bus
+- The field `direction_id` allows for a distinction between trips of the same route going in different directions. For example, distinguish between inbound trips and outbound trips - or southbound trips and northbound trips. 
     - In this case, trips towards Saddletowne have a `direction_id=0` and trips towards Brentwood have a `direction_id=1`. The values in direction_id have no inherent meaning, they are only used to assign one direction of travel versus another
 - The `shape_id` from [shapes.txt](../../reference/#shapestxt) that corresponds to the MAX Orange route towards Saddletowne is listed for the first record and the one for MAX Orange route towards Brentwood is listed for the second and third records
 
 
-The `shape_id=3030026` corresponds to the MAX Orange towards Saddletowne. The file below includes information on the points that outline the trip as well as the distance between each point and the start of the trip. With this information, it is possible to plot the route on a map for trip planning or analytics purposes.
+The `shape_id=3030026` corresponds to the MAX Orange towards Saddletowne. The file below includes information on the points that outline the trip, as well as the distance between each point and the start of the trip. With this information, it is possible to plot the route on a map for trip planning or analytics purposes.
 
 [**shapes.txt**](../../reference/#shapestxt) 
 

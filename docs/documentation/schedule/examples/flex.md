@@ -6,7 +6,7 @@ The following example demonstrates how to model different demand responsive serv
 
 ## On-demand services within a single zone
 
-Demand-repsonsive services can operate within a specific zone, allowing riders to book pickups at any point A within the zone and drop-offs at any point B within the same zone. An example of this is the [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&id=56) service in Minnesota, USA.
+Demand-responsive services can operate within a specific zone, allowing riders to book pickups at any point A within the zone and drop-offs at any point B within the same zone. An example of this is the [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&id=56) service in Minnesota, USA.
 
 <sup>[Download Heartland Express example dataset](../../../assets/on-demand_services_within_a_single_zone.zip)</sup>
 
@@ -80,7 +80,7 @@ Here are booking rules that apply to all Heartland Express services:
 - Rides must be requested one business day prior to day of the ride. 
 - Ride requests can be made up to 14 days in advance.
 
-Using `booking_type = 2` indicates that the service requires up to prior day(s) booking. `prior_notice_last_day = 1` and `prior_notice_start_day = 14` indicate  indicate that the service can be booked as early as 14 days in advance and as late as the day before.
+Using `booking_type = 2` indicates that the service requires up to prior day(s) booking. `prior_notice_last_day = 1` and `prior_notice_start_day = 14` indicate that the service can be booked as early as 14 days in advance and as late as the day before.
 
 [**booking_rules.txt**](../../reference/#booking_rulestxt)
 
@@ -108,7 +108,7 @@ t_5374946_b_77497_tn_0 | area_715 | 2 | 17:00:00 | 17:45:00 | 1 | 2 | booking_ro
 t_5374947_b_77497_tn_0 | area_715 | 1 | 08:00:00 | 12:00:00 | 2 | 1 | booking_route_74362 | booking_route_74362
 t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_route_74362 | booking_route_74362
 
-`area_715` refers to New Ulm City zone, `area_708` refers to Bronw County zone. 
+`area_715` refers to New Ulm City zone, `area_708` refers to Brown County zone. 
 
 ## On-demand services across multiple zones
 
@@ -131,7 +131,7 @@ route_id | service_id | trip_id
 
 ### Define stop times
 
-The following data indicates that pickup is only allowed in one zone and drop-off is only allowed in another zone. pickup and drop-off in the same zone are not allowed.
+The following data indicates that pickup is only allowed in one zone and drop-off is only allowed in another zone. Pickup and drop-off in the same zone are not allowed.
 
 [**stop_times.txt**](../../reference/#stop_timestxt)
 
@@ -212,7 +212,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 
 "Route deviation" refers to services where the vehicle follows a fixed route with a set sequence of stops but has the flexibility to deviate from this route to pick up or drop off riders between stops. Typically, deviations are limited to maintain service punctuality, and prior booking is required for deviated pickups and drop-offs. 
 
-In this example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City allows users to be picked up only at fixed stops and to be droped off at any point within a specific deviation area between these stops.
+In this example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City allows users to be picked up only at fixed stops and to be dropped off at any point within a specific deviation area between these stops.
 
 **The example below has been simplified, download the [Hermann Express example dataset](../../../assets/deviated_drop-off_route.zip) for more details.**
 

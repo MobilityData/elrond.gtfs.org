@@ -4,7 +4,7 @@
 
 **Impacts a large percentage of the population:** The World Health Organization estimates that [16% of people worldwide have a disability](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) and that people with disabilities “find inaccessible and unaffordable transportation 15 times more difficult than for those without disabilities”. Persons with disabilities also have [higher rates of acquiring new health conditions](https://www.who.int/publications/i/item/9789240063600), partially due to reduced access to care and services.
 
-**It's important to them:** Riders need up to date and accurate information about their transit options. Many agencies already use the General Transit Feed Specification (GTFS) to represent route, schedule, and stop location information that is critical to riders in planning their trips and understanding their options. For riders with accessibility needs, knowing the accessibility of a stop or vehicle is just as important as knowing the location. These riders need to know about every part of their trip to ensure they don’t get stranded somewhere or realize too late that they won’t be able to make it to their final stop.
+**It's important to them:** Riders need up-to-date and accurate information about their transit options. Many agencies already use the General Transit Feed Specification (GTFS) to represent route, schedule, and stop location information that is critical to riders in planning their trips and understanding their options. For riders with accessibility needs, knowing the accessibility of a stop or vehicle is just as important as knowing the location. These riders need to know about every part of their trip to ensure they don’t get stranded somewhere or realize too late that they won’t be able to make it to their final stop.
 
 **It may be the law:** Depending on your location, local or national law may require that you provide equal access and opportunity to people with disabilities. The following are some sources you may want to consider:
 
@@ -52,13 +52,13 @@ Riders will need to use an app that supports text-to-speech functionality, in or
 
 GTFS-Pathways is a component of GTFS that represents transit station details. It allows riders to understand whether they will be able to make a required transfer at a transit station. 
 
-GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in `pathways.txt`. 
+GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together the information described in `pathways.txt`. 
 
 <img class="center" src="../../../assets/pathways-visual.jpg">
 
 ### Describe the location of station entrances and exits
 
-With GTFS, it is possible to accurately describe stations using information on entrances and station interiors. This example describes sections of Waterfront station in downtown Vancouver. The station is part of the city’s Skytrain network and is served by the Canada Line, the Expo Line, the SeaBus, and the West Coast Express. Three street level entrances allow riders to enter and exit the station. The rest of the station is underground with a concourse level for fare validation and a lower level with platforms. 
+With GTFS, it is possible to accurately describe stations using information on entrances and station interiors. This example describes sections of Waterfront Station in downtown Vancouver. The station is part of the city’s Skytrain network and is served by the Canada Line, the Expo Line, the SeaBus, and the West Coast Express. Three street level entrances allow riders to enter and exit the station. The rest of the station is underground, with a concourse level for fare validation and a lower level with platforms. 
 
 First, the location of the station and its entrances are defined in [stops.txt](../../reference/#pathwaystxt):
 

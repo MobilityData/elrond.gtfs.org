@@ -2,9 +2,9 @@
 
 ## Attribute data to a data producer in an aggregated GTFS dataset
 
-Some GTFS datasets contain data aggregated from multiple sources such as different service providers that serve the same jurisdiction. In some cases, it is necessary to classify the agencies listed in [agency.txt](../../reference/#agencytxt) as producers, operators, or authorities. 
+Some GTFS datasets contain data aggregated from multiple sources, such as different service providers that serve the same jurisdiction. In some cases, it is necessary to classify the agencies listed in [agency.txt](../../reference/#agencytxt) as producers, operators, or authorities. 
 
-For example, Rejseplanen is a search engine for rail and bus services in Denmark. The company publishes a GTFS dataset that contains data from multiple agencies and providers as shown below in [agency.txt](../../reference/#agencytxt). 
+For example, Rejseplanen is a search engine for rail and bus services in Denmark. The company publishes a GTFS dataset that contains data from multiple agencies and providers, as shown below in [agency.txt](../../reference/#agencytxt). 
 
 [**agency.txt**](../../reference/#agencytxt)
 

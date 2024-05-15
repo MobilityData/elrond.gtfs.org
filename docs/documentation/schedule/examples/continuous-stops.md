@@ -2,9 +2,9 @@
 
 ## Pickup and drop off everywhere
 
-The transit agency The Current (Rockingham, US-VT) applies a continuous-stop policy on the routes 2, 53, and 55. A rider may be picked up and dropped off between scheduled stops all along the route, as long as there is a safe place for the bus to stop. 
+The transit agency The Current (Rockingham, US-VT) applies a continuous-stop policy on routes 2, 53, and 55. A rider may be picked up and dropped off between scheduled stops all along the route, as long as there is a safe place for the bus to stop. 
 
-The file [routes.txt](../../reference/#routestxt) is used to describe this service using the fields `continuous_pickup` and `continuous_drop_off`. The fields are set to `0` to indicate that continuous pickups and drop offs are permitted. 
+The file [routes.txt](../../reference/#routestxt) is used to describe this service using the fields `continuous_pickup` and `continuous_drop_off`. The fields are set to `0` to indicate that continuous pickups and dropoffs are permitted. 
 
 [**routes.txt**](../../reference/#routestxt)
 

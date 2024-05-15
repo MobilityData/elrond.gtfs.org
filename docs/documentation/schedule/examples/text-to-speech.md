@@ -21,7 +21,7 @@ Otherwise, the software would read “3300” as “three thousand three hundred
 
 ## Acronyms
 
-For acronyms that are referred to by their letters, letters should be followed by periods or separated by spaces. This clarifies that the acronym should be read letter-by-letter, and not read as a word.
+For acronyms that are referred to by their letters, letters should be followed by periods or separated by spaces. This clarifies that the acronym should be read letter-by-letter, and not as a word.
 
 For Tampa, the headsign “North to UATC” contains an acronym that is pronounced by its individual letters. The text-to-speech disambiguation would be:
 
@@ -37,7 +37,7 @@ or
 | ---- | ---- |
 | North to UATC | north to u a t c |
 
-Oppositely, some acronyms should be read as words: e.g. NATO; NASA. The text-to-speech field should reflect this.
+Conversely, some acronyms should be read as words: e.g. NATO; NASA. The text-to-speech field should reflect this.
 
 !!! Note
 
