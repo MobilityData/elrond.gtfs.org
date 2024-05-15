@@ -83,7 +83,7 @@ route_id,service_id,trip_id,trip_headsign,direction_id,shape_id
 
 - The `route_id` from [routes.txt](../../reference/#routestxt) that corresponds to MAX Orange is listed
 - The `service_id` from [calendar.txt](../../reference/#calendartxt) that corresponds to weekends is listed
-- Each records contains a unique ID for each trip
+- Each records contains a unique ID for each trip.
 The headsign text is provided, which is what is typically displayed on signs inside and outside the the bus
 - The field `direction_id` allows for a distinction between trips of the same route going in different directions. For example, distinguishing between inbound trips and outbound trips - or southbound trips and northbound trips. 
     - In this case, trips towards Saddletowne have a `direction_id=0` and trips towards Brentwood have a `direction_id=1`. The values in direction_id have no inherent meaning, they are only used to assign one direction of travel versus another
