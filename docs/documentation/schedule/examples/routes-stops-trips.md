@@ -130,7 +130,7 @@ However, this complicates the file since `service_id` is broken in two and this 
 
 ```
 service_id,date,exception_type
-weekend_service,20220623,2
+weekend_service,20220717,2
 ```
 
 - The `service_id` `weekend_service` is listed 
