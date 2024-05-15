@@ -90,7 +90,7 @@ The headsign text is provided, which is what is typically displayed on signs ins
 - The `shape_id` from [shapes.txt](../../reference/#shapestxt) that corresponds to the MAX Orange route towards Saddletowne is listed for the first record and the one for MAX Orange route towards Brentwood is listed for the second and third records
 
 
-The `shape_id=3030026` corresponds to the MAX Orange towards Saddletowne. The file below includes information on the points that outline the route as well as the distance between those points. With this information, it is possible to plot the route on a map for trip planning or analytics purposes.
+The `shape_id=3030026` corresponds to the MAX Orange towards Saddletowne. The file below includes information on the points that outline the trip as well as the distance between each point and the start of the trip. With this information, it is possible to plot the route on a map for trip planning or analytics purposes.
 
 [**shapes.txt**](../../reference/#shapestxt) 
 
