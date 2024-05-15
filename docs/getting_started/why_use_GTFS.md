@@ -4,7 +4,7 @@ Over 10,000 transit agencies in 100+ countries rely on GTFS, quickly becoming an
 
 - Simple: The core GTFS data is text-based and easy to understand. 
 - Flexible: It also offers the possibility of plugging in additional features beyond schedules, like fare information, flexible services, and accessibility information.
-- Open Source: by beign freely available, data can be shared easily and developers can create tools, shaping the future of GTFS to better suit their needs.
+- Open Source: by being freely available, data can be shared easily, and developers can create tools, shaping the future of GTFS to better suit their needs.
 - Community Driven: developed collaboratively, GTFS ensures the format meets the evolving needs of riders and agencies.
 
 ## A simple standard that is accessible to everyone
@@ -35,5 +35,5 @@ As an open data standard, GTFS is driven by an open community where anyone can p
 - Simple: It’s meant to be easy to view and edit using simple tools and editors.
 - Stable: Additions and changes are backwards compatible, which means existing feeds remain valid through time.
 - User-centered: the specification's main priority is passenger information, focusing on information that can help power tools for riders, first and foremost.
-- The References documents for GTFS Schedule and GTFS Realtime are officially hosted in a GitHub repository, where changes are proposed and reviewed by the community.
+- The Reference documents for GTFS Schedule and GTFS Realtime are officially hosted in a GitHub repository, where changes are proposed and reviewed by the community.
 

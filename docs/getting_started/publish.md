@@ -1,6 +1,6 @@
 # Making your GTFS feed publicly available
 
-## Benefits to Sharing your GTFS
+## Benefits of Sharing your GTFS
 
 GTFS data can be utilized in many ways, and publicly sharing your agency’s GTFS data provides many benefits to your riders and your agency as a whole. These include:
 
@@ -18,7 +18,7 @@ Sharing your GTFS data also allows it to be indexed by GTFS feed aggregation pla
 
 ### Integration with GIS, Analysis, and other Platforms and Tools
 
-GTFS data can also be imported into and used in a variety of geospatial analysis platforms. Geographic Information Systems (GIS) programs like Esri’s ArcGIS, as well as the open-source QGIS have their own plugins and extensions that can import and visualize GTFS stop and route data.
+GTFS data can also be imported into and used on a variety of geospatial analysis platforms. Geographic Information Systems (GIS) programs like Esri’s ArcGIS, as well as the open-source QGIS have their own plugins and extensions that can import and visualize GTFS stop and route data.
 
 - Esri has a [wide variety of tools and plugins](https://esri.github.io/public-transit-tools/) that use GTFS data, including visualizing schedule data
 - In QGIS, [GTFS-GO](https://plugins.qgis.org/plugins/GTFS-GO-master/) and [GTFS Loader](https://plugins.qgis.org/plugins/GTFS_Loader/) allow you to visualize routes + stops within the platform  
@@ -26,8 +26,8 @@ GTFS data can also be imported into and used in a variety of geospatial analysis
 
 Other platforms allow you to visualize and analyze GTFS data in unique ways:
 
-- [Conveyal](https://conveyal.com/) is an open-source program that allows users to import GTFS data to visualize schedules, routes, and patterns, and analyze impacts of potential service changes. Users can also import and work with demographic data to carry out analyses on, for example, how different routes or schedules would affect access to jobs in a particular urban area.
-- [GTFS to HTML](https://gtfstohtml.com/) is an open-source tool that enables the conversion of GTFS schedule data into HTML timetables. It allows agencies to automatically publish and update their schedules to their website in a format that can also be read by screen readers, making the data accessible to visually impaired people.
+- [Conveyal](https://conveyal.com/) is an open-source program that allows users to import GTFS data to visualize schedules, routes, and patterns, and analyze the impacts of potential service changes. Users can also import and work with demographic data to carry out analyses on, for example, how different routes or schedules would affect access to jobs in a particular urban area.
+- [GTFS to HTML](https://gtfstohtml.com/) is an open-source tool that enables the conversion of GTFS schedule data into HTML timetables. It allows agencies to automatically publish and update their schedules on their website in a format that can also be read by screen readers, making the data accessible to visually impaired people.
 
 ## Sharing your Data: Tips & Best Practices
 
@@ -65,5 +65,5 @@ Your GTFS is a zip file containing several interconnected text files (.txt). In 
 
 If multiple agencies share the same stop with different names or codes, applications like Google Maps might need to pick one. To avoid confusion, coordinate with other agencies to agree on the names and codes. This minimizes conflicts between different GTFS datasets.
 
-In the event you have multiple GTFS datasets available to you —usually the result of one being produced for public applications like Transit App, and another being produced for internal operational CAD/AVL systems— you may need to decide which one will be the published GTFS. It is recommended you choose to promote the feed that contains the most rider-facing information. Whenever possible, seek to have your GTFS datasets match (same ids for things like stops and trips) so that internal ones do not conflict with public ones, and integrating other feeds like GTFS-RT is possible.
+In the event you have multiple GTFS datasets available to you —usually the result of one being produced for public applications like Transit App, and another being produced for internal operational CAD/AVL systems— you may need to decide which one will be the published GTFS. It is recommended that you choose to promote the feed that contains the most rider-facing information. Whenever possible, seek to have your GTFS datasets match (same ids for things like stops and trips) so that internal ones do not conflict with public ones, and integrating other feeds like GTFS-RT is possible.
 

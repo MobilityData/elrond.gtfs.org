@@ -12,7 +12,7 @@ Accurate data is essential for providing transit riders with a reliable and user
 
 ## Up-to-date data
 
-Having out-of-date data is almost worse than no feed at all. It's not enough to simply publish information—it has to match what the rider sees and experiences. Some of the largest transit agencies update their GTFS weekly, or even daily, but most agencies will need to update their GTFS every few months, or a few times a year when service changes. This includes things like new routes or stops, timetable changes, or updates to fare structure.
+Having out-of-date data is almost worse than having no feed at all. It's not enough to simply publish information—it has to match what the rider sees and experiences. Some of the largest transit agencies update their GTFS weekly, or even daily, but most agencies will need to update their GTFS every few months, or a few times a year when service changes. This includes things like new routes or stops, timetable changes, or updates to fare structure.
 
 Many agencies hire a vendor to create and manage their GTFS for them. Some vendors may be proactive in asking about service changes, but it’s important that agencies communicate with vendors about upcoming service changes. It’s possible to publish GTFS with service changes in advance, making sure the transition goes smoothly for everyone—agencies, vendors, trip planners, and riders!
 
@@ -44,4 +44,4 @@ Similarly, using the free and open-source canonical [GTFS Realtime Validator](ht
 
 For information on creating high quality data, see the [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines), the [GTFS Schedule Best Practices](https://gtfs.org/schedule/best-practices/) and the [GTFS Realtime Best Practices](https://gtfs.org/realtime/best-practices/).
 
-[^1]: To see more instructions on how to use this tool in your data pipeline and contributing to this project, please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator).
+[^1]: To see more instructions on how to use this tool in your data pipeline and contribute to this project, please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator).

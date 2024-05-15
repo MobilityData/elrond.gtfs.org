@@ -1,7 +1,7 @@
 # Creating a GTFS dataset
 
 ## Overview of a GTFS feed
-All GTFS feeds start with a dataset in the GTFS Reference format, which is a series of CSV files saved with a .txt file extension[^1]. At its most basic implementation, a GTFS dataset starts with 7 base files, combined into a .zip file which is hosted on a stable and public URL: this is the GTFS feed.
+All GTFS feeds start with a dataset in the GTFS Reference format, which is a series of CSV files saved with a .txt file extension[^1]. At its most basic implementation, a GTFS dataset typically starts with seven base files, combined into a .zip file which is hosted on a stable and public URL: this is the GTFS feed.
 
 <img class="center" width="560" height="100%" src="../../../assets/create_001.png">
 
@@ -29,18 +29,18 @@ Because GTFS Realtime allows to present the actual status of a fleet, the feed n
 
 ## Producing your first GTFS feed?
 
-If you are an agency looking to produce your first GTFS feed, the first thing you need to do is to read the existing documentation.
+If you are an agency looking to produce your first GTFS feed, the first thing you need to do is read the existing documentation.
 
-Begin by exploring the capabilities of GTFS in the ["What can GTFS do?" section](/getting_started/features/overview) and determine the different features of your transit service that you want to represent using the GTFS format. For a more in-depth exploration, the official reference documentation for [GTFS Schedule](/documentation/schedule/reference) and [GTFS Realtime](/documentation/realtime/reference) offers detailed guidance on modeling these features and ensuring compliance.
+Begin by exploring the capabilities of GTFS in the ["What can GTFS do?" section](/getting_started/features/overview) and determining the different features of your transit service that you want to represent using the GTFS format. For a more in-depth exploration, the official reference documentation for [GTFS Schedule](/documentation/schedule/reference) and [GTFS Realtime](/documentation/realtime/reference) offers detailed guidance on modeling these features and ensuring compliance.
 
-Next, collect all the required data from your system. This includes information for all stops, routes, timetables, fares, etc. as many of these details will be the inputs that will populate the GTFS dataset.
+Next, collect all the required data from your system. This includes information for all stops, routes, timetables, fares, etc., as many of these details will be the inputs that will populate the GTFS dataset.
 
 Depending on the size and complexity of your system, you have the option to either create the data in-house or bring an external GTFS vendor to transform the data into the GTFS format. 
 
 In some cases, small agencies with a handful of routes create the data themselves using commonly available software like spreadsheets and text editors. 
 
-When dealing with a larger system scope, most agencies acquire specialized GTFS management software from specialized vendors, but some might opt for developing their own internal tools. Finally, when the system characteristics prove to be challenging for agencies to write datasets on their own, GTFS production can be outsourced entirely to companies specialized in producing GTFS data.
+When dealing with a larger system scope, most agencies acquire specialized GTFS management software from specialized vendors, but some might opt for developing their own internal tools. Finally, when the system characteristics prove to be challenging for agencies to write datasets on their own, GTFS production can be outsourced entirely to companies specializing in producing GTFS data.
 
 <a href="https://www.flaticon.com/authors/freepik" title="Icons by Freepik">Icons created by Freepik - Flaticon</a>
 
-[^1]: In addition to text files, the GeoJSON format is now also supported in GTFS to represent ceirtain elements of Demand-responsive services.
+[^1]: In addition to text files, the GeoJSON format is now also supported in GTFS to represent certain elements of Demand-responsive services.

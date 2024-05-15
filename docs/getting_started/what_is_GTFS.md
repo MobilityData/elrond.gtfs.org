@@ -26,5 +26,5 @@ The detailed information for both specifications is hosted in documents known as
 
 <a href="https://www.flaticon.com/authors/freepik" title="Icons by Freepik">Icons created by Freepik - Flaticon</a>
 
-[^1]: In addition to text files, the GeoJSON format is now also supported in GTFS to represent ceirtain elements of Demand-responsive services.
+[^1]: In addition to text files, the GeoJSON format is now also supported in GTFS to represent certain elements of Demand-responsive services.
 
