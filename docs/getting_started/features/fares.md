@@ -10,7 +10,7 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 |[fare_products.txt](/schedule/reference/#fare_productstxt)|`fare_product_id`, `fare_product_name`, `amount`, `currency`, `fare_media_id` |
 |[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`|
 
-**Requirement**: [Base features](/getting_started/features/base)
+**Prerequisites**: [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -45,7 +45,7 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 |[fare_media.txt](/schedule/reference/#fare_mediatxt)|`fare_media_id`, `fare_media_name`, `fare_media_type`|
 |[fare_products.txt](/schedule/reference/#fare_productstxt)|`fare_media_id`|
 
-**Requirement**: [Base features](/getting_started/features/base)
+**Prerequisites**: [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -86,7 +86,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 |[netowrks.txt](/schedule/reference/#networkstxt)|`network_id`, `network_name`|
 |[route_networks.txt](/schedule/reference/#route_networkstxt)|`network_id`, `route_id`|
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Fare Products feature](/getting_started/eatures/fares/#fare-products)
@@ -164,7 +164,7 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 |[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `from_timeframe_group_id`, `to_timeframe_group_id`|
 |[timeframes.txt](/schedule/reference/#timeframestxt)|`timeframe_group_id`, `start_time`, `end_time`, `service_id`|
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Fare Products feature](/getting_started/eatures/fares/#fare-products)
@@ -206,7 +206,7 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 |[areas.txt](/schedule/reference/#areastxt)|`area_id`, `area_name`|
 |[stop_areas.txt](/schedule/reference/#stop_areastxt)|`area_id`, `stop_id`|
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Fare Products feature](/getting_started/eatures/fares/#fare-products)
@@ -251,7 +251,7 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 
 Fares Transfers is used to define rules applicable when transferring between legs (or individual travel segments). This allows to model the total cost of a multi-leg travel journey, accounting for special transfer policies, such as free transfers for a specific time limit, or applying fare discounts based on legs already traveled.
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Fare Products feature](/getting_started/eatures/fares/#fare-products)
@@ -296,7 +296,7 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
 |[fare_attributes.txt](/schedule/reference/#fare_attributestxt)|`fare_id` `price` `currency_type` `payment_method` `transfers` `agency_id` `transfer_duration`|
 |[fare_rules.txt](/schedule/reference/#fare_rulestxt)|`fare_id` `route_id` `origin_id` `destination_id` `contains_id`|
 
-**Requirement**: [Base features](/getting_started/features/base)
+**Prerequisite**: [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 

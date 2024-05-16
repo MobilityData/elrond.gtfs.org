@@ -9,7 +9,7 @@ At its foundational level, Pathways offers basic functionality to connect key ar
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`pathway_id`, `from_stop_id`, `to_stop_id`, `pathway_mode`, `is_bidirectional` |
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Location Types](/getting_started/features/base-add-ons/#location-types)
@@ -46,7 +46,7 @@ More details can be added regarding the physical characteristics of a station’
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`max_slope`, `min_width`, `length`, `stair_count`|
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Pathway Connections](/getting_started/features/pathways/#pathway-connections)
@@ -84,7 +84,7 @@ Levels can be used to list all different levels within a station, providing user
 |[levels.txt](/documentation/schedule/reference/#levelstxt)|`level_id`, `level_index`, `level_name`|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`level_id`|
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Location Types](/getting_started/features/pathways/#location-types)
@@ -131,7 +131,7 @@ Levels can be used to list all different levels within a station, providing user
 
 In-station Traversal Time provides an additional level of detail to in-station directions, giving users an estimated time required to navigate stations, resulting in better travel directions and travel times.
 
-**Requirements**: 
+**Prerequisites**: 
 
 - [Base features](/getting_started/features/base)
 - [Pathway Connections](/getting_started/features/pathways/#pathway-connections)
@@ -172,7 +172,7 @@ Pathway Signs can bridge the information displayed in trip planners with real-wo
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`signposted_as`, `reversed_signposted_as`|
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Pathway Connections](/getting_started/features/pathways/#pathway-connections)

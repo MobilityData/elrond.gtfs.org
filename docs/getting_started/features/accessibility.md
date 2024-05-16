@@ -9,7 +9,7 @@ Stops Wheelchair Accessibility allows to indicate whether wheelchair boarding is
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`wheelchair_boarding` |
 
-**Requirements**:
+**Prerequisites**:
 
 - [Base features](/getting_started/features/base)
 - [Location Types](/getting_started/features/pathways/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
@@ -37,7 +37,7 @@ Trips Wheelchair Accessibility make it possible to indicate if a vehicle can acc
 |----------------------------------|-------------------|
 |[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
 
-**Requirement**: [Base features](/getting_started/features/base)
+**Prerequisites**: [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -63,7 +63,7 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
 
-**Requirement**: [Base features](/getting_started/features/base)
+**Prerequisites**: [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
