@@ -14,7 +14,7 @@ When your agency’s GTFS data is publicly shared, it can be utilized by a varie
 
 ### Feed Aggregators
 
-Sharing your GTFS data also allows it to be indexed by GTFS feed aggregation platforms, which can include state- or region-level directories of GTFS feeds, as well as international feed aggregators like the [Mobility Database](https://database.mobilitydata.org/) and [Transitland](https://www.transit.land/) (see more feed aggregators here). Being indexed on a feed aggregator increases your agency’s visibility and allows developers, researchers, and other interested parties to easily access your agency’s data for a variety of purposes, including the development of new applications.
+Sharing your GTFS data also allows it to be indexed by GTFS feed aggregation platforms, which can include state- or region-level directories of GTFS feeds, as well as international feed aggregators like the [Mobility Database](https://database.mobilitydata.org/) and [Transitland](https://www.transit.land/) (see more feed aggregators [here](/resources/data). Being indexed on a feed aggregator increases your agency’s visibility and allows developers, researchers, and other interested parties to easily access your agency’s data for a variety of purposes, including the development of new applications.
 
 ### Integration with GIS, Analysis, and other Platforms and Tools
 
