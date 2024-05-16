@@ -13,7 +13,7 @@
 
 The GTFS Specification is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS. It is expected that this community of producers and consumers of GTFS data will have proposals for extending the spec to enable new capabilities.
 
-To formalize this process, we've established the GTFS Governance framework, which includes the Specification Amendment Process (SAP).
+To formalize this process, we've established the GTFS Governance framework, which includes the Specification Amendment Process.
 
 <div class="grid cards" markdown>
 
