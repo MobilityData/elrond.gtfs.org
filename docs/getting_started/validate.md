@@ -40,7 +40,7 @@ The free and open-source [Canonical GTFS Schedule validator](https://gtfs-valida
     </div>
 </div>
 
-Similarly, using the free and open-source canonical [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator) ensures your GTFS data is compliant with the official GTFS [Realtime Reference](/documentation/Realtime/reference.md) and [Best Practices](/documentation/Realtime/best practices.md).
+Similarly, using the free and open-source canonical [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator) ensures your GTFS data is compliant with the official [GTFS Realtime Reference](/documentation/Realtime/reference/) and [Best Practices](/documentation/Realtime/best practices/).
 
 For information on creating high quality data, see the [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines), the [GTFS Schedule Best Practices](https://gtfs.org/schedule/best-practices/) and the [GTFS Realtime Best Practices](https://gtfs.org/realtime/best-practices/).
 
