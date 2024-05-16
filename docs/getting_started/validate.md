@@ -20,7 +20,7 @@ Many agencies hire a vendor to create and manage their GTFS for them. Some vendo
 
 Official GTFS Validators assess the quality of a dataset against the official specification, ensuring a common understanding within the industry of what constitutes a high-quality dataset. 
 
-The free and open-source canonical [GTFS Schedule validator](https://gtfs-validator.mobilitydata.org/)[^1] maintained by MobilityData ensures your GTFS data is compliant with the official GTFS Schedule Reference and Best Practices. It provides an easy-to-use validation report in an HTML format that can be opened in the browser and shared with other parties.
+The free and open-source [Canonical GTFS Schedule validator](https://gtfs-validator.mobilitydata.org/)[^1] maintained by [MobilityData](https://mobilitydata.org/) ensures your GTFS data is compliant with the official [GTFS Schedule Reference](/documentation/schedule/reference/) and [Best Practices](/documentation/schedule/best-practices/). It provides an easy-to-use report that can be shared with other parties and comprehensive documentation.
 
 ### Usage
 
