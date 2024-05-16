@@ -18,7 +18,7 @@ Sharing your GTFS data also allows it to be indexed by GTFS feed aggregation pla
 
 ### Integration with GIS, Analysis, and other Platforms and Tools
 
-GTFS data can also be imported into and used on a variety of geospatial analysis platforms. Geographic Information Systems (GIS) programs like Esri’s ArcGIS, as well as the open-source QGIS have their own plugins and extensions that can import and visualize GTFS stop and route data.
+GTFS data can also be imported and used on a variety of geospatial analysis platforms. Geographic Information Systems (GIS) programs like Esri’s ArcGIS, as well as the open-source QGIS have their own plugins and extensions that can import and visualize GTFS stop and route data.
 
 - Esri has a [wide variety of tools and plugins](https://esri.github.io/public-transit-tools/) that use GTFS data, including visualizing schedule data
 - In QGIS, [GTFS-GO](https://plugins.qgis.org/plugins/GTFS-GO-master/) and [GTFS Loader](https://plugins.qgis.org/plugins/GTFS_Loader/) allow you to visualize routes + stops within the platform  
