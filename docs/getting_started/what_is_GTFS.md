@@ -18,7 +18,7 @@ GTFS consists of two main parts: [GTFS Schedule](/documentation/schedule/referen
 
 GTFS Schedule contains information about routes, schedules, fares, and geographic transit details among many other features, and it is presented in simple text files[^1]. This straightforward format allows for easy creation and maintenance without relying on complex or proprietary software.
 
-GTFS Realtime contains trip updates, vehicle positions, and service alerts, using a different format based on [Protocol Buffers](https://developers.google.com/protocol-buffers/). This part of GTFS works in conjunction with GTFS Schedule in order to inform passengers of service disruptions and updated arrival times.
+GTFS Realtime contains trip updates, vehicle positions, and service alerts, using the [Protocol Buffers](https://developers.google.com/protocol-buffers/) format. This part of GTFS works in conjunction with GTFS Schedule in order to inform passengers of service disruptions and updated arrival times.
 
 The detailed information for both specifications is hosted in documents known as the Reference documents. An updated copy of this information can be found in the [Technical Documentation section](/documentation/overview).
 
