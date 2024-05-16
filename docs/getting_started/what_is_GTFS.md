@@ -20,7 +20,7 @@ GTFS Schedule contains information about routes, schedules, fares, and geographi
 
 GTFS Realtime contains trip updates, vehicle positions, and service alerts, using the [Protocol Buffers](https://developers.google.com/protocol-buffers/) format. This part of GTFS works in conjunction with GTFS Schedule in order to inform passengers of service disruptions and updated arrival times.
 
-The detailed information for both specifications is hosted in documents known as the Reference documents. An updated copy of this information can be found in the [Technical Documentation section](/documentation/overview).
+The GTFS Schedule and GTFS Realtime reference documentation is available in the [Technical Documentation section](/documentation/overview).
 
 <iframe class="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/SDz2460AjNo?si=wFsaN4_Hr3ypxWdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
