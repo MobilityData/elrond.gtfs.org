@@ -1,23 +1,23 @@
 # Accessibility
-GTFS contains multiple features intended to assist riders in navigating and accessing public transit services. Such features can communicate route names and colors consistent with the agency's rider-facing materials, indicate wheelchair accessibility for stops or entire trips, or ensure accurate information for riders using assistive technology.
+The Accessibility features are intended to provide people with disabilities the information they need to access the service.
 
 ## Stops Wheelchair Accessibility
 
-Stops Wheelchair Accessibility fields make it possible to indicate if a vehicle can accommodate users using wheelchairs.
-
-**Pre-requirements**: 
-
-- [Base features](/getting_started/features/base)
-- [Location Types feature](/getting_started/features/pathways/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
+Stops Wheelchair Accessibility allows to indicate whether wheelchair boarding is possible from the specified location. In order to serve riders using wheelchairs, specifying that wheelchair boarding is possible is just as important as specifying that it isn't.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`wheelchair_boarding` |
 
+**Requirements**:
+
+- [Base features](/getting_started/features/base)
+- [Location Types](/getting_started/features/pathways/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
+
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample shows wheelchair boarding is available at stop `TAS001` with  `wheelchair_boarding=1`.
+    The following sample shows wheelchair boarding is available at stop `TAS001` using `wheelchair_boarding=1`.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -31,21 +31,18 @@ Stops Wheelchair Accessibility fields make it possible to indicate if a vehicle 
 
 ## Trips Wheelchair Accessibility
 
-Trips Wheelchair Accessibility fields make it possible to indicate if a vehicle can accommodate users using wheelchairs.
-
-**Pre-requirements**: 
-
-- [Base features](/getting_started/features/base)
+Trips Wheelchair Accessibility make it possible to indicate if a vehicle can accommodate riders using wheelchairs. In order to serve riders using wheelchairs, specifying that a vehicle can accomodate riders using wheelchairs is just as important as specifying that a vehicle can't. Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
 
+**Requirement**: [Base features](/getting_started/features/base)
+
 ??? note "Sample Data"
 
     <p style="font-size:16px">
     The following sample shows that the vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
-    Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -62,13 +59,11 @@ Trips Wheelchair Accessibility fields make it possible to indicate if a vehicle 
 
 Text-to-speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
 
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
+
+**Requirement**: [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 

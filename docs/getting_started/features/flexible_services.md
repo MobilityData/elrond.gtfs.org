@@ -1,4 +1,4 @@
-# Flexible services
+# Flexible Services
 Flexible services, also called demand-responsibe services, are services that do not follow the common behavior of scheduled and/or fixed  service. 
 
 ## Continuous stops
