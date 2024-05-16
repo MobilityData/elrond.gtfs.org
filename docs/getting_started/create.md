@@ -5,7 +5,7 @@ All GTFS feeds start with a dataset in the GTFS Reference format, which is a ser
 
 <img class="center" width="560" height="100%" src="../../../assets/create_001.png">
 
-Each file consists of a list of multiple entries (lines of data) with several information fields. For example, each line listed in [routes.txt](/documentation/schedule/reference/#routestxt) represents a public transport route and its fields describe multiple elements of that route, like its name, description, operating agency, etc.
+Each file consists of a list of multiple records (lines of data) with several information fields. For example, each line listed in [routes.txt](/documentation/schedule/reference/#routestxt) represents a public transport route and its fields describe multiple elements of that route, like its name, description, operating agency, etc.
 
 <img class="center" width="560" height="100%" src="../../../assets/create_002.png">
 
@@ -19,7 +19,7 @@ Once these files have been set up to create a basic GTFS dataset,  additional (o
 - [pathways.txt](/documentation/schedule/reference/#pathwaystxt) which provides information that makes it possible to generate directions to help users navigate stations, 
 - [frequencies.txt](/documentation/schedule/reference/#frequenciestxt) which provides an alternative way to specify stop times. 
 
-For more information on all the GTFS functionalities that can be enabled, see the “what can GTFS do?” section. 
+For more information on all the GTFS functionalities that can be enabled, see the [“What can GTFS do?”](/getting_started/features/overview/) section. 
 
 A GTFS Schedule dataset can be complemented with realtime information like vehicle positions and service updates. To do this, a GTFS Realtime feed needs to be created separately from the existing GTFS Schedule dataset. 
 
@@ -43,4 +43,4 @@ When dealing with a larger system scope, most agencies acquire specialized GTFS 
 
 <a href="https://www.flaticon.com/authors/freepik" title="Icons by Freepik">Icons created by Freepik - Flaticon</a>
 
-[^1]: In addition to text files, the GeoJSON format is now also supported in GTFS to represent certain elements of Demand-responsive services.
+[^1]: In addition to text files, the [GeoJSON](https://geojson.org/) format is now also supported in GTFS to represent certain elements of Demand-responsive services.

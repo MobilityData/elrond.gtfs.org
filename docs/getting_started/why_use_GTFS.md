@@ -2,10 +2,10 @@
 
 Over 10,000 transit agencies in 100+ countries rely on GTFS, quickly becoming an industry standard. Here's what makes it so advantageous:
 
-- Simple: The core GTFS data is text-based and easy to understand. 
-- Flexible: It also offers the possibility of plugging in additional features beyond schedules, like fare information, flexible services, and accessibility information.
-- Open Source: by being freely available, data can be shared easily, and developers can create tools, shaping the future of GTFS to better suit their needs.
-- Community Driven: developed collaboratively, GTFS ensures the format meets the evolving needs of riders and agencies.
+- **Simple**: The core GTFS data is text-based and easy to understand. 
+- **Flexible**: It also offers the possibility of plugging in additional features beyond schedules, like fare information, flexible services, and accessibility information.
+- **Open Source**: by being freely available, data can be shared easily, and developers can create tools, shaping the future of GTFS to better suit their needs.
+- **Community Driven**: developed collaboratively, GTFS ensures the format meets the evolving needs of riders and agencies.
 
 ## A simple standard that is accessible to everyone
 
@@ -30,10 +30,13 @@ Some riders like to use different apps depending on their needs—having GTFS le
 
 ## Maintained by the community
 
-As an open data standard, GTFS is driven by an open community where anyone can propose changes or improvements. The specification continues to evolve and is overseen by an independent nonprofit organization called [MobilityData](https://mobilitydata.org/) guided by the following characteristics:
+As an open data standard, GTFS is driven by an open community where anyone can propose changes or improvements. The specification evolution is overseen by an independent nonprofit organization called [MobilityData](https://mobilitydata.org/), and its changes are guided by the following principles:
 
-- Simple: It’s meant to be easy to view and edit using simple tools and editors.
-- Stable: Additions and changes are backwards compatible, which means existing feeds remain valid through time.
-- User-centered: the specification's main priority is passenger information, focusing on information that can help power tools for riders, first and foremost.
-- The Reference documents for GTFS Schedule and GTFS Realtime are officially hosted in a GitHub repository, where changes are proposed and reviewed by the community.
+- Feeds should be easy to create and edit
+- Feeds should be easy to parse
+- The specification is primarily concerned with passenger information
+- Changes to the specification should be backwards-compatible
+- Speculative features are discouraged
+
+The Reference documents for [GTFS Schedule](/documentation/schedule/reference/) and [GTFS Realtime](/documentation/Realtime/reference/) are officially hosted in a [GitHub repository](https://github.com/google/transit), where changes are proposed and reviewed by the community.
 

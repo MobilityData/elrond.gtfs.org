@@ -10,7 +10,7 @@ It allows public transit agencies to publish their transit data in a format that
 
 Today, GTFS is the go-to [Open Standard](https://www.interoperablemobility.org/definitions/#open_standard) for thousands of public transport providers worldwide. Some agencies produce this data themselves, while others employ a vendor to create and maintain data for them. 
 
-## Two specifications in one
+## Support for static and dynamic data
 
 GTFS consists of two main parts: [GTFS Schedule](/documentation/schedule/reference) and [GTFS Realtime](/documentation/realtime/reference).
 
