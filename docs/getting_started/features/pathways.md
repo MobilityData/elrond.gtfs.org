@@ -1,5 +1,5 @@
 #  Pathways
-Pathways contains features that allow to model large transit stations, helping riders navigate from station entrances and exists to the location where they board or disambark from a transit vehicle. Some of these features make it possible to communicate a path's physical characteristics and estimated navigation time, and real-world wayfinding systems employed in stations.
+Pathways features can model large transit stations, guiding riders from station entrances and exists to the location where they board or disambark from a transit vehicle. Some of these features make it possible to communicate a path's physical characteristics and estimated navigation time, and real-world wayfinding systems employed in stations.
 
 ## Pathway Connections
 
