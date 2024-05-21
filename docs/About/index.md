@@ -12,7 +12,9 @@ To propose edits to the content of this website, contact MobilityData at [docume
 
 GTFS started with a collaboration between TriMet in Portland, Oregon, and Google. TriMet worked with Google to format their transit data into an easily maintainable and consumable format that could be imported into Google Maps. This transit data format was originally known as the Google Transit Feed Specification (GTFS).
 
-As a result of developer innovation, GTFS data is now being used by a variety of third-party software applications for many different purposes, including trip planning, timetable creation, mobile data, data visualization, accessibility, analysis tools for planning, and real-time information systems. In 2010, the GTFS format name was changed to the General Transit Feed Specification to accurately represent its use in many different applications outside of Google products.
+As a result of developer innovation, GTFS data is now being used by a variety of third-party software applications for many different purposes, including trip planning, timetable creation, mobile data, data visualization, accessibility, and analysis tools for planning. 
+
+In 2010, the GTFS format name was changed to the General Transit Feed Specification to accurately represent its use in many different applications outside of Google products. Real-time information capabilities were added to the specification with the creation of GTFS Realtime in 2011, and in 2019, the non-profit [MobilityData](https://mobilitydata.org/) was established to further maintain GTFS with the help of the community.
 
 Among public transportation data formats, GTFS stands out because it was conceived to meet specific, practical needs in communicating service information to passengers, not as an exhaustive vocabulary for managing operational details. It is designed to be relatively simple to create and read for both people and machines. 
 
