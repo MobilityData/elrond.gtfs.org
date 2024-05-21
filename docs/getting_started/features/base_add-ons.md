@@ -214,7 +214,9 @@ When modeling a Frequency-based service, `stop_times.txt` contains the relative 
     <p style="font-size:16px">
     The following sample shows two distinct trips: trip `AWE1` that runs every 30 min (`headway_secs=1800`), and trip `AWE2` that runs every 15min (`headway_secs=900`).  
     <p style="font-size:16px">
-    The 'exact times' field indicates whether the schedule follows the precise start time entered in the 'start_time' field: Trip `AWE1` departs every 30min from 6:10am to 12:00pm, trip `AW2` departs at 6:00am, 6:15am, 6:30am, and so on.
+    The `exact_times` field indicates whether the schedule follows the precise start time entered in the 'start_time' field: 
+    - Trip `AWE1` departs every 30min from 6:10am to 12:00pm.
+    - trip `AW2` departs at 6:00am, 6:15am, 6:30am, and so on.
     </p>
     !!! note ""
         <p style="font-size:16px">
