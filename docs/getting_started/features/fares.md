@@ -7,8 +7,8 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[fare_products.txt](/schedule/reference/#fare_productstxt)|`fare_product_id`, `fare_product_name`, `amount`, `currency`, `fare_media_id` |
-|[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`|
+|[fare_products.txt](/documentation/schedule/reference/#fare_productstxt)|`fare_product_id`, `fare_product_name`, `amount`, `currency`, `fare_media_id` |
+|[fare_leg_rules.txt](/documentation/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`|
 
 **Prerequisites**: [Base features](/getting_started/features/base)
 
@@ -19,7 +19,7 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
         </p>
 
         | fare_product_id  | fare_product_name      | amount  | currency  |
@@ -28,7 +28,7 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
         </p>
 
         | fare_product_id  |
@@ -42,8 +42,8 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[fare_media.txt](/schedule/reference/#fare_mediatxt)|`fare_media_id`, `fare_media_name`, `fare_media_type`|
-|[fare_products.txt](/schedule/reference/#fare_productstxt)|`fare_media_id`|
+|[fare_media.txt](/documentation/schedule/reference/#fare_mediatxt)|`fare_media_id`, `fare_media_name`, `fare_media_type`|
+|[fare_products.txt](/documentation/schedule/reference/#fare_productstxt)|`fare_media_id`|
 
 **Prerequisites**: [Base features](/getting_started/features/base)
 
@@ -54,7 +54,7 @@ Fare Media defines the supported media that can be used to hold and/or validate 
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_mediatxt"><b>fare_media.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_mediatxt"><b>fare_media.txt</b></a> <br>
         </p>
 
         | fare_media_id | fare_media_name  | fare_media_type |
@@ -65,7 +65,7 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
         </p>
 
         | fare_product_id  | fare_product_name      | amount  | currency  | fare_media_id |
@@ -81,10 +81,10 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[routes.txt](/schedule/reference/#routestxt)|`network_id`|
-|[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `network_id`|
-|[netowrks.txt](/schedule/reference/#networkstxt)|`network_id`, `network_name`|
-|[route_networks.txt](/schedule/reference/#route_networkstxt)|`network_id`, `route_id`|
+|[routes.txt](/documentation/schedule/reference/#routestxt)|`network_id`|
+|[fare_leg_rules.txt](/documentation/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `network_id`|
+|[netowrks.txt](/documentation/schedule/reference/#networkstxt)|`network_id`, `network_name`|
+|[route_networks.txt](/documentation/schedule/reference/#route_networkstxt)|`network_id`, `route_id`|
 
 **Prerequisites**:
 
@@ -100,7 +100,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#networkstxt"><b>networks.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#networkstxt"><b>networks.txt</b></a> <br>
         </p>
 
         | network_id | network_name    |
@@ -110,7 +110,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#route_networkstxt"><b>route_networks.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#route_networkstxt"><b>route_networks.txt</b></a> <br>
         </p>
 
         | network_id | route_id |
@@ -122,7 +122,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
         </p>
 
         | network_id | fare_product_id |
@@ -134,7 +134,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
         </p>
 
         | route_id   | network_id |
@@ -146,7 +146,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
         </p>
 
         | network_id | fare_product_id |
@@ -161,8 +161,8 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `from_timeframe_group_id`, `to_timeframe_group_id`|
-|[timeframes.txt](/schedule/reference/#timeframestxt)|`timeframe_group_id`, `start_time`, `end_time`, `service_id`|
+|[fare_leg_rules.txt](/documentation/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `from_timeframe_group_id`, `to_timeframe_group_id`|
+|[timeframes.txt](/documentation/schedule/reference/#timeframestxt)|`timeframe_group_id`, `start_time`, `end_time`, `service_id`|
 
 **Prerequisites**:
 
@@ -176,7 +176,7 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#timeframestxt"><b>timeframes.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#timeframestxt"><b>timeframes.txt</b></a> <br>
         </p>
 
         | timeframe_group_id | start_time | end_time | service_id |
@@ -187,7 +187,7 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
         </p>
 
         | from_timeframe_group_id | fare_product_id     |
@@ -202,9 +202,9 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `from_area_id`, `to_area_id`|
-|[areas.txt](/schedule/reference/#areastxt)|`area_id`, `area_name`|
-|[stop_areas.txt](/schedule/reference/#stop_areastxt)|`area_id`, `stop_id`|
+|[fare_leg_rules.txt](/documentation/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `from_area_id`, `to_area_id`|
+|[areas.txt](/documentation/schedule/reference/#areastxt)|`area_id`, `area_name`|
+|[stop_areas.txt](/documentation/schedule/reference/#stop_areastxt)|`area_id`, `stop_id`|
 
 **Prerequisites**:
 
@@ -218,7 +218,7 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#areastxt"><b>areas.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#areastxt"><b>areas.txt</b></a> <br>
         </p>
 
         | area_id | area_name |
@@ -228,7 +228,7 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#stop_areastxt"><b>stop_areas.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#stop_areastxt"><b>stop_areas.txt</b></a> <br>
         </p>
 
         | area_id | stop_id |
@@ -240,7 +240,7 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
         </p>
 
         | from_area_id | to_area_id | fare_product_id |
@@ -258,8 +258,8 @@ Fares Transfers is used to define rules applicable when transferring between leg
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`leg_group_id`|
-|[fare_transfer_rules.txt](/schedule/reference/#fare_transfer_rulestxt)|`from_leg_group_id`, `to_leg_group_id`, `transfer_count`, `duration_limit`, `duration_limit_type`, `fare_transfer_type`, `fare_product_id`|
+|[fare_leg_rules.txt](/documentation/schedule/reference/#fare_leg_rulestxt)|`leg_group_id`|
+|[fare_transfer_rules.txt](/documentation/schedule/reference/#fare_transfer_rulestxt)|`from_leg_group_id`, `to_leg_group_id`, `transfer_count`, `duration_limit`, `duration_limit_type`, `fare_transfer_type`, `fare_product_id`|
 
 
 ??? note "Sample Data"
@@ -269,7 +269,7 @@ Fares Transfers is used to define rules applicable when transferring between leg
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a> <br>
         </p>
 
         | leg_group_id  |
@@ -278,7 +278,7 @@ Fares Transfers is used to define rules applicable when transferring between leg
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_transfer_rulestxt"><b>fare_transfer_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_transfer_rulestxt"><b>fare_transfer_rules.txt</b></a> <br>
         </p>
 
         | from_leg_group_id | to_leg_group_id | transfer_count | duration_limit | duration_limit_type | fare_transfer_type | fare_product_id |
@@ -292,9 +292,9 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stops.txt](/schedule/reference/#stopstxt)|`zone_id`|
-|[fare_attributes.txt](/schedule/reference/#fare_attributestxt)|`fare_id` `price` `currency_type` `payment_method` `transfers` `agency_id` `transfer_duration`|
-|[fare_rules.txt](/schedule/reference/#fare_rulestxt)|`fare_id` `route_id` `origin_id` `destination_id` `contains_id`|
+|[stops.txt](/documentation/schedule/reference/#stopstxt)|`zone_id`|
+|[fare_attributes.txt](/documentation/schedule/reference/#fare_attributestxt)|`fare_id` `price` `currency_type` `payment_method` `transfers` `agency_id` `transfer_duration`|
+|[fare_rules.txt](/documentation/schedule/reference/#fare_rulestxt)|`fare_id` `route_id` `origin_id` `destination_id` `contains_id`|
 
 **Prerequisite**: [Base features](/getting_started/features/base)
 
@@ -305,7 +305,7 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_attributestxt"><b>fare_attributes.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_attributestxt"><b>fare_attributes.txt</b></a> <br>
         </p>
 
         | fare_id           | price | currency_type | payment_method | transfers | transfer_duration |
@@ -314,7 +314,7 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#fare_rulestxt"><b>fare_rules.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#fare_rulestxt"><b>fare_rules.txt</b></a> <br>
         </p>
 
         | fare_id           | route_id | origin_id       | destination_id  |
@@ -324,7 +324,7 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
         | stop_id | stop_name | stop_lat  | stop_lon   | zone_id         |
