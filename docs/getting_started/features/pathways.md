@@ -131,14 +131,14 @@ Levels can be used to list all different levels within a station, providing user
 
 In-station Traversal Time provides an additional level of detail to in-station directions, giving users an estimated time required to navigate stations, resulting in better travel directions and travel times.
 
+| Files included                   | Fields included   |
+|----------------------------------|-------------------|
+|[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`traversal_time`|
+
 **Prerequisites**: 
 
 - [Base features](/getting_started/features/base)
 - [Pathway Connections](/getting_started/features/pathways/#pathway-connections)
-
-| Files included                   | Fields included   |
-|----------------------------------|-------------------|
-|[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`traversal_time`|
 
 ??? note "Sample Data"
 
