@@ -261,9 +261,8 @@ Flexible services, or demand-responsive services, that do not follow regular sch
 
 - :material-subway-variant:{ .lg .middle } __Fixed-Stops Demand Responsive Services__
 
-   Services that allow pick up and/or drop off at any location within a group of stops.
-
-   [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services)
-
+    Services that allow pick up and/or drop off at any location within a group of stops.
+   
+    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services)
 
 </div>
