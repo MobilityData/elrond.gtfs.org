@@ -30,9 +30,9 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
 |Files included                             |Fields included            |
 |----------------------------------|-------------------|
-|[shapes.txt](/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
-|[trips.txt](/schedule/reference/#tripstxt)                         |`shape_id`           |
-|[stop_times.txt](/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
+|[shapes.txt](/documentation/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
+|[trips.txt](/documentation/schedule/reference/#tripstxt)                         |`shape_id`           |
+|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
 
 **Prerequisite**: [Base features](/getting_started/features/base)
 
@@ -43,7 +43,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+        <a href="/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
         </p>
     
         | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
@@ -56,7 +56,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
+        <a href="/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
         </p>
         
         |trip_id |shape_id|
@@ -65,7 +65,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
+        <a href="/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
         </p>
         
         |trip_id |stop_sequence|shape_dist_traveled|
