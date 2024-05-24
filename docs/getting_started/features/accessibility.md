@@ -37,7 +37,9 @@ Trips Wheelchair Accessibility make it possible to indicate if a vehicle can acc
 |----------------------------------|-------------------|
 |[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
 
-**Prerequisites**: [Base features](/getting_started/features/base)
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -63,7 +65,9 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
 
-**Prerequisites**: [Base features](/getting_started/features/base)
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
