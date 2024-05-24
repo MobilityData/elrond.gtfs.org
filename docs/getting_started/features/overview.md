@@ -13,37 +13,37 @@ These essential features form the core of a GTFS feed. They are the minimal elem
 
     Details about the agencies responsible for the transit service.
     
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base/#agency)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base/#agency)
 
 - :material-subway-variant:{ .lg .middle } __Stops__
 
     Locations where a transit service picks up and drops off passengers.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base/#stops)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base/#stops)
 
 - :material-subway-variant:{ .lg .middle }  __Routes__
 
     Elements of a transit route such as name and the type of service.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base/#routes)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base/#routes)
 
 - :material-subway-variant:{ .lg .middle } __Service Dates__
 
     Structure to schedule trips and service exceptions. 
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base/#service-dates)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base/#service-dates)
 
 - :material-subway-variant:{ .lg .middle } __Trips__
 
     Association of transit vehicles to a route on given days.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base/#trips)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base/#trips)
 
 -   :material-subway-variant:{ .lg .middle } __Stop Times__
 
     Arrival and departure times of the trips for each stop.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base/#stop-times)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base/#stop-times)
 
 </div>
 
@@ -56,61 +56,61 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
     Information regarding the feed itself.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#feed-information)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#feed-information)
 
 - :material-subway-variant:{ .lg .middle } __Shapes__
 
     Geographic path followed by a vehicle along a trip.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/base_add-ons/#shapes)
+    [:octicons-arrow-right-24: Learn more](/getting_started/base_add-ons/#shapes)
 
 - :material-subway-variant:{ .lg .middle } __Route Colors__
 
     Color scheme assigned to specific routes.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#route-colors)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#route-colors)
 
 - :material-subway-variant:{ .lg .middle } __Bike Allowed__
 
     Capacity of vehicles to accommodate bicycles or not.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#bike-allowed)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#bike-allowed)
 
 - :material-subway-variant:{ .lg .middle } __Headsigns__
 
     Signage used by vehicles indicating the trip’s destination.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#headsigns)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#headsigns)
 
 - :material-subway-variant:{ .lg .middle } __Location types__
 
     Locations within transit stations.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#location-types)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#location-types)
 
 - :material-subway-variant:{ .lg .middle } __Frequencies__
 
     Services based on headways or frequencies.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#frequency_based_services)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#frequency_based_services)
 
 - :material-subway-variant:{ .lg .middle } __Transfers__
 
     Transfers between different transit services.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#transfers)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#transfers)
 
 -   :material-subway-variant:{ .lg .middle } __Translations__
 
     Service information in multiple languages.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#translations)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#translations)
 
 - :material-subway-variant:{ .lg .middle } __Attributions__
 
     Organizations involved in the creation of the dataset.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/base_add-ons/#attributions)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#attributions)
 
 </div>
 
@@ -124,19 +124,19 @@ Accessibility features provide essential information for people with disabilitie
 
     Indicate whether wheelchair boarding is possible from a location.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/accessibility/#stops-wheelchair-accessibility)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/accessibility/#stops-wheelchair-accessibility)
 
 - :material-subway-variant:{ .lg .middle } __Trips Wheelchair Accessibility__
 
     Indicate if a vehicle can accommodate riders using wheelchairs.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/accessibility/#trips-wheelchair-accessibility)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/accessibility/#trips-wheelchair-accessibility)
 
 - :material-subway-variant:{ .lg .middle } __Text-to-speech__
 
     Conversion of text for stop names into audio.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/accessibility/#text-to-speech)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/accessibility/#text-to-speech)
 
 </div>
 
@@ -150,44 +150,44 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
     List the types of tickets or fares available to users.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#fare-products)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#fare-products)
     
 
 -   :material-subway-variant:{ .lg .middle } __Fare Media__
 
     The media that can be used to hold and/or validate a fare product.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#fare-media)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#fare-media)
 
 -   :material-subway-variant:{ .lg .middle } __Route-Based Fares__
 
     Fares based on the route travelled.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#route-based-fares)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#route-based-fares)
 
 -   :material-subway-variant:{ .lg .middle } __Time-Based Fares__
 
     Fares based on time (peak/offpeak) or day (weekday/weekend).
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#time-based-fares)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#time-based-fares)
 
 -   :material-subway-variant:{ .lg .middle } __Zone-Based Fares__
 
     Fares based on zone traveled.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#zone-based-fares)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#zone-based-fares)
 
 -   :material-subway-variant:{ .lg .middle } __Fares Transfers__
 
     Fees or discounts applicable when transferring from one leg to another.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#transfer-fares)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#transfer-fares)
 
 -   :material-subway-variant:{ .lg .middle } __Fares V1__
 
     Legacy feature that models simpler fare information.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/fares/#fares-v1)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#fares-v1)
 
 </div>
 
@@ -202,31 +202,31 @@ Pathways features allows to model large transit stations, so that riders are gui
 
     Paths connecting relevant points within a station.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/pathways/#pathways-basic-information)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathways-basic-information)
 
 -   :material-subway-variant:{ .lg .middle } __Pathway details__
 
     Additional details for stations' pathways.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/pathways/#pathways-details)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathways-details)
 
 -   :material-subway-variant:{ .lg .middle } __Levels__
 
     Levels within a station.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/pathways/#levels)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#levels)
 
 -   :material-subway-variant:{ .lg .middle } __In-station traversal time__
 
     Estimated time to navigate paths within a station.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/pathways/#in-station-traversal-time)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#in-station-traversal-time)
 
 -   :material-subway-variant:{ .lg .middle } __Pathways signs__
 
     In station signage associated with a pathway.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/pathways/#pathways-directions)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathways-directions)
 
 </div>
 
@@ -239,30 +239,30 @@ Flexible services, or demand-responsive services, that do not follow regular sch
 
     When a user can be picked up and/or dropped off between stops.
     
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#continuous-stops)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/flexible_services/#continuous-stops)
 
 - :material-subway-variant:{ .lg .middle } __Booking Rules__
 
     When users can reserve a trip on a demand-responsive service.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#booking-rules)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/flexible_services/#booking-rules)
 
 - :material-subway-variant:{ .lg .middle } __Predefined Routes With Deviation__
 
     Vehicles that can briefly deviate from a route to pick up or drop off riders.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#predefined-routes-with-deviation)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/flexible_services/#predefined-routes-with-deviation)
 
 - :material-subway-variant:{ .lg .middle } __Zone-based Demand Responsive Services__
 
     Services that allow pick up and/or drop off at any location within a specific area.
 
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#zone-based-demand-responsive-services)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/flexible_services/#zone-based-demand-responsive-services)
 
 - :material-subway-variant:{ .lg .middle } __Fixed-Stops Demand Responsive Services__
 
     Services that allow pick up and/or drop off at any location within a group of stops.
    
-    [:octicons-arrow-right-24: Learn more about this feature](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services)
 
 </div>
