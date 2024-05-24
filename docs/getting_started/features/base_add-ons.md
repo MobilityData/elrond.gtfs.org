@@ -9,7 +9,10 @@ Feed Information communicates important information about the feed, such as its 
 |----------------------------------|-------------------|
 |[feed_info.txt](/documentation/schedule/reference/#feed_infotxt)|`feed_publisher_name`, `feed_publisher_url`, `feed_lang`, `default_lang`, `feed_start_date`, `feed_end_date`, `feed_version`, `feed_contact_email`, `feed_contact_url` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -34,7 +37,10 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 |[trips.txt](/documentation/schedule/reference/#tripstxt)                         |`shape_id`           |
 |[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample data"
 
@@ -82,7 +88,10 @@ Using Route Colors allows to accurately depict and communicate the color scheme 
 |----------------------------------|-------------------|
 |[routes.txt](/documentation/schedule/reference/#routestxt)|`route_color`, `route_text_color` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -106,7 +115,10 @@ Bike Allowed indicates if vehicles serving specific trips are able to accommodat
 |----------------------------------|-------------------|
 |[trips.txt](/documentation/schedule/reference/#tripstxt)|`bikes_allowed` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -171,7 +183,10 @@ Location Types are used to classify key areas within transit stations such as ex
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`location_type`, `parent_station` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -207,7 +222,10 @@ When modeling a Frequency-based service, `stop_times.txt` contains the relative 
 |----------------------------------|-------------------|
 |[frequencies.txt](/documentation/schedule/reference/#frequenciestxt)|`trip_id`, `start_time`, `end_time`, `headway_secs`, `exact_times` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -236,7 +254,10 @@ Transfers provide details about transitions between different travel segments (o
 |----------------------------------|-------------------|
 |[transfers.txt](/documentation/schedule/reference/#transferstxt)|`from_stop_id`, `to_stop_id`, `from_route_id`, `to_route_id`, `from_trip_id`, `to_trip_id`, `transfer_type`, `min_transfer_time` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -262,7 +283,10 @@ Translations allows service information such as station names to be provided in 
 |----------------------------------|-------------------|
 |[translations.txt](/documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -289,7 +313,10 @@ Attributions makes it possible to share additional details regarding the organiz
 |----------------------------------|-------------------|
 |[attributions.txt](/documentation/schedule/reference/#attributionstxt) |`attribution_id`, `agency_id`, `route_id`, `trip_id`, `organization_name`, `is_producer`, `is_operator`, `is_authority`, `attribution_url`, `attribution_email`, `attribution_phone` |
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 

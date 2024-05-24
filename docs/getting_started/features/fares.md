@@ -10,7 +10,10 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 |[fare_products.txt](/documentation/schedule/reference/#fare_productstxt)|`fare_product_id`, `fare_product_name`, `amount`, `currency`, `fare_media_id` |
 |[fare_leg_rules.txt](/documentation/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`|
 
-**Prerequisites**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -45,7 +48,10 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 |[fare_media.txt](/documentation/schedule/reference/#fare_mediatxt)|`fare_media_id`, `fare_media_name`, `fare_media_type`|
 |[fare_products.txt](/documentation/schedule/reference/#fare_productstxt)|`fare_media_id`|
 
-**Prerequisites**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -295,7 +301,10 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
 |[fare_attributes.txt](/documentation/schedule/reference/#fare_attributestxt)|`fare_id` `price` `currency_type` `payment_method` `transfers` `agency_id` `transfer_duration`|
 |[fare_rules.txt](/documentation/schedule/reference/#fare_rulestxt)|`fare_id` `route_id` `origin_id` `destination_id` `contains_id`|
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
