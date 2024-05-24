@@ -22,8 +22,34 @@ To contribute to GTFS Realtime, read the [Specification Amendment Process](../re
 
 ## Recently Merged Proposals &ensp;<img src="../../../assets/pr-merged.svg" style="height:1em;"/>
 
-Recently merged proposals that are now features of the [official GTFS Realtime specification](../reference). See the complete [Revision History](../process#revision-history) for more.
+Recently merged proposals that are now features of the [official GTFS Realtime specification](../reference). See the complete Revision History for more.
 
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/403" class="no-icon" target="_blank">Add Trip-Modifications</a></h3>
+        <p class="maintainer">#332 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> was merged on Mar 11, 2024</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds Trip modifications as an experimental feature which is used to describe detours, which affect a set of trips.</li>
+            <li>A trip modification can cancel certain stops, adjust the timing for trips, provide a new shape that trips will take and provide the location of temporary stops along the way. </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/352" class="no-icon" target="_blank">Add DELETED enum to schedule_relationship</a></h3>
+        <p class="maintainer">#332 by <a href="https://github.com/mads14" class="no-icon" target="_blank">mads14</a> was merged on Nov 30, 2022</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds a new experimental <code>DELETED</code> trip schedule_relationship enum</li>
+            <li>This can be used to convey that a transit provider intends for a trip to entirely disappear from public-facing applications</li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
     <div class="leftcontainer">
@@ -39,7 +65,7 @@ Recently merged proposals that are now features of the [official GTFS Realtime s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/340" class="no-icon" target="_blank">GTFS-rt : wheelchair access update</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/340" class="no-icon" target="_blank">GTFS-rt: wheelchair access update</a></h3>
         <p class="maintainer">#340 by <a href="https://github.com/flaktack" class="no-icon" target="_blank">flaktack</a> was merged on Jul 25, 2022</p>
     </div>
     <div class="featurelist">
@@ -72,18 +98,6 @@ Recently merged proposals that are now features of the [official GTFS Realtime s
         <ul>
             <li>Ability to update route shapes in real time to reflect detours</li>
             <li>Route updates are either reflected by referencing an existing <code>shape_id</code> or by defining in real time a new shape as an encoded polyline</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Add departure_occupancy_status to TripUpdate</a></h3>
-        <p class="maintainer">#260 by <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> was merged on Apr 14, 2021</p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li>Provide the predicted occupancy of transit vehicles at future stops based on current or historical data</li>
         </ul>
     </div>
 </div>
