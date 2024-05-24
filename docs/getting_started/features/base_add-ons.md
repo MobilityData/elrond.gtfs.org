@@ -30,9 +30,9 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
 |Files included                             |Fields included            |
 |----------------------------------|-------------------|
-|[shapes.txt](/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
-|[trips.txt](/schedule/reference/#tripstxt)                         |`shape_id`           |
-|[stop_times.txt](/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
+|[shapes.txt](/documentation/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
+|[trips.txt](/documentation/schedule/reference/#tripstxt)                         |`shape_id`           |
+|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
 
 **Prerequisite**: [Base features](/getting_started/features/base)
 
@@ -43,7 +43,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+        <a href="/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
         </p>
     
         | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
@@ -56,7 +56,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
+        <a href="/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
         </p>
         
         |trip_id |shape_id|
@@ -65,7 +65,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="https://staging.gtfs.org/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
+        <a href="/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
         </p>
         
         |trip_id |stop_sequence|shape_dist_traveled|
@@ -214,7 +214,9 @@ When modeling a Frequency-based service, `stop_times.txt` contains the relative 
     <p style="font-size:16px">
     The following sample shows two distinct trips: trip `AWE1` that runs every 30 min (`headway_secs=1800`), and trip `AWE2` that runs every 15min (`headway_secs=900`).  
     <p style="font-size:16px">
-    The 'exact times' field indicates whether the schedule follows the precise start time entered in the 'start_time' field: Trip `AWE1` departs every 30min from 6:10am to 12:00pm, trip `AW2` departs at 6:00am, 6:15am, 6:30am, and so on.
+    The `exact_times` field indicates whether the schedule follows the precise start time entered in the 'start_time' field: 
+    - Trip `AWE1` departs every 30min from 6:10am to 12:00pm.
+    - trip `AW2` departs at 6:00am, 6:15am, 6:30am, and so on.
     </p>
     !!! note ""
         <p style="font-size:16px">

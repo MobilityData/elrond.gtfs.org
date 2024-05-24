@@ -10,8 +10,8 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
-|[routes.txt](/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
+|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
+|[routes.txt](/documentation/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
 
 ??? note "Sample Data"
 
@@ -56,7 +56,7 @@ Booking rules can be used to enable users to reserve a trip on a demand-responsi
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[booking_rules.txt](/schedule/reference/#booking_rulestxt)|`booking_rule_id`, `booking_type`, `prior_notice_duration_min`, `prior_notice_duration_max`, `prior_notice_last_day`, `prior_notice_last_time`, `prior_notice_start_day`, `prior_notice_start_time`, `prior_notice_service_id`, `message`, `pickup_message`, `drop_off_message`, `phone_number`, `info_url`, `booking_url` |
+|[booking_rules.txt](/documentation/schedule/reference/#booking_rulestxt)|`booking_rule_id`, `booking_type`, `prior_notice_duration_min`, `prior_notice_duration_max`, `prior_notice_last_day`, `prior_notice_last_time`, `prior_notice_start_day`, `prior_notice_start_time`, `prior_notice_service_id`, `message`, `pickup_message`, `drop_off_message`, `phone_number`, `info_url`, `booking_url` |
 
 **Prerequisites**: [Base features](/getting_started/features/base)
 
