@@ -634,10 +634,12 @@ A `Modification` message describes changes to each affected trip starting at `st
 
 <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-![](images/trip_modification.png)
+<img src="../../../assets/trip_modification.png">
+
 _An example showing the effect of a modification on a particular trip. This modification may also be applied to several other trips._
 
-![](images/propagated_delay.png)
+<img src="../../../assets/propagated_delay.png">
+
 _Propagated detour delays affect all stops following the end of a modification. If a trip has multiple modifications, the delays are accumulated._
 
 
@@ -684,7 +686,8 @@ Each `ReplacementStop` message defines a stop that will now be visited by the tr
 
 <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-![](images/first_stop_reference.png)
+<img src="../../../assets/first_stop_reference.png">
+
 _If a modification affects the first stop of the trip, that stop also serves as the reference stop of the modification._
 
 
