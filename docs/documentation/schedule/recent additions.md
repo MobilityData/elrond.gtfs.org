@@ -1,8 +1,8 @@
 # GTFS Schedule Changes
 
-The GTFS Specification is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS. It is expected that this community of producers and consumers of GTFS data will have proposals for extending the spec to enable new capabilities.
+The GTFS Schedule Reference is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS. It is expected that this community of producers and consumers of GTFS data will have proposals for extending the spec to enable new capabilities.
 
-To contribute to GTFS, read the [Specification Amendment Process](../reference) and follow the discussions in the open <a href="https://github.com/google/transit/issues" target="_blank">issues</a> and <a href="https://github.com/google/transit/pulls" target="_blank">pull requests</a> on Google's Transit Github repository (<a href="https://github.com/google/transit" target="_blank">google/transit</a>). ![](../../assets/mark-github.svg)
+To contribute to GTFS, read the [GTFS Schedule Amendment Process](../../../community/spec_amendment_process/gtfs_schedule_amendment_process) and follow the discussions in the open <a href="https://github.com/google/transit/issues" target="_blank">issues</a> and <a href="https://github.com/google/transit/pulls" target="_blank">pull requests</a> on the GTFS Github repository (<a href="https://github.com/google/transit" target="_blank">google/transit</a>). ![](../../assets/mark-github.svg)
 
 <!-- <div class="row">
     <div class="active-container">
@@ -20,9 +20,9 @@ To contribute to GTFS, read the [Specification Amendment Process](../reference) 
 </div>
 <div class="row"></div> -->
 
-## Recently Merged Proposals &ensp;<img src="../../../assets/pr-merged.svg" style="height:1em;"/>
+## Recently Adopted Proposals &ensp;<img src="../../../assets/pr-merged.svg" style="height:1em;"/>
 
-Recently merged proposals that are now features of the [official GTFS Schedule specification](../reference). See the complete [Revision History](../../../community/spec_amendment_process/gtfs_schedule_amendment_process/#revision-history) for more.
+Recently merged proposals that are now features of the [official GTFS Schedule reference](../reference). See the complete [Revision History](../../../community/spec_amendment_process/gtfs_schedule_amendment_process/#revision-history) for more.
 
 <div class="row">
     <div class="leftcontainer">
