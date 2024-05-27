@@ -32,7 +32,7 @@ Agencies contain basic information about the agencies responsible for the transi
 ## Stops
 
 Stops represent the basic elements used to identify where a transit service picks up and drops off passengers. This could be a metro station or a bus stop. Each stop has, among other attributes, geographical coordinates to pinpoint its location on a map, and a name that matches the agency's rider-facing materials. Stops are associated to Trips using Stop Times. 
-With GTFS, it is also possible to describe the interior of larger stations, such as a train station or bus depot, using Pathways (@TODO link).
+With GTFS, it is also possible to describe the interior of larger stations, such as a train station or bus depot, using [Pathways](/getting_started/features/pathways).
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -153,7 +153,7 @@ Trips brings together Routes and Service dates to create journeys that can be ta
 ## Stop Times
 
 Stop times are used to represent the individual stop arrival and departure times for each trip, allowing riders to know precisely at what time the bus, train or ferry is arriving and departing a specific location. The `stop_times.txt` file is typically the largest in a GTFS feed. 
-Certain services operate on regular a frequency (e. g. a subway line that runs every 5min) rather than having specific arrival and departure times. This can be modeled using Frequency-based sercices (@TODO link), and this can be modeled in conjunction with `stop_times.txt`.
+Certain services operate on regular a frequency (e. g. a subway line that runs every 5min) rather than having specific arrival and departure times. This can be modeled using [Frequency-based sercices](/getting_started/features/base_add-ons/#frequency-based_services), and this can be modeled in conjunction with `stop_times.txt`.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
