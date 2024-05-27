@@ -54,7 +54,7 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
 - :material-subway-variant:{ .lg .middle } __Feed Information__
 
-    Communicate information regarding the feed itself.
+    Communicate important information about the feed itself.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#feed-information)
 
@@ -84,15 +84,15 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
 - :material-subway-variant:{ .lg .middle } __Location types__
 
-    Classify specific locations within transit stations.
+    Classify key areas within transit stations such as entrances and exits.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#location-types)
 
 - :material-subway-variant:{ .lg .middle } __Frequencies__
 
-    Services based on headways or frequencies.                           
+    Represent services that operate on a regular frequency or specific headways.                           
 
-    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#frequency_based_services)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/base_add-ons/#frequency-based-service)
 
 - :material-subway-variant:{ .lg .middle } __Transfers__
 
@@ -148,7 +148,7 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
 -   :material-subway-variant:{ .lg .middle } __Fare Products__
 
-    List the types of tickets or fares available to users.
+    Define the list of tickets or fares types available to users.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#fare-products)
 
@@ -184,7 +184,7 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
 -   :material-subway-variant:{ .lg .middle } __Fares V1__
 
-    Legacy feature that models simpler fare information.
+    Legacy feature that allows a simpler representation of fare information.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/fares/#fares-v1)
 
@@ -199,31 +199,31 @@ Pathways features allows to model large transit stations, so that riders are gui
 
 -   :material-subway-variant:{ .lg .middle } __Pathways connections__
 
-    Model paths connecting relevant points within a station.
+    Model paths connecting relevant points within a transit station.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathways-basic-information)
 
 -   :material-subway-variant:{ .lg .middle } __Pathway details__
 
-    Provide additional details for stations' pathways.
+    Provide additional details regarding the physical characteristics of a pathway.
 
-    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathways-details)
+    [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathway-details)
 
 -   :material-subway-variant:{ .lg .middle } __Levels__
 
-    Describe and list all different levels within a station.
+    Describe and list all different levels within a transit station.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#levels)
 
 -   :material-subway-variant:{ .lg .middle } __In-station traversal time__
 
-    Communicate the estimated time to navigate paths within a station.
+    Communicate the estimated time to navigate paths within a transit station.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#in-station-traversal-time)
 
 -   :material-subway-variant:{ .lg .middle } __Pathways signs__
 
-    Communicate the in station signage associated with a pathway.
+    Communicate the in-station signage associated with a pathway.
 
     [:octicons-arrow-right-24: Learn more](/getting_started/features/pathways/#pathways-directions)
 
