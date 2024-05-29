@@ -2,7 +2,7 @@
 
 The GTFS Schedule Reference is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS. It is expected that this community of producers and consumers of GTFS data will have proposals for extending the spec to enable new capabilities.
 
-To contribute to GTFS, read the [GTFS Schedule Amendment Process](../../../community/spec_amendment_process/gtfs_schedule_amendment_process) and follow the discussions in the open <a href="https://github.com/google/transit/issues" target="_blank">issues</a> and <a href="https://github.com/google/transit/pulls" target="_blank">pull requests</a> on the GTFS Github repository (<a href="https://github.com/google/transit" target="_blank">google/transit</a>). ![](../../assets/mark-github.svg)
+To contribute to GTFS, read the [GTFS Schedule Amendment Process](../../../../community/spec_amendment_process/gtfs_schedule_amendment_process) and follow the discussions in the open <a href="https://github.com/google/transit/issues" target="_blank">issues</a> and <a href="https://github.com/google/transit/pulls" target="_blank">pull requests</a> on the GTFS Github repository (<a href="https://github.com/google/transit" target="_blank">google/transit</a>). ![](../../../assets/mark-github.svg)
 
 <!-- <div class="row">
     <div class="active-container">
@@ -20,9 +20,9 @@ To contribute to GTFS, read the [GTFS Schedule Amendment Process](../../../commu
 </div>
 <div class="row"></div> -->
 
-## Recently Adopted Proposals &ensp;<img src="../../../assets/pr-merged.svg" style="height:1em;"/>
+## Recently Adopted Proposals &ensp;<img src="../../../../assets/pr-merged.svg" style="height:1em;"/>
 
-Recently merged proposals that are now features of the [official GTFS Schedule reference](../reference). See the complete [Revision History](../../../community/spec_amendment_process/gtfs_schedule_amendment_process/#revision-history) for more.
+Recently merged proposals that are now features of the [official GTFS Schedule reference](../../reference). See the complete [Revision History](/documentation/schedule/change_history/revision_history) for more.
 
 <div class="row">
     <div class="leftcontainer">
@@ -31,7 +31,7 @@ Recently merged proposals that are now features of the [official GTFS Schedule r
     </div>
     <div class="featurelist">
         <ul>
-            <li>The <a href="../../../community/extensions/flex" class="no-icon" target="_blank">GTFS-Flex proposal</a> allows passengers to discover demand-responsive services on trip planners</li>
+            <li>The <a href="../../../../community/extensions/flex" class="no-icon" target="_blank">GTFS-Flex proposal</a> allows passengers to discover demand-responsive services on trip planners</li>
 	    <li>Multiple files have been added to the specification, including locations.geojson which integrates GeoJson in GTFS  </li>
         </ul>
     </div>
@@ -84,7 +84,7 @@ Recently merged proposals that are now features of the [official GTFS Schedule r
     </div>
     <div class="featurelist">
         <ul>
-            <li>Time-variable fares is an important functionality developed as part of the <a href="../../../community/extensions/fares-v2">GTFS Fares-v2 extension proposal</a></li>
+            <li>Time-variable fares is an important functionality developed as part of the <a href="../../../../community/extensions/fares-v2">GTFS Fares-v2 extension proposal</a></li>
             <li>Allows to represent fares differentiated based on the time of the day or the day of the week, such as peak and off-peak fares</li>
             <li>Adds a new file: <code>timeframes.txt</code>, to define moments in time where the fare applies</li>
             <li>Extends <code>fare_leg_rules.txt</code> with <code>from_timeframe_id</code>, and <code>to_timeframe_id</code> to specify that a fare leg rule applies only if the beginning or end of the leg is in a specified timeframe</li>
@@ -99,7 +99,7 @@ Recently merged proposals that are now features of the [official GTFS Schedule r
     </div>
     <div class="featurelist">
         <ul>
-            <li>Fare Media is a key element on the <a href="../../../community/extensions/fares-v2">GTFS Fares-v2 extension proposal</a></li>
+            <li>Fare Media is a key element on the <a href="../../../../community/extensions/fares-v2">GTFS Fares-v2 extension proposal</a></li>
             <li>It represents what a rider can use to validate their ride (e.g. a transit card, mobile app, or tap-to-pay using a contactless bank card)</li>
             <li>A fare product can be associated to a specific Fare Media (e.g. a monthly pass is only available on a transit card)</li>
             <li>The price of a fare product can be defined based on the Fare Media (e.g. the ticket is cheaper if bought via a mobile app)</li>
