@@ -168,7 +168,9 @@ nav:
         - Text-to-speech: documentation/schedule/examples/text-to-speech.md
         - Transfers: documentation/schedule/examples/transfers.md
         - Translations: documentation/schedule/examples/translations.md
-      - Recent additions: documentation/schedule/recent additions.md
+      - Change history:
+        - Recent additions: documentation/schedule/change_history/recent_additions.md
+        - Full revision history: documentation/schedule/change_history/revision_history.md
     - Realtime:
       - Reference: documentation/Realtime/reference.md
       - Best Practices: documentation/Realtime/best practices.md
@@ -190,7 +192,9 @@ nav:
       - Data examples:
         - Service alerts: documentation/Realtime/examples/service-alerts.md
         - Trip updates: documentation/Realtime/examples/trip-updates.md
-      - Recent Additions: documentation/Realtime/recent additions.md
+      - Change history:
+        - Recent Additions: documentation/Realtime/change_history/recent_additions.md
+        - Full revision history: documentation/Realtime/change_history/revision_history.md
   - Community:
     - Get involved: community/get_involved.md
     - Governance:
