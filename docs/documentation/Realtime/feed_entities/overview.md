@@ -1,6 +1,6 @@
 # Feed Entities
 
-GTFS Realtime supports three distinct types of realtime data, that can be
+GTFS Realtime supports four distinct types of realtime data, that can be
 combined witin a single realtime feed. Summaries are given below, with full
 documentation given in the relevant section.
 
