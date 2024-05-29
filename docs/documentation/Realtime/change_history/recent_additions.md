@@ -2,7 +2,7 @@
 
 The GTFS Realtime Reference is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS Realtime. It is expected that this community of producers and consumers of GTFS Realtime data will have proposals for extending the spec to enable new capabilities.
 
-To contribute to GTFS Realtime, read the [GTFS Realtime Amendment Process](../../../../community/spec_amendment_process/gtfs_realtime_amendment_process) and follow the discussions in the open <a href="https://github.com/google/transit/issues" target="_blank">issues</a> and <a href="https://github.com/google/transit/pulls" target="_blank">pull requests</a> on the GTFS Github repository (<a href="https://github.com/google/transit" target="_blank">google/transit</a>). ![](../../../assets/mark-github.svg)
+To contribute to GTFS Realtime, read the [GTFS Realtime Amendment Process](../../../../community/governance/gtfs_realtime_amendment_process) and follow the discussions in the open <a href="https://github.com/google/transit/issues" target="_blank">issues</a> and <a href="https://github.com/google/transit/pulls" target="_blank">pull requests</a> on the GTFS Github repository (<a href="https://github.com/google/transit" target="_blank">google/transit</a>). ![](../../../assets/mark-github.svg)
 
 <!-- <div class="row">
     <div class="active-container">

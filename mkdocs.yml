@@ -198,8 +198,8 @@ nav:
   - Community:
     - Get involved: community/get_involved.md
     - Governance:
-      - GTFS Schedule Amendment Process: community/spec_amendment_process/gtfs_schedule_amendment_process.md
-      - GTFS Realtime Amendment Process: community/spec_amendment_process/gtfs_realtime_amendment_process.md
+      - GTFS Schedule Amendment Process: community/governance/gtfs_schedule_amendment_process.md
+      - GTFS Realtime Amendment Process: community/governance/gtfs_realtime_amendment_process.md
     - Extensions:
       - Overview: community/extensions/overview.md
       - Fares v2: community/extensions/fares-v2.md
