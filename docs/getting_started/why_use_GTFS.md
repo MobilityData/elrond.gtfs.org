@@ -25,6 +25,7 @@ GTFS thrives on community collaboration, ensuring its continuous evolution and r
 GTFS fosters collaboration between transit agencies by enabling easy data exchange, promoting smoother service integration, and information sharing. Here's how GTFS simplifies data sharing:
 
 - **Ease of Integration:** GTFS makes it easy for agencies to get started with a simple data structure using common file formats like .txt and GeoJSON, fostering collaboration and interoperability.
+- **Backwards compatible:** when updating the specification, existing feeds remain valid and maintain compatibility with existing parsers.
 
 ## GTFS can probably do more than you think
 
