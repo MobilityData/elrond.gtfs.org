@@ -28,7 +28,7 @@ GTFS fosters collaboration between transit agencies by enabling easy data exchan
 
 ## GTFS can probably do more than you think
 
-While trip planning is a core function, GTFS offers additional features that enhance the transit experience:
+While schedule information is at its core, GTFS also offers additional features that enhance the transit experience, such as:
 
 - **Fares:** GTFS can include fare information for accurate cost breakdowns across routes and journey options.
 - **Flexible services:** GTFS can describe demand-responsive options like dial-a-ride, route deviations, and other services that do not follow the common behavior of scheduled and/or fixed service.
@@ -38,7 +38,7 @@ While trip planning is a core function, GTFS offers additional features that enh
 
 ## Improved Rider Experience
 
-GTFS empowers riders with accurate schedules, real-time updates, and a wider choice of apps, leading to reduced wait times and informed travel decisions. Here's how GTFS enhances the rider experience:
+Here's how GTFS empowers riders and enhances their experience:
 
 - **Up-to-Date Information:** GTFS provides riders with access to schedules, routes, and stop information, facilitating informed travel decisions.
 - **Reduced Wait Times:** GTFS Realtime offers live updates on vehicle locations, reducing wait times and enhancing the overall travel experience.
