@@ -139,8 +139,8 @@ A definition (or update) of an entity in the transit feed. If the entity is not 
 
 ### _message_ TripUpdate
 
-Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](trip-updates.md).
-
+Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](../../documentation/Realtime/feed_entities/trip-updates.md).
+upd
 Depending on the value of ScheduleRelationship, a TripUpdate can specify:
 
 *   A trip that proceeds along the schedule.
@@ -187,7 +187,7 @@ Uncertainty applies equally to both time and delay. The uncertainty roughly spec
 
 ### _message_ StopTimeUpdate
 
-Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](trip-updates.md) documentation.
+Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](../../documentation/Realtime/feed_entities/trip-updates.md) documentation.
 
 Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events.
 The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set.  If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.
@@ -617,7 +617,7 @@ A `TripModifications` message identifies a list of similar trips which are all a
 
 <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
  
-[More about Trip Modifications...](trip-modifications.md)
+[More about Trip Modifications...](../../documentation/Realtime/feed_entities/trip-modifications.md)
 
 **Fields**
 
