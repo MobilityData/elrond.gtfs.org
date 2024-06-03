@@ -96,8 +96,6 @@ plugins:
   - external-markdown
   - search:
       lang: en
-  - redirects:
-      redirect_maps:
 nav:
   - Home: index.md
   - Getting started:
