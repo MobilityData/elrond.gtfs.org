@@ -18,7 +18,7 @@ GTFS thrives on community collaboration, ensuring its continuous evolution and r
 
 [:material-chat-processing: Get Involved](../../community/get_involved){ .md-button }
 [:material-map-plus: Active Projects](../../community/get_involved/#active-projects){ .md-button }
-[:material-book-heart: Guiding Principles](../../community/spec_amendment_process/gtfs_schedule_amendment_process/#guiding-principles){ .md-button }
+[:material-book-heart: Guiding Principles](../../community/governance/gtfs_schedule_amendment_process/#guiding-principles){ .md-button }
 
 ## Simple and Easy to Use
 
