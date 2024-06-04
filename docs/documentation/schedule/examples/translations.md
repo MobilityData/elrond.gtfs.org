@@ -50,4 +50,3 @@ table_name,field_name,field_value,language,translation`
 stops,stop_name,Bruxelles-Ouest,nl,Brussel-West
 ```
 
-<sup>[Example source](http://gtfs.irail.be/mivb/mivb-gtfs.zip)</sup>
