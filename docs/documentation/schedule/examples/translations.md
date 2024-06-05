@@ -46,7 +46,7 @@ There is another way to translate names in GTFS using the file [translations.txt
 [**translations.txt**](../../reference/#translationstxt)
 
 ```
-table_name,field_name,field_value,language,translation`
+table_name,field_name,field_value,language,translation
 stops,stop_name,Bruxelles-Ouest,nl,Brussel-West
 ```
 
