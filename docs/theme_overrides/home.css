@@ -12,6 +12,12 @@
     position: relative;
 }
 
+.hero-dark-gradient {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
 .hero-content {
     position: absolute;
     bottom: 80px;
