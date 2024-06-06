@@ -180,7 +180,7 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
     Define fees applicable when transferring from one leg of the trip to another.
 
-    [:octicons-arrow-right-24: Learn more](../fares/#transfer-fares)
+    [:octicons-arrow-right-24: Learn more](../fares/#fares-transfers)
 
 -   :material-subway-variant:{ .lg .middle } __Fares V1__
 
@@ -201,7 +201,7 @@ Pathways features allows to model large transit stations, so that riders are gui
 
     Model paths connecting relevant points within a transit station.
 
-    [:octicons-arrow-right-24: Learn more](../pathways/#pathways-basic-information)
+    [:octicons-arrow-right-24: Learn more](../pathways/#pathway-connections)
 
 -   :material-subway-variant:{ .lg .middle } __Pathway details__
 
