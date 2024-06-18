@@ -1,6 +1,8 @@
 site_name: General Transit Feed Specification
 site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
+docs_dir: 'docs/en'                           # Where to find the English markdown files
+site_dir: 'generated/en'                      # Where to put the English HTML files
 
 validation:
   nav:
@@ -31,7 +33,7 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
-  custom_dir: docs/theme_overrides/
+  custom_dir: docs/assets/overrides/
   language: en
   locale: en
 extra_css:
@@ -68,6 +70,10 @@ extra:
       link: https://www.linkedin.com/company/mobilitydata
     - icon: fontawesome/brands/slack
       link: https://share.mobilitydata.org/slack
+  alternate:
+      - name: English
+        link: /en/
+        lang: en
 markdown_extensions:
   - attr_list
   - footnotes
@@ -96,6 +102,15 @@ plugins:
   - external-markdown
   - search:
       lang: en
+  - i18n:
+      docs_structure: folder
+      reconfigure_search: false
+      reconfigure_material: true
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
 nav:
   - Home: index.md
   - Getting started:
@@ -187,4 +202,4 @@ nav:
     - Multimodal: resources/multimodal.md
     - Other: resources/other.md
   - About:
-      - About/index.md
+      - about/index.md
