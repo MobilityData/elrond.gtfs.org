@@ -37,6 +37,7 @@ theme:
   locale: en
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/footer.css
 extra:
   analytics:
     provider: google
