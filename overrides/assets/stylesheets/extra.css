@@ -98,6 +98,10 @@
   margin: 0;
 }
 
+.md-typeset .md-consent__controls .md-button {
+  display: inline-block;
+}
+
 /** global header end **/
 
 .md-top:hover {
