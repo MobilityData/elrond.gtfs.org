@@ -8,7 +8,7 @@ Thank you to [Andrew Byrd](https://www.linkedin.com/in/byrdandrew) for purchasin
 
 To propose edits to the content of this website, contact MobilityData at [documentation@mobilitydata.org](mailto:documentation@mobilitydata.org) or visit the [GTFS.org GitHub Repository](https://github.com/mobilitydata/gtfs.org) to submit your edits as pull requests.
 
-Regarding translations, GTFS.org uses an automated tool to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, any one-time translation contribution will be overwritten in the future. 
+Regarding translations, GTFS.org uses an automated tool to ensure translations are kept up to date with repository changes. Please note that since our priority is to keep translations up-to-date, any translation corrected manually in any language will eventually be overwritten.
 
 We do accept glossary changes for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can create an issue on the [GTFS.org GitHub Repository](https://github.com/mobilitydata/gtfs.org).
 
