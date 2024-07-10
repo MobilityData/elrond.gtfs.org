@@ -78,7 +78,7 @@
 
  | reserva_rule_id | tipo_reserva | aviso_previo_duración_min | previo_notice_duration_max | aviso_anterior_último_día | aviso_anterior_última_hora | aviso_anterior_día_inicio | aviso_previo_hora_inicio | previo_notice_service_id | message | mensaje_recogida | drop_off_message | número_teléfono | URL_información | URL_reserva | 
  |-----------------|--------------|---------------------------|---------------------|-----------------------|------------------------|---------------------------------|-------------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------|----------|----------------------|-------------------------| 
- | ruta_br_1818 | 2 | | | 1 | 13:00 | 14 | 9:00 | | Para solicitar transporte, llame al 123-111-2233 antes de la 1:00 p.m. al menos un día hábil antes de su viaje. Puede reservar viajes con hasta 14 días hábiles de anticipación. | | | (123)-111-2233 | flexservice.org/info | flexservice.org/booking | 
+ | ruta_br_1818 | 2 | | | 1 | 13:00 | 14 | 9:00 | | Para solicitar transporte, llame al 123-111-2233 antes de la 1:00 p.m.al menos un día hábil antes de su viaje. Puede reservar viajes con hasta 14 días hábiles de anticipación. | | | (123)-111-2233 | flexservice.org/info | flexservice.org/booking | 
  | ruta_br_4545 | 1 | 45 | 300 | | | | | | Para solicitar un viaje utilice el sistema de reservas oficial en nuestro sitio web, los viajes deben reservarse con al menos 45 min de antelación | | | (123)-111-2233 | flexservice.org/info | flexservice.org/booking | 
  
  
@@ -193,7 +193,7 @@
  ??? nota "Datos de muestra" 
  
 <p style="font-size:16px"> 
- El siguiente ejemplo muestra un servicio que puede recoger y dejar pasajeros con reserva previa en cualquier lugar entre un área específica entre las 9 a.m. y las 6 p.m. 
+ El siguiente ejemplo muestra un servicio que puede recoger y dejar pasajeros con reserva previa en cualquier lugar entre un área específica entre las 9 a.m.y las 6 p.m. 
 </p> 
  !!! nota "" 
 <p style="font-size:16px"> 
@@ -249,7 +249,7 @@
  | Archivos incluidos | Campos incluidos | 
  |----------------------------------|-------------------| 
  |[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`ubicación_grupo_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`| 
- |[grupos_ubicación.txt](../../../documentation/schedule/reference/#ubicación_groupstxt)|`id_grupo_ubicación`, `nombre_grupo_ubicación`| 
+ |[location_groups.txt](../../../documentation/schedule/reference/#location_groupstxt)|`ubicación_group_id`, `ubicación_group_name`| 
  |[location_group_stops.txt](../../../documentation/schedule/reference/#location_group_stopstxt)|`ubicación_group_id`, `stop_id`| 
  
  **Requisitos previos**: 
@@ -260,7 +260,7 @@
  ??? nota "Datos de muestra" 
  
 <p style="font-size:16px"> 
- El siguiente ejemplo muestra un servicio que puede recoger y dejar pasajeros con reserva previa en 4 stops diferentes entre las 7 a.m. y las 10 a.m. 
+ El siguiente ejemplo muestra un servicio que puede recoger y dejar pasajeros con reserva previa en 4 stops diferentes entre las 7 a.m.y las 10 a.m. 
  
 </p> 
  !!! nota "" 

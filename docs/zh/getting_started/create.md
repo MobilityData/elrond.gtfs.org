@@ -41,7 +41,7 @@
  
  在处理更大的系统范围时，大多数机构会从专业供应商处购买专门的GTFS管理软件，但有些机构可能会选择开发自己的内部工具。最后，当系统特性证明机构难以自行编写数据集时，可以将GTFS制作完全外包给专门生产GTFS数据的公司。 
  
-<a href="https://www.flaticon.com/authors/freepik" title="Freepik 的图标">由 Freepik- Flaticon 创建的图标</a>
+<a href="https://www.flaticon.com/authors/freepik" title="Freepik 图标">由 Freepik- Flaticon 创建的图标</a>
  
  [^1]: 除了文本文件之外， GTFS现在还支持 [GeoJSON](https: ) 格式，以表示需求响应服务的某些元素。
  

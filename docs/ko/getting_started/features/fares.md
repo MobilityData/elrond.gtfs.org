@@ -230,7 +230,7 @@
  | area_id | area_name | 
  |---------|------------| 
  | zone_a | 구역 A | 
- | zone_b | B구역 | 
+ | zone_b | B 구역 | 
  
  !!! 메모 "" 
 <p style="font-size:16px"> 

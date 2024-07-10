@@ -128,7 +128,7 @@
  
  - :material-subway-variant:{ .lg.middle } __Teks- to-Speech__ 
  
- Berikan masukan yang diperlukan untuk mengubah teks untuk nama perhentian menjadi audio. 
+ Berikan input yang diperlukan untuk mengubah teks untuk nama perhentian menjadi audio. 
  
  [:octicons-panah-kanan-24: Pelajari lebih lanjut](../accessibility/#text-to-speech) 
  

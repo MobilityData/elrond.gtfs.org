@@ -13,7 +13,7 @@
  O GTFS prospera na colaboração da comunidade, garantindo sua evolução e relevância contínuas, com foco principal nas informações voltadas aos passageiros dentro das especificações. 
  
  - **Colaboração Aberta:** GTFS opera como um padrão de dados abertos, permitindo que qualquer pessoa contribua com mudanças ou melhorias. 
- - **Evolução Guiada:** A evolução da especificação é supervisionada por uma organização independente sem fins lucrativos chamada [MobilityData](https://mobilitydata.org/), e suas mudanças são guiadas pelos princípios de facilidade de uso, retroativamente.compatibilidade e mudança pragmática. 
+ - **Evolução Guiada:** A evolução da especificação é supervisionada por uma organização independente sem fins lucrativos chamada [MobilityData](https://mobilitydata.org/), e suas mudanças são guiadas pelos princípios de facilidade de uso, retroativamente compatibilidade e mudança pragmática. 
  - **Desenvolvimento orientado pela comunidade:** A especificação GTFS passa por refinamento contínuo por meio de contribuições e análises da comunidade, facilitadas em plataformas como [GitHub](https:) e [Slack](https:). 
  
  [:material-chat-processing: Envolva-se](../../community/get_involved){ .md-button.md-button--primary } 

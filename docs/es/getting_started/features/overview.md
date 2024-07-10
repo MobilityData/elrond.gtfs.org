@@ -246,7 +246,7 @@
  
  - :material-subway-variant:{ .lg.middle } __Servicios de respuesta a la demanda basados ​​en zonas__ 
  
- Servicios que permiten recoger/dejar en cualquier ubicación dentro de un área específica. 
+ Servicios que permiten recoger/dejar en cualquier lugar dentro de un área específica. 
  
  [:octicons-arrow-right-24: Más información](../flexible_services/#zone-based-demand-responsive-services) 
  

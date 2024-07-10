@@ -88,7 +88,7 @@
  - **时间** - HH:MM:SS 格式的时间（也接受 H:MM:SS）。时间从服务日的“中午减 12 点”开始计算（除夏令时变更的日子外，实际上是午夜）。对于服务日午夜之后的时间，请以 HH:MM:SS 格式输入大于 24:00:00 的值。<br> *例如：`14:30:00` 表示下午 2:30，或 `25:35:00` 表示第二天凌晨 1:35。* 
  - **Text** - UTF-8string，用于显示，因此必须易于阅读。 
  - **时区** - [https://www.iana.org/time-zones](https://www.iana.org/time-zones) 中的 TZ 时区。时区名称从不包含空格字符，但可以包含下划线。请参阅 [http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) 获取有效值列表。<br> *示例：`Asia/Tokyo`、`America/Los_Angeles` 或 `Africa/Cairo`。* 
- - ** URL** - 包含 http://或 https://的完全限定URL ，并且URL中的任何特殊字符都必须正确转义。有关如何创建完全限定URL值的说明，请参阅以下 [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http: URL/4\_URI\_Recommentations.html)。 
+ - **URL** - 包含 http://或 https://的完全限定URL ，并且URL中的任何特殊字符都必须正确转义。有关如何创建完全限定URL值的说明，请参阅以下 [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http: URL/4\_URI\_Recommentations.html)。 
  
 ### 字段符号 
  适用于Float或整数字段类型的符号：
@@ -238,7 +238,7 @@ lat` | 纬度 | **有条件要求** | 位置的纬度。<br><br>对于stops/站�
  | `route_text_color` | 颜色 | 可选 | 用于在 `route_color` 背景下绘制的文本的清晰颜色。省略或留空时默认为黑色（`000000`）。在黑白屏幕上查看时，`route_color` 和 `route_text_color` 之间的颜色差异应提供足够的对比度。| 
  | `route_sort_order` | 非负整数 |可选 | 以最适合向客户展示的方式对routes进行排序。`route_sort_order` 值较小的路线应首先显示。| 
  | `continuous_pickup ` | 枚举 | **有条件禁止** | 表示乘客可以在路线的每次行程中，按照 [shapes.txt](#shapestxt) 描述的车辆行驶路径上的任何一点登上vehicle。有效选项包括：<br><br> `0`-连续停止拾音。<br> “`1`”或空 – 无连续停止拾音。<br> `2` – 必须打电话agency安排连续停止取货。<br> `3` – 必须与司机协调安排连续停车接送。<br><br>可以通过在“ stop_times.continuous_pickup”中定义沿途特定“stop_time ”的值来覆盖“ routes.continuous_pickup ”的值。<br><br> **有条件禁止**：<br> - 如果此路线的任何行程定义了 ` stop_times或 ` stop_times ，则**禁止** 。<br> - 其他情况下可选。| 
- | `continuous_drop_off ` | 枚举 | **有条件禁止** | 表示乘客可以在路线的每次行程中，按照 [shapes.txt](#shapestxt) 描述的vehicle行驶路径上的任何一点下车。有效选项包括：<br><br> `0`-连续停止下降。<br> “`1`”或空 - 没有连续停止下降。<br> `2` – 必须打电话给agency安排连续停车送达。<br> `3` – 必须与司机协调安排连续停车下车。<br><br>可以通过在“ stop_times.continuous_drop_off”中定义沿途特定“stop_time ”的值来覆盖“ routes.continuous_drop_off ”的值。<br><br> **有条件禁止**：<br> - 如果此路线的任何行程定义了 ` stop_times或 ` stop_times ，则**禁止** 。<br> - 其他情况下可选。| 
+ | `continuous_drop_off ` | 枚举 | **有条件禁止** | 表示乘客可以在路线的每次行程中，按照 [shapes.txt](#shapestxt) 描述的vehicle行驶路径上的任何一点下车。有效选项包括：<br><br> `0`-连续停止下降。<br> “`1`”或空 - 没有连续停止下降。<br> `2` – 必须打电话给agency安排连续停车送达。<br> `3` – 必须与司机协调安排连续停车下客。<br><br>可以通过在“ stop_times.continuous_drop_off”中定义沿途特定“stop_time ”的值来覆盖“ routes.continuous_drop_off ”的值。<br><br> **有条件禁止**：<br> - 如果此路线的任何行程定义了 ` stop_times或 ` stop_times ，则**禁止** 。<br> - 其他情况下可选。| 
  | `network_id` | ID | **有条件禁止** | 标识一组routes。[routes.txt](#routestxt) 中的多行可能具有相同的 `network_id`。<br><br>有条件禁止：<br> - 如果 [route_networks.txt](#route_networkstxt) 文件存在，则 **禁止**。<br> - 其他情况下为可选。
  
 ### trips.txt 
@@ -258,7 +258,7 @@ lat` | 纬度 | **有条件要求** | 位置的纬度。<br><br>对于stops/站�
  | `block_id` | ID | 可选 | 标识行程所属的区块。区块由单次行程或使用同一vehicle进行的多次连续行程组成，由共享的服务日和 `block_id` 定义。`block_id` 可能包含服务日不同的行程，从而构成不同的区块。请参阅[下面的示例](#example-blocks-and-service-day)。若要提供座位内transfers信息，应提供 ` transfer_type ` `4` 的 [transfers](#transferstxt)。| 
  | `shape_id` | 引用 `shapes.shape_id ` 的外部 ID | **有条件要求** | 标识描述行程vehicle行驶路径的地理空间shape。<br><br>有条件要求：<br> - 如果行程在 [routes.txt](#routestxt) 或 [stop_times.txt](#stop_timestxt) 中定义了连续的接送行为，则 **必需**。<br> - 否则为可选。| 
  | `wheelchair_accessible` | 枚举 | 可选 | 表示轮椅可访问性。有效选项包括：<br><br> `0` 或空 — 没有关于此行程的可达性信息。<br> `1`本次行程所使用的车辆至少可容纳一名坐轮椅的乘客。<br> `2` - 此行程不允许坐轮椅的乘客。| 
- | `bikes_allowed` | 枚举 | 可选 | 表示是否允许骑自行车。有效选项包括：<br><br> “0” 或空 — 此行程没有自行车信息。<br> `1`本次行程所使用的车辆至少可容纳一辆自行车。<br> `2` - 此行程不允许骑自行车。| 
+ | `bikes_allowed` | 枚举 | 可选 | 表示是否允许骑自行车。有效选项包括：<br><br> `0` 或空 - 此行程没有自行车信息。<br> `1`本次行程所使用的车辆至少可容纳一辆自行车。<br> `2` - 此行程不允许骑自行车。| 
  
 #### 示例：区块和服务日 
  
@@ -284,8 +284,8 @@ lat` | 纬度 | **有条件要求** | 位置的纬度。<br><br>对于stops/站�
  | 字段名称 | 类型 | 存在 | 说明 | 
  |------|------|------|------| 
  | `trip_id` | 引用`trips.trip_id`的外部 ID | **必需** | 标识一次行程。| 
- | `arrival_time | 时间 | **有条件必需** |在由 ` agency.agency_timezone指定的时区内（由 ` stop_times.stop_id定义），特定行程（由 `stop_times.trip_id定义）到达站点（由 `stop_times.stop_id` 定义）的时间，而不是由 ` stops.stop_timezone定义。<br><br>如果站点没有单独的arrival和departure时间，则“arrival_time”和“`departure_time`”应该相同。<br><br>对于服务日午夜之后的时间，请以 HH:MM:SS 格式输入大于 24:00:00 的值。<br><br>如果没有准确的arrival和departure时间（`timepoint=1` 或空），则应提供估计或插入的arrival和departure时间（`timepoint=0`）。<br><br>有条件要求：<br> - 行程中的第一站和最后一站**必需**（由“stop_times.stop_sequence”定义）。<br> - `timepoint=1的 **必需**。<br> - 当定义“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”时**禁止**。<br> - 其他情况下可选。| 
- | `departure_time` | 时间 | **有条件要求** | 在由 ` agency.agency_timezone指定的时区内（由 ` stop_times.stop_id定义），特定行程（由 `stop_times.trip_id定义）从站点（由 `stop_times.stop_id` 定义）出发的时间，而不是由 ` stops.stop_timezone定义的时区。<br><br>如果站点没有单独的arrival和departure时间，则“arrival_time”和“`departure_time`”应该相同。<br><br>对于服务日午夜之后的时间，请以 HH:MM:SS 格式输入大于 24:00:00 的值。<br><br>如果没有准确的arrival和departure时间（`timepoint=1` 或空），则应提供估计或插入的arrival和departure时间（`timepoint=0`）。<br><br>有条件要求：<br> - `timepoint=1的 **必需**。<br> - 当定义“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”时**禁止**。<br> - 其他情况下可选。| 
+ | `arrival_time | 时间 | **有条件必需** |在由 ` agency.agency_timezone指定的时区内（由 ` stop_times.stop_id定义），特定行程（由 `stop_times.trip_id定义）到达站点（由 `stop_times.stop_id` 定义）的时间，而不是由 ` stops.stop_timezone定义。<br><br>如果站点没有单独的arrival和departure时间，则“arrival_time”和“`departure_time`”应该相同。<br><br>对于服务日午夜之后的时间，请以 HH:MM:SS 格式输入大于 24:00:00 的值。<br><br>如果没有准确的arrival和departure时间（`timepoint=1` 或空），则应提供估计或插入的arrival和departure时间（`timepoint=0`）。<br><br>有条件要求：<br> - 行程中的第一站和最后一站**必需**（由“stop_times.stop_sequence”定义）。<br> - 对于 `timepoint=1来说**是必需的**。<br> - 当定义“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”时**禁止**。<br> - 其他情况下可选。| 
+ | `departure_time` | 时间 | **有条件要求** | 在由 ` agency.agency_timezone指定的时区内（由 ` stop_times.stop_id定义），特定行程（由 `stop_times.trip_id定义）从站点（由 `stop_times.stop_id` 定义）出发的时间，而不是由 ` stops.stop_timezone定义的时区。<br><br>如果站点没有单独的arrival和departure时间，则“arrival_time”和“`departure_time`”应该相同。<br><br>对于服务日午夜之后的时间，请以 HH:MM:SS 格式输入大于 24:00:00 的值。<br><br>如果没有准确的arrival和departure时间（`timepoint=1` 或空），则应提供估计或插入的arrival和departure时间（`timepoint=0`）。<br><br>有条件要求：<br> - 对于 `timepoint=1来说**是必需的**。<br> - 当定义“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”时**禁止**。<br> - 其他情况下可选。| 
  | `stop_id` | 引用 `stops.stop_id的外部 ID | **有条件必需** | 标识服务的站点。行程期间服务的所有stops都必须在 [stop_times.txt](#stop_timestxt) 中有记录。引用的位置必须是stops/平台，即它们的 `stops.location_type值必须为 `0` 或空。一个站点可能在同一行程中服务多次，并且多个行程和routes可能为同一站点提供服务。<br><br>使用stops的按需服务应按stops提供服务的顺序引用。数据消费者应假设可以从一个站点或地点到行程中的任意站点或地点旅行，前提是每个stop_time的“pickup/drop_off_type ”和每个“start/end_pickup_drop_off_window”的时间限制不禁止这样做。<br><br>有条件要求：<br> - 如果 `stop_times和 `stop_times未定义，则**必需**。<br> - 如果定义了 `stop_times.location_group_id` 或 `stop_times.location_id`，则**禁止**。| 
  | `location_group_id` | 引用 `location_groups.location_group_id` 的外部 ID | **有条件禁止** | 标识服务地点组，该组指示乘客可以请求接送的stops组。行程期间服务的所有地点组都必须在 [stop_times.txt](#stop_timestxt) 中有记录。多个行程和routes可以为同一地点组提供服务。<br><br>使用位置组的按需服务应按照这些位置组提供的服务的顺序引用。数据消费者应假设可以从一个站点或位置到行程中的任意站点或位置，前提是每个stop_time的“pickup/drop_off_type ”和每个“start/end_pickup_drop_off_window”的时间限制不禁止这样做。<br><br> **有条件禁止**：<br> - 如果定义了 `stop_times.stop_id` 或 `stop_times.location_id`，则**禁止**。| 
  | `location_id` | 引用`locations.geojson`中的`id`的外部 ID | **有条件禁止** | 标识与乘客可能请求接送的服务区域相对应的 GeoJSON 位置。行程期间服务的所有 GeoJSON 位置都必须在 [stop_times.txt](#stop_timestxt) 中有记录。多条行程和routes可能为同一个 GeoJSON 位置提供服务。<br><br>应按照这些位置的服务可用顺序引用位置内的按需服务。数据消费者应假设可以从一个站点或位置到行程中的任意站点或位置，前提是每个stop_time的“pickup/drop_off_type ”和每个“start/end_pickup_drop_off_window”的时间限制不禁止这样做。<br><br> **有条件禁止**：<br> - 如果定义了 `stop_times.stop_id` 或 `stop_times.location_group_id`，则**禁止**。| 
@@ -297,10 +297,10 @@ lat` | 纬度 | **有条件要求** | 位置的纬度。<br><br>对于stops/站�
  | ` drop_off_type` | 枚举 | **有条件禁止** | 表示丢弃方法。有效选项为：<br><br> `0` 或空 – 定期下车。<br> `1` – 没有可用的下车地点。<br> `2` – 必须打电话给agency安排送达。<br> `3` – 必须与司机协调安排下车。<br><br> **有条件禁止**：<br> - 如果定义了`start_pickup_drop_off_window`或`end_pickup_drop_off_window` ，则 **禁止** ` drop_off_type =0`。<br> - 其他情况下为可选项。| 
  | ` continuous_pickup ` | 枚举 | **有条件禁止** | 表示乘客可以在 [shapes.txt](#shapestxt) 描述的车辆行驶路径上的任何一点登上vehicle，从此 ` stop_time ` 到行程`stop_sequence`中的下一个 ` stop_time `。有效选项包括：<br><br> `0`-连续停止拾音。
 
-br> `1`或空 - 没有连续停止拾音。<br> `2` – 必须打电话agency安排连续停止取货。<br> `3` – 必须与司机协调安排连续停车接送。<br><br>如果此字段已填充，它将覆盖 [routes.txt](#routestxt) 中定义的任何连续接送行为。如果此字段为空，则 `stop_time` 将继承 [routes.txt](#routestxt) 中定义的任何连续接送行为。<br><br> **有条件禁止**：<br> - 如果定义了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`” ，则**禁止**。<br> - 其他情况下可选。| 
+br> `1`或空 – 没有连续停止拾音。<br> `2` – 必须打电话agency安排连续停止取货。<br> `3` – 必须与司机协调安排连续停车接送。<br><br>如果此字段已填充，它将覆盖 [routes.txt](#routestxt) 中定义的任何连续接送行为。如果此字段为空，则 `stop_time` 将继承 [routes.txt](#routestxt) 中定义的任何连续接送行为。<br><br> **有条件禁止**：<br> - 如果定义了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`” ，则**禁止**。<br> - 其他情况下可选。| 
  | `continuous_drop_off ` | 枚举 | **有条件禁止** | 表示乘客可以在 [shapes.txt](#shapestxt) 描述的vehicle行驶路径上的任何一点下车，从此 ` stop_time ` 到行程`stop_sequence`中的下一个 ` stop_time `。有效选项包括：<br><br> `0`-连续停止下降。<br> “`1`”或空 - 没有连续停止下降。<br> `2` – 必须打电话给agency安排连续停车送达。<br> `3` – 必须与司机协调安排连续停车下客。<br><br>如果此字段已填充，它将覆盖 [routes.txt](#routestxt) 中定义的任何连续下车行为。如果此字段为空，则 `stop_time` 将继承 [routes.txt](#routestxt) 中定义的任何连续下车行为。<br><br> **有条件禁止**：<br> - 如果定义了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`” ，则**禁止**。<br> - 否则为可选。| 
- | `shape_dist_traveled` | 非负float| 可选 | 从第一个站点到此记录中指定的站点沿相关shape行驶的实际距离。此字段指定在行程中任意两个stops之间绘制的shape范围。必须采用与 [shapes.txt](#shapestxt) 相同的单位。用于 `shape_dist_traveled` 的值必须随着`stop_sequence`增加；它们不得用于显示沿路线的反向旅行。<br><br>建议用于有环路或内联的routes（vehicle在一次行程中穿过或行驶过相同的路线部分）。请参阅 [`shapes.shape_dist_traveled`](#shapestxt)。<hr> *示例：如果公交车从shape起点到停靠点行驶 5.25 公里，则`shape_dist_traveled=`5.25`。*|
-|`timepoint |枚举|推荐|指示vehicle是否严格遵守停靠点的arrival和departure时间，或者它们是否是近似值和/或插值时间。此字段允许GTFS生产者提供插值的停靠时间，同时指示时间为近似值。有效选项为：<br><br> `0`-时间被视为近似值。<br> `1`或空 - 时间被视为准确时间。| 
+ | `shape_dist_traveled` | 非负float| 可选 | 从第一个站点到此记录中指定的站点沿相关shape行驶的实际距离。此字段指定在行程中任意两个stops之间绘制的shape范围。必须采用与 [shapes.txt](#shapestxt) 相同的单位。用于 `shape_dist_traveled` 的值必须随着`stop_sequence`增加；它们不得用于显示沿路线的反向旅行。<br><br>建议用于有环路或内联的routes（vehicle在一次行程中穿过或行驶过相同的路线部分）。请参阅 [`shapes.shape_dist_traveled`](#shapestxt)。<hr> *示例：如果公交车从shape起点到站点行驶 5.25 公里，则`shape_dist_traveled=`5.25`。*|
+|`timepoint |枚举|推荐|指示vehicle是否严格遵守站点的arrival和departure时间，或者它们是否是近似值和/或插值时间。此字段允许GTFS生产者提供插值的停止时间，同时指示时间为近似值。有效选项为：<br><br> `0`-时间被视为近似值。<br> `1`或空 - 时间被视为准确时间。| 
  | `pickup_booking_rule_id` | 引用 `booking_rules.booking_rule_id` 的 ID | 可选 | 标识此停止时间的登机预订规则。<br><br>当 `pickup_type=2` 时推荐使用。| 
  | `drop_off_booking_rule_id` | 引用 `booking_rules.booking_rule_id` 的 ID | 可选 | 标识此停止时间的下车预订规则。<br><br>当 `drop_off_type =2` 时推荐使用。| 
  
@@ -317,7 +317,7 @@ br> `1`或空 - 没有连续停止拾音。<br> `2` – 必须打电话agency安
  | 字段名称 | 类型 | 存在 | 说明 | 
  |------|------|------|------| 
  | `service_id` | 唯一 ID | **必需** | 标识一个或多个routes可提供服务的日期集合。| 
- | `monday ` | 枚举 | **必需** | 指示服务是否在`start_date`和 `end_date ` 字段指定的date范围内的所有星期一运行。请注意，特定日期的例外情况可能会列在 [calendar_dates.txt](#calendar_datestxt) 中。有效选项包括：<br><br> `1`服务在该date范围内的所有星期一可用。<br> `0` -date范围内的星期一不提供服务。| 
+ | `monday ` | 枚举 | **必需** | 指示服务是否在`start_date`和 `end_date ` 字段指定的date范围内的所有星期一运行。请注意，特定日期的例外情况可能会列在 [calendar_dates.txt](#calendar_datestxt) 中。有效选项包括：<br><br> `1`该date范围内的所有星期一均可提供服务。<br> `0` -date范围内的星期一不提供服务。| 
  | `tuesday` | 枚举 | **必需** | 功能与 `monday` 相同，但适用于星期二 | 
  | `wednesday` | 枚举 | **必需** | 功能与 `monday` 相同，但适用于星期三 | 
  | `thursday` | 枚举 | **必需** | 功能与 `monday` 相同，但适用于星期四 | 
@@ -419,7 +419,7 @@ br> `1`或空 - 没有连续停止拾音。<br> `2` – 必须打电话agency安
  |------|------|------|------| 
  | `fare_media_id` | 唯一 ID | **必填** | 标识票价媒体。| 
  | `fare_media_name` |Text| 可选 | 票价媒体的名称。<br><br>对于交通卡 (`fare_media_type =2`) 或移动应用程序 (`fare_media_type =4`) 形式的票价媒体，应包含 `fare_media_name`，并且应与提供这些媒体的组织使用的面向乘客的名称相匹配。| 
- | `fare_media_type` | 枚举 | **必需** | 票价媒体的类型。有效选项包括：<br><br> `0` - 无。当购买或验证票价产品时无需票价媒介，例如向司机或售票员支付现金，而不提供实体车票时使用。<br> `1` - 实体纸质车票，允许乘客在固定时间内进行一定数量的预购行程或无限制行程。<br> `2`-已存储票证、通行证或货币价值的实体交通卡。<br> `3`——cEMV（非接触式 Europay、Mastercard 和 Visa）作为基于账户票务的开环令牌容器。<br> `4` - 存储了虚拟交通卡、车票、通行证或货币价值的移动应用程序。| 
+ | `fare_media_type` | 枚举 | **必需** | 票价媒体的类型。有效选项包括：<br><br> `0` - 无。当购买或验证票价产品时无需使用票价媒介时使用，例如向司机或售票员支付现金，而不提供实体车票。<br> `1` - 实体纸质车票，允许乘客在固定时间内进行一定数量的预购行程或无限制行程。<br> `2`-已存储票证、通行证或货币价值的实体交通卡。<br> `3`——cEMV（非接触式 Europay、Mastercard 和 Visa）作为基于账户票务的开环令牌容器。<br> `4` - 存储了虚拟交通卡、车票、通行证或货币价值的移动应用程序。| 
  
 ### fare_products.txt 
  
@@ -512,7 +512,7 @@ br> `1`或空 - 没有连续停止拾音。<br> `2` – 必须打电话agency安
  - `fare_transfer_rules.from_leg_group_id` 中的空条目对应于 `fare_leg_rules.leg_group_id` 下定义的所有航段组，但不包括 `fare_transfer_rules.from_leg_group_id` 下列出的航段组 
  - `fare_transfer_rules.to_leg_group_id` 中的空条目对应于 `fare_leg_rules.leg_group_id` 下定义的所有航段组，但不包括 `fare_transfer_rules.to_leg_group_id` 下列出的航段组<br/>
 <br/> 
- 5.如果转机不符合上述任何规则，则不存在转机安排，且各航段将被视为独立航段。
+ 5.如果转机不符合上述任何规则，则不存在转机安排，且两段将被视为独立。
  
 <br/> 
  
@@ -642,7 +642,7 @@ br> `1`或空 - 没有连续停止拾音。<br> `2` – 必须打电话agency安
  | `to_route_id` | 引用 `routes.route_id` 的外部 ID | 可选 | 标识连接结束的路线。<br><br>如果定义了“to_route_id”，则转乘将适用于给定“to_stop_id”路线上的出发行程。<br><br>如果同时定义了 `to_trip_id` 和 `to_route_id` ，则`trip_id`必须属于`route_id`，并且 `to_trip_id` 将优先。| 
  | `from_trip_id` | 引用`trips.trip_id`的外部 ID | **有条件要求** | 标识routes之间连接开始的行程。<br><br>如果定义了“from_trip_id”，则转乘将适用于给定“from_stop_id”的到达行程。<br><br>如果同时定义了 `from_trip_id` 和 `from_route_id` ，则`trip_id`必须属于`route_id`，并且 `from_trip_id` 将优先。如果 `transfer_type` 为 ` 4 ` 或 ` 5 `，则必需。| 
  | `to_trip_id` | 引用`trips.trip_id` 的外部 ID | **有条件要求** | 标识routes之间连接结束的行程。<br><br>如果定义了“to_trip_id”，则转乘将适用于给定“to_stop_id”的出发行程。<br><br>如果同时定义了 `to_trip_id` 和 `to_route_id` ，则`trip_id`必须属于`route_id`，并且 `to_trip_id` 将优先。如果 `transfer_type` 为 ` 4` 或 ` 5` ，则为必需。| 
- | `transfer_type` | 枚举 | **必需** | 指示指定（`from_stop_id`，`to_stop_id`）对的连接类型。有效选项为：<br><br> `0` 或空 – 推荐routes间的换乘点。<br> `1` - 两条routes之间的定时换乘点。出发vehicle应等待到达车辆，并留出足够的时间让乘客在routes之间换乘。<br> `2` - 转机要求在arrival和departure之间留出最少的时间来确保连接。转机所需的时间由 ` min_transfer_time指定。<br> `3` - 该地点的routes之间无法转乘。<br> `4` - 乘客可以留在同一辆vehicle上，从一个行程换乘到另一个行程（“座位内换乘”）。有关此类换乘的更多详细信息，请参见[下文](#linked-trips)。<br> `5` - 连续的行程之间不允许在座位上transfers。乘客必须vehicle并重新登机。有关此类转乘的更多详细信息，请参见[下面](#linked-trips)。| 
+ | `transfer_type` | 枚举 | **必需** | 指示指定（`from_stop_id`，`to_stop_id`）对的连接类型。有效选项为：<br><br> `0` 或空 – 推荐routes间的换乘点。<br> `1` - 两条routes之间的定时换乘点。出发vehicle应等待到达车辆，并留出足够的时间让乘客在routes之间换乘。<br> `2` - 转机要求在arrival和departure之间留出最少的时间来确保连接。转机所需的时间由 ` min_transfer_time指定。<br> `3` - 该地点的routes之间无法转乘。<br> `4` - 乘客可以留在同一辆vehicle上，从一个行程换乘到另一个行程（“座位内换乘”）。有关此类换乘的更多详细信息，请参见[下文](#linked-trips)。<br> `5` - 连续的行程之间不允许在座位上transfers。乘客必须vehicle并重新登车。有关此类转乘的更多详细信息，请参见[下面](#linked-trips)。| 
  | `min_transfer_time ` | 非负整数 | 可选 | 在指定stops的routes之间转乘所必须具有的时间量（以秒为单位）。` min_transfer_time` 应足以让普通乘客在两个stops之间移动，包括缓冲时间以允许每条路线的时间安排差异。| 
  
 #### 链接行程 
@@ -653,7 +653,7 @@ br> `1`或空 - 没有连续停止拾音。<br> `2` – 必须打电话agency安
  
  如果同时提供了链接行程转接和block_id ，并且它们产生冲突的结果，则应使用链接行程转接。
  
- `from_trip_id` 的最后一站应在地理位置上接近 `to_trip_id ` 的第一站，并且 ` from_trip_id ` 的最后arrival时间应早于但接近 ` to_trip_id ` 的第一个departure时间。如果 ` to_trip_id ` 行程发生在下一个服务日，则 ` from_trip_id ` 的最后arrival时间可能晚于 ` to_trip_id ` 的第一个departure时间。
+ `from_trip_id` 的最后一站应在地理位置上接近 `to_trip_id ` 的第一站，并且 ` from_trip_id ` 的最后arrival时间应早于但接近 ` to_trip_id ` 的第一departure时间。如果 ` to_trip_id ` 行程发生在下一个服务日，则 ` from_trip_id ` 的最后arrival时间可能晚于 ` to_trip_id ` 的第一departure时间。
  
  在常规情况下，行程可以 1 对 1 链接，但也可以 1 对 n、n 对 1 或 n 对 n 链接，以表示更复杂的行程延续。例如，两次火车行程（下图中的行程 A 和行程 B）可以在一个公共车站进行vehicle耦合操作后合并为一次火车行程（行程 C）：
  
@@ -813,8 +813,8 @@ cation_type=0` 或空）、入口/出口（`location_type=2`）、通用节点�
  | `language` | 语言代码 | **必填** | 翻译语言。<br><br>如果语言与 `feed_info.feed_lang` 中的语言相同，则该字段的原始值将被视为在没有特定翻译的语言中使用的默认值（如果 `default_lang`t另行指定）。<hr> _示例：在瑞士，一个官方双语州的城市的官方名称是“Biel/Bienne”，但在法语中会简单地称为“Bienne”，在德语中则称为“Biel”。_ | 
  | `translation` |Text或URL或Email或Phone number| **必填** | 翻译的值。| 
  | `record_id` | 外国 ID | **有条件必填** | 定义与要翻译的字段相对应的记录。`record_id ` 中的值必须是表主键的第一个或唯一字段，如每个表的主键属性中所定义的那样，如下所示：<br><br> - [agency.txt](#agencytxt) 的 ` agency_id `<br> - [stops.txt](#stopstxt) 的`stop_id` ；<br> - [routes.txt](#routestxt) 的`route_id` ；<br> - [trips.txt](#tripstxt) 的`trip_id` ；<br> - [stop_times.txt](#stop_timestxt) 的`trip_id` ；<br> - [pathways.txt](#pathwaystxt) 的 ` pathway_id `；<br> - [levels.txt](#levelstxt) 的 ` level_id `；<br> - [attributions.txt](#attributionstxt) 的 ` attribution_id `。<br><br>上面未定义的表中的字段不应翻译。但是，生产者有时会添加超出官方规范的额外字段，这些非官方字段可能会被翻译。以下是这些表使用 ` record_id ` 的推荐方法：<br><br> - [calendar.txt](#calendartxt) 的 ` service_id `；<br> - [calendar_dates.txt](#calendar_datestxt) 的 ` service_id `；<br> - [fare_attributes.txt](#fare_attributestxt) 的 ` fare_id `；<br> - [fare_rules.txt](#fare_rulestxt) 的 ` fare_id `；<br> - [shapes.txt](#shapestxt) 的`shape_id` ；<br> - [frequencies.txt](#frequenciestxt) 的`trip_id` ；<br> - [transfers.txt](#transferstxt) 中的 ` from_stop_id `。<br><br>有条件要求：<br> - 如果 ` table_name是 `feed_info，则**禁止**。<br> - 如果定义了“field_value”，则**禁止**。<br> - 如果 `field_value为空，则**必填**。|
-|`record_sub_id| 外部 ID |**有条件必填**|当表t唯一 ID 时，帮助翻译包含该字段的记录。因此，`record_sub_id中的值是表的辅助 ID，如下表所定义：<br><br> - [agency.txt](#agencytxt) 无；<br> - [stops.txt](#stopstxt) 无；<br> - [routes.txt](#routestxt) 无；<br> - [trips.txt](#tripstxt) 无；<br> - `stop_sequence`用于 [stop_times.txt](#stop_timestxt)；<br> - [pathways.txt](#pathwaystxt) 无；<br> - [levels.txt](#levelstxt) 无；<br> - [attributions.txt](#attributionstxt) 无。<br><br>上面未定义的表中的字段不应翻译。但是，生产者有时会添加超出官方规范的额外字段，这些非官方字段可能会被翻译。以下是这些表使用“record_sub_id”的推荐方法：<br><br> - [calendar.txt](#calendartxt) 无；<br> - [calendar_dates.txt](#calendar_datestxt) 的 ` date `；<br> - [fare_attributes.txt](#fare_attributestxt) 无；<br> - [fare_rules.txt](#fare_rulestxt) 的`route_id` ；<br> - [shapes.txt](#shapestxt) 无；<br> - [frequencies.txt](#frequenciestxt) 的`start_time` ；<br> - [transfers.txt](#transferstxt) 的 ` to_stop_id `。<br><br>有条件要求：<br> - 如果 ` table_name是 `feed_info，则**禁止**。<br> - 如果定义了“field_value”，则**禁止**。<br> - 如果定义了 `table_name=stop_times` 和 `record_id`，则 **必填**。| 
- | `field_value` |Text或URL或Email或Phone number| **有条件必填** | 除了使用 `record_id` 和 `record_sub_id` 来定义应该翻译哪条记录之外，此字段还可用于定义应翻译的值。使用时，当 `table_name` 和 `field_name` 标识的字段包含与field_value中定义的完全相同的值时，将应用翻译。<br><br>该字段必须具有 `field_value` 中定义的**完全**值。如果只有值的子集与 `field_value` 匹配，则t应用转换。<br><br>如果两个翻译规则与同一条记录匹配（一个与 `field_value，另一个与 `record_id匹配），则与 `record_id匹配的规则优先。<br><br>有条件要求：<br> - 如果 `table_name是 `feed_info，则**禁止**。<br> - 如果定义了“record_id”，则**禁止**。<br> - 如果 `record_id` 为空，则**必填**。| 
+|`record_sub_id| 外部 ID |**有条件必填**|当表t唯一 ID 时，帮助翻译包含该字段的记录。因此，`record_sub_id中的值是表的辅助 ID，如下表所定义：<br><br> - [agency.txt](#agencytxt) 无；<br> - [stops.txt](#stopstxt) 无；<br> - [routes.txt](#routestxt) 无；<br> - [trips.txt](#tripstxt) 无；<br> - `stop_sequence`用于 [stop_times.txt](#stop_timestxt)；<br> - [pathways.txt](#pathwaystxt) 无；<br> - [levels.txt](#levelstxt) 无；<br> - [attributions.txt](#attributionstxt) 无。<br><br>上面未定义的表中的字段不应翻译。但是，生产者有时会添加超出官方规范的额外字段，这些非官方字段可能会被翻译。以下是针对这些表使用 `record_sub_id` 的推荐方法：<br><br> - [calendar.txt](#calendartxt) 无；<br> - [calendar_dates.txt](#calendar_datestxt) 的 ` date `；<br> - [fare_attributes.txt](#fare_attributestxt) 无；<br> - [fare_rules.txt](#fare_rulestxt) 的`route_id` ；<br> - [shapes.txt](#shapestxt) 无；<br> - [frequencies.txt](#frequenciestxt) 的`start_time` ；<br> - [transfers.txt](#transferstxt) 的 ` to_stop_id `。<br><br>有条件要求：<br> - 如果 ` table_name是 `feed_info，则**禁止**。<br> - 如果定义了“field_value”，则**禁止**。<br> - 如果定义了 `table_name=stop_times` 和 `record_id`，则 **必填**。| 
+ | `field_value` |Text或URL或Email或Phone number| **有条件必填** | 除了使用 `record_id` 和 `record_sub_id` 来定义应该翻译哪条记录之外，此字段还可用于定义应翻译的值。使用时，当 `table_name` 和 `field_name` 标识的字段包含与field_value中定义的完全相同的值时，将应用翻译。<br><br>该字段必须具有 `field_value` 中定义的**完全**值。如果只有值的子集与 `field_value` 匹配，则t应用翻译。<br><br>如果两个翻译规则与同一条记录匹配（一个与 `field_value，另一个与 `record_id匹配），则与 `record_id匹配的规则优先。<br><br>有条件要求：<br> - 如果 `table_name是 `feed_info，则**禁止**。<br> - 如果定义了“record_id”，则**禁止**。<br> - 如果 `record_id` 为空，则**必填**。| 
  
 ### feed_info.txt 
  

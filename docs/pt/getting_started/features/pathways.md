@@ -17,7 +17,7 @@
  ? ?? observe "Dados de amostra" 
  
 <p style="font-size:16px"> 
- O exemplo a seguir define múltiplas conexões (também chamadas de pathways) entre locais pré-estabelecidos (definidos como stops): passarelas (`pathway_mode=1), escadas (`pathway_mode=2) e portão de passagem (`pathway_mode=6`). A bidirecionalidade também é especificada. 
+ O exemplo a seguir define múltiplas conexões (também chamadas de pathways) entre locais pré-estabelecidos (definidos como stops): passarelas (`pathway_mode=1), escadas (`pathway_mode=2) e portão de passagem (`pathway_mode=6). A bidirecionalidade também é especificada. 
 </p> 
 !!! observação "" 
 <p style="font-size:16px"> 
@@ -166,7 +166,7 @@
  
 ## Sinais de trânsito 
  
- Os sinais de trânsito podem unir as informações exibidas nos planejadores de viagem com sinais do mundo real. Se isso for representado em um feed, os planejadores de viagem podem fornecer instruções como ’siga as placas para’. 
+ Os sinais de trânsito podem unir as informações exibidas nos planejadores de viagem com sinais do mundo real. Se isso for representado em um feed, os planejadores de viagem poderão fornecer instruções como ’siga as placas para’. 
  
  | Arquivos incluídos | Campos incluídos | 
  |----------------------------------|------------------| 

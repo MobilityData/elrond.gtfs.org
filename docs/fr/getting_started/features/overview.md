@@ -1,6 +1,6 @@
 # Fonctionnalités du GTFS Schedule 
  
- À mesure que le format de référence GTFS évolue pour répondre aux besoins actuels des systèmes de transport en commun, ses fonctions peuvent devenir de plus en plus complexes. Les ** Fonctionnalités GTFS ** sont destinées à fournir une explication claire et définitive des fonctionnalités activées par le format de référence GTFS. Cela aide les agences de transport en commun, les vendeurs, les consommateurs et les chercheurs à comprendre les capacités de GTFS et à répondre à la question : **Que puis-je faire avec GTFS?** 
+ À mesure que le format de référence GTFS évolue pour répondre aux besoins actuels des systèmes de transport en commun, ses fonctions peuvent devenir de plus en plus complexes. Les **Fonctionnalités GTFS ** sont destinées à fournir une explication claire et définitive des fonctionnalités activées par le format de référence GTFS. Cela aide les agences de transport en commun, les vendeurs, les consommateurs et les chercheurs à comprendre les capacités de GTFS et à répondre à la question : **Que puis-je faire avec GTFS?** 
  
  Les groupes de fonctionnalités suivants expliquent l’objectif de chaque fonctionnalité ainsi que le les fichiers et les champs qui leur sont associés, aidant les utilisateurs à comprendre quelles données sont nécessaires pour prendre en charge une fonctionnalité spécifique. 
  

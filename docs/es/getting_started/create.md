@@ -23,7 +23,7 @@
  
  Un feed GTFS Realtime consiste en un archivo binario normal servido a través de HTTP y actualizado con frecuencia; cualquier tipo de servidor web puede alojar y servir el archivo. El formato de intercambio de datos GTFS Realtime se basa en [Protocol Buffers](https://developers.google.com/protocol-buffers/), un mecanismo neutral en cuanto a idioma y plataforma para serializar datos estructurados. GTFS Realtime puede proporcionar tres tipos de información: actualizaciones de viaje, alertas de servicio y posiciones del vehículo, estas se pueden combinar según la información de servicio que deba comunicarse. 
  
- Dado que GTFS Realtime permite presentar el estado real de una flota, el feed debe actualizarse periódicamente, preferiblemente cada vez que lleguen nuevos datos del sistema de localización automática de vehículos del servicio. Combinados, el conjunto de datos GTFS Schedule y un feed GTFS Realtime permiten que las aplicaciones de consumo proporcionen información precisa y actualizada a los pasajeros. Para más información consultar la Documentación Técnica. 
+ Dado que GTFS Realtime permite presentar el estado real de una flota, el feed debe actualizarse periódicamente, preferiblemente cada vez que lleguen nuevos datos desde el sistema de localización automática de vehículos del servicio. Combinados, el conjunto de datos GTFS Schedule y un feed GTFS Realtime permiten que las aplicaciones de consumo proporcionen información precisa y actualizada a los pasajeros. Para más información consultar la Documentación Técnica. 
  
 ## ¿Estás produciendo tu primer feed GTFS ? 
  

@@ -1,6 +1,6 @@
 # GTFS Schedule 
  
- Während sich das GTFS Referenzformat weiterentwickelt, um den aktuellen Anforderungen von Verkehrssystemen gerecht zu werden, können seine Funktionen zunehmend komplexer werden. Die ** GTFS Funktionen** sollen eine klare und eindeutige Erklärung der durch das GTFS Referenzformat ermöglichten Funktionen bieten. Auf diese Weise können Verkehrsbetriebe, Anbieter, Verbraucher und Forscher die Fähigkeiten von GTFS verstehen und die Frage beantworten: **Was kann ich mit GTFS tun?** 
+ Während sich das GTFS Referenzformat weiterentwickelt, um den aktuellen Anforderungen von Verkehrssystemen gerecht zu werden, können seine Funktionen zunehmend komplexer werden. Die **GTFS Funktionen** sollen eine klare und eindeutige Erklärung der durch das GTFS Referenzformat ermöglichten Funktionen bieten. Auf diese Weise können Verkehrsbetriebe, Anbieter, Verbraucher und Forscher die Fähigkeiten von GTFS verstehen und die Frage beantworten: **Was kann ich mit GTFS tun?** 
  
  Die folgenden Funktionsgruppen erläutern den Zweck jeder Funktion sowie die ihnen zugehörigen Dateien und Felder und helfen Benutzern zu verstehen, welche Daten zur Unterstützung einer bestimmten Funktion benötigt werden. 
  
@@ -116,7 +116,7 @@
  
  
 ## Barrierefreiheit 
- Barrierefreiheitsfunktionen bieten Menschen mit Behinderungen wichtige Informationen für den Zugriff auf den Dienst. 
+ Die Barrierefreiheitsfunktionen bieten Menschen mit Behinderungen wichtige Informationen für den Zugriff auf den Dienst. 
  
 <div class="grid cards" markdown> 
  

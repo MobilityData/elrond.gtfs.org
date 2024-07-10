@@ -41,7 +41,7 @@
  
 ## Media Tarif 
  
- Media Tarif mendefinisikan media yang didukung yang dapat digunakan untuk menyimpan dan/atau memvalidasi produk tarif. Hal ini mengacu pada wadah fisik atau virtual seperti tiket kertas, kartu transit yang dapat diisi ulang, atau bahkan pembayaran nirsentuh dengan kartu kredit atau ponsel cerdas. 
+ Media Tarif mendefinisikan media yang didukung yang dapat digunakan untuk menyimpan dan/atau memvalidasi produk tarif. Hal ini mengacu pada wadah fisik atau virtual seperti tiket kertas, kartu transit yang dapat diisi ulang, atau bahkan pembayaran nirsentuh dengan kartu kredit atau ponsel pintar. 
  
  | File disertakan | Bidang disertakan | 
  |----------------------------------|----------------------------------| 

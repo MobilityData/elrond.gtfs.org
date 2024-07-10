@@ -1,6 +1,6 @@
 # 基礎
  以下功能提供了GTFS代表傳輸服務所需的最基本和最重要的元素。 GTFS由routes組成，每條路線都有相關的行程。這些行程在特定時間會造訪一個或多個stops。行程僅包含一天中的時間信息，其運行日期由日曆決定。 
- 所有這些功能必須一起實作才能啟用GTFS來源。 
+ 所有這些功能必須一起實作才能實現有效的GTFS提要。 
  
 ## 機構 
  
@@ -86,7 +86,7 @@
  服務日期表示服務運作的日期範圍，以及創造服務豁免，例如假期和特定日期的其他特殊服務。 
  它的工作原理是在` .txt `中定義開始date和結束date，然後為其運行的一周中的每一天定義一個標記。如果在此期間發生單日計劃更改，則可以使用``calendar_dates.txt``檔案覆蓋這些天的計劃。 
 
-|包含文件 |包含的字段 | 
+|包含的文件 |包含的字段 | 
  |------------------------------------------------|--------------------| 
  |[calendar.txt](../../../documentation/schedule/reference/#calendartxt)|`service_id、`monday`、`tuesday`、`wednesday`、`thursday`、`friday`、`saturday`、`sunday`、 `start_date`、`end_date`| 
  |[calendar_dates.txt](../../../documentation/schedule/reference/#calendar_datestxt)|`service_id、`date、`exception_type| 
@@ -106,7 +106,7 @@
 </p> 
 
 |service_id |monday|tuesday|wednesday|thursday|friday|saturday|sunday|start_date|end_date| 
- |------------|--------|---------|------------|--- -------|--------|----------|--------|------------|----------| 
+ |------------|--------|---------|------------|----------|--------|----------|--------|------------|----------| 
  |我們| 0 | 0 | 0 | 0 | 0 | 1 | 1 | 20240701 | 20240731 | 
  |西數 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 20240701 | 20240731 | 
 
@@ -165,7 +165,7 @@
 <p style="font-size:16px"> 
  以下範例定義了 5 個stops的行程時間表。 
 </p> 
-!!!筆記 ”” 
+！筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a><br> 
 </p> 

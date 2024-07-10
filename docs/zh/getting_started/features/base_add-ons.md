@@ -303,8 +303,8 @@
  |------------|-----------------|----------|------------------------------------------------------------------|---------------|---------------|-------------| 
  |routes|route_long_name| ES | 米申 - 市中心 | RA | | | 
  |routes|route_long_name| FR | 米申 - 市中心 | RA | | | 
- |routes|route_desc| ES | 从 Lower Mission 出发的“A”路线到市中心 | RA | | | 
- |routes|route_desc| FR | 从 Lower Mission 出发的“A”路线到市中心。 | RA | | | 
+ |routes|route_desc| ES | 从 Lower Mission 出发的“A”路线到达市中心 | RA | | | 
+ |routes|route_desc| FR | 从 Lower Mission 出发的“A”路线到达市中心。 | RA | | | 
  
 ## 归因 
  

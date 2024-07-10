@@ -183,7 +183,7 @@
  | File disertakan | Bidang disertakan | 
  |----------------------------------|----------------------------------| 
  |[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`| 
- |[locations.geojson](../../../documentation/schedule/reference/#locationsgeojson)|`Jenis`, `Fitur`, `Fitur:Jenis`, `Fitur:Id`, `Fitur :Properti`, `Fitur:Properti:Stop_name`, `Fitur:Properti:Stop_description`, `Fitur:Geometri`, `Fitur:Geometri:Jenis`, `Fitur:Geometri:Koordinat` | 
+ |[locations.geojson](../../../documentation/schedule/reference/#locationsgeojson)|`Jenis`, `Fitur`, `Fitur:Jenis`, `Fitur:Id`, `Fitur :Properties`, `Fitur:Properti:Stop_name`, `Fitur:Properti:Stop_description`, `Fitur:Geometri`, `Fitur:Geometri:Jenis`, `Fitur:Geometri:Koordinat` | 
  
  **Prasyarat**: 
  

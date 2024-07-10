@@ -125,7 +125,7 @@
  A_shp,37.65863,-122.30839,3, 15.8765 
  ``` 
  
-  frequencies.txt 
+## frequencies.txt 
  
  ``` 
  trip_id, start_time, end_time, headway_secs 
@@ -193,8 +193,8 @@
  
  ``` 
  attribution_id, is_producer, is_operator, organization_name, agency_id 
- attribution001,1,0,Transit Feed Solutions USA,agency001 
- attribution002,0,1,Transit Bus Operations USA,agency001 
+ atribusi001,1,0,Transit Feed Solutions AS,agency001 
+ atribusi002,0,1,Transit Bus Operations AS,agency001 
  [...] 
  ```
 

@@ -17,7 +17,7 @@
  ? ?? nota "Datos de muestra" 
  
 <p style="font-size:16px"> 
- El siguiente ejemplo define múltiples conexiones (también denominadas pathways) entre ubicaciones preestablecidas (definidas como stops): pasarelas (`pathway_mode=1`), escaleras (`pathway_mode=2`) y puerta de entrada (`pathway_mode=6`). También se especifica la bidireccionalidad. 
+ El siguiente ejemplo define múltiples conexiones (también denominadas pathways) entre ubicaciones preestablecidas (definidas como stops): pasarelas (`pathway_mode=1`), escaleras (`pathway_mode=2`) y puerta de entrada (`pathway_mode=6). También se especifica la bidireccionalidad. 
 </p> 
  !!! nota "" 
 <p style="font-size:16px"> 
@@ -197,7 +197,7 @@
  | MainSt-006 | | | 
  | MainSt-007 | Trenes en dirección este | Salir | 
  | MainSt-008 | | | 
- | MainSt-009 | Trenes en dirección oeste | Al lobby | 
+ | MainSt-009 | Trenes en dirección oeste | Al vestíbulo | 
  | MainSt-010 | Trenes en dirección este | Al vestíbulo | 
  
  

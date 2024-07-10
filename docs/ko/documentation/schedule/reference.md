@@ -76,19 +76,19 @@
  - **통화 코드** - ISO 4217 알파벳 currency 코드입니다. 현재 currency 목록은 [https://en.wikipedia.org/wiki/ISO_4217#Active\_codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)를 참조하세요.<br> *예: 캐나다 달러의 경우 `CAD`, 유로의 경우 `EUR`, 일본 엔의 경우 `JPY`.* 
  - **통화 amount** - currency amount 나타내는 소수 값입니다. 함께 제공되는 통화 코드에 대한 소수 자릿수는 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)에 의해 지정됩니다. 모든 재무 계산은 데이터를 소비하는 데 사용되는 프로그래밍 언어에 따라 소수, currency 또는 재무 계산에 적합한 다른 동등한 유형으로 처리되어야 합니다. 계산 중 금전적 이익이나 손실로 인해 통화 currency 을 float 으로 처리하는 것은 권장되지 않습니다. 
  - **날짜** - YYYYMMDD 형식의 서비스 날짜입니다. 서비스 날짜 내의 시간이 24:00:00를 초과할 수 있으므로 서비스 날짜에는 다음 날짜에 대한 정보가 포함될 수 있습니다.<br> *예: 2018년 9월 13일의 ’20180913’.* 
- - ** Email** - 이메일 주소입니다.<br> *예: `example@example.com`* 
+ - **Email** - 이메일 주소입니다.<br> *예: `example@example.com`* 
  - **Enum** - "설명" 열에 정의된 사전 정의된 상수 세트의 옵션입니다.<br> *예: `route_type 필드에는 트램의 경우 `0`, 지하철의 경우 `1` 포함됩니다...* 
  - **ID** - ID 필드 값은 내부 ID이며 표시할 의도가 없습니다. riders이며 UTF-8 문자의 시퀀스입니다. 인쇄 가능한 ASCII 문자만 사용하는 것이 좋습니다. ID는 파일 내에서 고유해야 하는 경우 "고유 ID"로 표시됩니다. 하나의 .txt 파일에 정의된 ID는 다른 .txt 파일에서 참조되는 경우가 많습니다. 다른 테이블의 ID를 참조하는 ID에는 "외부 ID"라는 라벨이 붙습니다.<br> *예: [stops.txt](#stopstxt)의 `stop_id` 필드는 "고유 ID"입니다. [stops.txt](#stopstxt)의 ` parent_station ` 필드는 ` stops.stop_id 를 참조하는 "외부 ID"입니다.* 
  - **언어 코드** - IETF BCP 47 언어 코드입니다. IETF BCP 47에 대한 소개는 [http://www.rfc-editor.org/rfc/bcp/bcp47 .txt](http://www.rfc-editor.org/rfc/bcp/bcp47 )를 참조하세요 .txt) 및 [http://www.w3.org/International/articles/](http://www.w3.org/International/articles/언어-tags/).<br> *예: 영어의 경우 `en`, 미국 영어의 경우 `en-US`, 독일어의 경우 `de`.* 
  - **위도** - WGS84 latitude (십진수 도)입니다. 값은 -90.0보다 크거나 같고 90.0보다 작거나 같아야 합니다. *<br> 예: 로마 콜로세움의 경우 `41.890169`.* 
  - **경도** - 소수점 단위의 WGS84 longitude 입니다. 값은 -180.0보다 크거나 같고 180.0보다 작거나 같아야 합니다.<br> *예: 로마 콜로세움의 경우 `12.492269`.* 
- - ** Float** - 부동 소수점 숫자입니다. 
+ - **Float** - 부동 소수점 숫자입니다. 
  - **정수** - 정수입니다. 
- - ** Phone number** - 전화번호. 
+ - **Phone number** - 전화번호. 
  - **시간** - HH:MM:SS 형식의 시간입니다(H:MM:SS도 허용됨). 시간은 서비스일의 "정오 - 12시"부터 측정됩니다(일광 절약 시간이 변경되는 날을 제외하고 사실상 자정). 운행일 자정 이후의 시간은 HH:MM:SS 형식으로 24:00:00보다 큰 값으로 입력합니다.<br> *예: 오후 2시 30분은 ’14:30:00’, 다음날 오전 1시 35분은 ’25:35:00’.* 
- - ** Text** - UTF-8 문자로 구성된 string 입니다. 표시되는 것이 목적이므로 사람이 읽을 수 있어야 합니다. 
+ - **Text** - UTF-8 문자로 구성된 string 입니다. 표시되는 것이 목적이므로 사람이 읽을 수 있어야 합니다. 
  - **시간대** - [https://www.iana.org/time-zones](https://www.iana.org/time-zones)의 TZ 시간대입니다. 시간대 이름에는 공백 문자가 포함되지 않지만 밑줄은 포함될 수 있습니다. 유효한 값 목록은 [http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones)를 참조하세요..<br> *예: `Asia/Tokyo`, `America/Los_Angeles` 또는 `Africa/Cairo`.* 
- - ** URL** - http://또는 https://및 특수 문자를 포함하는 정규화된 URL URL 의 문자는 올바르게 이스케이프되어야 합니다. 자세한 내용은 다음 [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html)을 참조하세요. 정규화된 URL 값을 만드는 방법에 대한 설명입니다. 
+ - **URL** - http://또는 https://및 특수 문자를 포함하는 정규화된 URL URL 의 문자는 올바르게 이스케이프되어야 합니다. 자세한 내용은 다음 [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html)을 참조하세요. 정규화된 URL 값을 만드는 방법에 대한 설명입니다. 
  
 ### 필드 기호 
  Float 또는 정수 필드 유형에 적용 가능한 기호: 
@@ -183,11 +183,11 @@
  
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
- | `agency_id| 고유 ID | **조건부 필수** | 대중교통 agency 과 동의어인 경우가 많은 대중교통 브랜드를 식별합니다. 단일 agency 여러 개의 별도 서비스를 운영하는 경우와 같이 대행사와 브랜드가 구별되는 경우도 있습니다. 본 문서에서는 ’브랜드’ 대신 ’ agency’라는 용어를 사용합니다. 데이터 세트에는 여러 기관의 데이터가 포함될 수 있습니다.<br><br> 조건부 필수:<br> - 데이터세트에 여러 대중교통 기관의 데이터가 포함된 경우 **필수**입니다.<br> - 그렇지 않은 경우 권장됩니다. | 
+ | `agency_id| 고유 ID | **조건부 필수** | 대중교통 agency 과 동의어인 경우가 많은 대중교통 브랜드를 식별합니다. 단일 agency 여러 개의 별도 서비스를 운영하는 경우와 같이 대행사와 브랜드가 구별되는 경우도 있습니다. 본 문서에서는 ’브랜드’ 대신 ’ agency’라는 용어를 사용합니다. 데이터 세트에는 여러 기관의 데이터가 포함될 수 있습니다.<br><br> 조건부 필수:<br> - 데이터세트에 여러 대중교통 기관에 대한 데이터가 포함된 경우 **필수**입니다.<br> - 그렇지 않은 경우 권장됩니다. | 
  | `agency_name` | Text | **필수** | 대중교통 agency 의 전체 이름입니다. | 
  | `agency_url| URL | **필수** | 대중교통 agency 의 URL. | 
  | ` agency_timezone` | 시간대 | **필수** | 대중교통 agency 위치한 시간대입니다. 데이터세트에 여러 대행사가 지정된 경우 각 대행사는 동일한 ’ agency_timezone’을 가져야 합니다. | 
- | `agency_lang` | 언어 코드 | 선택사항 | 이 대중교통 agency 에서 사용하는 기본 언어입니다. GTFS 소비자가 데이터 세트의 대문자 사용 규칙 및 기타 언어별 설정을 선택하는 데 도움이 되도록 제공되어야 합니다. | 
+ | `agency_lang` | 언어 코드 | 선택사항 | 이 대중교통 agency 에서 사용하는 기본 언어입니다. GTFS 소비자가 데이터 세트에 대한 대문자 사용 규칙 및 기타 언어별 설정을 선택하는 데 도움이 되도록 제공되어야 합니다. | 
  | `agency_phone` | Phone number | 선택사항 | 특정 agency 의 음성 전화번호입니다. 이 필드는 해당 기관의 서비스 지역에 대한 일반적인 전화번호를 나타내는 string 값입니다. 숫자의 숫자를 그룹화하기 위해 구두점을 포함할 수 있습니다. 전화를 걸 수 있는 텍스트(예: TriMet의 "503-238-RIDE")는 허용되지만 필드에는 다른 설명 텍스트가 포함되어서는 안 됩니다. | 
  | `agency_fare_url| URL | 선택사항 | 승객이 해당 agency 의 티켓이나 기타 요금 수단을 온라인으로 구매할 수 있는 웹페이지의 URL. | 
  | ` agency_email` | Email | 선택사항 | 대행사의 고객 서비스 부서에서 적극적으로 모니터링하는 Email 주소입니다. 이 이메일 주소는 대중교통 탑승자가 agency 의 고객 서비스 담당자에게 연락할 수 있는 직접적인 연락 지점이어야 합니다. | 
@@ -228,17 +228,17 @@ lat` | 위도 | **조건부 필수** | 위치의 위도입니다.<br><br> stops/
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
  | `route_id` | 고유 ID | **필수** | 경로를 식별합니다. | 
- | `agency_id` | `agency.agency_id 를 참조하는 외부 ID | **조건부 필수** | 지정된 경로에 대한 기관입니다.<br><br> 조건부 필수:<br> - [agency.txt](#agencytxt)에 여러 대행사가 정의된 경우 **필수**입니다.<br> - 그렇지 않은 경우 권장됩니다. | 
+ | `agency_id| `agency.agency_id 를 참조하는 외부 ID | **조건부 필수** | 지정된 경로에 대한 기관입니다.<br><br> 조건부 필수:<br> - [agency.txt](#agencytxt)에 여러 대행사가 정의된 경우 **필수**입니다.<br> - 그렇지 않은 경우 권장됩니다. | 
  | `route_short_name` | Text | **조건부 필수** | 경로의 짧은 이름입니다. 라이더가 경로를 식별하는 데 사용하는 짧고 추상적인 식별자(예: "32", "100X", "Green")인 경우가 많습니다. `route_short_name 과 `route_long_name 을 모두 정의할 수 있습니다.<br><br> 조건부 필수:<br> - `routes.route_long_name`이 비어 있는 경우 **필수**입니다.<br> - 간략한 서비스 지정이 있는 경우 추천합니다. 이는 일반적으로 알려진 승객 이름이어야 하며 12자를 초과할 수 없습니다. | 
  | `route_long_name` | Text | **조건부 필수** | 경로의 전체 이름입니다. 이 이름은 일반적으로 `route_short_name 보다 더 설명적이며 경로의 목적지나 정류장을 포함하는 경우가 많습니다. `route_short_name 과 `route_long_name 을 모두 정의할 수 있습니다.<br><br> 조건부 필수:<br> - `routes.route_short_name`이 비어 있는 경우 **필수**입니다.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `route_desc` | Text | 선택사항 | 유용하고 수준 높은 정보를 제공하는 경로에 대한 설명입니다. `route_short_name 또는 `route_long_name 과 중복되어서는 안 됩니다.<hr> _예: "A" 열차는 맨해튼의 Inwood-207 St와 Queens의 Far Rockaway-Mott Avenue 사이를 항상 운행합니다. 또한 오전 6시부터 자정까지 추가 "A" 열차가 Inwood-207 St와 Lefferts Boulevard 사이를 운행합니다(열차는 일반적으로 Lefferts Blvd와 Far Rockaway를 번갈아 운행합니다)._ | 
  | `route_type` | 열거형 | **필수** | 경로에서 사용되는 교통수단의 유형을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> `0` - 트램, 전차, 경전철. 대도시 지역 내의 모든 경전철 또는 거리 수준 시스템.<br> `1` - 지하철, 지하철. 대도시 지역 내의 모든 지하철 시스템.<br> `2` - 레일. 도시 간 또는 장거리 여행에 사용됩니다.<br> `3` - 버스. 단거리 및 장거리 버스 routes 에 사용됩니다.<br> `4` - 페리. 단거리 및 장거리 보트 서비스에 사용됩니다.<br> `5` - 케이블 트램. 케이블이 vehicle 아래로 연결되는 거리 수준의 철도 차량에 사용됩니다(예: 샌프란시스코의 케이블카).<br> `6` - 공중 리프트, 매달린 케이블카(예: 곤돌라 리프트, 공중 트램웨이). 캐빈, 자동차, 곤돌라 또는 개방형 의자가 하나 이상의 케이블에 매달려 있는 케이블 운송입니다.<br> `7` - 케이블카. 가파른 경사를 위해 설계된 모든 레일 시스템.<br> `11` - 무궤도 전차. 기둥을 이용해 가공선에서 전력을 끌어오는 전기버스.<br> `12` - 모노레일. 선로가 단일 레일 또는 빔으로 구성된 철도입니다. | 
- | `route_url` | URL | 선택사항 | 특정 경로에 대한 웹페이지의 URL. `agency.agency_url 값과 달라야 합니다. | 
+ | `route_url| URL | 선택사항 | 특정 경로에 대한 웹페이지의 URL. `agency.agency_url 값과 달라야 합니다. | 
  | `route_color` | 색상 | 선택사항 | 대중을 위한 자료와 일치하는 경로 색상 지정. 생략하거나 비워두면 기본값은 흰색(`FFFFFF)입니다. `route_color 와 `route_text_color 의 색상 차이는 흑백 화면에서 볼 때 충분한 대비를 제공해야 합니다. | 
  | `route_text_color` | 색상 | 선택사항 | `route_color 배경에 그려진 텍스트에 사용할 읽기 쉬운 색상입니다. 생략하거나 비워두면 기본값은 검정색(`000000`)입니다. `route_color 와 `route_text_color 의 색상 차이는 흑백 화면에서 볼 때 충분한 대비를 제공해야 합니다. | 
  | `route_sort_order` | 음수가 아닌 정수 | 선택사항 | 고객에게 제시하기에 이상적인 방식으로 routes 주문합니다. `route_sort_order 값이 더 작은 경로가 먼저 표시되어야 합니다. | 
  | `continuous_pickup ` | 열거형 | **조건부 금지** | 경로의 모든 이동 시 [shapes.txt](#shapestxt)에 설명된 대로 승객이 차량 이동 경로를 따라 어느 지점에서든 대중교통 vehicle 에 탑승할 수 있음을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 연속 정지 픽업.<br> ’`1`’ 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `2` - 지속적인 정차 픽업을 예약하려면 agency 전화해야 합니다.<br> `3` - 운전자와 협의하여 연속 정차 픽업을 준비해야 합니다.<br><br> 경로를 따라 특정 ` stop_time `에 대해 ` stop_times.continuous_pickup `에 값을 정의하여 ` routes.continuous_pickup 값을 재정의할 수 있습니다.<br><br> **조건부 금지**:<br> - ` stop_times.start_pickup_drop_off_window` 또는 `stop_times.end_pickup_drop_off_window 는 이 경로의 모든 이동에 대해 정의됩니다.<br> - 그렇지 않은 경우 선택 사항입니다. | 
- | `continuous_drop_off ` | 열거형 | **조건부 금지** | [shapes.txt](#shapestxt)에 설명된 대로 경로의 모든 이동에서 승객이 차량 이동 경로를 따라 어느 지점에서나 대중교통 vehicle 에서 내릴 수 있음을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 연속 정지 하차.<br> ’`1`’ 또는 비어 있음 - 연속 정지 하차가 없습니다.<br> `2` - 지속적인 정차를 위해 agency 에 전화해야 합니다.<br> `3` - 운전자와 협력하여 지속적인 정차를 준비해야 합니다.<br><br> 경로를 따라 특정 ` stop_time `에 대해 ` stop_times.continuous_drop_off `에 값을 정의하여 ` routes.continuous_drop_off ` 값을 재정의할 수 있습니다.<br><br> **조건부 금지**:<br> - ` stop_times.start_pickup_drop_off_window` 또는 `stop_times.end_pickup_drop_off_window 는 이 경로의 모든 이동에 대해 정의됩니다.<br> - 그렇지 않은 경우 선택 사항입니다. | 
+ | `continuous_drop_off ` | 열거형 | **조건부 금지** | [shapes.txt](#shapestxt)에 설명된 대로 경로의 모든 이동에서 승객이 차량 이동 경로를 따라 어느 지점에서나 대중교통 vehicle 에서 내릴 수 있음을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 연속 정지 하차.<br> ’`1`’ 또는 비어 있음 - 연속 정지 하차가 없습니다.<br> `2` - 지속적인 정차를 위해 agency 에 전화해야 합니다.<br> `3` - 운전자와 협력하여 지속적인 정차 하차를 준비해야 합니다.<br><br> 경로를 따라 특정 ` stop_time `에 대해 ` stop_times.continuous_drop_off `에 값을 정의하여 ` routes.continuous_drop_off ` 값을 재정의할 수 있습니다.<br><br> **조건부 금지**:<br> - ` stop_times.start_pickup_drop_off_window` 또는 `stop_times.end_pickup_drop_off_window 는 이 경로의 모든 이동에 대해 정의됩니다.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `network_id` | 아이디 | **조건부 금지** | routes 그룹을 식별합니다. [routes.txt](#routestxt)의 여러 행은 동일한 `network_id`를 가질 수 있습니다.<br><br> 조건부 금지:<br> - [route_networks.txt](#route_networkstxt) 파일이 존재하는 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. 
  
 ### trips.txt 
@@ -274,7 +274,7 @@ lat` | 위도 | **조건부 필수** | 위치의 위도입니다.<br><br> stops/
  
  위 표에 대한 참고사항: 
  
- * 예를 들어 금요일부터 토요일 오전까지 vehicle 한 대가 `trip_1`, `trip_2`, `trip_3`(오후 10시부터 오전 12시 55분까지)을 운행합니다.. 마지막 운행은 토요일 오전 12시부터 12시 55분까지 이루어지지만 시간이 24:00:00부터 24:55:00이므로 금요일 "서비스일"에 포함됩니다. 
+ * 예를 들어 금요일부터 토요일 오전까지 vehicle 한 대가 `trip_1`, `trip_2`, `trip_3`(오후 10시부터 오전 12시 55분까지)을 운행합니다..마지막 운행은 토요일 오전 12시부터 12시 55분까지 이루어지지만 시간이 24:00:00부터 24:55:00이므로 금요일 "서비스일"에 포함됩니다. 
  * 월요일, 화요일, 수요일, 목요일에는 오후 8시부터 오후 10시 55분까지 vehicle 1대가 `trip_1, `trip_4, `trip_5 를 블록으로 운행합니다. 
  
 ### stop_times.txt 
@@ -288,19 +288,19 @@ lat` | 위도 | **조건부 필수** | 위치의 위도입니다.<br><br> stops/
  | `trip_id` | ’`trips.trip_id` 참조하는 외국인 ID | **필수** | 여행을 식별합니다. | 
  | `arrival_time ` | 시간 | **조건부 필수** | ` stops.stop_timezone 이 아닌 ` agency.agency_timezone 으로 지정된 시간대의 특정 이동(` stop_times.stop_id 로 정의)에 대한 정류장(`stop_times.trip_id 로 정의)에 도착하는 시간입니다.<br><br> 정류장 arrival 과 departure 시간이 따로 있지 않은 경우 `arrival_time`과 `departure_time` 은 동일해야 합니다.<br><br> 운행일 자정 이후의 시간은 HH:MM:SS 형식으로 24:00:00보다 큰 값으로 입력합니다.<br><br> 정확한 arrival 및 departure 시간(`timepoint=1` 또는 비어 있음)을 사용할 수 없는 경우 예상 또는 보간된 arrival 및 departure 시간(`timepoint=0`)을 제공해야 합니다.<br><br> 조건부 필수:<br> - 이동의 첫 번째 및 마지막 정류장에 **필수**입니다(`stop_times.stop_sequence`로 정의됨).<br> - `timepoint=1`의 경우 **필수**입니다.<br> - `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그 외에는 선택사항입니다.| 
  | `departure_time` ` | 시간 | **조건부 필수** | ` stops.stop_timezone 이 아닌 ` agency.agency_timezone 에 의해 지정된 시간대에서 특정 이동(` stop_times.stop_id 로 정의됨)에 대한 정류장(`stop_times.trip_id 로 정의됨)에서 출발 시간입니다.<br><br> 정류장 arrival 과 departure 시간이 따로 있지 않은 경우 `arrival_time`과 `departure_time` 은 동일해야 합니다.<br><br> 운행일 자정 이후의 시간은 HH:MM:SS 형식으로 24:00:00보다 큰 값으로 입력합니다.<br><br> 정확한 arrival 및 departure 시간(`timepoint=1` 또는 비어 있음)을 사용할 수 없는 경우 예상 또는 보간된 arrival 및 departure 시간(`timepoint=0`)을 제공해야 합니다.<br><br> 조건부 필수:<br> - `timepoint=1`의 경우 **필수**입니다.<br> - `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
- | `stop_id` | `stops.stop_id 를 참조하는 외부 ID | **조건부 필수** | 서비스가 제공되는 정류장을 식별합니다. 이동 중에 서비스되는 모든 stops [stop_times.txt](#stop_timestxt)에 기록이 있어야 합니다. 참조된 위치는 stops/플랫폼이어야 합니다. 즉, ’ stops.location_type’ 값은 ’0’이거나 비어 있어야 합니다. 한 정류장은 동일한 이동 내에서 여러 번 서비스될 수 있으며, 여러 이동 및 routes 동일한 정류장을 서비스할 수 있습니다.<br><br> stops 이용한 주문형 서비스는 해당 stops 에서 서비스를 이용할 수 있는 순서대로 참조되어야 합니다. 데이터 소비자는 각 stop_time 의 `pickup/drop_off_type 과 각 `start/end_pickup_drop_off_window 의 시간 제약이 이를 금지하지 않는 한, 여행 후반에 한 정거장이나 위치에서 다른 정류장이나 위치로 여행이 가능하다고 가정해야 합니다..<br><br> 조건부 필수:<br> - `stop_times.location_group_id` 및 `stop_times.location_id`가 정의되지 않은 경우 **필수**입니다.<br> - `stop_times.location_group_id` 또는 `stop_times.location_id`가 정의된 경우 **금지됨**. | 
+ | `stop_id` | `stops.stop_id 를 참조하는 외부 ID | **조건부 필수** | 서비스가 제공되는 정류장을 식별합니다. 이동 중에 서비스되는 모든 stops [stop_times.txt](#stop_timestxt)에 기록이 있어야 합니다. 참조된 위치는 stops/플랫폼이어야 합니다. 즉, ’ stops.location_type’ 값은 ’0’이거나 비어 있어야 합니다. 동일한 이동에서 한 정류장이 여러 번 서비스될 수 있으며, 여러 이동 및 routes 동일한 정류장을 서비스할 수 있습니다.<br><br> stops 이용한 주문형 서비스는 해당 stops 에서 서비스를 이용할 수 있는 순서대로 참조되어야 합니다. 데이터 소비자는 각 stop_time 의 `pickup/drop_off_type 과 각 `start/end_pickup_drop_off_window 의 시간 제약이 이를 금지하지 않는 한, 여행 후반에 한 정거장이나 위치에서 다른 정류장이나 위치로 여행이 가능하다고 가정해야 합니다..<br><br> 조건부 필수:<br> - `stop_times.location_group_id` 및 `stop_times.location_id`가 정의되지 않은 경우 **필수**입니다.<br> - `stop_times.location_group_id` 또는 `stop_times.location_id`가 정의된 경우 **금지됨**. | 
  | `위치_그룹_ID` | ’location_groups.location_group_id’를 참조하는 외부 ID | **조건부 금지** | 승객이 픽업 또는 하차를 요청할 수 있는 stops 그룹을 나타내는 서비스 위치 그룹을 식별합니다. 이동 중에 서비스되는 모든 위치 그룹은 [stop_times.txt](#stop_timestxt)에 기록이 있어야 합니다. 여러 이동 및 routes 동일한 위치 그룹을 서비스할 수 있습니다.<br><br> 위치 그룹을 이용한 온디맨드 서비스는 해당 위치 그룹에서 서비스가 가능한 순서대로 참조되어야 합니다. 데이터 소비자는 각 stop_time 의 `pickup/drop_off_type 과 각 `start/end_pickup_drop_off_window 의 시간 제약이 이를 금지하지 않는 한, 여행 후반에 한 정거장이나 위치에서 다른 정류장이나 위치로 여행이 가능하다고 가정해야 합니다..<br><br> **조건부 금지**:<br> - `stop_times.stop_id 또는 `stop_times.location_id`가 정의된 경우 **금지됨**. | 
  | `위치_ID` | `locations.geojson` 에서 `id` 참조하는 외부 ID | **조건부 금지** | 승객이 픽업 또는 하차를 요청할 수 있는 서비스 구역에 해당하는 GeoJSON 위치를 식별합니다. 여행 중에 서비스되는 모든 GeoJSON 위치는 [stop_times.txt](#stop_timestxt)에 기록이 있어야 합니다. 여러 여행과 routes 동일한 GeoJSON 위치를 서비스할 수 있습니다.<br><br> 위치 내의 주문형 서비스는 해당 위치에서 서비스가 제공되는 순서대로 참조되어야 합니다. 데이터 소비자는 각 stop_time 의 `pickup/drop_off_type 과 각 `start/end_pickup_drop_off_window 의 시간 제약이 이를 금지하지 않는 한, 여행 후반에 한 정거장이나 위치에서 다른 정류장이나 위치로 여행이 가능하다고 가정해야 합니다..<br><br> **조건부 금지**:<br> - `stop_times.stop_id 또는 `stop_times.location_group_id`가 정의된 경우 **금지됨**. | 
  | `stop_sequence` | 음수가 아닌 정수 | **필수** | 특정 여행에 대한 stops, 위치 그룹 또는 GeoJSON 위치의 순서입니다. 값은 이동 중에 증가해야 하지만 연속적일 필요는 없습니다.<hr> *예: 이동의 첫 번째 위치는 `stop_sequence`= `1` 일 수 있고, 이동의 두 번째 위치는 `stop_sequence`=`23`일 수 있으며, 세 번째 위치는 `stop_sequence`=`40`일 수 있습니다., 등등.*<br><br> 동일한 위치 그룹 또는 GeoJSON 위치 내에서 여행하려면 [stop_times.txt](#stop_timestxt)에 동일한 `location_group_id` 또는 `location_id`가 있는 두 개의 레코드가 필요합니다. | 
  | `stop_headsign| Text | 선택사항 | 승객에게 여행 목적지를 알려주는 표지판에 표시되는 Text 입니다. 이 필드는 stops 사이에 행선지가 변경될 때 기본 ` trips.trip_headsign 재정의합니다. 행선지가 전체 여행에 대해 표시되는 경우 ` trips.trip_headsign 을 대신 사용해야 합니다.<br><br> 하나의 ` stop_time `에 지정된 ` stop_headsign ` 값은 동일한 이동의 후속 ` stop_time `에 적용되지 않습니다. 동일한 이동에서 여러 ` stop_time `에 대해 ` trip_headsign `을 재정의하려면 각 ` stop_time ` 행에서 ` stop_headsign` 값을 repeated 해야 합니다. | 
  | `start_pickup_drop_off_window` | 시간 | **조건부 필수** | GeoJSON 위치, 위치 그룹 또는 정류장에서 주문형 서비스를 사용할 수 있게 된 시간입니다.<br><br> **조건부 필수**:<br> - `stop_times.location_group_id` 또는 `stop_times.location_id`가 정의된 경우 **필수**입니다.<br> - `end_pickup_drop_off_window` 정의된 경우 **필수**입니다.<br> - `arrival_time` 또는 `departure_time` 정의된 경우 **금지**입니다.<br> - 그렇지 않은 경우 선택 사항입니다. | 
- | `end_pickup_drop_off_window` | 시간 | **조건부 필수** | 주문형 서비스가 GeoJSON 위치, 위치 그룹 또는 정류장에서 종료되는 시간입니다.<br><br> **조건부 필수**:<br> - `stop_times.location_group_id` 또는 `stop_times.location_id`가 정의된 경우 **필수**입니다.<br> - `start_pickup_drop_off_window` 정의된 경우 **필수**입니다.<br> - `arrival_time` 또는 `departure_time` 정의된 경우 **금지**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
+ | `end_pickup_drop_off_window` | 시간 | **조건부 필수** | 주문형 서비스가 GeoJSON 위치, 위치 그룹 또는 정류장에서 종료되는 시간입니다.<br><br> **조건부 필수**:<br> - `stop_times.location_group_id` 또는 `stop_times.location_id`가 정의된 경우 **필수**입니다.<br> - `start_pickup_drop_off_window` 정의된 경우 **필수**입니다.<br> - `arrival_time` 또는 `departure_time` 정의된 경우 **금지**입니다.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `pickup_type` | 열거형 | **조건부 금지** | 픽업 방법을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ 또는 비어 있음 - 정기적으로 예약된 픽업입니다.<br> `1` - 픽업이 불가능합니다.<br> `2` - 픽업을 준비하려면 agency 전화해야 합니다.<br> `3` - 픽업을 준비하려면 운전자와 조율해야 합니다.<br><br> **조건부 금지**:<br> - `pickup_type=0` `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - `pickup_type=3` `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `drop_off_type` | 열거형 | **조건부 금지** | 하차 방법을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ 또는 비어 있음 - 정기적으로 예정된 하차입니다.<br> `1` - 하차가 불가능합니다.<br> `2` - 하차를 준비하려면 agency 전화해야 합니다.<br> `3` - 하차 준비를 위해 운전자와 조율해야 합니다.<br><br> **조건부 금지**:<br> - `drop_off_type=0` `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `continuous_pickup ` | 열거형 | **조건부 금지** | 승객이 [shapes.txt](#shapestxt)에 설명된 대로 차량 이동 경로를 따라 이동의 `stop_sequence` 에서 이 ` stop_time`부터 다음 `stop_time `까지 대중교통 vehicle 에 탑승할 수 있음을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 연속 정지 픽업.
 
 br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `2` - 지속적인 정차 픽업을 예약하려면 agency 전화해야 합니다.<br> `3` - 운전자와 협의하여 연속 정차 픽업을 준비해야 합니다.<br><br> 이 필드가 채워지면 [routes.txt](#routestxt)에 정의된 연속 픽업 동작을 재정의합니다. 이 필드가 비어 있으면 `stop_time`은 [routes.txt](#routestxt)에 정의된 연속 승차 동작을 상속합니다.<br><br> **조건부 금지**:<br> - `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
- | `continuous_drop_off ` | 열거형 | **조건부 금지** | 승객이 [shapes.txt](#shapestxt)에 설명된 대로 차량 이동 경로를 따라 이동의 `stop_sequence` 에서 이 ` stop_time`부터 다음 `stop_time `까지 대중교통 vehicle 에서 내릴 수 있음을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 연속 정지 하차.<br> ’`1`’ 또는 비어 있음 - 연속 정지 하차가 없습니다.<br> `2` - 지속적인 정차를 위해 agency 에 전화해야 합니다.<br> `3` - 운전자와 협력하여 지속적인 정차를 준비해야 합니다.<br><br> 이 필드가 채워지면 [routes.txt](#routestxt)에 정의된 모든 지속적인 하차 동작을 재정의합니다. 이 필드가 비어 있으면 `stop_time`은 [routes.txt](#routestxt)에 정의된 연속 하차 동작을 상속합니다.<br><br> **조건부 금지**:<br> - `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
+ | `continuous_drop_off ` | 열거형 | **조건부 금지** | 승객이 [shapes.txt](#shapestxt)에 설명된 대로 차량 이동 경로를 따라 이동의 `stop_sequence` 에서 이 ` stop_time`부터 다음 `stop_time `까지 대중교통 vehicle 에서 내릴 수 있음을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 연속 정지 하차.<br> ’`1`’ 또는 비어 있음 - 연속 정지 하차가 없습니다.<br> `2` - 지속적인 정차를 위해 agency 에 전화해야 합니다.<br> `3` - 운전자와 협력하여 지속적인 정차 하차를 준비해야 합니다.<br><br> 이 필드가 채워지면 [routes.txt](#routestxt)에 정의된 모든 지속적인 하차 동작을 재정의합니다. 이 필드가 비어 있으면 `stop_time`은 [routes.txt](#routestxt)에 정의된 연속 하차 동작을 상속합니다.<br><br> **조건부 금지**:<br> - `start_pickup_drop_off_window` 또는 `end_pickup_drop_off_window` 가 정의된 경우 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `shape_dist_traveled` | 음수가 아닌 float 소수점 | 선택사항 | 첫 번째 정류장에서 이 기록에 지정된 정류장까지 관련 shape 따라 이동한 실제 거리입니다. 이 필드는 이동 중에 두 stops 사이에 그릴 shape 의 양을 지정합니다. [shapes.txt](#shapestxt)에 사용된 것과 동일한 단위여야 합니다. `shape_dist_traveled 에 사용되는 값은 `stop_sequence` 와 함께 증가해야 합니다. 경로를 따라 역방향 이동을 표시하는 데 사용해서는 안 됩니다.<br><br> 순환 또는 인라인이 있는 routes 에 권장됩니다( vehicle 한 번의 이동으로 선형의 동일한 부분을 건너거나 이동함). [`shapes.shape_dist_traveled](#shapestxt)를 참조하세요.<hr> *예: 버스가 shape 의 시작점에서 정류장까지 5.25km의 거리를 이동하는 경우 `shape_dist_traveled`=`5.25`.*| 
  | `timepoint ` | 열거형 | 추천 | vehicle 정차를 위한 arrival 및 departure 시간을 엄격히 준수하는지, 아니면 대략적인 시간 및/또는 보간된 시간인지를 나타냅니다. 이 필드를 사용하면 GTFS 생산자가 보간된 정지 시간을 제공하면서 해당 시간이 대략적인 것임을 나타낼 수 있습니다. 유효한 옵션은 다음과 같습니다.<br><br> `0` - 시간은 대략적인 것으로 간주됩니다.<br> ’`1`’ 또는 비어 있음 - 시간이 정확한 것으로 간주됩니다. | 
  | `pickup_booking_rule_id` | `booking_rules.booking_rule_id`를 참조하는 ID | 선택사항 | 이 정류장 시간의 탑승 예약 규칙을 식별합니다.<br><br> `pickup_type=2`인 경우 권장됩니다. | 
@@ -353,7 +353,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  기본 키(`fare_id`) 
  
  **버전**<br> 
- 요금을 설명하는 데는 두 가지 모델링 옵션이 있습니다. GTFS- Fares V1 최소 요금 정보를 설명하기 위한 기존 옵션입니다. GTFS- Fares V2 기관의 요금 구조를 더욱 자세히 설명할 수 있는 업데이트된 방법입니다. 둘 다 데이터 세트에 존재할 수 있지만 데이터 소비자는 지정된 데이터 세트에 대해 한 가지 방법만 사용해야 합니다. GTFS- Fares V2 GTFS- Fares V1 보다 우선 적용되는 것이 좋습니다.<br><br> GTFS- Fares V1 과 관련된 파일은 다음과 같습니다.<br> - [fare_attributes.txt](#fare_attributestxt)<br> - [fare_rules.txt](#fare_rulestxt)<br><br> GTFS- Fares V2 와 관련된 파일은 다음과 같습니다.<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
+ 요금을 설명하는 데는 두 가지 모델링 옵션이 있습니다. GTFS- Fares V1 최소한의 요금 정보를 설명하기 위한 기존 옵션입니다. GTFS- Fares V2 기관의 요금 구조를 더욱 자세히 설명할 수 있는 업데이트된 방법입니다. 둘 다 데이터 세트에 존재할 수 있지만 데이터 소비자는 지정된 데이터 세트에 대해 한 가지 방법만 사용해야 합니다. GTFS- Fares V2 GTFS- Fares V1 보다 우선 적용되는 것이 좋습니다.<br><br> GTFS- Fares V1 과 관련된 파일은 다음과 같습니다.<br> - [fare_attributes.txt](#fare_attributestxt)<br> - [fare_rules.txt](#fare_rulestxt)<br><br> GTFS- Fares V2 와 관련된 파일은 다음과 같습니다.<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
  
 <br> 
  
@@ -364,7 +364,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  | ` currency_type` | 통화 코드 | **필수** | 요금 지불에 사용되는 통화입니다. | 
  | `payment_method` | 열거형 | **필수** | 요금을 지불해야 하는 시기를 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 요금은 선상에서 지불됩니다.<br> `1` - 탑승 전 요금을 결제해야 합니다. | 
  | `transfers` | 열거형 | **필수** | 이 요금으로 허용되는 transfers 횟수를 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> ’0’ - 이 요금에는 transfers 허용되지 않습니다.<br> `1` - 라이더는 한 번 환승할 수 있습니다.<br> `2` - 라이더는 두 번 환승할 수 있습니다.<br> 비어 있음 - 무제한 transfers 허용됩니다. | 
- | `agency_id` | `agency.agency_id 를 참조하는 외부 ID | **조건부 필수** | 운임 관련 agency 식별합니다.<br><br> 조건부 필수:<br> - [agency.txt](#agencytxt)에 여러 대행사가 정의된 경우 **필수**입니다.<br> - 그렇지 않은 경우 권장됩니다. | 
+ | `agency_id| `agency.agency_id 를 참조하는 외부 ID | **조건부 필수** | 운임 관련 agency 식별합니다.<br><br> 조건부 필수:<br> - [agency.txt](#agencytxt)에 여러 대행사가 정의된 경우 **필수**입니다.<br> - 그렇지 않은 경우 권장됩니다. | 
  | `transfer_duration` | 음수가 아닌 정수 | 선택사항 | 전송이 만료되기 전까지의 시간(초)입니다. `transfers`=`0`인 경우 이 필드는 티켓의 유효 기간을 나타내는 데 사용될 수 있거나 비어 있을 수 있습니다. | 
  
 ### fare_rules.txt 
@@ -384,7 +384,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
  | `fare_id` | `fare_attributes.fare_id 를 참조하는 외부 ID | **필수** | 운임 클래스를 식별합니다. | 
- | `route_id` | `routes.route_id`를 참조하는 외부 ID | 선택사항 | 요금 등급과 관련된 경로를 식별합니다. 동일한 요금 속성을 가진 routes 여러 개 존재하는 경우 각 경로에 대해 [fare_rules.txt](#fare_rulestxt)에 기록을 생성하세요.<hr> *예: 운임 클래스 "b"가 "TSW" 및 "TSE" 경로에서 유효한 경우 [fare_rules.txt](#fare_rulestxt) 파일에는 운임 클래스에 대한 다음 레코드가 포함됩니다.*<br> ` fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
+ | `route_id` | `routes.route_id`를 참조하는 외부 ID | 선택사항 | 요금 등급과 관련된 경로를 식별합니다. 동일한 요금 속성을 가진 routes 여러 개 존재하는 경우 각 경로에 대해 [fare_rules.txt](#fare_rulestxt)에 기록을 생성하세요.<hr> *예: 운임 클래스 "b"가 "TSW" 및 "TSE" 경로에서 유효한 경우 [fare_rules.txt](#fare_rulestxt) 파일에는 운임 클래스에 대한 다음 레코드가 포함됩니다.*<br> ` fare_id,route_id`<br> `b,TSW<br> `b,TSE`| 
  | `origin_id` | `stops.zone_id 를 참조하는 외부 ID | 선택사항 | 원본 영역을 식별합니다. 요금 클래스에 여러 출발지 구역이 있는 경우 각 ` origin_id `에 대해 [fare_rules.txt](#fare_rulestxt)에 기록을 생성하세요.<hr> *예: 운임 클래스 "b"가 구역 "2" 또는 구역 "8"에서 출발하는 모든 여행에 유효한 경우 [fare_rules.txt](#fare_rulestxt) 파일에는 운임 클래스에 대한 다음 레코드가 포함됩니다.*<br> `fare_id,...,origin_id`<br> `b,...,2`<br> `b,...,8` | 
  | `destination_id| `stops.zone_id 를 참조하는 외부 ID | 선택사항 | 대상 영역을 식별합니다. 요금 클래스에 목적지 구역이 여러 개 있는 경우 각 ` destination_id `에 대해 [fare_rules.txt](#fare_rulestxt)에 기록을 생성하세요.<hr> *예: ` origin_id 및 `destination_id 필드를 함께 사용하면 요금 클래스 "b"가 구역 3과 4 사이의 여행에 유효하고, 구역 3과 5 사이의 여행에 유효함을 지정할 수 있으며, [fare_rules.txt](#fare_rulestxt) 파일에는 요금 등급에 대한 다음 기록이 포함됩니다.*<br> `fare_id,...,origin_id,destination_id`<br> `b,...,3,4`<br> `b,...,3,5` | 
  | `contains_id` | `stops.zone_id 를 참조하는 외부 ID | 선택사항 | 승객이 특정 요금 등급을 사용하는 동안 진입하게 될 구역을 식별합니다. 일부 시스템에서 정확한 요금 등급을 계산하는 데 사용됩니다.<hr> *예: 요금 클래스 "c"가 구역 5, 6, 7을 통과하는 GRT 경로의 모든 여행과 연결된 경우 [fare_rules.txt](#fare_rulestxt)에 다음 레코드가 포함됩니다.*<br> `fare_id,route_id,...,contains_id`<br> `c,GRT,...,5`<br> `c,GRT,...,6`<br> `c,GRT,...,7`<br> *운임이 적용되려면 모든 `contains_id` 구역이 일치해야 하기 때문에 구역 5와 6을 통과하지만 구역 7을 통과하지 않는 여정에는 운임 클래스 "c"가 없습니다. 자세한 내용은 GoogleTransitDataFeed 프로젝트 위키의 [https://code.google.com/p/googletransitdatafeed/wiki/FareExamples](https://code.google.com/p/googletransitdatafeed/wiki/FareExamples)를 참조하세요.* | 
@@ -406,7 +406,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  | `service_id` | `calendar.service_id` 또는 `calendar_dates.service_id`를 참조하는 외부 ID | **필수** | 기간이 적용되는 날짜 집합을 식별합니다. | 
  
 #### 시간대 현지 시간 의미 
- - [timeframes.txt](#timeframestxt)에 대해 요금 이벤트 시간을 평가할 때 이벤트 시간은 `에 의해 결정된 현지 시간대를 사용하여 현지 시간으로 계산됩니다. stop_timezone`(지정된 경우 요금 이벤트에 대한 정류장 또는 상위 역). 지정하지 않으면 피드의 agency 시간대를 대신 사용해야 합니다. 
+ - [timeframes.txt](#timeframestxt)에 대해 요금 이벤트 시간을 평가할 때 이벤트 시간은 `에 의해 결정된 현지 시간대를 사용하여 현지 시간으로 계산됩니다. stop_timezone`(지정된 경우 요금 이벤트에 대한 정류장 또는 상위 역). 지정하지 않은 경우 피드의 agency 시간대를 대신 사용해야 합니다. 
  - "현재 날짜"는 요금 이벤트 시간의 현재 date 이며 현지 시간대를 기준으로 계산됩니다. "현재 날짜"는 운임 구간 여행의 서비스 날짜와 다를 수 있으며, 특히 자정 이후로 연장되는 여행의 경우 더욱 그렇습니다. 
  - 요금 이벤트의 ’시간대’는 GTFS 시간 필드 유형 의미 체계를 사용하여 ’현재 날짜’를 기준으로 계산됩니다. 
  
@@ -447,7 +447,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  
  기본 키(`network_id, from_area_id, to_area_id, from_timeframe_group_id, to_timeframe_group_id, fare_product_id`) 
  
- 요금 규정 개별 여행 구간에 적합합니다. 
+ 요금 규정 개별 여행 구간용. 
  
  승객이 여행할 구간과 일치하는 규칙을 찾기 위해 파일의 모든 기록을 필터링하여 [`fare_leg_rules.txt`](#fare_leg_rulestxt)의 요금을 쿼리해야 합니다. 
  
@@ -461,7 +461,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  - `fare_leg_rules.to_timeframe_group_id` 
 <br/> 
  
- 2. 여행 특성에 따라 구간이 [fare_leg_rules.txt](#fare_leg_rulestxt)의 기록과 정확히 일치하는 경우 해당 기록을 처리하여 구간 비용을 결정해야 합니다. 이 파일은 빈 의미 또는 규칙_우선순위라는 두 가지 방법으로 빈 항목을 처리합니다. 
+ 2. 여행 특성에 따라 구간이 [fare_leg_rules.txt](#fare_leg_rulestxt)의 기록과 정확하게 일치하는 경우 해당 기록을 처리하여 구간 비용을 결정해야 합니다. 이 파일은 빈 의미 또는 규칙_우선순위라는 두 가지 방법으로 빈 항목을 처리합니다. 
 <br/> 
  
  3. 정확한 일치 항목이 발견되지 않고 `rule_priority` 필드가 존재하지 않는 경우 `fare_leg_rules.network_id`, `fare_leg_rules.from_area_id` 및 `fare_leg_rules.to_area_id`의 빈 항목을 확인하여 처리해야 합니다. 구간 비용: 
@@ -487,7 +487,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  | `network_id` | `routes.network_id` 또는 `networks.network_id `|를 참조하는 외부 ID 선택사항 | 요금 구간 규칙이 적용되는 경로 네트워크를 식별합니다.<br><br> `rule_priority` 필드가 존재하지 않고 필터링 중인 ` network_id `와 일치하는 ` fare_leg_rules.network_id ` 값이 없는 경우 기본적으로 비어 있는 ` fare_leg_rules.network_id`가 일치됩니다.<br><br> `fare_leg_rules.network_id `의 빈 항목은 ` fare_leg_rules.network_id `에 나열된 네트워크를 제외하고 [routes.txt](#routestxt) 또는 [networks.txt](#networkstxt)에 정의된 모든 네트워크에 해당합니다.<br><br> 파일에 ’rule_priority’ 필드가 있는 경우 빈 ’ fare_leg_rules.network_id’는 해당 구간의 경로 네트워크가 이 규칙의 일치에 영향을 미치지 않음을 나타냅니다. | 
  | `from_area_id| `areas.area_id 를 참조하는 외부 ID | 선택사항 | departure 지역을 식별합니다.<br><br> `rule_priority` 필드가 존재하지 않고 필터링되는 ` area_id 와 일치하는 ` fare_leg_rules.from_area_id 값이 없으면 기본적으로 비어 있는 ` fare_leg_rules.from_area_id 가 일치됩니다.<br><br> `fare_leg_rules.from_area_id 의 빈 항목은 ` fare_leg_rules.from_area_id 에 나열된 영역을 제외하고 ` areas.area_id 에 정의된 모든 영역에 해당합니다.<br><br> 파일에 ’rule_priority’ 필드가 있는 경우 빈 ’ fare_leg_rules.from_area_id’는 구간의 departure 영역이 이 규칙의 일치에 영향을 미치지 않음을 나타냅니다. | 
  | `to_area_id| `areas.area_id 를 참조하는 외부 ID | 선택사항 | arrival 지역을 식별합니다.<br><br> `rule_priority` 필드가 존재하지 않고 필터링되는 ` area_id 와 일치하는 ` fare_leg_rules.to_area_id 값이 없으면 기본적으로 빈 ` fare_leg_rules.to_area_id 가 일치됩니다.<br><br> `fare_leg_rules.to_area_id 의 빈 항목은 ` fare_leg_rules.to_area_id 에 나열된 항목을 제외하고 ` areas.area_id 에 정의된 모든 영역에 해당합니다.<br><br> 파일에 ’rule_priority’ 필드가 있는 경우 비어 있는 ’ fare_leg_rules.to_area_id’는 구간의 arrival 지역이 이 규칙의 일치에 영향을 미치지 않음을 나타냅니다. | 
- | `from_timeframe_group_id| `timeframes.timeframe_group_id 를 참조하는 외부 ID | 선택사항 | 요금 구간 시작 시 요금 확인 이벤트의 기간을 정의합니다.<br><br> 요금 구간의 "시작 시간"은 이벤트가 발생할 예정인 시간입니다. 예를 들어, 시간은 승객이 탑승하고 요금을 확인하는 요금 구간이 시작되는 버스의 예정된 departure 시간일 수 있습니다. 아래 규칙 일치 의미 체계의 경우 시작 시간은 [timeframes.txt](#timeframestxt)의 [Local Time Semantics](#timeframe-local-time-semantics)에 따라 결정된 현지 시간으로 계산됩니다. 해당하는 경우 시간대 확인을 위해 요금 구간 departure 이벤트의 정류장 또는 역을 사용해야 합니다.<br><br> `from_timeframe_group_id`를 지정하는 요금 구간 규칙의 경우 해당 규칙은 t 같은 경우 특정 구간과 일치합니다.
+ | `from_timeframe_group_id| `timeframes.timeframe_group_id`를 참조하는 외부 ID | 선택사항 | 요금 구간 시작 시 요금 확인 이벤트의 기간을 정의합니다.<br><br> 요금 구간의 "시작 시간"은 이벤트가 발생할 예정인 시간입니다. 예를 들어, 시간은 승객이 탑승하고 요금을 확인하는 요금 구간이 시작되는 버스의 예정된 departure 시간일 수 있습니다. 아래 규칙 일치 의미 체계의 경우 시작 시간은 [timeframes.txt](#timeframestxt)의 [Local Time Semantics](#timeframe-local-time-semantics)에 따라 결정된 현지 시간으로 계산됩니다. 해당하는 경우 시간대 확인을 위해 요금 구간 departure 이벤트의 정류장 또는 역을 사용해야 합니다.<br><br> `from_timeframe_group_id`를 지정하는 요금 구간 규칙의 경우 해당 규칙은 t 같은 경우 특정 구간과 일치합니다.
 
 여기에는 다음 조건이 모두 충족되는 [timeframes.txt](#timeframestxt)에 하나 이상의 레코드가 있습니다.<br> - `timeframe_group_id` 값은 `from_timeframe_group_id` 값과 같습니다.<br> - 기록의 `service_id`로 식별되는 날짜 세트에는 요금 구간 시작 시간의 "현재 날짜"가 포함됩니다.<br> - 요금 구간 시작 시간의 "시간대"는 기록의 `timeframes.start_time` 값보다 크거나 같고 `timeframes.end_time` 값보다 작습니다.<br><br> 비어 있는 `fare_leg_rules.from_timeframe_group_id 는 구간의 시작 시간이 이 규칙의 일치에 영향을 미치지 않음을 나타냅니다. | 
  | `to_timeframe_group_id` | `timeframes.timeframe_group_id 를 참조하는 외부 ID | 선택사항 | 요금 구간이 끝날 때 요금 확인 이벤트의 기간을 정의합니다.<br><br> 요금 구간의 "종료 시간"은 이벤트가 발생하도록 예정된 시간입니다. 예를 들어, 시간은 승객이 내리고 요금을 확인하는 요금 구간 끝에 버스가 예정된 arrival 시간일 수 있습니다. 아래 규칙 일치 의미 체계의 경우 종료 시간은 [timeframes.txt](#timeframestxt)의 [Local Time Semantics](#timeframe-local-time-semantics)에 따라 결정된 현지 시간으로 계산됩니다. 적절한 경우 시간대 확인을 위해 요금 구간 arrival 이벤트의 정류장 또는 역을 사용해야 합니다.<br><br> ’ to_timeframe_group_id’를 지정하는 요금 구간 규칙의 경우, 다음 조건이 모두 충족되는 [timeframes.txt](#timeframestxt)에 하나 이상의 기록이 있는 경우 해당 규칙은 특정 구간과 일치합니다.<br> - `timeframe_group_id` 값은 `to_timeframe_group_id` 값과 같습니다.<br> - 기록의 `service_id`로 식별되는 날짜 세트에는 요금 구간 종료 시간의 "현재 날짜"가 포함됩니다.<br> - 요금 구간 종료 시간의 "시간"은 기록의 `timeframes.start_time` 값보다 크거나 같고 `timeframes.end_time` 값보다 작습니다.<br><br> 비어 있는 `fare_leg_rules.to_timeframe_group_id 는 구간의 종료 시간이 이 규칙의 일치에 영향을 미치지 않음을 나타냅니다. | 
@@ -540,7 +540,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
- | `area_id` | 고유 ID | **필수** | 영역을 식별합니다. [areas.txt](#areastxt)에서 고유해야 합니다. | 
+ | `area_id| 고유 ID | **필수** | 영역을 식별합니다. [areas.txt](#areastxt)에서 고유해야 합니다. | 
  | `area_name` | Text | **선택사항** | 라이더에게 표시되는 지역의 이름입니다. | 
  
 ### stop_areas.txt 
@@ -553,8 +553,8 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
- | ` area_id| `areas.area_id 를 참조하는 외부 ID | **필수** | 하나 이상의 `stop_id` 가 속하는 영역을 식별합니다. 동일한 `stop_id` 여러 `area_id 에 정의될 수 있습니다. | 
- | `stop_id` | `stops.stop_id 를 참조하는 외부 ID | **필수** | 정류장을 식별합니다. 이 필드에 역(예: `stops.location_type=1 가진 정류장)이 정의된 경우, 이 역이 ` 정류장 으로 정의된 ` stops.location_type=0 을 가진 모든 정류장(즉, `stops.location_type=0`을 가진 모든 stops )이 이 필드에 정의된 것으로 가정됩니다. stops.parent_station)은 동일한 영역의 일부입니다. 이 동작은 플랫폼을 다른 영역에 할당하여 무시할 수 있습니다. | 
+ | ` area_id` | `areas.area_id 를 참조하는 외부 ID | **필수** | 하나 이상의 `stop_id` 가 속하는 영역을 식별합니다. 동일한 `stop_id` 여러 `area_id 에 정의될 수 있습니다. | 
+ | `stop_id` | `stops.stop_id 를 참조하는 외부 ID | **필수** | 정류장을 식별합니다. 이 필드에 역(예: `stops.location_type=1 가진 정류장)이 정의된 경우, 이 역이 ` 정류장 으로 정의된 ` stops.location_type=0 을 가진 모든 정류장(예: `stops.location_type=0`을 가진 모든 stops )이 이 필드에 정의된 것으로 가정됩니다. stops.parent_station)은 동일한 영역의 일부입니다. 이 동작은 플랫폼을 다른 영역에 할당하여 무시할 수 있습니다. | 
  
 ### 네트워크 .txt 
  
@@ -640,7 +640,7 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
  | `from_stop_id| `stops.stop_id 를 참조하는 외부 ID | **조건부 필수** | routes 간 연결이 시작되는 정류장 또는 역을 식별합니다. 이 필드가 역을 참조하는 경우 환승 규칙은 해당 역의 모든 하위 stops 에 적용됩니다. `transfer_types` 4, 5. 에는 스테이션 참조가 금지되어 있습니다. | 
- | `to_stop_id| `stops.stop_id 를 참조하는 외부 ID | **조건부 필수** | routes 간 연결이 끝나는 정류장이나 역을 식별합니다. 이 필드가 역을 참조하는 경우 환승 규칙은 모든 하위 stops 에 적용됩니다. `transfer_types` 4, 5. 에는 스테이션 참조가 금지되어 있습니다. | 
+ | `to_stop_id| `stops.stop_id 를 참조하는 외부 ID | **조건부 필수** | routes 간 연결이 끝나는 정류장 또는 역을 식별합니다. 이 필드가 역을 참조하는 경우 환승 규칙은 모든 하위 stops 에 적용됩니다. `transfer_types` 4, 5. 에는 스테이션 참조가 금지되어 있습니다. | 
  | `from_route_id| `routes.route_id`를 참조하는 외부 ID | 선택사항 | 연결이 시작되는 경로를 식별합니다.<br><br> `from_route_id`가 정의된 경우 지정된 `from_stop_id`에 대한 경로로 도착하는 이동에 환승이 적용됩니다.<br><br> `from_trip_id 와 `from_route_id 가 모두 정의된 경우 `trip_id` 는 `route_id` 에 속해야 하며 `from_trip_id 가 우선 적용됩니다. | 
  | `to_route_id` | `routes.route_id`를 참조하는 외부 ID | 선택사항 | 연결이 끝나는 경로를 식별합니다.<br><br> `to_route_id`가 정의된 경우 지정된 `to_stop_id`에 대한 경로의 출발 이동에 환승이 적용됩니다.<br><br> `to_trip_id 와 `to_route_id 가 모두 정의된 경우 `trip_id` 는 `route_id` 에 속해야 하며 `to_trip_id`가 우선 적용됩니다. | 
  | `from_trip_id` | ’`trips.trip_id` 참조하는 외국인 ID | **조건부 필수** | routes 간 연결이 시작되는 이동을 식별합니다.<br><br> `from_trip_id`가 정의된 경우 지정된 `from_stop_id`에 대해 도착하는 이동에 환승이 적용됩니다.<br><br> `from_trip_id 와 `from_route_id 가 모두 정의된 경우 `trip_id` 는 `route_id` 에 속해야 하며 `from_trip_id 가 우선 적용됩니다. `transfer_type 이 `4` 또는 `5`인 경우 필수입니다. | 
@@ -688,12 +688,12 @@ br> `1` 또는 비어 있음 - 지속적인 정지 픽업이 없습니다.<br> `
  
  - 매달린 위치 없음: 역 내의 어느 위치에 통로가 있는 경우 탑승 구역이 있는 pathways(`location_type=4`, 아래 지침을 참조하세요). 
  - 탑승 구역이 있는 플랫폼에 대한 pathways 없음: 탑승 구역(` location_type=4 `)이 있는 플랫폼(` location_type=0 ` 또는 비어 있음)은 지점이 아닌 상위 객체로 처리됩니다. 이러한 경우 플랫폼에는 pathways 지정되어서는 안 됩니다. 모든 pathways 플랫폼의 탑승 구역 각각에 지정되어야 합니다. 
- - 잠긴 플랫폼 없음: ​​각 플랫폼(`location_type=0` 또는 비어 있음) 또는 탑승 구역(`location_type=4 `)은 일부 pathways 체인을 통해 적어도 하나의 입구/출구(` location_type=2 `)에 연결되어야 합니다.. 특정 플랫폼에서 역 외부로의 통로를 허용하지 않는 역은 거의 없습니다. 
+ - 잠긴 플랫폼 없음: ​​각 플랫폼(`location_type=0` 또는 비어 있음) 또는 탑승 구역(`location_type=4 `)은 일부 pathways 체인을 통해 적어도 하나의 입구/출구(` location_type=2 `)에 연결되어야 합니다..특정 플랫폼에서 역 외부로의 통로를 허용하지 않는 역은 거의 없습니다. 
  
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
  | ` pathway_id` | 고유 ID | **필수** | 경로를 식별합니다. 시스템에서 기록의 내부 식별자로 사용됩니다. 데이터 세트에서 고유해야 합니다.<br><br> 서로 다른 pathways `from_stop_id` 및 `to_stop_id`에 대해 동일한 값을 가질 수 있습니다.<hr> _예: 두 개의 에스컬레이터가 반대 방향으로 나란히 있거나 계단 세트와 엘리베이터가 같은 장소에서 같은 장소로 이동하는 경우 서로 다른 `pathway_id 는 동일한 `from_stop_id 및 `to_stop_id 값을 가질 수 있습니다._ | 
- | `from_stop_id| `stops.stop_id 를 참조하는 외부 ID | **필수** | 경로가 시작되는 위치입니다.<br><br> 플랫폼을 식별하는 `stop_id` 포함해야 합니다(`lo
+ | `from_stop_id` | `stops.stop_id 를 참조하는 외부 ID | **필수** | 경로가 시작되는 위치입니다.<br><br> 플랫폼을 식별하는 `stop_id` 포함해야 합니다(`lo
 
 cation_type=0` 또는 비어 있음), 입구/출구(`location_type=2`), 일반 노드(`location_type=3`) 또는 탑승 구역(`location_type=4`).<br><br> 역을 식별하는 `stop_id` 값(`location_type=1`)은 금지됩니다.| 
  | `to_stop_id| `stops.stop_id 를 참조하는 외부 ID | **필수** | 통로가 끝나는 위치.<br><br> 플랫폼(` location_type=0` 또는 비어 있음), 입구/출구(`location_type=2`), 일반 노드(`location_type=3`) 또는 탑승 구역(`location_type=4 `)을 식별하는 `stop_id` 포함해야 합니다..<br><br> 역을 식별하는 `stop_id` 값(`location_type=1`)은 금지됩니다.| 
@@ -787,7 +787,7 @@ cation_type=0` 또는 비어 있음), 입구/출구(`location_type=2`), 일반 �
  | `예약_유형` | 열거형 | **필수** | 사전 예약이 가능한 기간을 나타냅니다. 유효한 옵션은 다음과 같습니다.<br><br> `0` - 실시간 예약.<br> `1` - 사전 공지 후 당일 예약까지 가능합니다.<br> `2` - 전날까지 예약 가능. | 
  | `prior_notice_duration_min` | 정수 | **조건부 필수** | 요청을 하기 위한 여행 전 최소 시간(분)입니다.<br><br> **조건부 필수**:<br> - `booking_type=1`의 경우 **필수**입니다.<br> - **금지됨**. | 
  | `prior_notice_duration_max` | 정수 | **조건부 금지** | 여행 전 예약 요청을 위한 최대 시간(분)입니다.<br><br> **조건부 금지**:<br> - `booking_type=0` 및 `booking_type=2`에는 **금지됨**.<br> - `booking_type=1`의 경우 선택 사항입니다.| 
- | `prior_notice_last_day` | 정수 | **조건부 필수** | 예약 요청을 위한 여행 마지막 날.<br><br> 예: "탑승은 오후 5시 이전에 1일 전에 예약해야 합니다."는 `prior_notice_last_day=1`로 인코딩됩니다.<br><br> **조건부 필수**:<br> - `booking_type=2`의 경우 **필수**입니다.<br> - 그렇지 않으면 **금지됨**. | 
+ | `prior_notice_last_day` | 정수 | **조건부 필수** | 예약 요청을 위한 여행 마지막 날.<br><br> 예: "탑승은 오후 5시 이전에 1일 전에 예약해야 합니다."는 `prior_notice_last_day=1`로 인코딩됩니다.<br><br> **조건부 필수**:<br> - `booking_type=2`의 경우 **필수**입니다.<br> - **금지됨**. | 
  | `prior_notice_last_time` | 시간 | **조건부 필수** | 여행 마지막 날 예약 요청을 위한 마지막 시간입니다.<br><br> 예: "라이드는 오후 5시 이전에 1일 전에 예약해야 합니다."는 `prior_notice_last_time=17:00:00`으로 인코딩됩니다.<br><br> **조건부 필수**:<br> - `prior_notice_last_day`가 정의된 경우 **필수**입니다.<br> - **금지됨**. | 
  | `prior_notice_start_day` | 정수 | **조건부 금지** | 예약 요청을 위한 여행 전 가장 빠른 날입니다.<br><br> 예: "탑승은 빠르면 일주일 전 자정부터 예약할 수 있습니다."는 `prior_notice_start_day=7`로 인코딩됩니다.<br><br> **조건부 금지**:<br> - `booking_type=0`에는 **금지됨**.<br> - `prior_notice_duration_max`가 정의된 경우 `booking_type=1`에 **금지됨**.<br> - 그렇지 않은 경우 선택 사항입니다. | 
  | `prior_notice_start_time` | 시간 | **조건부 필수** | 예약 요청을 위한 여행 전 가장 이른 날의 가장 빠른 시간입니다.<br><br> 예: "탑승은 빠르면 일주일 전 자정에 예약할 수 있습니다."는 `prior_notice_start_time=00:00:00`으로 인코딩됩니다.<br><br> **조건부 필수**:<br> - `prior_notice_start_day`가 정의된 경우 **필수**입니다.<br> - **금지됨**. | 
@@ -811,7 +811,7 @@ cation_type=0` 또는 비어 있음), 입구/출구(`location_type=2`), 일반 �
  
  | 필드 이름 | 유형 | 존재 | 설명 | 
  |------|------|------|------| 
- | `table_name` | 열거형 | **필수** | 번역할 필드가 포함된 테이블을 정의합니다. 허용되는 값은 다음과 같습니다.<br><br> - `agency`<br> - `stops`<br> - `routes`<br> - ’여행’<br> - `stop_times<br> - `pathways`<br> - ’레벨’<br> - `feed_info`<br> - `attributions`<br><br> GTFS 에 추가된 모든 파일은 위에 나열된 파일 이름과 동일한 `table_name` 값을 갖습니다(예: `.txt` 파일 확장자는 포함되지 않음). | 
+ | `table_name` | 열거형 | **필수** | 번역할 필드가 포함된 테이블을 정의합니다. 허용되는 값은 다음과 같습니다.<br><br> - `agency`<br> - `stops`<br> - `routes`<br> - ’여행’<br> - `stop_times<br> -`pathways`<br> - ’레벨’<br> - `feed_info`<br> - `attributions`<br><br> GTFS 에 추가된 모든 파일은 위에 나열된 파일 이름과 동일한 `table_name` 값을 갖습니다(예: `.txt` 파일 확장자는 포함되지 않음). | 
  | `field_name` | Text | **필수** | 번역할 필드의 이름입니다. ’ Text’ 유형의 필드는 번역될 수 있으며, ’ URL’, ’ Email’ 및 ’ Phone number’ 유형의 필드도 "번역"되어 올바른 언어로 리소스를 제공할 수 있습니다. 다른 유형의 필드는 번역하면 안 됩니다. | 
  | ’언어’ | 언어 코드 | **필수** | 번역 언어.<br><br> 언어가 `feed_info.feed_lang 과 동일한 경우 필드의 원래 값은 특정 번역 없이 언어에서 사용할 기본값으로 간주됩니다(`default_lang 이 달리 지정하지 t 경우).<hr> _예: 스위스에서 공식적으로 이중 언어를 사용하는 주의 도시는 공식적으로 "Biel/Bienne"이라고 불리지만 프랑스어에서는 "Bienne", 독일어에서는 "Biel"이라고 간단히 부릅니다._ | 
  | `번역` | Text, URL, Email, Phone number | **필수** | 번역된 값. | 
@@ -830,8 +830,8 @@ cation_type=0` 또는 비어 있음), 입구/출구(`location_type=2`), 일반 �
  |------|------|------|------| 
  | `feed_publisher_name` | Text | **필수** | 데이터 세트를 게시하는 조직의 전체 이름입니다. `agency.agency_name 값 중 하나와 동일할 수 있습니다. | 
  | `feed_publisher_url` | URL | **필수** | 데이터세트 게시 기관의 웹사이트 URL. `agency.agency_url 값 중 하나와 동일할 수 있습니다. | 
- | `feed_lang` | 언어 코드 | **필수** | 이 데이터 세트의 텍스트에 사용되는 기본 언어입니다. 이 설정은 GTFS 소비자가 데이터세트의 대문자 사용 규칙과 기타 언어별 설정을 선택하는 데 도움이 됩니다. 텍스트를 기본 언어가 아닌 다른 언어로 번역해야 하는 경우 `translations.txt 파일을 사용할 수 있습니다.<br><br> 기본 언어는 원본 텍스트가 여러 언어로 포함된 데이터세트의 경우 다국어일 수 있습니다. 이러한 경우 `feed_lang 필드에는 표준 ISO 639-2에 정의된 언어 코드 `mul`이 포함되어야 하며, 데이터세트에 사용된 각 언어에 대한 번역은 `translations.txt 에 제공되어야 합니다. 데이터 세트의 모든 원본 텍스트가 동일한 언어로 되어 있는 경우 `mul`을 사용하면 안 됩니다.<hr> _예: 원래 `stops.stop_name 필드가 다른 언어의 정류장 이름으로 채워진 스위스와 같은 다국어 국가의 데이터세트를 생각해 보세요. 각 정류장 이름은 해당 정류장의 지리적 위치에서 주로 사용되는 언어에 따라 작성됩니다. 예를 들어 프랑스어를 사용하는 도시인 Geneva 는 ’ Genève ’, 독일어를 사용하는 도시인 Zurich 는 ’ Zürich ’, 이중 언어를 사용하는 도시는 ’ Biel/Bienne’로 표시됩니다. Biel/Bienne 도시. 데이터세트 `feed_lang 은 `mul`이어야 하며 번역은 `translations.txt 에 제공됩니다(독일어: `Genf`, `Zürich` 및 `Biel`). 프랑스어: `Genève`, `Zurich` 및 `Bienne`; 이탈리아어: `Ginevra`, `Zurigo` 및 `Bienna`; 영어: `Geneva`, `Zurich` 및 `Biel/Bienne`._ | 
- | `default_lang| 언어 코드 | 선택사항 | 데이터 소비자가 라이더의 언어를 t 때 사용해야 하는 언어를 정의합니다. 종종 ’en’(영어)이 됩니다. | 
+ | `feed_lang` | 언어 코드 | **필수** | 이 데이터 세트의 텍스트에 사용되는 기본 언어입니다. 이 설정은 GTFS 소비자가 데이터세트의 대문자 사용 규칙과 기타 언어별 설정을 선택하는 데 도움이 됩니다. 텍스트를 기본 언어가 아닌 다른 언어로 번역해야 하는 경우 `translations.txt 파일을 사용할 수 있습니다.<br><br> 기본 언어는 원본 텍스트가 여러 언어로 포함된 데이터세트의 경우 다국어일 수 있습니다. 이러한 경우 `feed_lang 필드에는 ISO 639-2 표준에 정의된 언어 코드 `mul`이 포함되어야 하며, 데이터세트에 사용된 각 언어에 대한 번역은 `translations.txt 에 제공되어야 합니다. 데이터 세트의 모든 원본 텍스트가 동일한 언어로 되어 있는 경우 `mul`을 사용하면 안 됩니다.<hr> _예: 원래 `stops.stop_name 필드가 다른 언어의 정류장 이름으로 채워진 스위스와 같은 다국어 국가의 데이터세트를 생각해 보세요. 각 정류장 이름은 해당 정류장의 지리적 위치에서 주로 사용되는 언어에 따라 작성됩니다. 예를 들어 프랑스어를 사용하는 도시인 Geneva 는 ’ Genève ’, 독일어를 사용하는 도시인 Zurich 는 ’ Zürich ’, 이중 언어를 사용하는 도시는 ’ Biel/Bienne’로 표시됩니다. Biel/Bienne 도시. 데이터세트 `feed_lang 은 `mul`이어야 하며 번역은 `translations.txt 에 제공됩니다(독일어: `Genf`, `Zürich` 및 `Biel`). 프랑스어: `Genève`, `Zurich` 및 `Bienne`; 이탈리아어: `Ginevra`, `Zurigo` 및 `Bienna`; 영어: `Geneva`, `Zurich` 및 `Biel/Bienne`._ | 
+ | `default_lang` | 언어 코드 | 선택사항 | 데이터 소비자가 라이더의 언어를 t 때 사용해야 하는 언어를 정의합니다. 종종 ’en’(영어)이 됩니다. | 
  | `feed_start_date` | 날짜 | 추천 | 데이터세트는 `feed_start_date`일 시작부터 `feed_end_date`일까지의 기간 동안 서비스에 대한 완전하고 신뢰할 수 있는 일정 정보를 제공합니다. 이용할 수 없는 경우 두 날 모두 비워 둘 수 있습니다. `feed_end_date` date `feed_start_date` date 둘 다 제공되는 경우 이전되어서는 안 됩니다. 데이터 세트 공급자는 향후 서비스에 대해 조언하기 위해 이 기간 외의 일정 데이터를 제공하는 것이 좋지만 데이터 세트 소비자는 신뢰할 수 없는 상태를 염두에 두고 이를 처리해야 합니다. `feed_start_date 또는 `feed_end_date 가 [calendar.txt](#calendartxt) 및 [calendar_dates.txt](#calendar_datestxt)에 정의된 활성 달력 날짜를 초과하는 경우 데이터세트는 날짜에 대한 서비스가 없다고 명시적으로 주장합니다. `feed_start_date 또는 `feed_end_date 범위 내에 있지만 활성 달력 날짜에는 포함되지 않습니다. | 
  | `feed_end_date` | 날짜 | 추천 | (위 참조) | 
  | `feed_version` | Text | 추천 | GTFS 데이터세트의 현재 버전을 나타내는 문자열입니다. GTFS 사용하는 애플리케이션은 이 값을 표시하여 데이터세트 게시자가 최신 데이터세트가 통합되었는지 여부를 판단하는 데 도움을 줄 수 있습니다. | 

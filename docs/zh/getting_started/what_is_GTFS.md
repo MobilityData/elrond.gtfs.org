@@ -24,7 +24,7 @@
  
  <iframe class="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/SDz2460AjNo?si=wFsaN4_Hr3ypxWdp" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
  
-<a href="https://www.flaticon.com/authors/freepik" title="Freepik 的图标">由 Freepik- Flaticon 创建的图标</a>
+<a href="https://www.flaticon.com/authors/freepik" title="Freepik 图标">由 Freepik- Flaticon 创建的图标</a>
  
  [^1]: 除了文本文件之外， GTFS现在还支持 [GeoJSON](https: ) 格式，以表示需求响应服务的某些元素。
  

@@ -101,7 +101,7 @@
  ??? nota "Datos de muestra" 
  
 <p style="font-size:16px"> 
- El siguiente ejemplo define dos servicios (día laborable y fin de semana) para el mes de julio de 2024, incluyendo un servicio especial festivo el 4 de julio, operando como servicio de fin de semana. 
+ El siguiente ejemplo define dos servicios (entre semana y fin de semana) para el mes de julio de 2024, incluyendo un servicio especial festivo el 4 de julio, operando como servicio de fin de semana. 
 </p> 
  !!! nota "" 
 <p style="font-size:16px"> 
@@ -125,7 +125,7 @@
  
 ## Viajes 
  
- Viajes reúne Rutas y Fechas de Servicio para crear viajes que puedan realizar los pasajeros. Los Viajes se asocian a Paradas utilizando Horarios de Parada. 
+ Viajes reúne Rutas y Fechas de Servicio para crear viajes que puedan realizar los pasajeros. Los Viajes están asociados a Paradas utilizando Horarios de Parada. 
 
  | Archivos incluidos | Campos incluidos | 
  |----------------------------------|-------------------| 

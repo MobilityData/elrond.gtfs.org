@@ -2,7 +2,7 @@
  
  A General Transit Feed Specification, também conhecida como GTFS, é um formato de dados padronizado que fornece uma estrutura para o transporte público agências descrevam os detalhes de seus serviços, como horários, stops, tarifas, etc. 
  
- Permite que agências de transporte público publiquem seus dados de trânsito em um formato que pode ser consumido por uma ampla variedade de aplicativos de software, mais comumente viagens planejadores. Isso significa que os usuários podem obter facilmente informações de viagem para acessar os serviços de transporte público usando seus smartphones ou dispositivos similares. 
+ Permite que agências de transporte público publiquem seus dados de trânsito em um formato que pode ser consumido por uma ampla variedade de aplicativos de software, mais comumente viagens planejadores. Isso significa que os usuários podem obter facilmente informações de viagem para acessar os serviços de transporte público usando seus smartphones ou dispositivos semelhantes. 
  
 <img class="center" width="560" height="100%" src="../../../assets/what_is_gtfs_001.png"> 
  

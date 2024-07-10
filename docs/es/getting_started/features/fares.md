@@ -240,7 +240,7 @@
  | area_id | stop_id | 
  |---------|---------| 
  | zona_a | parada_a | 
- | zona_a | detener_b | 
+ | zona_a | parada_b | 
  | zona_b | parada_c | 
  | zona_b | detener_d | 
  

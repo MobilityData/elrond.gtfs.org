@@ -189,7 +189,7 @@
  
  | pathway_id | signposted_as | reversed_signposted_as | 
  |------------|------|------------------------| 
- | MainSt-001 | 로비로 | 종료 | 
+ | MainSt-001 | 로비에 | 종료 | 
  | MainSt-002 | | | 
  | MainSt-003 | 플랫폼으로 | 종료 | 
  | MainSt-004 | | | 

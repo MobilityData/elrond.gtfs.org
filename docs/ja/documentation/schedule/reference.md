@@ -83,12 +83,12 @@
  - **緯度** - 10 進度での WGS84latitude。値は -90.0 以上 90.0 以下である必要があります。 *<br>例: ローマのコロッセオの場合は `41.890169`。* 
  - **経度** - WGS84longitude(10 進度)。値は -180.0 以上 180.0 以下である必要があります。<br> *例: ローマのコロッセオの場合は `12.492269`。* 
  - **Float小数点数 ** - 浮動小数点数。 
- - ** 整数** - 整数。 
+ - **整数** - 整数。 
  - **Phone number** - 電話番号。 
  - **時刻** - HH:MM:SS 形式の時刻 (H:MM:SS も使用可能)。時刻は、サービス日の`正午から 12 時間を引いた時刻`から測定されます (夏時間の変更が行われる日を除いて、実質的には真夜中)。サービス日の真夜中以降に発生する時刻については、HH:MM:SS で 24:00:00 より大きい値として時刻を入力します。<br> *例: 午後 2:30 の場合は `14:30:00`、翌日の午前 1:35 の場合は `25:35:00`。* 
  - **Text** - UTF-8 文字のstring。表示を目的としているため、人間が判読できる必要があります。 
  - **タイムゾーン** - [https://www.iana.org/time-zones](https://www.iana.org/time-zones) の TZ タイムゾーン。タイムゾーン名にはスペース文字は含まれませんが、アンダースコアは含めることができます。有効な値の一覧については、[http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) を参照してください。<br> *例: `Asia/Tokyo`、`America/Los_Angeles`、`Africa/Cairo`。* 
- - ** URL** - http://または https://を含む完全修飾URLであり、 URL内の特殊文字は正しくエスケープする必要があります。完全修飾URL値の作成方法については、次の [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) を参照してください。 
+ - **URL** - http://または https://を含む完全修飾URLであり、 URL内の特殊文字は正しくエスケープする必要があります。完全修飾URL値の作成方法については、次の [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) を参照してください。 
  
 ### フィールド記号 
  Floatまたは Integer フィールド タイプに適用可能な記号: 
@@ -167,7 +167,7 @@
  * GTFSデータは、安定した場所にある 1 つのファイルに、交通agency（または複数の交通機関）のサービスの最新の公式説明が常に含まれるように、反復して公開する必要があります。
  * データセットは、可能な限り、データの反復をまたいで`stop_id`、 `route_id`、および `agency_idの永続的な識別子（ idフィールド）を維持する必要があります。
  * 1 つのGTFSデータセットに、現在のサービスと今後のサービスを含める必要があります（`マージされた`データセットと呼ばれることもあります）。2 つの異なるGTFSフィードからマージされたデータセットを作成するために使用できる複数の [マージ ツール](../../../resources/gtfs/#gtfs-merge-tools) が利用可能です。 
- * 公開されたGTFSデータセットは、いつでも、少なくとも今後 7 日間は有効である必要があります。理想的には、運行会社がスケジュールが継続して運行されると確信している限り有効です。
+ * 公開されたGTFSデータセットは、いつでも少なくとも今後 7 日間は有効である必要があります。理想的には、運行会社がスケジュールが継続して運行されると確信している限り有効です。
  * 可能であれば、 GTFSデータセットは少なくとも今後 30 日間のサービスをカバーする必要があります。
  * 古いサービス (期限切れのカレンダー) はフィードから削除する必要があります。
  * サービスの変更が 7 日以内に有効になる場合は、このサービスの変更は、静的なGTFSデータセットではなく、 GTFSリアルタイム フィード (サービス アドバイザリまたはルート更新) を通じて表現する必要があります。
@@ -307,7 +307,7 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  | `drop_off_booking_rule_id` | `booking_rules.booking_rule_id` を参照する ID | オプション | この停車時間における降車予約ルールを識別します。<br><br> `drop_off_type =2` の場合に推奨されます。 | 
  
 #### オンデマンド サービスのルーティング動作 
- - 出発地と目的地の間のルーティングまたは移動時間を提供する場合、データ コンシューマーは、 `start_pickup_drop_off_window`と`end_pickup_drop_off_window`が定義されている同じ`trip_id`を持つ中間のstop_times.txtレコードを無視する必要があります。無視する必要があるものを示す例については、[データ例のページ](../examples/flex/#ignoring-intermediate-stop-times-records-with-pickupdrop-off-windows) を参照してください。 
+ - 出発地と目的地の間のルーティングまたは移動時間を提供する場合、データ コンシューマーは、 `start_pickup_drop_off_window`と`end_pickup_drop_off_window`が定義されている同じ`trip_id`を持つ中間のstop_times.txtレコードを無視する必要があります。無視する必要がある内容を示す例については、[データ例のページ](../examples/flex/#ignoring-intermediate-stop-times-records-with-pickupdrop-off-windows) を参照してください。 
  - 同じ`trip_id`を持つ 2 つ以上のstop_times.txtレコード間で、 locations.geojson `id`ジオメトリ、`start/end_pickup_drop_off_window` 時間、および `pickup_type` または `drop_off_type ` が同時に重複することは禁止されています。禁止されている内容を示す例については、[データ例のページ](../examples/flex/#zone-overlap-constraint) を参照してください。
  
 ### calendar.txt 
@@ -383,7 +383,7 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------| 
  | `fare_id` | `fare_attributes.fare_id` を参照する外部 ID | **必須** | 運賃クラスを識別します。 | 
- | `route_id` | `routes.route_idを参照する外部 ID | オプション | 運賃クラスに関連付けられたルートを識別します。同じ運賃属性を持つ複数のroutesが存在する場合は、ルートごとに [fare_rules.txt](#fare_rulestxt) にレコードを作成します。<hr> *例: 運賃クラス`b`がルート`TSW`および`TSE`で有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
+ | `route_id` | `routes.route_idを参照する外部 ID | オプション | 運賃クラスに関連付けられたルートを識別します。同じ運賃属性を持つ複数のroutesが存在する場合は、ルートごとに [fare_rules.txt](#fare_rulestxt) にレコードを作成します。<hr> *例: 運賃クラス`b`がルート`TSW`と`TSE`で有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
  | `origin_id` | `stops.zone_id` を参照する外部 ID | オプション | 出発地ゾーンを識別します。運賃クラスに複数の出発地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `origin_id` のレコードを作成します。<hr> *例: 運賃クラス`b`がゾーン`2`またはゾーン`8`から出発するすべての旅行に有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,...,origin_id`<br> `b,...,2`<br> `b,...,8` | 
  | `destination_id` | `stops.zone_id` を参照する外部 ID | オプション | 目的地ゾーンを識別します。運賃クラスに複数の目的地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `destination_id` のレコードを作成します。<hr> *例: `origin_id` フィールドと `destination_id` フィールドを一緒に使用して、運賃クラス "b" がゾーン 3 と 4 の間の旅行に有効であることを指定できます。ゾーン 3 と 5 の間の旅行の場合、[fare_rules.txt](#fare_rulestxt) ファイルには、運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,...,origin_id,destination_id`<br> `b,...,3,4`<br> `b,...,3,5` | 
  | `contains_id` | `stops.zone_id` を参照する外部 ID | オプション | 特定の運賃クラスを使用しているときに乗客が進入するゾーンを識別します。一部のシステムで正しい運賃クラスを計算するために使用されます。<hr> *例: 運賃クラス`c`がゾーン 5、6、7 を通過する GRT ルートのすべての旅行に関連付けられている場合、[fare_rules.txt](#fare_rulestxt) には次のレコードが含まれます。*<br> `fare_id,route_id,...,contains_id`<br> `c,GRT,...,5`<br> `c,GRT,...,6`<br> `c,GRT,...,7`<br> *運賃を適用するには、すべての `contains_id` ゾーンが一致している必要があるため、ゾーン 5 と 6 は通過するがゾーン 7 は通過しない旅程には運賃クラス`c`はありません。詳細については、GoogleTransitDataFeed プロジェクト wiki の [https://code.google.com/p/googletransitdatafeed/wiki/FareExamples](https://code.google.com/p/googletransitdatafeed/wiki/FareExamples) をご覧ください。* | 
@@ -783,7 +783,7 @@ cation_type=0` または空)、入口/出口 (`location_type=2`)、汎用ノー�
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------| 
  | `booking_rule_id` | 一意の ID | **必須** | ルールを識別します。 | 
- | `booking_type` | 列挙型 | **必須** | どのくらい前に予約できるかを示します。有効なオプションは次のとおりです。<br><br> `0` - リアルタイム予約。<br> `1` - 事前連絡で当日予約まで。<br> `2` - 最大で前日の予約。 | 
+ | `booking_type` | 列挙型 | **必須** | どのくらい前に予約できるかを示します。有効なオプションは次のとおりです。<br><br> `0` - リアルタイム予約。<br> `1` - 事前連絡で当日予約まで。<br> `2` - 最大で前日の予約まで。 | 
  | `prior_notice_duration_min` | 整数 | **条件付きで必須** | リクエストを行う旅行前の最小分数。<br><br> **条件付きで必須**:<br> - `booking_type=1` の場合は**必須**です。<br> - それ以外の場合は**禁止**。 | 
  | `prior_notice_duration_max` | 整数 | **条件付きで禁止** | 旅行前に予約リクエストを行う最大分数。<br><br> **条件付き禁止**:<br> - `booking_type=0` および `booking_type=2` の場合は**禁止**です。<br> - `booking_type=1` の場合はオプションです。| 
  | `prior_notice_last_day` | 整数 | **条件付きで必須** | 予約リクエストを行う旅行前の最終日。<br><br>例: `乗車は 1 日前の午後 5 時までに予約する必要があります`は、`prior_notice_last_day=1` としてエンコードされます。<br><br> **条件付きで必須**:<br> - `booking_type=2` の場合は**必須**です。<br> - それ以外の場合は**禁止**。 | 
@@ -814,9 +814,9 @@ cation_type=0` または空)、入口/出口 (`location_type=2`)、汎用ノー�
  | `field_name` |Text| **必須** | 翻訳するフィールドの名前。`Text` タイプのフィールドは翻訳できます。`URL`、`Email`、`Phone number` タイプのフィールドも、正しい言語でリソースを提供するために`翻訳`できます。その他のタイプのフィールドは翻訳しないでください。 | 
  | `language` | 言語コード | **必須** | 翻訳の言語。<br><br>言語が `feed_info.feed_lang` と同じ場合、フィールドの元の値は、特定の翻訳のない言語で使用するデフォルト値であると見なされます (`default_lang` で別途指定されていt場合)。<hr> _例: スイスでは、公式にバイリンガルの州にある都市は正式には`Biel/Bienne`と呼ばれますが、フランス語では単に`Bienne`、ドイツ語では`Biel`と呼ばれます。_ | 
  | `translation` |Text、 URL 、Email、Phone number| **必須** | 翻訳された値。 | 
- | `record_id` | 外国 ID | **条件付きで必須** | 翻訳するフィールドに対応するレコードを定義します。`record_id ` の値は、各テーブルの主キー属性で定義されているように、テーブルの主キーの最初のフィールドまたは唯一のフィールドである必要があります。<br><br> - [agency.txt](#agencytxt) の ` agency_id `<br> - [stops.txt](#stopstxt) の`stop_id`<br> - [routes.txt](#routestxt) の`route_id` ;<br> - [trips.txt](#tripstxt) の`trip_id`<br> - [stop_times.txt](#stop_timestxt) の`trip_id` ;<br> - [pathways.txt](#pathwaystxt) の ` pathway_id `;<br> - [levels.txt](#levelstxt) の ` level_id `;<br> - [attributions.txt](#attributionstxt) の ` attribution_id `。<br><br>上記で定義されていないテーブル内のフィールドは翻訳しないでください。ただし、プロデューサーが公式仕様外のフィールドを追加する場合があり、これらの非公式フィールドは翻訳される可能性があります。以下は、これらのテーブルで ` record_id ` を使用するための推奨方法です。<br><br> - [calendar.txt](#calendartxt) の ` service_id `;<br> - [calendar_dates.txt](#calendar_datestxt) の ` service_id `;<br> - [fare_attributes.txt](#fare_attributestxt) の ` fare_id `;<br> - [fare_rules.txt](#fare_rulestxt) の ` fare_id `;<br> - [shapes.txt](#shapestxt) の`shape_id`<br> - [frequencies.txt](#frequenciestxt) の`trip_id` ;<br> - [transfers.txt](#transferstxt) の ` from_stop_id `。<br><br>条件付きで必須:<br> - ` table_name` が `feed_info` の場合は**禁止**です。<br> - `field_value` が定義されている場合は**禁止**です。<br> - `field_value` が空の場合は**必須**です。 | 
+ | `record_id` | 外国 ID | **条件付きで必須** | 翻訳するフィールドに対応するレコードを定義します。`record_id ` の値は、各テーブルの主キー属性で定義されているように、テーブルの主キーの最初のフィールドまたは唯一のフィールドである必要があります。<br><br> - [agency.txt](#agencytxt) の ` agency_id `<br> - [stops.txt](#stopstxt) の`stop_id`<br> - [routes.txt](#routestxt) の`route_id` ;<br> - [trips.txt](#tripstxt) の`trip_id`<br> - [stop_times.txt](#stop_timestxt) の`trip_id` ;<br> - [pathways.txt](#pathwaystxt) の ` pathway_id `;<br> - [levels.txt](#levelstxt) の ` level_id `;<br> - [attributions.txt](#attributionstxt) の ` attribution_id `。<br><br>上記で定義されていないテーブル内のフィールドは翻訳しないでください。ただし、プロデューサーが公式仕様外のフィールドを追加する場合があり、これらの非公式フィールドは翻訳される可能性があります。以下は、これらのテーブルで ` record_id ` を使用するための推奨方法です。<br><br> - [calendar.txt](#calendartxt) の ` service_id `;<br> - [calendar_dates.txt](#calendar_datestxt) の ` service_id `;<br> - [fare_attributes.txt](#fare_attributestxt) の ` fare_id `;<br> - [fare_rules.txt](#fare_rulestxt) の ` fare_id `;<br> - [shapes.txt](#shapestxt) の`shape_id` ;<br> - [frequencies.txt](#frequenciestxt) の`trip_id` ;<br> - [transfers.txt](#transferstxt) の ` from_stop_id `。<br><br>条件付きで必須:<br> - ` table_name` が `feed_info` の場合は**禁止**です。<br> - `field_value` が定義されている場合は**禁止**です。<br> - `field_value` が空の場合は**必須**です。 | 
  | `record_sub_id` | 外部 ID | **条件付きで必須** | テーブルに一意の ID がt場合に、フィールドを含むレコードを翻訳するのに役立ちます。したがって、`record_sub_id` の値は、次の表で定義されているように、テーブルのセカンダリ ID です。<br><br> - [agency.txt](#agencytxt) にはなし<br>- [stops.txt](#stopstxt) にはなし<br>- [routes.txt](#routestxt) にはなし。<br> - [trips.txt](#tripstxt) にはありません。<br> - [stop_times.txt](#stop_timestxt) の`stop_sequence` ;<br> - [pathways.txt](#pathwaystxt) にはなし。<br> - [levels.txt](#levelstxt) にはなし<br>- [attributions.txt](#attributionstxt) にはありません。<br><br>上記で定義されていないテーブル内のフィールドは翻訳しないでください。ただし、プロデューサーが公式仕様外のフィールドを追加する場合があり、これらの非公式フィールドは翻訳される可能性があります。以下は、これらのテーブルで `record_sub_id` を使用するための推奨方法です。<br><br> - [calendar.txt](#calendartxt) にはなし<br>- [calendar_dates.txt](#calendar_datestxt) の ` date `<br> - [fare_attributes.txt](#fare_attributestxt) にはなし<br>- [fare_rules.txt](#fare_rulestxt) の`route_id` ;<br> - [shapes.txt](#shapestxt) にはなし<br>- [frequencies.txt](#frequenciestxt) の`start_time` ;<br> - [transfers.txt](#transferstxt) の ` to_stop_id `。<br><br>条件付きで必須:<br> - ` table_name` が `feed_info` の場合は**禁止**です。<br> - `field_value` が定義されている場合は**禁止**です。<br> - `table_name=stop_times` および `record_id` が定義されている場合は**必須**です。| 
- | `field_value` |Text、 URL 、Email、Phone number| **条件付きで必須** | `record_id` および `record_sub_id` を使用してどのレコードを翻訳するかを定義する代わりに、このフィールドを使用して翻訳する値を定義できます。使用すると、`table_name` および `field_name` で識別されるフィールドに、 field_valueで定義された値とまったく同じ値が含まれている場合、翻訳が適用されます。<br><br>フィールドには、`field_value` で定義された値と **正確に** 一致している必要があります。値のサブセットのみが `field_value` と一致する場合、翻訳は適用されませt。<br><br> 2 つの変換ルールが同じレコード (1 つは `field_value` を持ち、もう 1 つは `record_id` を持つ) に一致する場合、`record_id` を持つルールが優先されます。<br><br>条件付きで必須:<br> - `table_nameが `feed_infoの場合は**禁止**です。<br> - `record_id` が定義されている場合は**禁止**です。<br> - `record_id` が空の場合は**必須**です。 | 
+ | `field_value` |Text、 URL 、Email、Phone number| **条件付きで必須** | `record_id` および `record_sub_id` を使用してどのレコードを翻訳するかを定義する代わりに、このフィールドを使用して翻訳する値を定義できます。使用すると、`table_name` および `field_name` で識別されるフィールドに、 field_valueで定義された値とまったく同じ値が含まれている場合、翻訳が適用されます。<br><br>フィールドには、`field_value` で定義された値と **正確に** 一致している必要があります。値のサブセットのみが `field_value` と一致する場合、翻訳は適用されませt。<br><br> 2 つの変換ルールが同じレコード (1 つは `field_value` を持ち、もう 1 つは `record_id` を持つ) に一致する場合、`record_id` を持つルールが優先されます。<br><br>条件付きで必須:<br> - `table_name` が `feed_info` の場合は**禁止**です。<br> - `record_id` が定義されている場合は**禁止**です。<br> - `record_id` が空の場合は**必須**です。 | 
  
 ### feed_info.txt 
  

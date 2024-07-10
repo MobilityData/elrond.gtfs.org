@@ -121,7 +121,7 @@
  ``` 
  shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled " `
 
-## frequencies.txt 
+ frequencies.txt 
  
  ``` 
  trip_id, start_time, end_time, headway_secs 

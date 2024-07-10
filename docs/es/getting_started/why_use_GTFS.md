@@ -24,7 +24,7 @@
  
  GTFS fomenta la colaboración entre agencias de tránsito al permitir datos fáciles intercambio, promoviendo una integración de servicios más fluida y el intercambio de información. Así es como GTFS simplifica el intercambio de datos: 
  
- - **Facilidad de integración:** GTFS facilita a las agencias comenzar con una estructura de datos simple utilizando formatos de archivo comunes como.txt y GeoJSON, fomentando la colaboración y la interoperabilidad. 
+ - **Facilidad de integración:** GTFS facilita que las agencias comiencen con una estructura de datos simple utilizando formatos de archivo comunes como.txt y GeoJSON, fomentando la colaboración y la interoperabilidad. 
  - **Compatible con versiones anteriores:** al actualizar la especificación, los feeds existentes siguen siendo válidos y mantienen la compatibilidad con los analizadores existentes. 
  
 ## GTFS probablemente pueda hacer más de lo que cree 

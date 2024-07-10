@@ -111,7 +111,7 @@
  
  允許自行車指示服務特定行程的車輛是否能夠容納自行車，幫助用戶規劃和訪問使他們能夠進行多式聯運旅行的服務。 
 
-|包含的文件 |包含的字段 | 
+|包含文件 |包含的字段 | 
  |------------------------------------------------|--------------------| 
  |[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`bikes_allowed ` | 
  
@@ -139,7 +139,7 @@
  
  Headsigns 允許傳達車輛使用的標牌，指示行程目的地，使用戶更容易識別正確的交通服務。此功能支援沿特定路線更改車頭標誌。 
 
-|包含的文件 |包含的字段 | 
+|包含文件 |包含的字段 | 
  |------------------------------------------------|--------------------| 
  |[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`trip_headsign` | 
  |[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`stop_headsign`| 
@@ -195,7 +195,7 @@
 <p style="font-size:16px"> 
  以下範例在`stops.txt`中顯示了公車站內的多個位置：代表主位置的父站及其子位置，例如月台、入口/出口和通用節點。 
 </p> 
-！筆記 ”” 
+!!!筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
 </p> 
@@ -238,7 +238,7 @@
  - 行程`AWE1`從早上 6:10 到中午 12:00 每 30 分鐘一班。 
  - 行程`AW2`的出發時間為上午 6:00、上午 6:15、上午 6:30，依此類推。 
 </p> 
-！筆記 ”” 
+!!!筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#frequenciestxt"><b>frequencies.txt</b></a><br> 
 </p> 
@@ -266,13 +266,13 @@
 <p style="font-size:16px"> 
  以下範例顯示了三種不同的transfers：一種在stops之間，需要最少換乘時間 5 分鐘；一種在兩條routes之間的定時換乘點；一種在同一vehicle的兩次行程之間進行座位內換乘。 
 </p> 
-!!!筆記 ”” 
+！筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#transferstxt"><b>transfers.txt</b></a><br> 
 </p> 
 
 |from_stop_id |to_stop_id |from_route_id |to_route_id |from_trip_id |to_trip_id |transfer_type|min_transfer_time| 
- |--------------|------------|----------------|--- ----------|--------------|------------|----------------|--------------------| 
+ |--------------|------------|----------------|-------------|--------------|------------|----------------|--------------------| 
  | s6 | s7 | | | | | 2 | 300 | 300 
  | | | | | PL04-003 | DL57-008 | 4 | | 
  | | | BR09 | CR01 | BR09-012 | CR01-005 | 1 | | 
@@ -281,7 +281,7 @@
  
  翻譯允許以多種語言提供車站名稱等服務信息，使旅行規劃者能夠根據用戶的語言和位置設置以特定語言顯示信息。 
 
-|包含的文件 |包含的字段 | 
+|包含文件 |包含的字段 | 
  |------------------------------------------------|--------------------| 
  |[translations.txt](../../../documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`語言`,`翻譯`,`record_id`, `record_sub_id`,`field_value` | 
  
@@ -295,7 +295,7 @@
 <p style="font-size:16px"> 
  以下範例顯示了為`routes.txt`中使用的兩個欄位提供的法文和西班牙文翻譯：`route_long_name`和`route_desc`。 
 </p> 
-！筆記 ”” 
+!!!筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#translationstxt"><b>translations.txt</b></a><br> 
 </p> 
@@ -324,16 +324,16 @@
  
 <p style="font-size:16px"> 
 </p> 
-!!!筆記 ”” 
+！筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#attributionstxt"><b>attributions.txt</b></a><br> 
 </p> 
 
 |attribution_id |agency_id |route_id |trip_id |organization_name|is_producer|is_operator|is_authority|attribution_url |attribution_email|attribution_phone| 
- |----------------|------------|----------|----------|--------------------------|-------------|----- -------|--------------|-----------------------------------|-------------------------|--------------------------------| 
+ |----------------|------------|----------|----------|--------------------------|-------------|------------|--------------|-----------------------------------|-------------------------|--------------------------------| 
  | OP01 | TB | | |公車| | 1 | | https://www.transitbus.org/fares | contact@transitbus.org | (777) 555-7777 | 
  | au01 |格拉 | | |大區域交通| 1 | | 1 | https://www.gra1.org |聯絡@gra1.org | (555) 555-5555 | 
- | OP02 | | rtd023 | rtd023 | |巴士公司A | | 1 | | https://www.buscompanya.com | contact@buscompanya.com | (333) 333-3333 | 
+ | OP02 | | rtd023 | rtd023 |巴士公司A | | 1 | | https://www.buscompanya.com | contact@buscompanya.com | (333) 333-3333 | 
  | OP03 | | rtd025 | rtd025 |巴士公司B | | 1 | | https://www.buscompanyb.com | contact@buscompanyb.com | (888) 888-8888 | 
  
 

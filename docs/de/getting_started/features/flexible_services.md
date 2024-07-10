@@ -7,7 +7,7 @@
  Dies kann entweder in „routes.txt“ angegeben werden, um anzuzeigen, dass Fahrgäste bei jeder Fahrt der Route an jedem Punkt entlang der Fahrtroute des Fahrzeugs ein- oder aussteigen können, oder in „`stop_times.txt`“ für einen bestimmten Abschnitt einer Route. 
  
  | Eingeschlossene Dateien | Eingeschlossene Felder | 
- |----------------------------------|-------------------| 
+ |----------------------------------|------------------| 
  |[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` | 
  |[routes.txt](../../../documentation/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` | 
  
@@ -57,7 +57,7 @@
  Buchungsregeln können verwendet werden, um Benutzern die Reservierung einer Fahrt mit einem Bedarfsservice zu ermöglichen. Diese Regeln legen die notwendigen Voraussetzungen für erfolgreiche Buchungen fest und bieten Kontaktinformationen, unter denen Benutzer Fahrten reservieren können. Diese Funktion sollte in Verbindung mit den Funktionen [Vordefinierte Routen mit Abweichung](#predefined-routes-with-deviation), [Zonenbasierte Bedarfsservices](#zone-based-demand-responsive-services) und [Bedarfsservices mit festen Haltestellen](#fixed-stops-demand-responsive-services) verwendet werden, wenn für solche Dienste eine Buchung require ist. 
  
  | Eingeschlossene Dateien | Eingeschlossene Felder | 
- |----------------------------------|------------------| 
+ |----------------------------------|-------------------| 
  |[booking_rules.txt](../../../documentation/schedule/reference/#booking_rulestxt)|`Buchungsregel-ID`, `Buchungstyp`, `Mindestdauer der Vorbenachrichtigung`, `Maximale Dauer der Vorbenachrichtigung`, `Letzter Tag der Vorbenachrichtigung`, `Letzte Uhrzeit der Vorbenachrichtigung`, `Starttag der Vorbenachrichtigung`, `Startzeit der Vorbenachrichtigung`, `Service-ID der Vorbenachrichtigung`, `message`, `Abholnachricht`, `Abgabenachricht`, `Telefonnummer`, `Info-URL`, `Buchungs-URL` | 
  
  

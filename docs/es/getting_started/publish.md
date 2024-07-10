@@ -1,6 +1,6 @@
 # Hacer que su feed GTFS esté disponible públicamente## Beneficios de compartir su GTFS 
  
- Los datos GTFS se pueden utilizar de muchas maneras, y compartir públicamente los datos GTFS de su agencia proporciona muchos beneficios a sus usuarios y a su agency en general.. Estos incluyen: 
+ Los datos GTFS se pueden utilizar de muchas maneras, y compartir públicamente los datos GTFS de su agencia proporciona muchos beneficios a sus usuarios y a su agency en general..Estos incluyen: 
  
  - Integrar su feed en aplicaciones de planificación de viajes móviles y basadas en la web, permitiendo a los pasajeros planificar viajes en su sistema- Enviar su feed a un agregador GTFS como Mobility Database, que proporciona una información más amplia audiencia y más visibilidad para su agency- Uso de herramientas que permiten visualizar y analizar datos GTFS en Sistemas de Información Geográfica (GIS) y otros programas de análisis basados ​​en mapas### Aplicaciones de planificación de viajes 
  
@@ -27,7 +27,7 @@
  
 ### URL y nombres de archivos 
  
- Los enlaces de recuperación y los nombres de archivos GTFS coherentes son cruciales para garantizar el acceso a los datos de su feed. Si su agency no utiliza URL y nombres de archivos consistentes para sus datos, significa que las aplicaciones de planificación de viajes, los agregadores de feeds y otros usuarios no obtendrán los datos más precisos y actualizados, lo que cause problemas a largo plazo.. 
+ Los enlaces de recuperación y los nombres de archivos GTFS coherentes son cruciales para garantizar el acceso a los datos de su feed. Si su agency no utiliza URL y nombres de archivos consistentes para sus datos, significa que las aplicaciones de planificación de viajes, los agregadores de feeds y otros usuarios no obtendrán los datos más precisos y actualizados, lo que cause problemas a largo plazo..
  
  Una vez que haya establecido una URL para su enlace de recuperación permanente, NO LA CAMBIE. Esto significa que el nombre de la URL debe permanecer coherente, incluso si los archivos se actualizan. Como tal, mantenga sus URL lo más simples y genéricas posible y evite el uso de URL que tengan fechas o números de versión. 
  

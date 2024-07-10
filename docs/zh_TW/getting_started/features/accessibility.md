@@ -46,7 +46,7 @@
 <p style="font-size:16px"> 
  以下範例顯示，行程` AWE1中使用的vehicle配備有至少可容納一輛輪椅的設施，而行程` AWE2中使用的vehicle則不能。 
 </p> 
-！筆記 ”” 
+!!!筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a><br> 
 </p> 
@@ -79,7 +79,7 @@
  <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
 </p> 
 
-|stop_id |stop_name|stop_lat|stop_lon| tts_stop_name| 
+|stop_id |stop_name|stop_lat|stop_lon| tts_stop_name | tts_stop_name | 
  |---------|------------|-------------|--------------|--------------------------| 
  | TAS001 | 5 Av/53 St | 45.5035680 |-73.587079 |-73.587079第五大道和53街| 
  

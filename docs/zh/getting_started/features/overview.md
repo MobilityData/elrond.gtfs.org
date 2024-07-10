@@ -1,6 +1,6 @@
 # GTFS Schedule功能 
  
- 随着GTFS参考格式不断发展以满足当前交通系统的需求，其功能也变得越来越复杂。** GTFS功能**旨在提供对GTFS参考格式所支持功能的清晰而明确的解释。这有助于交通机构、供应商、消费者和研究人员了解GTFS的功能并回答以下问题：**我可以用GTFS做什么？** 
+ 随着GTFS参考格式不断发展以满足当前交通系统的需求，其功能也变得越来越复杂。**GTFS功能**旨在提供对GTFS参考格式所支持功能的清晰而明确的解释。这有助于交通机构、供应商、消费者和研究人员了解GTFS的功能并回答以下问题：**我可以用GTFS做什么？** 
  
  以下功能组解释了每个功能的用途以及与它们相关的文件和字段，帮助用户了解支持特定功能所需的数据。
  
@@ -248,13 +248,13 @@
  
  - :material-subway-variant:{ .lg.middle } __带有偏差的预定义路线__ 
  
- 可以短暂偏离路线来接送乘客的车辆。 
+ 可以短暂偏离路线接送乘客的车辆。 
  
  [:octicons-arrow-right-24: 了解更多](../flexible_services/#predefined-routes-with-deviation) 
  
  - :material-subway-variant:{ .lg.middle } __基于区域的需求响应服务__ 
  
- 允许在特定区域内的任何位置接送乘客的服务。 
+ 允许在特定区域内任何地点接送乘客的服务。 
  
  [:octicons-arrow-right-24: 了解更多](../flexible_services/#zone-based-demand-responsive-services) 
  

@@ -46,7 +46,7 @@
  1. Lors de l’ouverture d’un fichier texte, assurez-vous de conserver les valeurs sous forme de texte. Il existe de nombreux champs dans un GTFS que des applications comme Excel liront de manière incorrecte ou abrégeront. 
  2. Les fichiers sont délimités par des virgules et non par des tabulations. Cela signifie que chaque fichier contient des enregistrements en lignes et que les différents champs sont séparés par des virgules. 
  3. Les lignes ou colonnes supplémentaires cause des erreurs lors de la consommation des applications, alors assurez-vous qu’il n’y a pas de lignes ou de colonnes vides lors de l’enregistrement du fichier. 
- 4. Ne supprimez aucun des fichiers de votre GTFS- ils fonctionnent ensemble et tout fichier manquant peut cause des erreurs lors de la consommation des applications. 
+ 4. Ne supprimez aucun des fichiers de votre GTFS : ils fonctionnent ensemble et tout fichier manquant peut cause des erreurs lors de la consommation des applications. 
  5. Lorsque vous recompressez les fichiers, assurez-vous de compresser les fichiers et non un dossier contenant. Vous pouvez être sûr que vous avez fait cela correctement en décompressant votre fichier et en voyant immédiatement les fichiers de ce dossier, et non un autre dossier contenant les fichiers. 
  
  

@@ -68,7 +68,7 @@
  ???注記`サンプルデータ`
 
 <p style="font-size:16px"> 
- 次のサンプルは、2 つの異なる予約ルール セットを示しています。1 つ目は、少なくとも 1 日前 (午後 1 時前) から 14 日前までに予約する必要がある旅行用で、2 つ目は、少なくとも旅行の 45 分前から 5 時間前までに予約できる旅行用です。
+ 次のサンプルは、2 つの異なる予約ルール セットを示しています。最初のルール セットは、少なくとも 1 日前 (午後 1 時前) から 14 日前までに予約する必要がある旅行用で、2 番目のルール セットは、少なくとも旅行の 45 分前から 5 時間前までに予約できる旅行用です。
  
 </p> 
  ！！！ 注記 "" 
@@ -274,7 +274,7 @@
  
  !!! 注 "" 
 <p style="font-size:16px"> 
-<a href="../../../documentation/schedule/reference/#location_group_stopstxt"><b>場所グループ停止.txt</b></a><br> 
+ <a href="../../../documentation/schedule/reference/#location_group_stopstxt"><b>location_group_stops.txt</b></a><br> 
 </p> 
  
  | location_group_id | stop_id | 

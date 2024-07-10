@@ -33,7 +33,7 @@
  
  |포함된 파일 |포함된 필드 | 
  |---------|-------------------| 
- |[shapes.txt](../../../documentation/schedule/reference/#shapestxt) | `shape_id`, `shape_pt_lat, `shape_pt_lon, `shape_pt_sequence`, `shape_dist_traveled` | 
+ |[shapes.txt](../../../documentation/schedule/reference/#shapestxt) | `shape_id`, `shape_pt_lat, `shape_pt_lon, `shape_pt_sequence, `shape_dist_traveled| 
  |[trips.txt](../../../documentation/schedule/reference/#tripstxt) | `shape_id` | 
  |[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt) |`shape_dist_traveled `| 
  
@@ -293,7 +293,7 @@
  ??? "샘플 데이터" 참고 
  
 <p style="font-size:16px"> 
- 다음 샘플은 `routes.txt`route_long_name`route_desc`에 사용되는 두 필드에 제공되는 프랑스어 및 스페인어 번역을 보여줍니다. 
+ 다음 샘플은 `routes.txt ` 및 ` route_desc `에 사용되는 두 필드에 route_long_name 제공되는 프랑스어 및 스페인어 번역을 보여줍니다. 
 </p> 
  !!! 메모 "" 
 <p style="font-size:16px"> 
@@ -330,7 +330,7 @@
 </p> 
  
  | attribution_id | agency_id | route_id | trip_id | organization_name | is_producer | is_operator | is_authority | attribution_url | attribution_email | attribution_phone | 
- |---|------------|------------|----------|---------------|---------------|-------------|----------------|----------------------|------------|------| 
+ |---|------------|----------|----------|---------------|-------------|-------------|----------------|----------------------|------------|------| 
  | op01 | 결핵 | | | 대중교통 버스 | | 1 | | https://www.transitbus.org/fares | contact@transitbus.org | (777) 555-7777 | 
  | au01 | 그래 | | | 광역 교통 | 1 | | 1 | https://www.gra1.org | contact@gra1.org | (555) 555-5555 | 
  | op02 | | RTD023 | | 버스 회사 A | | 1 | | https://www.buscompanya.com | contact@buscompanya.com | (333) 333-3333 | 

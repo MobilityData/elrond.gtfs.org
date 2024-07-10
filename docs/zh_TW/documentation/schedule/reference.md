@@ -70,7 +70,7 @@
  
 ### 欄位類型 
  
- - **顏色** - 編碼為六位十六進位數字的顏色。請參考[https://htmlcolorcodes.com](https:)產生有效值（不能包含前導`#`）。<br> *範例：`FFFFFF` 表示白色，`000000` 表示黑色，或 `0039A6` 表示 NYMTA 中的A 、C、E 行。目前currency清單請參考[https://en.wikipedia.org/wiki/ISO_4217#Active\_codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes )。<br> *範例：`CAD`代表加幣，`EUR `amountamount，` JPY `currency日圓。小數位數由隨附貨幣代碼的 [ISO 4217](https:) 指定。所有財務計算都應以十進制、currency或其他適合財務計算的等效類型進行處理，具體取決於用於使用資料的程式語言。由於計算過程中會產生金錢收益或損失，因此不鼓勵將currency金額處理為float。 
+ - **顏色** - 編碼為六位十六進位數字的顏色。請參考[https://htmlcolorcodes.com](https:)產生有效值（不得包含前導`#`）。<br> *範例：`FFFFFF` 表示白色，`000000` 表示黑色，或 `0039A6` 表示 NYMTA 中的A 、C、E 行。目前currency清單請參考[https://en.wikipedia.org/wiki/ISO_4217#Active\_codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes )。<br> *範例：`CAD`代表加幣，`EUR `amountamount，` JPY `currency日圓。小數位數由隨附貨幣代碼的 [ISO 4217](https:) 指定。所有財務計算都應以十進制、currency或其他適合財務計算的等效類型進行處理，具體取決於用於使用資料的程式語言。由於計算過程中會產生金錢收益或損失，因此不鼓勵將currency金額處理為float。 
  - **日期** - YYYYMMDD 格式的服務日。由於服務日內的時間可能高於 24:00:00，因此服務日可能包含後續日期的資訊。<br> *範例：`20180913`表示 2018 年 9 月 13 日。 * 
  - **Email** - 電子郵件地址。<br> *範例：`example@example.com`* 
  - **Enum** - `描述`欄中定義的一組預定義常數中的選項。<br> *範例：`route_type`欄位包含`0`（表示電車）、 ``1`` （表示地鐵）...* 
@@ -102,7 +102,7 @@
  | [時間範圍.txt](#timeframestxt) |可選|票價規則中使用的日期和時間段取決於date和時間因素。 | 
  | [fare_media.txt](#fare_mediatxt) |可選|描述可用於使用票價產品的票價媒體。<br><br>檔案 [fare_media.txt](#fare_mediatxt) 描述了 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt) 中未表示的概念。因此， [fare_media.txt](#fare_mediatxt) 的使用與檔案 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt) 完全分開。 | 
  | [fare_products.txt](#fare_productstxt) |可選|描述乘客可以購買的不同類型的車票或票價。<br><br>檔案 [fare_products.txt](#fare_productstxt) 描述 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt) 中未表示的票價產品。因此，[fare_products.txt](#fare_productstxt) 的使用與檔案 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt) 完全分開。 | 
- | [fare_leg_rules.txt](#fare_leg_rulestxt) |可選|個別旅行段的票價規則。<br><br>文件 [fare_leg_rules.txt](#fare_leg_rulestxt) 提供了更詳細的票價結構建模方法。因此，[fare_leg_rules.txt](#fare_leg_rulestxt) 的使用與檔案 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt) 完全分開。 | 
+ | [fare_leg_rules.txt](#fare_leg_rulestxt) |可選|個別旅行段的票價規則。<br><br>文件 [fare_leg_rules.txt](#fare_leg_rulestxt) 提供了更詳細的票價結構建模方法。因此，[fare_leg_rules.txt](#fare_leg_rulestxt) 的使用完全獨立於檔案 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt)。 | 
  | [fare_transfer_rules.txt](#fare_transfer_rulestxt) |可選|旅行航段之間transfers的票價規則。<br><br>與 [fare_leg_rules.txt](#fare_leg_rulestxt) 一起，檔案 [fare_transfer_rules.txt](#fare_transfer_rulestxt) 提供了更詳細的票價結構建模方法。因此，[fare_transfer_rules.txt](#fare_transfer_rulestxt) 的使用完全獨立於檔案 [fare_attributes.txt](#fare_attributestxt) 和 [fare_rules.txt](#fare_rulestxt)。 | 
  | [areas.txt](#areastxt) |可選|地點的區域分組。 | 
  | [stop_areas.txt](#stop_areastxt) |可選|將stops指派給區域的規則。 | 
@@ -134,12 +134,12 @@
  * **原始欄位值：** `Contains "quotes", commas and text` 
  * **CSV 檔案中的欄位值:* * `"Contains ""quotes"", commas and text"` 
  * 欄位值不得包含 HTML 標記、註解或轉義序列。 
- * 應刪除欄位或欄位名稱之間的多餘空格。許多解析器認為空格是值的一部分，這可能cause錯誤。 
+ * 欄位或欄位名稱之間的多餘空格應刪除。許多解析器認為空格是值的一部分，這可能cause錯誤。 
  * 每行必須以 CRLF 或 LF 換行符號結束。 
  * 文件應採用 UTF-8 編碼以支援所有 Unicode 字元。包含 Unicode 位元組順序標記 (BOM) 字元的檔案是可接受的。有關 BOM 字元和 UTF-8 的更多信息，請參閱 [http://unicode.org/faq/utf_bom.html#BOM](http://unicode.org/faq/utf_bom.html#BOM )。 
  * 所有資料集檔案必須壓縮在一起。這些檔案必須直接位於根級別，而不是子資料夾中。 
  * 所有面向客戶的文字字串（包括車站名稱、路線名稱和車頭標誌）應使用混合大小寫（不是全部大寫），遵循能夠顯示小寫字符的顯示器上地名大寫的當地慣例（例如“Brighton” ）邱吉爾廣場`、`馬恩河畔維利耶`、`市場街`）。 
- * 在整個提要中應避免使用縮寫名稱和其他文本（例如 St. 代表街道），除非某個地點以縮寫名稱稱呼（例如“JFK 機場”）。縮寫可能會為螢幕閱讀器軟體和語音使用者介面的可訪問性帶來問題。消費軟體可以被設計為可靠地將完整單字轉換為縮寫以供顯示，但從縮寫轉換為完整單字更容易出現更大的錯誤風險。 
+ * 在整個提要中應避免使用縮寫名稱和其他文本（例如 St. 代表街道），除非某個地點以縮寫名稱稱呼（例如“JFK 機場”）。縮寫可能會為螢幕閱讀器軟體和語音使用者介面的可訪問性帶來問題。消費軟體可以被設計為可靠地將完整單字轉換為縮寫形式以供顯示，但從縮寫轉換為完整單字更容易出現更大的錯誤風險。 
  
 ## 資料集發布和一般實踐 
  
@@ -210,12 +210,12 @@
  | `route_id` |唯一ID | **必填** |標識一條路線。 | 
  | `agency_id` |外部 ID 引用 `agency.agency_id| **有條件要求** |代理指定航線。<br><br>有條件要求：<br> - **必要** 如果在 [agency.txt](#agencytxt) 中定義了多個機構。<br> - 另有推薦。 | 
  | `route_short_name` |Text| **有條件要求** |路線的簡稱。通常是騎士用來識別路線的簡短抽象標識符（例如“32”、“100X”、“綠色”）。可以定義`route_short_name和`route_long_name。<br><br>有條件要求：<br> - 如果`routes.route_long_name為空，則**必需**。<br> - 如果有簡短的服務名稱，則建議使用。這應該是該服務的常見乘客姓名，並且不應超過 12 個字元。 | 
- | `route_long_name|Text| **有條件要求** |路線的全名。這個名稱通常比`route_short_name`更具描述性，並且通常包含路線的目的地或停靠點。可以定義`route_short_name和`route_long_name。<br><br>有條件要求：<br> - 如果`routes.route_short_name為空，則**必要**。<br> - 否則可選。 | 
+ | `route_long_name|Text| **有條件要求** |路線的全名。這個名稱通常比`route_short_name`更具描述性，並且通常包含路線的目的地或停靠點。可以定義`route_short_name和`route_long_name。<br><br>有條件要求：<br> - 如果 `routes.route_short_name為空，則**必要**。<br> - 否則可選。 | 
  | `route_desc|Text|可選|提供有用、優質資訊的路線描述。不應與 `route_short_name或 `route_long_name重複。<hr> _範例：`A`列車始終在曼哈頓 Inwood-207 St 和皇后區 Far Rockaway-Mott Avenue 之間運行。另外，從上午 6 點左右到午夜左右，Inwood-207 St 和 Lefferts Boulevard 之間還有額外的`A`列車運行（列車通常在 Lefferts Blvd 和 Far Rockaway 之間交替運行）。 
  | `route_type` |枚舉 | **必填** |指示路線上使用的交通類型。有效選項有：<br><br> `0` - 有軌電車、有軌電車、輕軌。大都會區內的任何輕軌或街道系統。<br> `1` - 地鐵，地鐵。大都會區內的任何地下鐵路系統。<br> `2` - 鐵路。用於城際或長途旅行。<br> `3` - 公共汽車。用於短途和長途巴士routes。<br> `4` - 渡輪。用於短途和長途船隻服務。<br> `5` - 纜車。用於電纜在vehicle下方運行的街道級軌道車（例如舊金山的纜車）。<br> `6` - 空中升降機、懸吊式纜車（例如纜車、空中纜車）。纜索運輸，其中船艙、汽車、吊船或開放式椅子透過一條或多根纜索懸掛。<br> `7` - 纜車。任何專為陡坡設計的鐵路系統。<br> `11` - 無軌電車。電動公車使用電線桿從架空電線取得電力。<br> `12` - 單軌鐵路。軌道由單根鋼軌或梁組成的鐵路。 | 
  | `route_url|URL|可選|有關特定路線的網頁的URL 。應與`agency.agency_url值不同。 | 
- | `route_color` |顏色 |可選|與面向公眾的材料相符的路線顏色指定。省略或留空時預設為白色 (`FFFFFF`)。在黑白螢幕上查看時，`route_color`和`route_text_color`之間的色差應提供足夠的對比度。 | 
- | `route_text_color` |顏色 |可選|用於在`route_color`背景下繪製的文字的清晰顏色。省略或留空時預設為黑色 (`000000`)。在黑白螢幕上查看時，`route_color`和`route_text_color`之間的色差應提供足夠的對比度。 | 
+ | `route_color` |顏色 |可選|與面向公眾的材料相符的路線顏色指定。省略或留空時預設為白色 (`FFFFFF`)。在黑白螢幕上查看時，`route_color`和`route_text_color`之間的色差應提供足夠的對比。 | 
+ | `route_text_color` |顏色 |可選|用於在`route_color`背景下繪製的文字的清晰顏色。省略或留空時預設為黑色 (`000000`)。在黑白螢幕上查看時，`route_color`和`route_text_color`之間的色差應提供足夠的對比。 | 
  | `route_sort_order` |非負整數 |可選|以最適合向客戶展示的方式訂購routes。應先顯示 `route_sort_order值較小的路由。 | 
  | `continuous_pickup` |枚舉 | **有條件禁止** |表示乘客可以在路線的每次行程中沿著車輛行駛路徑（如 [shapes.txt](#shapestxt) 中所述）的任何點登上公車vehicle。有效選項有：<br><br> `0` - 連續停止拾取。<br> “`1`”或空 - 沒有連續停止拾取。<br> `2` - 必須致電agency安排連續停車取件。<br> `3` - 必須與司機協調安排連續停車接送。<br><br>可以透過在` stop_times.continuous_pickup`中為路線沿線的特定`stop_time `定義值來覆蓋` routes.continuous_pickup `的值。<br><br> **有條件禁止**：<br> - **禁止** 如果 ` stop_times。 start_pickup_drop_off_window` 或 `stop_times。 end_pickup_drop_off_window` 是為此路線的任何行程定義的。<br> - 否則可選。 | 
  | `continuous_drop_off` |枚舉 | **有條件禁止** |表示乘客可以在路線的每次行程中沿著車輛行駛路徑的任意點vehicle，如 [shapes.txt](#shapestxt) 中所述。有效選項有：<br><br> `0` - 連續停止下降。<br> “`1`”或空 - 沒有連續停止下降。<br> `2` - 必須致電agency安排連續停止還車。<br> `3` - 必須與司機協調安排連續停車下車。<br><br>可以透過在` stop_times.continuous_drop_off`中為路線沿線的特定`stop_time `定義值來覆寫` routes.continuous_drop_off `的值。<br><br> **有條件禁止**：<br> - **禁止** 如果 ` stop_times。 start_pickup_drop_off_window` 或 `stop_times。 end_pickup_drop_off_window` 是為此路線的任何行程定義的。<br> - 否則可選。 | 
@@ -231,11 +231,11 @@
  |------|------|------|------| 
  | `route_id` |外部 ID 引用 `routes.route_id| **必填** |標識一條路線。 | 
  | `service_id|外部 ID 引用 `calendar.service_id或 `calendar_dates.service_id| **必填** |標識一條或多條routes提供服務的一組日期。 | 
- | `trip_id` |唯一ID | **必填** |標識一次行程。 | 
+ | `trip_id` |唯一ID | **必填** |標識一次旅行。 | 
  | `trip_headsign` |Text|可選|標示牌上顯示的Text，向乘客標識行程的目的地。應用於區分同一路線上的不同服務模式。<br><br>如果在行程期間路標發生變化，則可以透過在行程中特定的stop_time的stop_times.stop_headsign中定義值來覆寫trip_headsign的值。 | 
  | ` trip_short_name` |Text|可選|面向公眾的文字用於識別乘客的行程，例如，識別通勤鐵路旅行的火車號碼。如果乘客通常不依賴行程名稱，則 `trip_short_name` 應為空。 `trip_short_name` 值（若有提供）應唯一標識服務天內的行程；它不應用於目的地名稱或有限/明確指定。 | 
  | `direction_id` |枚舉 |可選|指示行程的行駛方向。該欄位不應該在路由中使用；它提供了一種在發佈時間表時按方向分隔行程的方法。有效選項有：<br><br> `0` - 朝一個方向行駛（例如出境旅行）。<br> ``1`` - 沿著相反方向行駛（例如入境行駛）。<hr> *範例：`trip_headsign和`direction_id`欄位可以一起使用來為一組行程的每個方向上的行進分配名稱。 [trips.txt](#tripstxt) 檔案可以包含這些用於時間表的記錄：*<br> `trip_id,...,trip_headsign,direction_id`<br> `1234,...,Airport,0`<br> `1505,...,Downtown,1` | 
- | `block_id` |身分證 |可選|標識行程所屬的區塊。一個區塊由單次行程或使用同一vehicle進行的多次連續行程組成，由共享服務天數和`block_id`定義。 `block_id` 可能有不同服務天數的行程，從而形成不同的區塊。請參閱[下面的範例](#example-blocks-and-service-day)。要提供座位內transfers訊息，應提供 ` transfer_type的 [transfers](#transferstxt)。 | 
+ | `block_id` |身分證 |可選|標識行程所屬的區塊。一個區塊由單次行程或使用同一vehicle進行的多次連續行程組成，由共享服務天數和`block_id`定義。 `block_id` 可能有不同服務天數的行程，從而形成不同的區塊。請參閱下面的[範例](#example-blocks-and-service-day)。要提供座位內transfers訊息，應提供 ` transfer_type的 [transfers](#transferstxt)。 | 
  | `shape_id` |外部 ID 引用 `shapes.shape_id | **有條件要求** |標示描述行程的vehicle行駛路徑的地理空間shape。<br><br>有條件要求：<br> - 如果行程具有在 [routes.txt](#routestxt) 或 [stop_times.txt](#stop_timestxt) 中定義的連續上車或下車行為，則為**必需**。<br> - 否則可選。 | 
  | `wheelchair_accessible` |枚舉 |可選|表示輪椅可通行。有效選項有：<br><br> `0`或空 - 沒有行程的無障礙資訊。<br> “`1`” - 此特定行程中使用的車輛可容納至少一名坐輪椅的乘客。<br> `2` - 此行程不接待使用輪椅的乘客。 | 
  | `bikes_allowed` |枚舉 |可選|指示是否允許自行車。有效選項有：<br><br> `0`或空 - 行程中沒有自行車資訊。<br> “`1`” - 此特定行程中使用的車輛可容納至少一輛自行車。<br> “2” - 此行程不允許攜帶自行車。 | 
@@ -266,7 +266,7 @@
  |字段名稱 |類型 |存在 |描述 | 
  |------|------|------|------| 
  | `trip_id` |引用`trips.trip_id` 的外部 ID | **必填** |標識一次行程。 | 
- | `arrival_time` |時間 | **有條件要求** |在` agency.agency_timezone`（而非`stops.stop_timezone `）指定的時區中，特定行程（由` stop_times.stop_id`定義）到達停靠點（由`stop_times.trip_id `定義）的時間。<br><br>如果停靠點沒有單獨的arrival和departure時間，則 `arrival_time和`departure_time`應相同。<br><br>對於服務日午夜之後發生的時間，請以 HH:MM:SS 格式輸入大於 24:00:00 的時間值。<br><br>如果無法獲得準確的arrival和departure時間（`timepoint=1` 或空），則應提供估計或插值的arrival和departure時間（`timepoint=0`）。<br><br>有條件要求：<br> - **對於行程中的第一站和最後一站來說是必需的**（由 `stop_times.stop_sequence` 定義）。<br> - **必需**`timepoint=1`。<br> - 定義了`start_pickup_drop_off_window`或`end_pickup_drop_off_window`時**禁止**。<br> - 否則可選。 
+ | `arrival_time` |時間 | **有條件要求** |在` agency.agency_timezone`（而非`stops.stop_timezone `）指定的時區中，特定行程（由` stop_times.stop_id`定義）到達停靠點（由`stop_times.trip_id `定義）的時間。<br><br>如果停靠點沒有單獨的arrival和departure時間，則 `arrival_time和`departure_time`應相同。<br><br>對於服務日午夜之後發生的時間，請以 HH:MM:SS 格式輸入大於 24:00:00 的時間值。<br><br>如果無法獲得準確的arrival和departure時間（`timepoint=1` 或空），則應提供估計或插值的arrival和departure時間（`timepoint=0`）。<br><br>有條件要求：<br> - **對於行程中的第一站和最後一站來說是必需的**（由 `stop_times.stop_sequence` 定義）。<br> - **必需**`timepoint=1`。<br> - **定義了`start_pickup_drop_off_window`或`end_pickup_drop_off_window`時禁止**。<br> - 否則可選。 
  | `departure_time` |時間 | **有條件要求** |在` agency.agency_timezone`（而非`stops.stop_timezone `）指定的時區中，從特定行程（由` stop_times.stop_id`定義）的停靠點（由`stop_times.trip_id `定義）出發的時間。<br><br>如果停靠點沒有單獨的arrival和departure時間，則 `arrival_time和`departure_time`應相同。<br><br>對於服務日午夜之後發生的時間，請以 HH:MM:SS 格式輸入大於 24:00:00 的時間值。<br><br>如果無法獲得準確的arrival和departure時間（`timepoint=1` 或空），則應提供估計或插值的arrival和departure時間（`timepoint=0`）。<br><br>有條件要求：<br> - **必需**`timepoint=1`。<br> - **定義了`start_pickup_drop_off_window`或`end_pickup_drop_off_window`時禁止**。<br> - 否則可選。 | 
  | `stop_id` |外部 ID 引用 `stops.stop_id| **有條件要求** |標識服務站點。行程期間提供服務的所有stops都必須在 [stop_times.txt](#stop_timestxt) 中具有記錄。引用的位置必須是stops/平台，即它們的“stops.location_type”值必須為“0”或為空。在同一行程中，一個站點可能會提供多次服務，並且多個行程和routes可能會為同一站點提供服務。<br><br>使用stops的隨選服務應按照這些stops提供服務的順序引用。資料消費者應假設可以從一個網站或地點到行程中稍後的任何網站或地點，前提是每個stop_time的 `pickup/drop_off_type和每個 ` end_pickup_drop_off_window的時間限制不禁止它。<br><br>有條件要求：<br> - 如果未定義“stop_times.location_group_id”和“stop_times.location_id”，則**必要**。<br> - 如果定義了 `stop_times.location_group_id` 或 `stop_times.location_id`，則**禁止**。 | 
  | `位置群組 ID` |外部 ID 引用 `location_groups.location_group_id` | **有條件禁止** |標識服務位置組，指示乘客可以要求上車或下車的stops組。行程期間提供服務的所有地點群組必須在 [stop_times.txt](#stop_timestxt) 中具有記錄。多個行程和routes可能會服務於同一位置群組。<br><br>使用位置組的隨選服務應按照這些位置組提供服務的順序引用。資料消費者應假設可以從一個網站或地點到行程中稍後的任何網站或地點，前提是每個stop_time的 `pickup/drop_off_type和每個 ` end_pickup_drop_off_window的時間限制不禁止它。<br><br> **有條件禁止**：<br> - 如果定義了 `stop_times.stop_id` 或 `stop_times.location_id`，則**禁止**。 | 
@@ -275,7 +275,7 @@
  | `stop_headsign` |Text|可選|標示牌上顯示的Text，向乘客標識行程的目的地。當車頭標誌在stops之間發生變化時，此欄位將覆蓋預設的` trips.trip_headsign `。如果在整個行程中顯示車頭標誌，則應使用` trips.trip_headsign `。<br><br>為一個 ` stop_time指定的 ` stop_headsign值不適用於同一行程中的後續 ` stop_time 。如果您想在同一行程中覆寫多個“ stop_time ”的“ trip_headsign ”，則必須在每個“ stop_time ”行中repeated“ stop_headsign ”值。 | 
  | `start_pickup_drop_off_window` |時間 | **有條件要求** |按需服務在 GeoJSON 位置、位置群組或停靠點可用的時間。<br><br> **有條件要求**：<br> - 如果定義了 `stop_times.location_group_id` 或 `stop_times.location_id`，則**必要**。<br> - 如果定義了``end_pickup_drop_off_window`` ，則**必要**。<br> - 如果定義了`arrival_time`或``departure_time`` ，則**禁止**。<br> - 否則可選。 | 
  | `end_pickup_drop_off_window` |時間 | **有條件要求** |點播服務在 GeoJSON 位置、位置群組或停止處結束的時間。<br><br> **有條件要求**：<br> - 如果定義了 `stop_times.location_group_id` 或 `stop_times.location_id`，則**必要**。<br> - 如果定義了``start_pickup_drop_off_window`` ，則**必要**。<br> - 如果定義了`arrival_time`或``departure_time`` ，則**禁止**。<br> - 否則可選。 | 
- | `pickup_type` |枚舉 | **有條件禁止** |表示拾取方式。有效選項有：<br><br> `0`或空 - 定期安排取貨。<br> “`1`” - 沒有可用的接送服務。<br> `2` - 必須致電agency安排取貨。<br> `3` - 必須與司機協調安排接送。<br><br> **有條件禁止**：<br> - 如果定義了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”，則“ pickup_type =0” **禁止**。<br> - 如果定義了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”，則“ pickup_type =3” **禁止**。<br> - 否則可選。 | 
+ | `pickup_type` |枚舉 | **有條件禁止** |表示拾取方式。有效選項有：<br><br> `0`或空 - 定期安排取貨。<br> “`1`” - 沒有可用的接送服務。<br> `2` - 必須致電agency安排取貨。<br> `3` - 必須與司機協調安排接送。<br><br> **有條件禁止**：<br> - 如果定義了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”，則“ pickup_type =0”**禁止**。<br> - 如果定義了“`start_pickup_drop_off_window`”或“`end_pickup_drop_off_window`”，則“ pickup_type =3”**禁止**。<br> - 否則可選。 | 
  | ` drop_off_type` |枚舉 | **有條件禁止** |表示投放方式。有效選項有：<br><br> `0`或空 - 定期安排投放。<br> “`1`” - 不提供下車服務。<br> `2` - 必須致電agency安排送機。<br> `3` - 必須與司機協調安排還車。<br><br> **有條件禁止**：<br> - 如果定義了``start_pickup_drop_off_window``或``end_pickup_drop_off_window`` ，則` drop_off_type =0` **禁止**。<br> - 否則可選。 | 
  | `continuous_pickup` |枚舉 | **有條件禁止** |指示乘客可以在 [shapes.txt](#shapestxt) 所描述的車輛行駛路徑上的任何點登上交通vehicle，從當前 ` stop_time ` 到行程`stop_sequence`中的下一個 ` stop_time ` 。有效選項有：<br><br> `0` - 連續停止拾取。
 
@@ -364,7 +364,7 @@ br> `1`或空 - 沒有連續停止拾取。<br> `2` - 必須致電agency安排�
 |字段名稱 |類型 |存在 |描述 | 
  |------|------|------|------| 
  | `fare_id` |外部 ID 引用 `fare_attributes.fare_id` | **必填** |標示票價等級。 | 
- | `route_id` |外部 ID 引用 `routes.route_id|可選|標示與票價等級關聯的路線。如果存在多個具有相同票價屬性的routes，請在 [fare_rules.txt](#fare_rulestxt) 中為每條路線建立一條記錄。<hr> *範例：如果票價類別`b`在路線`TSW`和`TSE`上有效，則 [fare_rules.txt](#fare_rulestxt) 檔案將包含該票價類別的以下記錄：*<br> `fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
+ | `route_id` |外部 ID 引用 `routes.route_id|可選|標識與票價等級關聯的路線。如果存在多個具有相同票價屬性的routes，請在 [fare_rules.txt](#fare_rulestxt) 中為每條路線建立一條記錄。<hr> *範例：如果票價類別`b`在路線`TSW`和`TSE`上有效，則 [fare_rules.txt](#fare_rulestxt) 檔案將包含該票價類別的以下記錄：*<br> `fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
  | `origin_id` |外部 ID 引用 `stops.zone_id|可選|標識起源區域。如果票價類別有多個始發區，請在 [fare_rules.txt](#fare_rulestxt) 中為每個 `origin_id` 建立一筆記錄。<hr> *範例：如果票價類別`b`對於從區域`2`或區域`8`出發的所有行程均有效，則 [fare_rules.txt](#fare_rulestxt) 檔案將包含該票價類別的以下記錄：*<br> `fare_id,...,origin_id`<br> `b,...,2`<br> `b,...,8` | 
  | `destination_id` |外部 ID 引用 `stops.zone_id|可選|標識目標區域。如果票價類別有多個目的地區域，請在 [fare_rules.txt](#fare_rulestxt) 中為每個 `destination_id建立一筆記錄。<hr> *範例：`origin_id`和`destination_id`欄位可以一起使用，以指定票價類別`b`對於區域 3 和 4 之間的旅行有效，並且對於區域 3 和 5 之間的旅行有效，[fare_rules.txt](#fare_rulestxt) 檔案將包含票價類別的以下記錄：*<br> `fare_id,...,origin_id,destination_id`<br> `b,...,3,4`<br> `b,...,3,5` | 
  | `contains_id` |外部 ID 引用 `stops.zone_id|可選|識別乘客在使用給定票價等級時將進入的區域。在某些系統中用於計算正確的票價等級。<hr> *範例：如果票價類別`c`與經過區域 5、6 和 7 的 GRT 路線上的所有行程相關聯，則 [fare_rules.txt](#fare_rulestxt) 將包含以下記錄：*<br> `fare_id,route_id,...,contains_id`<br> `c,GRT,...,5`<br> `c,GRT,...,6`<br> `c,GRT,...,7`<br> *由於所有 `contains_id` 區域都必須匹配才能應用票價，因此經過區域 5 和 6 但不經過區域 7 的行程不會有票價類別“c”。有關更多詳細信息，請參閱 GoogleTransitDataFeed 專案 wiki 中的 [](https: )。 
@@ -458,7 +458,7 @@ br> `1`或空 - 沒有連續停止拾取。<br> `2` - 必須致電agency安排�
 |字段名稱 |類型 |存在 |描述 | 
  |------|------|------|------| 
  | `leg_group_id|身分證 |可選|標識 [fare_leg_rules.txt](#fare_leg_rulestxt) 中的一組條目。<br><br>用於描述`fare_transfer_rules.from_leg_group_id和`fare_transfer_rules.to_leg_group_id之間的票價轉移規則。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) 中的多個條目可能屬於同一個 `fare_leg_rules.leg_group_id`。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) 中的相同條目（不包括 `fare_leg_rules.leg_group_id`）不得屬於多個 `fare_leg_rules.leg_group_id`。 
- | `network_id` |引用 `routes.network_id或 `networks.network_id的外部 ID可選|標識適用票價航段規則的航線網絡。<br><br>如果`rule_priority`欄位不存在，且沒有與正在過濾的` network_id `相符的` fare_leg_rules.network_id `值，則預設會符合空的` fare_leg_rules.network_id`。<br><br> `fare_leg_rules.network_id`中的空條目對應於 [routes.txt](#routestxt) 或 [.txt](#networkstxt) 中定義的所有網絡，不包括`fare_leg_rules.network_id`下列出的網絡<br><br>如果檔案中存在`rule_priority`字段，則`fare_leg_rules.network_id為空，表示該航段的航線網路不影響該規則的匹配。 | 
+ | `network_id` |引用 `routes.network_id或 `networks.network_id的外部 ID可選|標識適用票價段規則的航線網絡。<br><br>如果`rule_priority`欄位不存在，且沒有與正在過濾的` network_id `相符的` fare_leg_rules.network_id `值，則預設會符合空的` fare_leg_rules.network_id`。<br><br> `fare_leg_rules.network_id`中的空條目對應於 [routes.txt](#routestxt) 或 [.txt](#networkstxt) 中定義的所有網絡，不包括`fare_leg_rules.network_id`下列出的網絡<br><br>如果檔案中存在`rule_priority`字段，則`fare_leg_rules.network_id為空，表示該航段的航線網路不影響該規則的匹配。 | 
  | `from_area_id` |外部 ID 引用 `areas.area_id|可選|標識departure區域。<br><br>如果`rule_priority`欄位不存在，且沒有與正在過濾的` area_id `相符的` fare_leg_rules.from_area_id `值，則預設將符合空的` fare_leg_rules.from_area_id`。<br><br> `fare_leg_rules.from_area_id`中的空白條目對應於`areas.area_id`中定義的所有區域，不包括`fare_leg_rules.from_area_id`下列出的區域<br><br>如果文件中存在rule_priority字段，則為空的fare_leg_rules.from_area_id表示該航段的departure區域不影響該規則的匹配。 | 
  | `to_area_id` |外部 ID 引用 `areas.area_id|可選|標識arrival區域。<br><br>如果`rule_priority`欄位不存在，且沒有與正在過濾的` area_id `相符的` fare_leg_rules.to_area_id `值，則預設會符合空的` fare_leg_rules.to_area_id`。<br><br> `fare_leg_rules.to_area_id`中的空白條目對應於`areas.area_id`中定義的所有區域，不包括`fare_leg_rules.to_area_id`下列出的區域<br><br>如果檔案中存在rule_priority字段，則為空的fare_leg_rules.to_area_id表示該航段的arrival區域不影響該規則的匹配。 | 
  | `from_timeframe_group_id` |外部 ID 引用 `timeframes.timeframe_group_id|可選|定義票價段開始時票價驗證事件的時間範圍。<br><br>票價段的`開始時間`是指事件計畫發生的時間。例如，該時間可以是乘客在票價段開始時上車並驗證其票價的巴士的預定departure時間。對於下面的規則匹配語義，開始時間以本地時間計算，由 [timeframes.txt](#timeframestxt) 的 [Local Time Semantics](#timeframe-local-time-semantics) 決定。在適當的情況下，應使用票價航段departure事件的停靠站或站點進行時區解析。<br><br>對於指定`from_timeframe_group_id`的票價航段規則，該規則將符合特定航段，如果t
@@ -598,7 +598,7 @@ br> `1`或空 - 沒有連續停止拾取。<br> `2` - 必須致電agency安排�
  
  主鍵 (`from_stop_id`, `to_stop_id`, `from_trip_id`, `to_trip_id`, `from_route_id`, `to_route_id`) 
  
- 計算行程時，使用GTFS的應用程式會根據允許的時間和停靠點鄰近程度插入transfers。 [Transfers.txt](#transferstxt) 指定所選transfers的附加規則和覆寫。 
+ 在計算行程時，使用GTFS的應用程式會根據允許的時間和停靠點鄰近程度來插值transfers。 [Transfers.txt](#transferstxt) 指定所選transfers的附加規則和覆寫。 
  
  欄位`from_trip_id、`to_trip_id、`from_route_id和`to_route_id允許傳輸規則的更高層級的特定性。與 `from_stop_id` 和 `to_stop_id` 一起，特異性的排名如下： 
  
@@ -616,9 +616,9 @@ br> `1`或空 - 沒有連續停止拾取。<br> `2` - 必須致電agency安排�
  | `from_stop_id` |外部 ID 引用 `stops.stop_id| **有條件要求** |標示routes之間連接開始的停靠站或車站。如果此欄位指的是車站，則轉乘規則適用於其所有子stops。禁止引用`transfer_types`4 和5. 的電台。 
  | `to_stop_id` |外部 ID 引用 `stops.stop_id| **有條件要求** |標示routes之間連接的終點站。如果此欄位指的是車站，則轉乘規則適用於所有子stops。禁止引用`transfer_types`4 和5. 的電台。 
  | `from_route_id` |外部 ID 引用 `routes.route_id|可選|標識連線開始的路由。<br><br>如果定義了“from_route_id”，則轉乘將套用於給定“from_stop_id”路線上的到達行程。<br><br>如果同時定義了`from_trip_id和`from_route_id，則`trip_id`必須屬於`route_id`，且`from_trip_id優先。 | 
- | `to_route_id` |外部 ID 引用 `routes.route_id|可選|標識連線結束的路由。<br><br>如果定義了“to_route_id”，則轉乘將套用於給定“to_stop_id”路線上的出發行程。<br><br>如果同時定義了`to_trip_id和`to_route_id，則`trip_id`必須屬於`route_id`，並且`to_trip_id優先。 | 
+ | `to_route_id` |外部 ID 引用 `routes.route_id|可選|標識連線結束的路由。<br><br>如果定義了“to_route_id”，則轉乘將套用於給定“to_stop_id”的路線上的出發行程。<br><br>如果同時定義了`to_trip_id和`to_route_id，則`trip_id`必須屬於`route_id`，並且`to_trip_id優先。 | 
  | `from_trip_id` |引用`trips.trip_id` 的外部 ID | **有條件要求** |標示routes之間連接開始的行程。<br><br>如果定義了“from_trip_id”，則接送服務將套用於給定“from_stop_id”的到達行程。<br><br>如果同時定義了`from_trip_id和`from_route_id，則`trip_id`必須屬於`route_id`，且`from_trip_id優先。如果“transfer_type”是“4”或“5”，則為必要。 | 
- | `to_trip_id` |引用`trips.trip_id` 的外國 ID | **有條件要求** |標識routes之間的連接結束的行程。<br><br>如果定義了“to_trip_id”，則轉乘將套用於給定“to_stop_id”的出發行程。<br><br>如果同時定義了`to_trip_id和`to_route_id，則`trip_id`必須屬於`route_id`，並且`to_trip_id優先。如果“transfer_type”是“4”或“5”，則為必要。 | 
+ | `to_trip_id` |引用`trips.trip_id` 的外部 ID | **有條件要求** |標示routes之間連接結束的行程。<br><br>如果定義了“to_trip_id”，則轉乘將套用於給定“to_stop_id”的出發行程。<br><br>如果同時定義了`to_trip_id和`to_route_id，則`trip_id`必須屬於`route_id`，並且`to_trip_id優先。如果“transfer_type”是“4”或“5”，則為必要。 | 
  | `transfer_type` |枚舉 | **必填** |指示指定（`from_stop_id`, `to_stop_id`）對的連線類型。有效選項有：<br><br> `0`或空 -routes之間建議的轉乘點。<br> `1` - 兩條routes之間的定時換乘點。出發vehicle預計會等待到達車輛，並為乘客在routes之間換乘留出足夠的時間。<br> `2` - 轉乘需要arrival和departure之間的最短amount，以確保轉機。傳輸所需的時間由` min_transfer_time指定。<br> `3` - 無法在該地點的routes之間換乘。<br> `4` - 乘客可以透過留在同一vehicle上從一個行程換乘到另一個行程（`座位內換乘`）。有關此類傳輸的更多詳細資訊[如下](#linked-trips)。<br> `5` - 連續行程之間不允許座位transfers。乘客必須下車並重新上vehicle。有關此類傳輸的更多詳細資訊[如下](#linked-trips)。 | 
  | `min_transfer_time ` |非負整數 |可選|允許在指定stops的routes之間換乘所必需的時間量（以秒為單位）。 ` min_transfer_time` 應足以允許典型的乘客在兩個stops之間移動，包括允許每條路線的時間表變化的緩衝時間。 | 
  
@@ -656,7 +656,7 @@ br> `1`或空 - 沒有連續停止拾取。<br> `2` - 必須致電agency安排�
  
  檔案 [pathways.txt](#pathwaystxt) 和 [levels.txt) 。 
  
- 從車站入口/出口（以`location_type=2表示的位置的節點）導航到站台（用`location_type=0表示的位置或空的節點），騎手將移動通過人行道、檢票口、樓梯和其他表示為pathways的邊緣。通用節點（以 `location_type=3表示的節點）可用來連接整個車站的pathways。 
+ 從車站入口/出口（以`location_type=2表示的位置的節點）導航到站台（用`location_type=0表示的位置或空的節點），騎手將移動通過人行道、檢票口、樓梯和其他表示為pathways的邊緣。通用節點（以`location_type=3`表示的節點）可用來連接整個車站的pathways。 
  
  車站中的路徑必須被詳盡地定義。如果定義了任何pathways，則假定表示整個站的所有pathways。因此，適用以下準則： 
  
@@ -737,7 +737,7 @@ cation_type=0`或空）、入口/出口（`location_type=2）、通用節點（`
  |字段名稱 |類型 |存在 |描述 | 
  |------|------|------|------| 
  |- `類型` |字串| **必填** |位置的“特徵集合”。 | 
- |- `特點` |數組 | **必填** |描述位置的`特徵`物件的集合。 | 
+ |- `特點` |數組| **必填** |描述位置的`特徵`物件的集合。 | 
  |     \- `類型` |字串| **必填** | `“功能”` | 
  |     \- `id` |字串| **必填** |標識一個位置。所有 `stops.stop_id、 locations.geojson和 `location_groups.location_group_id` 值中的ID 必須是唯一的。 | 
  |     \- `屬性` |對象| **必填** |位置屬性鍵。 | 
@@ -745,7 +745,7 @@ cation_type=0`或空）、入口/出口（`location_type=2）、通用節點（`
  |         \- `stop_desc` |字串|可選|對位置進行有意義的描述，以幫助騎士確定方向。 | 
  |     \- `幾何` |對象| **必填** |位置的幾何形狀。 | 
  |         \- `類型` |字串| **必填** |必須屬於以下類型：<br> - ``Polygon``<br> - ``多多邊形`` | 
- |         \- `坐標` |數組 | **必填** |定義位置幾何形狀的地理座標（latitude和longitude）。 | 
+ |         \- `坐標` |數組| **必填** |定義位置幾何形狀的地理座標（latitude和longitude）。 | 
  
 ### booking_rules.txt 
  
@@ -759,7 +759,7 @@ cation_type=0`或空）、入口/出口（`location_type=2）、通用節點（`
  |------|------|------|------| 
  | `booking_rule_id` |唯一ID | **必填** |標識一條規則。 | 
  | `預訂類型` |枚舉 | **必填** |表示可以提前多久預訂。有效選項有：<br><br> “0”-即時預訂。<br> `1` - 最多可在當天預訂並提前通知。<br> `2` - 截至前一天的預訂。 | 
- | `prior_notice_duration_min` |整數 | **有條件要求** |出行前至少需要幾分鐘時間提出請求。<br><br> **有條件要求**：<br> - “booking_type=1”**必需**。<br> - **否則禁止**。 | 
+ | `prior_notice_duration_min` |整數| **有條件要求** |出行前至少需要幾分鐘時間提出請求。<br><br> **有條件要求**：<br> - “booking_type=1”**必需**。<br> - **否則禁止**。 | 
  | `prior_notice_duration_max` |整數 | **有條件禁止** |出發前提出預訂請求的最多分鐘數。<br><br> **有條件禁止**：<br> - **禁止**“booking_type=0”和“booking_type=2”。<br> - `booking_type=1` 可選。 
  | `前通知最後一天` |整數 | **有條件要求** |出遊前最後一天提出預訂要求。<br><br>範例：`乘車必須在下午 5 點之前提前 1 天預訂`將編碼為 `prior_notice_last_day=1`。<br><br> **有條件要求**：<br> - “booking_type=2”的**必要**。<br> - **否則禁止**。 | 
  | `事先通知_最後時間` |時間 | **有條件要求** |最後一次在旅行前最後一天提出預訂要求。<br><br>範例：`乘車必須在下午 5 點之前提前 1 天預訂`將編碼為 `prior_notice_last_time=17:00:00`。<br><br> **有條件要求**：<br> - 如果定義了“prior_notice_last_day”，則**必要**。<br> - **否則禁止**。 | 
@@ -785,11 +785,11 @@ cation_type=0`或空）、入口/出口（`location_type=2）、通用節點（`
 
 |字段名稱 |類型 |存在 |描述 | 
  |------|------|------|------| 
- | `table_name` |枚舉 | **必填** |定義包含要翻譯的欄位的表。允許的值為：<br><br> -`agency`<br> -`stops`<br> -`routes`<br> - `旅行`<br> - `stop_times`<br> -`pathways`<br> - `級別`<br> - `feed_info`<br> -`attributions`<br><br>新增至GTFS的任何檔案都會具有與檔案名稱等效的`table_name`值，如上面所列（即，不包括`.txt`檔案副檔名）。 | 
+ | `table_name` |枚舉 | **必填** |定義包含要翻譯的欄位的表格。允許的值為：<br><br> -`agency`<br> -`stops`<br> -`routes`<br> - `旅行`<br> - `stop_times`<br> -`pathways`<br> - `級別`<br> - `feed_info`<br> -`attributions`<br><br>新增至GTFS的任何檔案都會具有與檔案名稱等效的`table_name`值，如上面所列（即，不包括`.txt`檔案副檔名）。 | 
  | `field_name` |Text| **必填** |要翻譯的欄位的名稱。類型為`Text`的欄位可以翻譯，類型為`URL`、`Email`和`Phone number`的欄位也可以`翻譯`以提供正確語言的資源。其他類型的欄位不應被翻譯。 | 
  | `語言` |語言代碼 | **必填** |翻譯語言。<br><br>如果語言與`feed_info.feed_lang`中的語言相同，則該欄位的原始值將被假定為在沒有特定翻譯的語言中使用的預設值（如果`default_lang`t另外指定）。<hr> _例：在瑞士，官方雙語州的城市的正式名稱為“Biel/Bienne”，但在法語中簡稱為“Bienne”，在德語中簡稱為“Biel”。 
  | `翻譯` |Text或URL或Email或Phone number| **必填** |翻譯後的值。 | 
- | `record_id` |外國身分證 | **有條件要求** |定義與要翻譯的欄位對應的記錄。 `record_id`中的值必須是表主鍵的第一個或唯一字段，如每個表的主鍵屬性中所定義，如下所示：<br><br> - `agency_id為 [agency.txt](#agencytxt)<br> - [stops.txt](#stopstxt) 的`stop_id` ；<br> - [routes.txt](#routestxt) 的`route_id` ；<br> - [trips.txt](#tripstxt) 的`trip_id` ；<br> - [stop_times.txt](#stop_timestxt) 的`trip_id` ；<br> - [pathways.txt](#pathwaystxt) 的` pathway_id ；<br> - [levels.txt](#levelstxt) 的 ` level_id ；<br> - [attributions.txt](#attributionstxt) 的 ` attribution_id 。<br><br>上面未定義的表格中的欄位不應被翻譯。然而，生產者有時會添加官方規範之外的額外字段，而這些非官方字段可能會被翻譯。以下是對這些表使用 ` record_id的建議方法：<br><br> - `service_id for [calendar.txt](#calendartxt);<br> - `service_id for [calendar_dates.txt](#calendar_datestxt);<br> - `fare_id` for [fare_attributes.txt](#fare_attributestxt);<br> - `fare_id` for [fare_rules.txt](#fare_rulestxt);<br> - [shapes.txt](#shapestxt) 的`shape_id` ；<br> - [frequencies.txt](#frequenciestxt) 的`trip_id` ；<br> - [transfers.txt](#transferstxt) 的 ` from_stop_id 。<br><br>有條件要求：<br> - 如果 ` table_name是 `feed_info，則**禁止**。<br> - 如果定義了“field_value”，則**禁止**。<br> - 如果`field_value為空，則**必需**。 | 
+ | `record_id` |外國身分證 | **有條件要求** |定義與要翻譯的欄位對應的記錄。 `record_id`中的值必須是表主鍵的第一個或唯一字段，如每個表的主鍵屬性中所定義，如下所示：<br><br> - `agency_id為 [agency.txt](#agencytxt)<br> - [stops.txt](#stopstxt) 的`stop_id` ；<br> - [routes.txt](#routestxt) 的`route_id` ；<br> - [trips.txt](#tripstxt) 的`trip_id` ；<br> - [stop_times.txt](#stop_timestxt) 的`trip_id` ；<br> - [pathways.txt](#pathwaystxt) 的` pathway_id ；<br> - [levels.txt](#levelstxt) 的 ` level_id ；<br> - [attributions.txt](#attributionstxt) 的 ` attribution_id 。<br><br>上面未定義的表格中的欄位不應被翻譯。然而，生產者有時會添加官方規範之外的額外字段，而這些非官方字段可能會被翻譯。以下是這些表使用“ record_id”的建議方法：<br><br> - `service_id for [calendar.txt](#calendartxt);<br> - `service_id for [calendar_dates.txt](#calendar_datestxt);<br> - `fare_id` for [fare_attributes.txt](#fare_attributestxt);<br> - `fare_id` for [fare_rules.txt](#fare_rulestxt);<br> - [shapes.txt](#shapestxt) 的`shape_id` ；<br> - [frequencies.txt](#frequenciestxt) 的`trip_id` ；<br> - [transfers.txt](#transferstxt) 的 ` from_stop_id 。<br><br>有條件要求：<br> - 如果 ` table_name是 `feed_info，則**禁止**。<br> - 如果定義了“field_value”，則**禁止**。<br> - 如果`field_value為空，則**必需**。 | 
  | `record_sub_id` |外國身分證 | **有條件要求** |當表格t唯一 ID 時，幫助包含要翻譯的欄位的記錄。因此，`record_sub_id中的值是表格的輔助ID，如下表所定義：<br><br> - [agency.txt](#agencytxt) 無；<br> - [stops.txt](#stopstxt) 無；<br> - [routes.txt](#routestxt) 無；<br> - [trips.txt](#tripstxt) 無；<br> - [stop_times.txt](#stop_timestxt) 的`stop_sequence` ；<br> - [pathways.txt](#pathwaystxt) 無；<br> - [levels.txt](#levelstxt) 無；<br> - [attributions.txt](#attributionstxt) 無。<br><br>上面未定義的表格中的欄位不應被翻譯。然而，生產者有時會添加官方規範之外的額外字段，而這些非官方字段可能會被翻譯。以下是對這些表使用 `record_sub_id的建議方法：<br><br> - [calendar.txt](#calendartxt) 無；<br> - `date為 [calendar_dates.txt](#calendar_datestxt);<br> - [fare_attributes.txt](#fare_attributestxt) 無；<br> - [fare_rules.txt](#fare_rulestxt) 的`route_id` ；<br> - [shapes.txt](#shapestxt) 無；<br> - [frequencies.txt](#frequenciestxt) 的`start_time` ；<br> - [transfers.txt](#transferstxt) 的` to_stop_id 。<br><br>有條件要求：<br> - 如果 ` table_name是 `feed_info，則**禁止**。<br> - 如果定義了“field_value”，則**禁止**。<br> - 如果定義了“table_name=stop_times”和“record_id”，則**必要**。 | 
  | `field_value` |Text或URL或Email或Phone number| **有條件要求** |此欄位可用於定義應翻譯的值，而不是使用`record_id`和`record_sub_id`來定義應翻譯的記錄。使用時，當`table_name`和`field_name`所識別的欄位包含與field_value中定義的完全相同的值時，將會套用翻譯。<br><br>該欄位必須**精確**在`field_value中定義的值。如果只有值的子集與`field_value`匹配，則t套用翻譯。<br><br>如果兩個翻譯規則符合相同的記錄（一個帶有“field_value”，另一個帶有“record_id”），則帶有“record_id”的規則優先。<br><br>有條件要求：<br> - 如果 `table_name是 `feed_info，則**禁止**。<br> - 如果定義了 `record_id，則**禁止**。<br> - **必需** 如果 `record_id` 為空。 | 
  
@@ -825,7 +825,7 @@ Primary key (none) § §
  | `attribution_id` |唯一ID |可選|標識資料集或其子集的屬性。這對於翻譯來說最有用。 | 
  | `agency_id` |外部 ID 引用 `agency.agency_id|可選|歸屬所適用的機構。<br><br>如果定義了`agency_id`、 ``route_id``或``trip_id``屬性之一，則其他屬性必須為空。如果未指定任何一個，則歸因將應用於整個資料集。 | 
  | `route_id` |外部 ID 引用 `routes.route_id|可選|功能與`agency_id相同，只是屬性適用於路線。多個attributions可能適用於同一條路線上。 | 
- | `trip_id` |引用`trips.trip_id` 的外部 ID |可選|功能與`agency_id`相同，只不過屬性適用於旅行。多個attributions可能適用於同一次旅行。 | 
+ | `trip_id` |引用`trips.trip_id` 的外部 ID |可選|功能與`agency_id相同，只是屬性適用於旅行。多個attributions可能適用於同一次旅行。 | 
  | `organization_name` |Text| **必填** |資料集所屬組織的名稱。 | 
  | `is_producer` |枚舉 |可選|組織的角色是生產者。有效選項有：<br><br> `0`或空 - 組織t此角色。<br> `1` - 組織確實有這個角色。<br><br>至少應將`is_producer`、`is_operator`或`is_authority`欄位之一設為` `1` `。 | 
  | `is_operator` |枚舉 |可選|功能與 `is_producer` 相同，只是組織的角色是操作員。 | 

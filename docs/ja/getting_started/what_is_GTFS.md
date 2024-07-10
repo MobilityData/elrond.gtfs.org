@@ -24,8 +24,8 @@
  
  <iframe class="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/SDz2460AjNo?si=wFsaN4_Hr3ypxWdp" title="YouTubeビデオプレーヤー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
  
- <a href="https://www.flaticon.com/authors/freepik" title="アイコンはFreepikによるものです">Freepik によって作成されたアイコン - Flaticon</a> 
+ <a href="https://www.flaticon.com/authors/freepik" title="アイコンはFreepikによるものです">Freepik- Flaticon によって作成されたアイコン</a>
  
- [^1]: テキスト ファイルに加えて、[GeoJSON](https://geojson.org/) 形式もGTFSでサポートされ、デマンド レスポンシブ サービスの特定の要素を表すことができるようになりました。
+ [^1]: テキスト ファイルに加えて、[GeoJSON](https://geojson.org/) 形式もGTFSでサポートされ、デマンド レスポンシブ サービスの特定の要素を表すようになりました。
  
 

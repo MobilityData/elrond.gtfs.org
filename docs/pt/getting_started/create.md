@@ -7,14 +7,14 @@
  
 <img class="center" width="560" height="100%" src="../../../assets/create_002.png"> 
  
- Os arquivos base para um conjunto de dados GTFS podem ser descritos da seguinte forma: Um conjunto de dados de cronograma GTFS tem uma ou mais routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), cada rota tem uma ou mais viagens ([trips.txt](../../documentation/schedule/reference/#tripstxt)), cada viagem visita uma série de stops ([stops.txt](../../documentation/schedule/reference/#stopstxt)) em horários especificados ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Os horários de viagens e paradas contêm apenas informações sobre a hora do dia; o calendário é usado para determinar em quais dias uma determinada viagem será executada ([calendar.txt](../../documentation/schedule/reference/#calendartxt) e [calendar_dates.txt](../../documentation/agendamento/referência/#calendar_datestxt)). Além disso, diversas agências ([agency.txt](../../documentation/schedule/reference/#agencytxt)) podem operar diversas routes. Esses arquivos estão vinculados entre si por campos com referências cruzadas entre eles. 
+ Os arquivos base para um conjunto de dados GTFS podem ser descritos da seguinte forma: Um conjunto de dados de cronograma GTFS tem uma ou mais routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), cada rota tem uma ou mais viagens ([trips.txt](../../documentation/schedule/reference/#tripstxt)), cada viagem visita uma série de stops ([stops.txt](../../documentation/schedule/reference/#stopstxt)) em horários especificados ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Os horários de viagens e paradas contêm apenas informações sobre a hora do dia; o calendário é usado para determinar em quais dias uma determinada viagem será executada ([calendar.txt](../../documentation/schedule/reference/#calendartxt) e [calendar_dates.txt](../../documentation/agendamento/referência/#calendar_datestxt)). Além disso, diversas agências ([agency.txt](../../documentation/schedule/reference/#agencytxt)) podem operar diversas routes. Esses arquivos são vinculados entre si por campos com referências cruzadas entre eles. 
  
 <img class="center" width="560" height="100%" src="../../../assets/create_003.png"> 
  
  Depois que esses arquivos forem configurados para criar um conjunto de dados GTFS básico, arquivos adicionais (optional) podem ser adicionados para permitir outras funcionalidades ou necessidades específicas entre agências de trânsito e fornecedores. Alguns exemplos desses arquivos incluem: 
  
  - [shapes.txt](../../documentation/schedule/reference/#shapestxt) que permite representar graficamente o caminho de uma viagem, 
- - [pathways.txt](../../documentation/schedule/reference/#pathwaystxt) que fornece informações que permitem gerar rotas para ajudar os usuários a navegar pelas estações, 
+ - [pathways.txt](../../documentation/schedule/reference/#pathwaystxt) que fornece informações que permitem gerar rotas para ajudar os usuários a navegar nas estações, 
  - [frequencies.txt](../../documentation/schedule/reference/#frequenciestxt) que fornece uma maneira alternativa de especificar horários de parada. 
  
  Para obter mais informações sobre todas as funcionalidades do GTFS que podem ser habilitadas, consulte a seção [“O que o GTFS pode fazer?”](../features/overview/). 
@@ -23,7 +23,7 @@
  
  Um feed GTFS Realtime consiste em um arquivo binário regular servido via HTTP e atualizado com frequência. Qualquer tipo de servidor web pode hospedar e servir o arquivo. O formato de troca de dados GTFS Realtime é baseado em [Buffers de protocolo](https:), um mecanismo neutro em linguagem e plataforma para serializar dados estruturados. O GTFS Realtime pode fornecer três tipos de informações: atualizações de viagem, alertas de serviço e posições de veículos, que podem ser combinadas dependendo das informações de serviço que precisam ser comunicadas. 
  
- Como o GTFS Realtime permite apresentar o status real de uma frota, o feed precisa ser atualizado regularmente- preferencialmente sempre que novos dados vierem do sistema de Localização Automática de Veículos do serviço. Combinados, o conjunto de dados GTFS Schedule e um feed GTFS Realtime permitem que os aplicativos de consumo forneçam informações precisas e atualizadas aos passageiros. Para mais informações consulte a Documentação Técnica. 
+ Como o GTFS Realtime permite apresentar o status real de uma frota, o feed precisa ser atualizado regularmente- de preferência sempre que novos dados vierem do sistema de Localização Automática de Veículos do serviço. Combinados, o conjunto de dados GTFS Schedule e um feed GTFS Realtime permitem que os aplicativos de consumo forneçam informações precisas e atualizadas aos passageiros. Para mais informações consulte a Documentação Técnica. 
  
 ## Produzindo seu primeiro feed GTFS ? 
  

@@ -38,7 +38,7 @@
 </div> 
 </div> 
  
- Demikian pula, menggunakan [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator) kanonik yang gratis dan bersumber terbuka akan memastikan data GTFS Anda mematuhi [Referensi GTFS Realtime] resmi (../../documentation/realtime/reference/) dan [Praktik Terbaik](../../documentation/realtime/realtime_best_practices). 
+ Demikian pula, menggunakan [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator) kanonikal gratis dan bersumber terbuka memastikan data GTFS Anda mematuhi [Referensi GTFS Realtime] resmi (../../documentation/realtime/reference/) dan [Praktik Terbaik](../../documentation/realtime/realtime_best_practices). 
  
  Untuk informasi tentang cara membuat data berkualitas tinggi, lihat [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines), [Praktik Terbaik GTFS Schedule](../../documentation/schedule/schedule_best_practices) dan [Praktik Terbaik GTFS Realtime](../../documentation/realtime/realtime_best_practices). 
  

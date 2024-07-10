@@ -101,12 +101,12 @@
 
 |level_id |level_index|level_name| 
  |--------------------|-------------|------------| 
- | level_0_street | 0 |街上| 
+ | level_0_street | 0 |街上 | 
  |級別_-1_大廳 |-1 |大堂| 
  | level_-2_platform |-2 |平台| 
 
 
-！筆記 ”” 
+!!!筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a><br> 
 </p> 
@@ -182,7 +182,7 @@
 <p style="font-size:16px"> 
  以下範例指定了與預先建立的pathways相關的導航信息，反映了車站物理標誌上顯示的文本。 
 </p> 
-！筆記 ”” 
+!!!筆記 ”” 
 <p style="font-size:16px"> 
  <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a><br> 
 </p> 
