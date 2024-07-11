@@ -157,8 +157,8 @@
  * フィールド間またはフィールド名間の余分なスペースは削除する必要があります。多くのパーサーは、スペースを値の一部と見なすため、エラーがcause可能性があります。
  * 各行は、CRLF または LF 改行文字で終了する必要があります。 
  * すべての Unicode 文字をサポートするには、ファイルを UTF-8 でエンコードする必要があります。Unicode バイト オーダー マーク (BOM) 文字を含むファイルも使用できます。BOM 文字と UTF-8 の詳細については、[http://unicode.org/faq/utf_bom.html#BOM](http://unicode.org/faq/utf_bom.html#BOM) を参照してください。
- * すべてのデータセット ファイルは、まとめて zip 圧縮する必要があります。ファイルは、サブフォルダーではなく、ルート レベルに直接配置する必要があります。
- * 顧客向けのすべてのテキスト文字列 (停留所名、ルート名、ヘッドサインを含む) では、小文字を表示できるディスプレイでの地名の大文字化に関するローカル規則に従い、大文字と小文字を混在させる (すべて大文字にしない) 必要があります (例: “Brighton Churchill Square”、“Villiers-sur-Marne”、“Market Street”)。 
+ * すべてのデータセット ファイルは、一緒に zip 形式で圧縮する必要があります。ファイルは、サブフォルダーではなく、ルート レベルに直接配置する必要があります。
+ * 顧客向けのすべてのテキスト文字列 (停留所名、ルート名、ヘッドサインを含む) では、小文字を表示できるディスプレイで地名を大文字にするローカル規則に従い、大文字と小文字を混在させる (すべて大文字にしない) 必要があります (例: “Brighton Churchill Square”、“Villiers-sur-Marne”、“Market Street”)。 
  * フィード全体を通して、名前やその他のテキストの略語の使用は避けてください (例: Street の代わりに St.)。ただし、場所が略語で呼ばれている場合 (例: “JFK Airport”) は除きます。略語は、スクリーン リーダー ソフトウェアや音声ユーザー インターフェイスによるアクセシビリティに問題が生じる可能性があります。使用ソフトウェアは、完全な単語を略語に変換して表示するように確実に設計できますが、略語から完全な単語に変換すると、エラーが発生するリスクが高くなります。
  
 ## データセットの公開と一般的な方法 
@@ -167,7 +167,7 @@
  * GTFSデータは、安定した場所にある 1 つのファイルに、交通agency（または複数の交通機関）のサービスの最新の公式説明が常に含まれるように、反復して公開する必要があります。
  * データセットは、可能な限り、データの反復をまたいで`stop_id`、 `route_id`、および `agency_idの永続的な識別子（ idフィールド）を維持する必要があります。
  * 1 つのGTFSデータセットに、現在のサービスと今後のサービスを含める必要があります（`マージされた`データセットと呼ばれることもあります）。2 つの異なるGTFSフィードからマージされたデータセットを作成するために使用できる複数の [マージ ツール](../../../resources/gtfs/#gtfs-merge-tools) が利用可能です。 
- * 公開されたGTFSデータセットは、いつでも少なくとも今後 7 日間は有効である必要があります。理想的には、運行会社がスケジュールが継続して運行されると確信している限り有効です。
+ * 公開されたGTFSデータセットは、いつでも、少なくとも今後 7 日間は有効である必要があります。理想的には、運行会社がスケジュールが継続して運行されると確信している限り有効です。
  * 可能であれば、 GTFSデータセットは少なくとも今後 30 日間のサービスをカバーする必要があります。
  * 古いサービス (期限切れのカレンダー) はフィードから削除する必要があります。
  * サービスの変更が 7 日以内に有効になる場合は、このサービスの変更は、静的なGTFSデータセットではなく、 GTFSリアルタイム フィード (サービス アドバイザリまたはルート更新) を通じて表現する必要があります。
@@ -200,18 +200,18 @@
  
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------|------| 
- | `stop_id` | 一意の ID | **必須** |場所を識別します: 停留所/プラットフォーム、駅、入口/出口、汎用ノード、または乗車エリア (`location_type` を参照)。<br><br> ID は、すべての `stops.stop_id、 locations.geojson `id`、および `location_groups.location_group_id` 値にわたって一意である必要があります。<br><br>複数のroutesで同じ`stop_id`が使用される場合があります。 | 
+ | `stop_id` | 一意の ID | **必須** |場所を識別します: 停留所/プラットフォーム、駅、入口/出口、汎用ノード、または乗車エリア ( ``location_type``を参照)。<br><br> ID は、すべての `stops.stop_id、 locations.geojson `id`、および `location_groups.location_group_id` 値にわたって一意である必要があります。<br><br>複数のroutesで同じ`stop_id`が使用される場合があります。 | 
  | `stop_code` |Text| オプション | 乗客に対して場所を識別する短いテキストまたは番号。これらのコードは、多くの場合、電話ベースの交通情報システムで使用され、乗客が特定の場所の情報を入手しやすくするために標識に印刷されます。 `stop_code` は、一般向けである場合は`stop_id`と同じになることがあります。乗客にコードが提示されない場所では、このフィールドは空白のままにしてください。 | 
- | `stop_name` |Text| **条件付きで必須** | 場所の名前。 `stop_name` は、時刻表に印刷されているか、オンラインで公開されているか、標識に表示されている、機関の乗客向けの場所の名前と一致する必要があります。他の言語に翻訳するには、[translations.txt](#translationstxt) を使用します。<br><br>場所が乗車エリアの場合 (`location_type=4`)、`stop_name` には、agencyが表示する乗車エリアの名前を含める必要があります。これは、1 文字だけの場合 (一部のヨーロッパの都市間鉄道駅のように) もあれば、`車椅子乗車エリア`(ニューヨーク市の地下鉄) や`短距離列車の先頭`(パリの RER) のようなテキストの場合もあります。<br><br>条件付きで必須:<br> -stops(`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は**必須**です。<br> - 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。| 
+ | `stop_name` |Text| **条件付きで必須** | 場所の名前。 `stop_name` は、時刻表に印刷されているか、オンラインで公開されているか、標識に表示されている、機関の乗客向けの場所の名前と一致する必要があります。他の言語に翻訳するには、[translations.txt](#translationstxt) を使用します。<br><br>場所が乗車エリアの場合 (`location_type=4`)、 `stop_name` には、agencyが表示する乗車エリアの名前を含める必要があります。これは、1 文字だけの場合 (一部のヨーロッパの都市間鉄道駅のように) もあれば、`車椅子乗車エリア`(ニューヨーク市の地下鉄) や`短距離列車の先頭`(パリの RER) のようなテキストの場合もあります。<br><br>条件付きで必須:<br> -stops(`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は**必須**です。<br> - 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。| 
  | `tts_stop_name` |Text| オプション | `stop_name` の読み取り可能なバージョン。詳細については、[用語の定義](#term-definitions) の`テキスト読み上げフィールド`を参照してください。| 
  | `stop_desc` |Text| オプション | 有用で質の高い情報を提供する場所の説明。`stop_name` と重複してはいけません。| 
  | `stop
 
-lat` | 緯度 | **条件付きで必須** | 場所の緯度。<br><br>stops/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標でなければならず、そうでない場合は旅行者がvehicleに乗車する場所 (vehicleがstops道路や線路ではなく、歩道またはプラットフォーム) の座標でなければなりません。<br><br>条件付きで必須:<br> -stops(`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は**必須**です。<br> - 汎用ノード (`location_type=3`) または搭乗エリア (`location_type=4`) の場所の場合はオプションです。| 
+lat` | 緯度 | **条件付きで必須** | 場所の緯度。<br><br>stops/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標でなければならず、そうでない場合は旅行者がvehicleに乗車する場所 (vehicleがstops道路や線路ではなく、歩道またはプラットフォーム) の座標でなければなりません。<br><br>条件付きで必須:<br> -stops(`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は**必須**です。<br> - 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。| 
  | `stop_lon` | 経度 | **条件付きで必須** | 場所の経度。<br><br>stops/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標でなければならず、そうでない場合は旅行者がvehicleに乗車する場所 (vehicleがstops道路や線路ではなく、歩道またはプラットフォーム) の座標でなければなりません。<br><br>条件付きで必須:<br> -stops(`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は**必須**です。<br> - 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。| 
- | `zone_id` | ID | オプション | 停留所の料金ゾーンを識別します。このレコードが駅または駅の入口を表す場合、`zone_id` は無視されます。| 
+ | `zone_id` | ID | オプション | 停車場の料金ゾーンを識別します。このレコードが駅または駅の入口を表す場合、`zone_id` は無視されます。| 
  | `stop_url` | URL | オプション | 場所に関する Web ページのURL 。これは、`agency.agency_url` および `routes.route_url` フィールド値とは異なる必要があります。| 
- | `location_type` | Enum | オプション | 場所の種類。有効なオプションは次のとおりです。<br><br> `0` (または空白) - **停留所** (または **プラットフォーム**)。乗客が交通機関のvehicleに乗車または降車する場所です。`parent_station` 内で定義されている場合はプラットフォームと呼ばれます。<br> `1` - **駅**。1 つ以上のプラットフォームを含む物理的な構造またはエリア。<br> `2` - **入口/出口**。乗客が通りから駅に出入りできる場所です。入口/出口が複数の駅に属している場合、両方の駅にpathwaysでリンクされている可能性がありますが、データ プロバイダーはそのうちの 1 つを親として選択する必要があります。<br> `3` - **汎用ノード**。他の `location_type ` に一致しない駅内の場所。[pathways.txt](#pathwaystxt) で定義されたpathwaysをリンクするために使用できます。<br> `4` - **乗車エリア**。乗客が車両に乗ったり降車したりできるプラットフォーム上の特定の場所です。| 
+ | `location_type` | Enum | オプション | 場所の種類。有効なオプションは次のとおりです。<br><br> `0` (または空白) - **停留所** (または **プラットフォーム**)。乗客が交通機関のvehicleに乗車または降車する場所です。`parent_station` 内で定義されている場合はプラットフォームと呼ばれます。<br> `1` - **駅**。1 つ以上のプラットフォームを含む物理的な構造またはエリア。<br> `2` - **入口/出口**。乗客が通りから駅に出入りできる場所です。入口/出口が複数の駅に属している場合、両方の駅にpathwaysでリンクされている可能性がありますが、データ プロバイダーはそのうちの 1 つを親として選択する必要があります。<br> `3` - **汎用ノード**。他の`location_type`に一致しない駅内の場所。[pathways.txt](#pathwaystxt) で定義されたpathwaysをリンクするために使用できます。<br> `4` - **乗車エリア**。乗客が車両に乗ったり降車したりできるプラットフォーム上の特定の場所です。| 
  | ` parent_station` | `stops.stop_id` を参照する外部 ID | **条件付きで必須** | [stops.txt](#stopstxt) で定義されているさまざまな場所間の階層を定義します。次のように、親の場所の ID が含まれます。<br><br> - **停車駅/プラットフォーム** (`location_type=0`): `parent_station` フィールドには駅の ID が含まれます。<br> - **駅** (`location_type=1`): このフィールドは空でなければなりません。<br> - **入口/出口** (`location_type=2`) または **汎用ノード** (`location_type=3`): `parent_station` フィールドには駅の ID が含まれます (`location_type=1`)<br> - **乗車エリア** (`location_type=4`): `parent_station` フィールドにはプラットフォームの ID が含まれます。<br><br>条件付きで必須:<br> - 入口 (`location_type=2`)、汎用ノード (`location_type=3`)、または搭乗エリア (`location_type=4`) の場所の場合は **必須** です。<br> -stops/プラットフォームの場合はオプションです (`location_type=0`)。<br> - 駅 (`location_type=1`) では禁止されています。| 
  | `stop_timezone ` | タイムゾーン | オプション | 場所のタイムゾーン。場所に親駅がある場合は、その駅のタイムゾーンを適用する代わりに、親駅のタイムゾーンを継承します。` stop_timezone ` が空の駅と親のないstopsは、` agency.agency_timezone` で指定されたタイムゾーンを継承します。[stop_times.txt](#stop_timestxt) で提供される時間は、` stop_timezone ` ではなく、` agency.agency_timezone ` で指定されたタイムゾーンです。これにより、旅行がどのタイムゾーンを通過するかに関係なく、旅行の途中で旅行の時間値が常に増加することが保証されます。| 
  | ` wheelchair_boarding` | 列挙型 | オプション | 場所から車椅子で乗車できるかどうかを示します。有効なオプションは次のとおりです。<br><br>親のいないstopsの場合:<br> `0` または空 - 停留所のアクセシビリティ情報がありません。<br> `1` - この停留所の一部の車両には車椅子の乗客が乗車できます。<br> `2` - この停留所では車椅子での乗車はできません。<br><br>チャイルドstopsの場合：<br> `0` または空 - 親ステーションで指定されている場合、停留所は親ステーションから `wheelchair_boarding` 動作を継承します。<br> `1` - 駅の外から特定の停留所/プラットフォームまでアクセス可能な経路が存在します。<br> `2` - 駅の外から特定の停留所/プラットフォームまでアクセス可能な経路が存在しません。<br><br>駅の出入口について：<br> `0` または空 - 親に指定されている場合、駅の入口は親駅の `wheelchair_boarding` 動作を継承します。<br> `1` - 駅の入り口は車椅子でアクセス可能です。<br> `2` - 駅の入口からstops/プラットフォームへのアクセス可能な経路がありません。| 
@@ -237,8 +237,8 @@ lat` | 緯度 | **条件付きで必須** | 場所の緯度。<br><br>stops/プ�
  | `route_color` | 色 | オプション | 公共向け資料に一致するルートの色の指定。省略または空のままにした場合、デフォルトで白 (`FFFFFF`) になります。`route_color` と `route_text_color` の色の違いは、白黒画面で表示したときに十分なコントラストを提供する必要があります。 | 
  | `route_text_color` | 色 | オプション | `route_color` の背景に描画されるテキストに使用する判読可能な色。省略または空のままにした場合、デフォルトで黒 (`000000`) になります。`route_color` と `route_text_color` の色の違いは、白黒画面で表示したときに十分なコントラストを提供する必要があります。 | 
  | `route_sort_order` | 負でない整数 | オプション | 顧客への提示に最適な方法でroutesを並べ替えます。`route_sort_order` 値が小さいルートが最初に表示されます。 | 
- | `continuous_pickup ` | 列挙型 | **条件付き禁止** | ルートのすべての移動において、[shapes.txt](#shapestxt) で説明されているように、乗客が車両の移動経路に沿った任意の地点で交通機関のvehicleに乗車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ピックアップ。<br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続的な停車ピックアップを手配するにはagencyに電話する必要があります。<br> `3` - 連続停止ピックアップを手配するにはドライバーと調整する必要があります。<br><br> `routes.continuous_pickupの値は、ルート沿いの特定の ` stop_timeに対して ` stop_times.continuous_pickupの値を定義することによって上書きできます。<br><br> **条件付き禁止**:<br> - このルートの任意の旅行に ` stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
- | `continuous_drop_off ` | 列挙型 | **条件付きで禁止** | 乗客は、[shapes.txt](#shapestxt) で説明されているように、ルートのすべての移動で、車両の移動経路に沿った任意の地点で交通機関のvehicleから降車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ドロップオフ。<br> `1`または空 - 連続停止ドロップオフなし。<br> `2` - 連続停車降車を手配するにはagencyに電話する必要があります。<br> `3` - 連続停車降車を手配するには、ドライバーと調整する必要があります。<br><br> `routes.continuous_drop_offの値は、ルート沿いの特定の ` stop_timeに対して ` stop_times.continuous_drop_offの値を定義することによって上書きできます。<br><br> **条件付き禁止**:<br> - このルートの任意の旅行に ` stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
+ | `continuous_pickup` | 列挙型 | **条件付きで禁止** | ルートのすべての移動において、[shapes.txt](#shapestxt) で説明されているように、乗客が車両の移動経路に沿った任意の地点で交通機関のvehicleに乗車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ピックアップ。<br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続的な停車ピックアップを手配するにはagencyに電話する必要があります。<br> `3` - 連続停止ピックアップを手配するにはドライバーと調整する必要があります。<br><br> `routes.continuous_pickup`の値は、ルート沿いの特定の ` stop_timeに対して`stop_times.continuous_pickup`の値を定義することによって上書きできます。<br><br> **条件付き禁止**:<br> - このルートの任意の旅行に ` stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
+ | `continuous_drop_off` | 列挙型 | **条件付きで禁止** | 乗客は、[shapes.txt](#shapestxt) で説明されているように、ルートのすべての移動において、車両の移動経路に沿った任意の地点で交通機関のvehicleから降車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ドロップオフ。<br> `1`または空 - 連続停止ドロップオフなし。<br> `2` - 連続停車降車を手配するにはagencyに電話する必要があります。<br> `3` - 連続停車降車を手配するには、ドライバーと調整する必要があります。<br><br> `routes.continuous_drop_offの値は、ルート沿いの特定の ` stop_timeに対して ` stop_times.continuous_drop_offの値を定義することによって上書きできます。<br><br> **条件付き禁止**:<br> - このルートの任意の旅行に ` stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
  | `network_id` | ID | **条件付きで禁止** |routesのグループを識別します。[routes.txt](#routestxt) 内の複数の行に同じ `network_id` が含まれる場合があります。<br><br>条件付き禁止:<br> - [route_networks.txt](#route_networkstxt) ファイルが存在する場合は**禁止**です。<br> - それ以外の場合はオプションです。 
  
 ### trips.txt 
@@ -297,11 +297,11 @@ lat` | 緯度 | **条件付きで必須** | 場所の緯度。<br><br>stops/プ�
  | `end_pickup_drop_off_window` | 時間 | **条件付きで必須** | GeoJSON の場所、場所グループ、または停留所でオンデマンド サービスが終了する時間。<br><br> **条件付きで必須**:<br> - `stop_times.location_group_id` または `stop_times.location_id` が定義されている場合は**必須**です。<br> - `start_pickup_drop_off_window`が定義されている場合は**必須**です。<br> - `arrival_timeまたは`departure_time`が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
  | `pickup_type` | 列挙型 | **条件付きで禁止** | ピックアップ方法を示します。有効なオプションは次のとおりです:<br><br> `0` または空 - 定期的にスケジュールされたピックアップ。<br> `1` - ピックアップできません。<br> `2` -agencyに電話して集荷を手配する必要があります。<br> `3` - ピックアップを手配するにはドライバーと調整する必要があります。<br><br> **条件付き禁止**:<br> - `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合、` pickup_type =0` は**禁止**です。<br> - `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合、` pickup_type =3` は**禁止** です。<br> - それ以外の場合はオプションです。 | 
  | ` drop_off_type` | 列挙型 | **条件付き禁止** | ドロップオフ方法を示します。有効なオプションは次のとおりです:<br><br> `0` または空 - 定期的に予定されている降車。<br> `1` - ドロップオフは利用できません。<br> `2` - 降車手配のためagencyに電話する必要があります。<br> `3` - 降車手配についてはドライバーと調整する必要があります。<br><br> **条件付き禁止**:<br> - `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合、` drop_off_type =0` は**禁止**です。<br> - それ以外の場合はオプションです。 | 
- | ` continuous_pickup ` | 列挙型 | **条件付きで禁止** | 乗客は、[shapes.txt](#shapestxt) で説明されているように、この `stop_time ` から旅行の`stop_sequence`の次の ` stop_time ` まで、車両の移動経路に沿った任意の時点で交通vehicleの車両に乗車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ピックアップ。
+ | `continuous_pickup` | 列挙型 | **条件付きで禁止** | 乗客は、[shapes.txt](#shapestxt) で説明されているように、この `stop_time ` から旅行の`stop_sequence`の次の ` stop_time ` まで、車両の移動経路に沿った任意の時点で交通vehicleの車両に乗車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ピックアップ。
 
 br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続的な停車ピックアップを手配するにはagencyに電話する必要があります。<br> `3` - 連続停止ピックアップを手配するにはドライバーと調整する必要があります。<br><br>このフィールドに値が入力されている場合は、[routes.txt](#routestxt) で定義されている連続ピックアップ動作が上書きされます。このフィールドが空の場合、`stop_time` は [routes.txt](#routestxt) で定義されている連続ピックアップ動作を継承します。<br><br> **条件付き禁止**:<br> - `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
- | `continuous_drop_off ` | 列挙型 | **条件付きで禁止** | 乗客は、[shapes.txt](#shapestxt) で記述されているように、この `stop_time ` から旅行の`stop_sequence`の次の ` stop_time ` まで、車両の移動経路に沿った任意の地点で交通vehicleの車両から降車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ドロップオフ。<br> `1`または空 - 連続停止ドロップオフなし。<br> `2` - 連続停車降車を手配するにはagencyに電話する必要があります。<br> `3` - 連続停車降車を手配するには、ドライバーと調整する必要があります。<br><br>このフィールドに値が入力されている場合は、[routes.txt](#routestxt) で定義されている連続降車動作が上書きされます。このフィールドが空の場合、`stop_time` は [routes.txt](#routestxt) で定義されている連続降車動作を継承します。<br><br> **条件付き禁止**:<br> - `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
- | `shape_dist_traveled` | 非負のfloat| オプション | 最初の停車地からこのレコードで指定された停車地までの、関連付けられたshapeに沿った実際の移動距離。このフィールドは、旅行中に任意の 2 つのstops間に描画するshapeの量を指定します。[shapes.txt](#shapestxt) で使用されているのと同じ単位にする必要があります。`shape_dist_traveled` に使用される値は、`stop_sequence`とともに増加する必要があり、ルートに沿った逆方向の移動を示すために使用することはできません。<br><br>ループまたはインライン（vehicleが1 回の移動で同じ部分の線形を横断または移動する）があるroutesに推奨されます。[` shapes.shape_dist_traveled`](#shapestxt) を参照してください。<hr> *例: バスがshapeの開始から停留所まで 5.25 キロメートルの距離を移動する場合、`shape_dist_traveled`=`5.25` となります。*| 
+ | `continuous_drop_off` | 列挙型 | **条件付き禁止** | 乗客は、[shapes.txt](#shapestxt) で記述されているように、この `stop_time ` から旅行の`stop_sequence`の次の ` stop_time ` まで、車両の移動経路に沿った任意の地点で交通機関のvehicleから降車できることを示します。有効なオプションは次のとおりです。<br><br> `0` - 連続停止ドロップオフ。<br> `1`または空 - 連続停止ドロップオフなし。<br> `2` - 連続停車降車を手配するにはagencyに電話する必要があります。<br> `3` - 連続停車降車を手配するには、ドライバーと調整する必要があります。<br><br>このフィールドに値が入力されている場合は、[routes.txt](#routestxt) で定義されている連続降車動作が上書きされます。このフィールドが空の場合、`stop_time` は [routes.txt](#routestxt) で定義されている連続降車動作を継承します。<br><br> **条件付き禁止**:<br> - `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合は**禁止**です。<br> - それ以外の場合はオプションです。 | 
+ | `shape_dist_traveled` | 非負のfloat| オプション | 最初の停車地からこのレコードで指定された停車地までの、関連付けられたshapeに沿った実際の移動距離。このフィールドは、`shape_dist_traveled`中に任意の 2 つのstops間に描画するshapeの量を指定します。[shapes.txt](#shapestxt) で使用されているのと同じ単位にする必要があります。`shape_dist_traveled` に使用される値は、`stop_sequence`とともに増加する必要があり、ルートに沿った逆方向の移動を示すために使用することはできません。<br><br>ループまたはインライン（vehicleが1 回の移動で同じ部分の線形を横断または移動する）があるroutesに推奨されます。[` shapes.shape_dist_traveled`](#shapestxt) を参照してください。<hr> *例: バスがshapeの開始から停留所まで 5.25 キロメートルの距離を移動する場合、 `shape_dist_traveled`=`5.25` となります。*| 
  | `timepoint` | 列挙型 | 推奨 | 停留所のarrival時間とdeparture時間がvehicleによって厳密に遵守されているか、または概算時間や補間時間であるかを示します。このフィールドにより、 GTFSプロデューサーは、概算時間であることを示すとともに、補間された停留所時間を提供できます。有効なオプションは次のとおりです。<br><br> `0` - 時間はおおよそのものとみなされます。<br> `1`または空 - 時間は正確であるとみなされます。 | 
  | `pickup_booking_rule_id` | `booking_rules.booking_rule_id` を参照する ID | オプション | この停止時間での搭乗予約ルールを識別します。<br><br> `pickup_type=2 ` の場合に推奨されます。 | 
  | `drop_off_booking_rule_id` | `booking_rules.booking_rule_id` を参照する ID | オプション | この停車時間における降車予約ルールを識別します。<br><br> `drop_off_type =2` の場合に推奨されます。 | 
@@ -364,7 +364,7 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  | `payment_method` | 列挙型 | **必須** | 運賃を支払う必要がある時期を示します。有効なオプションは次のとおりです。<br><br> `0` - 運賃は乗車時に支払われます。<br> `1` - 乗車前に運賃を支払う必要があります。 | 
  | `transfers` | Enum | **必須** | この運賃で許可されるtransfers回数を示します。有効なオプションは次のとおりです:<br><br> `0` - この運賃ではtransfersは許可されません。<br> `1` - ライダーは 1 回乗り換えることができます。<br> `2` - ライダーは2回乗り換えることができます。<br>空 - 無制限のtransfersが許可されます。 | 
  | `agency_id` | `agency.agency_id` を参照する外国 ID | **条件付きで必須** | 運賃の関連agencyを識別します。<br><br>条件付きで必須:<br> - [agency.txt](#agencytxt) に複数の代理店が定義されている場合は**必須**です。<br> - それ以外の場合は推奨されます。 | 
- | `transfer_duration` | 負でない整数 | オプション | 乗り換えが期限切れになるまでの時間 (秒単位)。`transfers`=`0` の場合、このフィールドはチケットの有効期間を示すために使用されるか、空のままにすることができます。 | 
+ | `transfer_duration` | 負でない整数 | オプション |`transfers`が期限切れになるまでの時間 (秒単位)。`transfers` =`0` の場合、このフィールドはチケットの有効期間を示すために使用されるか、空のままにすることができます。 | 
  
 ### fare_rules.txt 
  
@@ -383,7 +383,7 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------| 
  | `fare_id` | `fare_attributes.fare_id` を参照する外部 ID | **必須** | 運賃クラスを識別します。 | 
- | `route_id` | `routes.route_idを参照する外部 ID | オプション | 運賃クラスに関連付けられたルートを識別します。同じ運賃属性を持つ複数のroutesが存在する場合は、ルートごとに [fare_rules.txt](#fare_rulestxt) にレコードを作成します。<hr> *例: 運賃クラス`b`がルート`TSW`と`TSE`で有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
+ | `route_id` | `routes.route_idを参照する外部 ID | オプション | 運賃クラスに関連付けられたルートを識別します。同じ運賃属性を持つ複数のroutesが存在する場合は、ルートごとに [fare_rules.txt](#fare_rulestxt) にレコードを作成します。<hr> *例: 運賃クラス`b`がルート`TSW`および`TSE`で有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,route_id`<br> `b,TSW`<br> `b,TSE`| 
  | `origin_id` | `stops.zone_id` を参照する外部 ID | オプション | 出発地ゾーンを識別します。運賃クラスに複数の出発地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `origin_id` のレコードを作成します。<hr> *例: 運賃クラス`b`がゾーン`2`またはゾーン`8`から出発するすべての旅行に有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,...,origin_id`<br> `b,...,2`<br> `b,...,8` | 
  | `destination_id` | `stops.zone_id` を参照する外部 ID | オプション | 目的地ゾーンを識別します。運賃クラスに複数の目的地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `destination_id` のレコードを作成します。<hr> *例: `origin_id` フィールドと `destination_id` フィールドを一緒に使用して、運賃クラス "b" がゾーン 3 と 4 の間の旅行に有効であることを指定できます。ゾーン 3 と 5 の間の旅行の場合、[fare_rules.txt](#fare_rulestxt) ファイルには、運賃クラスに関する次のレコードが含まれます。*<br> `fare_id,...,origin_id,destination_id`<br> `b,...,3,4`<br> `b,...,3,5` | 
  | `contains_id` | `stops.zone_id` を参照する外部 ID | オプション | 特定の運賃クラスを使用しているときに乗客が進入するゾーンを識別します。一部のシステムで正しい運賃クラスを計算するために使用されます。<hr> *例: 運賃クラス`c`がゾーン 5、6、7 を通過する GRT ルートのすべての旅行に関連付けられている場合、[fare_rules.txt](#fare_rulestxt) には次のレコードが含まれます。*<br> `fare_id,route_id,...,contains_id`<br> `c,GRT,...,5`<br> `c,GRT,...,6`<br> `c,GRT,...,7`<br> *運賃を適用するには、すべての `contains_id` ゾーンが一致している必要があるため、ゾーン 5 と 6 は通過するがゾーン 7 は通過しない旅程には運賃クラス`c`はありません。詳細については、GoogleTransitDataFeed プロジェクト wiki の [https://code.google.com/p/googletransitdatafeed/wiki/FareExamples](https://code.google.com/p/googletransitdatafeed/wiki/FareExamples) をご覧ください。* | 
@@ -553,20 +553,20 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------| 
  | ` area_id` | `areas.area_id` を参照する外部 ID | **必須** | 1 つまたは複数の`stop_id` stop_id` が属するエリアを識別します。同じ`stop_id` が複数の `area_id` で定義される場合があります。 | 
- | `stop_id` | `stops.stop_id` を参照する外部 ID | **必須** | 停留所を識別します。このフィールドで駅 (つまり、`stops.location_type=1の停留所) が定義されている場合、そのすべてのプラットフォーム (つまり、この駅が ` stops.parent_stationとして定義されている ` stops.location_type=0のすべてのstops) は同じエリアの一部であると見なされます。 この動作は、プラットフォームを他のエリアに割り当てることで上書きできます。 | 
+ | `stop_id` | `stops.stop_id` を参照する外部 ID | **必須** | 停留所を識別します。このフィールドで駅 (つまり、 `stops.location_type=1`の停留所) が定義されている場合、そのすべてのプラットフォーム (つまり、この駅が ` stops.parent_stationとして定義されている ` `stops.location_type=0`のすべてのstops) は同じエリアの一部であると見なされます。 この動作は、プラットフォームを他のエリアに割り当てることで上書きできます。 | 
  
 ### networks.txt 
  
  ファイル: **条件付き禁止** 
  
- 主キー (`network_id) 
+ 主キー (`network_id`) 
  
  運賃区間ルールに適用されるネットワーク識別子を定義します。 
  
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------| 
- | `network_id| 一意の ID | **必須** | ネットワークを識別します。[networks.txt](#networkstxt) 内で一意である必要があります。 | 
- | `network_name` |Text| **オプション** | 地方agencyとその乗客が使用する、運賃区間ルールに適用されるネットワークの名前。 
+ | `network_id` | 一意の ID | **必須** | ネットワークを識別します。 [networks.txt](#networkstxt) 内で一意である必要があります。 | 
+ | `network_name` |Text| **オプション** | 地方agencyとその乗客が使用する、運賃区間ルールに適用されるネットワークの名前。
  
 ### route_networks.txt 
  
@@ -574,11 +574,11 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  
  主キー (`route_id` ) 
  
- [routes.txt](#routestxt) からのroutesをネットワークに割り当てます。 
+ [routes.txt](#routestxt) からのroutesをネットワークに割り当てます。
  
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------| 
- | ` network_id` | `networks.network_id` を参照する外部 ID | **必須** | 1 つまたは複数の`route_id`が属するネットワークを識別します。 `route_id` は1 つの `network_id` でのみ定義できます。 | 
+ | ` network_id` | `networks.network_id` を参照する外部 ID | **必須** | 1 つまたは複数の`route_id`が属するネットワークを識別します。 `route_id` は、1 つの `network_id` でのみ定義できます。 | 
  | `route_id` | `routes.route_idを参照する外部 ID | **必須** | ルートを識別します。 | 
  
 ### shapes.txt 
@@ -587,15 +587,15 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  
  主キー (`shape_id`、 `shape_pt_sequence`) 
  
- シェイプは、vehicleがルート線形に沿って移動するパスを表し、ファイルshapes.txtで定義されます。シェイプはトリップに関連付けられており、vehicleが順番に通過する一連のポイントで構成されます。シェイプはストップの位置を正確に横切る必要はありませんが、トリップのすべてのストップは、そのトリップのshapeからわずかな距離内、つまりshapeポイントを接続する直線セグメントの近くにある必要があります。 
+ シェイプは、vehicleがルート線形に沿って移動するパスを表し、ファイルshapes.txtで定義されます。シェイプはトリップに関連付けられており、vehicleが順番に通過する一連のポイントで構成されます。シェイプはストップと正確に重なる必要はありませんが、トリップのすべてのストップは、そのトリップのshapeからわずかな距離内、つまりshapeポイントを接続する直線セグメントの近くにある必要があります。 
  
  | フィールド名 | タイプ | 存在 | 説明 | 
- |------|------|------|------|------| 
+ |------|------|------|------| 
  | `shape_id` | ID | **必須** |shapeを識別します。 | 
  | `shape_pt_lat` | 緯度 | **必須** |shapeポイントの緯度。[shapes.txt](#shapestxt) 内の各レコードは、shapeを定義するために使用されるshapeポイントを表します。 | 
  | ` shape_pt_lon` | 経度 | **必須** |shapeポイントの経度。 | 
  | `shape_pt_sequence` | 負でない整数 | **必須** |shapeポイントが接続してshapeを形成するシーケンス。値はトリップに沿って増加する必要がありますが、連続している必要はありません。<hr> *例:shape`A_shp`の定義に 3 つの点がある場合、[shapes.txt](#shapestxt) ファイルにはshapeを定義する次のレコードが含まれる可能性があります。*<br> `shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence`<br> `A_shp,37.61956,-122.48161,0`<br> `A_shp,37.64430,-122.41070,6`<br> `A_shp,37.65863,-122.30839,11` | 
- | `shape_dist_traveled` | 非負のfloat| オプション | 最初のshapeポイントからこのレコードで指定されたポイントまでのshapeに沿った実際の移動距離。旅行プランナーがマップ上にshapeの正しい部分を表示するために使用します。値は `shape_pt_sequence` とともに増加する必要があります。ルートに沿った逆方向の移動を示すために使用しないでください。距離の単位は [stop_times.txt](#stop_timestxt) で使用されている単位と一致している必要があります。<br><br>ループまたはインライン (vehicleが1 回の移動で同じ線形部分を横断または移動する) があるroutesに推奨されます。 <br><img src="../../../assets/inlining.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"><br>vehicleが移動中にルートの線形をたどったり交差したりする場合、[shapes.txt](# shape_dist_traveled ) 内のポイントの並び方が [stop_times.txt](#stop_timestxt) 内のレコードとどのように対応しているかを明確にするために、` shape_dist_traveled ` が重要になります。<hr> *例: バスが上記で A_shp に定義された 3 つのポイントに沿って移動する場合、追加の `shape_dist_traveled` 値 (ここではキロメートル単位で表示) は次のようになります。*<br> `shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled`<br> `A_shp,37.61956,-122.48161,0,0<br> `A_shp,37.64430,-122.41070,6,6.8310`<br> `A_shp,37.65863,-122.30839,11,15.8765` | 
+ | `shape_dist_traveled` | 非負のfloat| オプション | 最初のshapeポイントからこのレコードで指定されたポイントまでのshapeに沿った実際の移動距離。旅行プランナーがマップ上にshapeの正しい部分を表示するために使用します。値は `shape_pt_sequence` とともに増加する必要があります。ルートに沿った逆方向の移動を示すために使用しないでください。距離の単位は [stop_times.txt](#stop_timestxt) で使用されている単位と一致している必要があります。<br><br>ループまたはインライン (vehicleが1 回の移動で同じ線形部分を横断または移動する) があるroutesに推奨されます。 <br><img src="../../../assets/inlining.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"><br>vehicleが移動中にルートをたどったり、ルートを横切ったりする場合、 `shape_dist_traveled` は、 [shapes.txt](#shapestxt) 内のポイントの並び方が [stop_times.txt](#stop_timestxt) 内のレコードとどのように対応しているかを明確にするために重要です。<hr> *例: バスが上記で A_shp に定義された 3 つのポイントに沿って移動する場合、追加の`shape_dist_traveled`値 (ここではキロメートル単位で表示) は次のようになります。*<br> `shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled`<br> `A_shp,37.61956,-122.48161,0,0<br> `A_shp,37.64430,-122.41070,6,6.8310`<br> `A_shp,37.65863,-122.30839,11,15.8765` | 
  
 ### frequencies.txt 
  
@@ -679,24 +679,24 @@ br> `1`または空 - 連続停止ピックアップなし。<br> `2` - 継続�
  
  主キー (`pathway_id`) 
  
- ファイル [pathways.txt](#pathwaystxt) と [levels.txt](#levelstxt) は、グラフ表現を使用して地下鉄や電車の駅を記述します。ノードは場所を表し、エッジはpathwaysを表します。 
+ ファイル [pathways.txt](#pathwaystxt) と [levels.txt](#levelstxt) は、グラフ表現を使用して地下鉄や電車の駅を記述します。ノードは場所を、エッジはpathwaysを表します。 
  
- 駅の出入口 (`location_type=2` の場所として表されるノード) からプラットフォーム (`location_type=0` または空の場所として表されるノード) に移動するには、乗客は通路、改札口、階段、およびpathwaysとして表されるその他のエッジを通過します。汎用ノード (`location_type=3` で表されるノード) は、駅全体のpathwaysを接続するために使用できます。 
+ 駅の出入口 ( `location_type=2`の場所として表されるノード) からプラットフォーム ( `location_type=0`または空の場所として表されるノード) に移動するには、乗客は通路、改札口、階段、およびpathwaysとして表されるその他のエッジを通過します。汎用ノード ( `location_type=3`で表されるノード) は、駅全体のpathwaysを接続するために使用できます。 
  
  経路は、駅内で網羅的に定義する必要があります。pathwaysが定義されている場合、駅全体のすべてのpathwaysが表されているものとみなされます。したがって、次のガイドラインが適用されます。
  
- - ぶら下がっている場所は不可: 駅内のいずれかの場所に経路がある場合、その駅内のすべての場所にpathwaysが必要です。ただし、乗車エリア (`location_type=4`) があるプラットフォームは除きます (以下のガイドラインを参照)。
- - 乗車エリアのあるプラットフォームにはpathwaysがありません: 乗車エリア (` location_type=4 `) があるプラットフォーム (` location_type=0 ` または空) は、ポイントではなく親オブジェクトとして扱われます。このような場合、プラットフォームにはpathwaysを割り当ててはなりません。すべてのpathwaysは、プラットフォームの乗車エリアごとに割り当てる必要があります。
- - ロックされたプラットフォームは不可: 各プラットフォーム (`location_type=0` または空) または乗車エリア (`location_type=4 `) は、pathwaysのチェーンを介して少なくとも 1 つの出入口 (` location_type=2 `) に接続されている必要があります。特定のプラットフォームから駅の外への通路を許可していない駅はまれです。
+ - ぶら下がっている場所は不可: 駅内のいずれかの場所に経路がある場合、その駅内のすべての場所にpathwaysが必要です。ただし、乗車エリア (`location_type=4`、以下のガイドラインを参照) があるプラットフォームは除きます。
+ - 乗車エリアのあるプラットフォームにはpathwaysがありません: 乗車エリア ( `location_type= `location_type=4` ) があるプラットフォーム ( `location_type=0`または空) は、ポイントではなく親オブジェクトとして扱われます。このような場合、プラットフォームにはpathwaysを割り当ててはなりません。すべてのpathwaysは、プラットフォームの各乗車エリアに割り当てる必要があります。
+ - ロックされたプラットフォームは不可: 各プラットフォーム (`location_type=0`または空) または乗車エリア (`location_type=4` ) は、pathwaysのチェーンを介して少なくとも 1 つの出入口 ( `location_type=2` ) に接続されている必要があります。特定のプラットフォームから駅の外への通路を許可していない駅はまれです。
  
  | フィールド名 | タイプ | 存在 | 説明 | 
  |------|------|------|------|------| 
  | ` pathway_id` | 一意の ID | **必須** | 通路を識別します。システムによってレコードの内部識別子として使用されます。データセット内で一意である必要があります。<br><br>異なるpathwaysでは、 `from_stop_id` と `to_stop_id` の値が同一になる場合があります。<hr> _例: 2 つのエスカレーターが反対方向に並んでいる場合、または階段セットとエレベーターが同じ場所から同じ場所に行く場合、異なる `pathway_id` が同じ `from_stop_id` および `to_stop_id` 値を持つことがあります。_| 
  | `from_stop_id` | `stops.stop_id` を参照する外部 ID | **必須** | 経路が始まる場所。<br><br>プラットフォームを識別する`stop_id`を含める必要があります（`lo
 
-cation_type=0` または空)、入口/出口 (`location_type=2`)、汎用ノード (`location_type=3`)、または搭乗エリア (`location_type=4`)。<br><br>駅を識別する`stop_id`の値 (`location_type=1`) は禁止されています。| 
- | `to_stop_id` | `stops.stop_id ` を参照する外部 ID | **必須** | 経路が終了する場所。<br><br>プラットフォーム (` location_type=0` または空)、入口/出口 (`location_type=2`)、汎用ノード (`location_type=3`)、または乗車エリア (`location_type=4 `) を識別する`stop_id`を含める必要があります。<br><br>駅 (` location_type=1 `) を識別する`stop_id`の値は使用できません。| 
- | ` pathway_mode` | 列挙型 | **必須** | 指定された (`from_stop_id`、`to_stop_id`) ペア間の経路のタイプ。有効なオプションは次のとおりです。<br><br> `1` - 歩道。<br> `2` - 階段。<br> `3` - 動く歩道/動く歩道。<br> `4` - エスカレーター。<br> `5` - エレベーター。<br> `6` - 改札口 (または支払いゲート): 駅のエリアに渡る通路で、通過するには支払いの証明が必要です。改札口は、駅の有料エリアと無料エリアを分けたり、同じ駅内の異なる支払いエリアを互いに分けたりします。この情報を使用すると、乗客に不要な支払いをrequire近道を使って駅を経由するルートを回避できます。たとえば、バス専用通路に到達するために地下鉄のプラットフォームを歩くように乗客を誘導するなどです。<br> `7`- 出口ゲート: 有料エリアから、支払い証明がなくても通過できる無料エリアへの通路。| 
+cation_type=0` または空)、入口/出口 (`location_type=2`)、汎用ノード (`location_type=3`)、または搭乗エリア (`location_type=4`) のいずれかになります。<br><br>駅を識別する`stop_id`の値 (`location_type=1`) は禁止されています。| 
+ | `to_stop_id` | `stops.stop_id ` を参照する外部 ID | **必須** | 経路が終了する場所。<br><br>プラットフォーム ( `location_type=0`または空)、入口/出口 (`location_type=2`)、汎用ノード (`location_type=3`)、または乗車エリア (`location_type=4` ) を識別する`stop_id`を含める必要があります。<br><br>駅を識別する`stop_id`の値 (`location_type=1`) は禁止されています。| 
+ | `pathway_mode` | 列挙型 | **必須** | 指定された (`from_stop_id`、`to_stop_id`) ペア間の経路のタイプ。有効なオプションは次のとおりです。<br><br> `1` - 歩道。<br> `2` - 階段。<br> `3` - 動く歩道/動く歩道。<br> `4` - エスカレーター。<br> `5` - エレベーター。<br> `6` - 改札口 (または支払いゲート): 駅のエリアに渡る通路で、通過するには支払いの証明が必要です。改札口は、駅の有料エリアと無料エリアを分けたり、同じ駅内の異なる支払いエリアを互いに分けたりします。この情報を使用すると、乗客に不要な支払いをrequire近道を使って駅を経由するルートを回避できます。たとえば、バス専用通路に到達するために地下鉄のプラットフォームを歩くように乗客を誘導するなどです。<br> `7`- 出口ゲート: 有料エリアから、支払い証明がなくても通過できる無料エリアへの通路。| 
  | `is_bidirectional` | 列挙型 | **必須** | 通路の方向を示します。<br><br> `0` - `from_stop_id` から `to_stop_id` までのみ使用できる一方向の経路。<br> `1` - 両方向に使用できる双方向経路。<br><br>出口ゲート (`pathway_mode=7`) は双方向にすることはできません。| 
  | `length` | 負でないfloat数 | オプション | 出発地 (`from_stop_id` で定義) から目的地 (`to_stop_id` で定義) までの経路の水平方向の長さ (メートル単位)。<br><br>このフィールドは、歩道 (`pathway_mode=1`)、改札口 (`pathway_mode=6`)、出口ゲート (`pathway_mode=7`) に推奨されます。| 
  | `traversal_time` | 正の整数 | オプション | 出発地 (`from_stop_id` で定義) から目的地 (`to_stop_id` で定義) までの経路を歩くのに必要な平均時間 (秒単位)。<br><br>このフィールドは、動く歩道 (`pathway_mode=3`)、エスカレーター (`pathway_mode=4`)、エレベーター (`pathway_mode=5`) に推奨されます。| 
@@ -814,9 +814,9 @@ cation_type=0` または空)、入口/出口 (`location_type=2`)、汎用ノー�
  | `field_name` |Text| **必須** | 翻訳するフィールドの名前。`Text` タイプのフィールドは翻訳できます。`URL`、`Email`、`Phone number` タイプのフィールドも、正しい言語でリソースを提供するために`翻訳`できます。その他のタイプのフィールドは翻訳しないでください。 | 
  | `language` | 言語コード | **必須** | 翻訳の言語。<br><br>言語が `feed_info.feed_lang` と同じ場合、フィールドの元の値は、特定の翻訳のない言語で使用するデフォルト値であると見なされます (`default_lang` で別途指定されていt場合)。<hr> _例: スイスでは、公式にバイリンガルの州にある都市は正式には`Biel/Bienne`と呼ばれますが、フランス語では単に`Bienne`、ドイツ語では`Biel`と呼ばれます。_ | 
  | `translation` |Text、 URL 、Email、Phone number| **必須** | 翻訳された値。 | 
- | `record_id` | 外国 ID | **条件付きで必須** | 翻訳するフィールドに対応するレコードを定義します。`record_id ` の値は、各テーブルの主キー属性で定義されているように、テーブルの主キーの最初のフィールドまたは唯一のフィールドである必要があります。<br><br> - [agency.txt](#agencytxt) の ` agency_id `<br> - [stops.txt](#stopstxt) の`stop_id`<br> - [routes.txt](#routestxt) の`route_id` ;<br> - [trips.txt](#tripstxt) の`trip_id`<br> - [stop_times.txt](#stop_timestxt) の`trip_id` ;<br> - [pathways.txt](#pathwaystxt) の ` pathway_id `;<br> - [levels.txt](#levelstxt) の ` level_id `;<br> - [attributions.txt](#attributionstxt) の ` attribution_id `。<br><br>上記で定義されていないテーブル内のフィールドは翻訳しないでください。ただし、プロデューサーが公式仕様外のフィールドを追加する場合があり、これらの非公式フィールドは翻訳される可能性があります。以下は、これらのテーブルで ` record_id ` を使用するための推奨方法です。<br><br> - [calendar.txt](#calendartxt) の ` service_id `;<br> - [calendar_dates.txt](#calendar_datestxt) の ` service_id `;<br> - [fare_attributes.txt](#fare_attributestxt) の ` fare_id `;<br> - [fare_rules.txt](#fare_rulestxt) の ` fare_id `;<br> - [shapes.txt](#shapestxt) の`shape_id` ;<br> - [frequencies.txt](#frequenciestxt) の`trip_id` ;<br> - [transfers.txt](#transferstxt) の ` from_stop_id `。<br><br>条件付きで必須:<br> - ` table_name` が `feed_info` の場合は**禁止**です。<br> - `field_value` が定義されている場合は**禁止**です。<br> - `field_value` が空の場合は**必須**です。 | 
+ | `record_id` | 外国 ID | **条件付きで必須** | 翻訳するフィールドに対応するレコードを定義します。`record_id ` の値は、各テーブルの主キー属性で定義されているように、テーブルの主キーの最初のフィールドまたは唯一のフィールドである必要があります。<br><br> - [agency.txt](#agencytxt) の ` agency_id `<br> - [stops.txt](#stopstxt) の`stop_id`<br> - [routes.txt](#routestxt) の`route_id` ;<br> - [trips.txt](#tripstxt) の`trip_id`<br> - [stop_times.txt](#stop_timestxt) の`trip_id` ;<br> - [pathways.txt](#pathwaystxt) の ` pathway_id `;<br> - [levels.txt](#levelstxt) の ` level_id `;<br> - [attributions.txt](#attributionstxt) の ` attribution_id `。<br><br>上記で定義されていないテーブル内のフィールドは翻訳しないでください。ただし、プロデューサーが公式仕様外のフィールドを追加する場合があり、これらの非公式フィールドは翻訳される可能性があります。以下は、これらのテーブルで ` record_id ` を使用するための推奨方法です。<br><br> - [calendar.txt](#calendartxt) の ` service_id `;<br> - [calendar_dates.txt](#calendar_datestxt) の ` service_id `;<br> - [fare_attributes.txt](#fare_attributestxt) の ` fare_id `;<br> - [fare_rules.txt](#fare_rulestxt) の ` fare_id `;<br> - [shapes.txt](#shapestxt) の`shape_id` ;<br> - [frequencies.txt](#frequenciestxt) の`trip_id` ;<br> - [transfers.txt](#transferstxt) の ` from_stop_id `。<br><br>条件付きで必須:<br> - ` table_nameが `feed_infoの場合は**禁止**です。<br> - `field_value` が定義されている場合は**禁止**です。<br> - `field_value` が空の場合は**必須**です。 | 
  | `record_sub_id` | 外部 ID | **条件付きで必須** | テーブルに一意の ID がt場合に、フィールドを含むレコードを翻訳するのに役立ちます。したがって、`record_sub_id` の値は、次の表で定義されているように、テーブルのセカンダリ ID です。<br><br> - [agency.txt](#agencytxt) にはなし<br>- [stops.txt](#stopstxt) にはなし<br>- [routes.txt](#routestxt) にはなし。<br> - [trips.txt](#tripstxt) にはありません。<br> - [stop_times.txt](#stop_timestxt) の`stop_sequence` ;<br> - [pathways.txt](#pathwaystxt) にはなし。<br> - [levels.txt](#levelstxt) にはなし<br>- [attributions.txt](#attributionstxt) にはありません。<br><br>上記で定義されていないテーブル内のフィールドは翻訳しないでください。ただし、プロデューサーが公式仕様外のフィールドを追加する場合があり、これらの非公式フィールドは翻訳される可能性があります。以下は、これらのテーブルで `record_sub_id` を使用するための推奨方法です。<br><br> - [calendar.txt](#calendartxt) にはなし<br>- [calendar_dates.txt](#calendar_datestxt) の ` date `<br> - [fare_attributes.txt](#fare_attributestxt) にはなし<br>- [fare_rules.txt](#fare_rulestxt) の`route_id` ;<br> - [shapes.txt](#shapestxt) にはなし<br>- [frequencies.txt](#frequenciestxt) の`start_time` ;<br> - [transfers.txt](#transferstxt) の ` to_stop_id `。<br><br>条件付きで必須:<br> - ` table_name` が `feed_info` の場合は**禁止**です。<br> - `field_value` が定義されている場合は**禁止**です。<br> - `table_name=stop_times` および `record_id` が定義されている場合は**必須**です。| 
- | `field_value` |Text、 URL 、Email、Phone number| **条件付きで必須** | `record_id` および `record_sub_id` を使用してどのレコードを翻訳するかを定義する代わりに、このフィールドを使用して翻訳する値を定義できます。使用すると、`table_name` および `field_name` で識別されるフィールドに、 field_valueで定義された値とまったく同じ値が含まれている場合、翻訳が適用されます。<br><br>フィールドには、`field_value` で定義された値と **正確に** 一致している必要があります。値のサブセットのみが `field_value` と一致する場合、翻訳は適用されませt。<br><br> 2 つの変換ルールが同じレコード (1 つは `field_value` を持ち、もう 1 つは `record_id` を持つ) に一致する場合、`record_id` を持つルールが優先されます。<br><br>条件付きで必須:<br> - `table_name` が `feed_info` の場合は**禁止**です。<br> - `record_id` が定義されている場合は**禁止**です。<br> - `record_id` が空の場合は**必須**です。 | 
+ | `field_value` |Text、 URL 、Email、Phone number| **条件付きで必須** | `record_id` および `record_sub_id` を使用してどのレコードを翻訳するかを定義する代わりに、このフィールドを使用して翻訳する値を定義できます。使用すると、`table_name` および `field_name` で識別されるフィールドに、 field_valueで定義された値とまったく同じ値が含まれている場合、翻訳が適用されます。<br><br>フィールドには、`field_value` で定義された値と **正確に** 一致している必要があります。値のサブセットのみが `field_value` と一致する場合、翻訳は適用されませt。<br><br> 2 つの変換ルールが同じレコード (1 つは `field_value` を持ち、もう 1 つは `record_id` を持つ) に一致する場合、`record_id` を持つルールが優先されます。<br><br>条件付きで必須:<br> - `table_nameが `feed_infoの場合は**禁止**です。<br> - `record_id` が定義されている場合は**禁止**です。<br> - `record_id` が空の場合は**必須**です。 | 
  
 ### feed_info.txt 
  
@@ -830,7 +830,7 @@ Primary key (none)
  |------|------|------|------| 
  | `feed_publisher_name` |Text| **必須** | データセットを発行する組織のフルネーム。これは、`agency.agency_name` 値のいずれかと同じである可能性があります。 | 
  | `feed_publisher_url` | URL | **必須** | データセットを公開している組織のウェブサイトのURL 。これは、`agency.agency_url` 値のいずれかと同じになる場合があります。| 
- | `feed_lang` | 言語コード | **必須** | このデータセットのテキストに使用されるデフォルトの言語。この設定は、 GTFS のユーザーがデータセットの大文字化ルールやその他の言語固有の設定を選択するのに役立ちます。テキストをデフォルト以外の言語に翻訳する必要がある場合は、ファイル `translations.txt` を使用できます。<br><br>元のテキストが複数の言語であるデータセットの場合、デフォルトの言語は多言語になることがあります。このような場合、`feed_lang` フィールドには、規格 ISO 639-2 で定義されている言語コード `mul` を含め、データセットで使用される各言語の翻訳を `translations.txt` で提供する必要があります。データセット内のすべての元のテキストが同じ言語である場合は、`mul` を使用しないでください。<hr> _例: スイスのような多言語国家のデータセットを考えてみましょう。このデータセットでは、元の `stops.stop_nameフィールドにさまざまな言語の停留所名が入力されています。各停留所名は、その停留所の地理的位置で主流の言語に従って記述されます。たとえば、フランス語圏の都市Genevaの場合は ` Genève 、ドイツ語圏の都市Zurichの場合は ` Zürich 、バイリンガルの都市Biel/Bienneの場合は `Biel/Bienne` です。データセットの `feed_langは `mulである必要があり、翻訳は `translations.txtで提供されます。ドイツ語の場合: `Genf、`Zürich、`Biel。フランス語の場合: `Genève、`Zurich、`Bienne。イタリア語の場合: `Ginevra、`Zurigo、`Bienna。英語では、`Geneva`、`Zurich`、`Biel/Bienne`です。_ | 
+ | `feed_lang` | 言語コード | **必須** | このデータセットのテキストに使用されるデフォルトの言語。この設定は、 GTFS のユーザーがデータセットの大文字化ルールやその他の言語固有の設定を選択するのに役立ちます。テキストをデフォルト以外の言語に翻訳する必要がある場合は、ファイル `translations.txt` を使用できます。<br><br>元のテキストが複数の言語であるデータセットの場合、デフォルトの言語は多言語になることがあります。このような場合、`feed_lang` フィールドには、規格 ISO 639-2 で定義されている言語コード `mul` を含め、データセットで使用される各言語の翻訳を `translations.txt` で提供する必要があります。データセット内のすべての元のテキストが同じ言語である場合は、`mul` を使用しないでください。<hr> _例: スイスのような多言語国家のデータセットを考えてみましょう。このデータセットでは、元の `stops.stop_nameフィールドにさまざまな言語の停留所名が入力されています。各停留所名は、その停留所の地理的位置で主に使用される言語に従って記述されます。たとえば、フランス語圏の都市Genevaの場合は ` Genève 、ドイツ語圏の都市Zurichの場合は ` Zürich 、バイリンガルの都市Biel/BienneのBiel/Bienne/Bienne` です。データセットの `feed_lang は`mulである必要があり、翻訳は `translations.txtで提供されます。ドイツ語の場合: `Genf、`Zürich、`Biel。フランス語の場合: `Genève、`Zurich、`Bienne。イタリア語の場合: `Ginevra、`Zurigo、`Bienna。英語では、`Geneva`、`Zurich`、`Biel/Bienne`です。_ | 
  | `default_lang` | 言語コード | オプション | データ利用者が乗客の言語を知らt場合に使用する言語を定義します。多くの場合、`en` (英語) になります。 | 
  | `feed_start_date` | 日付 | 推奨 | データセットは、`feed_start_date` 日の開始から `feed_end_date` 日の終了までの期間のサービスの完全で信頼性の高いスケジュール情報を提供します。両方の日付が利用できない場合は空白のままにすることができます。両方が指定されている場合、`feed_end_date`dateは`feed_start_date`dateより前にしてはなりません。データセットプロバイダーは、将来のサービスの可能性を通知するためにこの期間外のスケジュールデータを提供することが推奨されますが、データセット消費者はそれが正式なものではないことに留意して扱う必要があります。 `feed_start_date` または `feed_end_date` が [calendar.txt](#calendartxt) および [calendar_dates.txt](#calendar_datestxt) で定義されているアクティブなカレンダーの日付を超える場合、データセットは、`feed_start_date` または `feed_end_date` の範囲内でアクティブなカレンダーの日付に含まれない日付にはサービスがないことを明示的に主張しています。 | 
  | `feed_end_date` | 日付 | 推奨 | (上記を参照) | 
@@ -854,7 +854,7 @@ Primary key (none)
  | `trip_id` | `trips.trip_id`を参照する外部 ID | オプション | 属性が旅行に適用されることを除いて、`agency_id` と同じように機能します。同じ旅行に複数のattributionsを適用できます。| 
  | `organization_name` |Text| **必須** | データセットの帰属先となる組織の名前。| 
  | `is_producer` | 列挙型 | オプション |組織の役割はプロデューサーです。有効なオプションは次のとおりです。<br><br> `0` または空 - 組織にはこの役割がありt。<br> `1` - 組織にはこの役割があります。<br><br> `is_producer`、`is_operator`、または `is_authority` のフィールドのうち少なくとも 1 つを`1`に設定する必要があります。 | 
- | `is_operator` | Enum | オプション | 組織の役割がオペレーターであることを除いて、`is_producer` と同じように機能します。 | 
+ | `is_operator` | Enum | オプション | 組織の役割がオペレータであることを除いて、`is_producer` と同じように機能します。 | 
  | `is_authority` | Enum | オプション | 組織の役割が権限であることを除いて、`is_producer` と同じように機能します。 | 
  | `attribution_url` | URL | オプション | 組織のURL 。 |
 
