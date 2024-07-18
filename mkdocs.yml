@@ -1,7 +1,7 @@
 site_name: General Transit Feed Specification
 site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
-docs_dir: 'docs/en/' # Where to find the English markdown files
+docs_dir: 'docs/' # Where to find the English markdown files
 
 validation:
   nav:
@@ -33,7 +33,6 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
-  locale: en
 extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/footer.css
@@ -73,6 +72,12 @@ extra:
       - name: English
         link: /
         lang: en
+      - name: Español
+        link: /es/
+        lang: es
+      - name: Français
+        link: /fr/
+        lang: fr
       # - name: Français
       #   link: /fr/
       #   lang: fr
@@ -113,6 +118,12 @@ plugins:
           name: English
           build: true
           default: true
+        - locale: es
+          name: Español
+          build: true
+        - locale: fr
+          name: Français
+          build: true
 nav:
   - Home: index.md
   - Getting started:
