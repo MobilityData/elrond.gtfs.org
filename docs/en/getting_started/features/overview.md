@@ -197,31 +197,31 @@ Pathways features allows to model large transit stations, so that riders are gui
 
 <div class="grid cards" markdown>
 
--   :material-vector-line:{ .lg .middle } __Pathway Connections__
+-   :material-escalator:{ .lg .middle } __Pathway Connections__
 
     Model paths connecting relevant points within a transit station.
 
     [:octicons-arrow-right-24: Learn more](../pathways/#pathway-connections)
 
--   :material-vector-line:{ .lg .middle } __Pathway Details__
+-   :material-escalator:{ .lg .middle } __Pathway Details__
 
     Provide additional details regarding the physical characteristics of a pathway.
 
     [:octicons-arrow-right-24: Learn more](../pathways/#pathway-details)
 
--   :material-vector-line:{ .lg .middle } __Levels__
+-   :material-escalator:{ .lg .middle } __Levels__
 
     Describe and list all different levels within a transit station.
 
     [:octicons-arrow-right-24: Learn more](../pathways/#levels)
 
--   :material-vector-line:{ .lg .middle } __In-Station Traversal Time__
+-   :material-escalator:{ .lg .middle } __In-Station Traversal Time__
 
     Communicate the estimated time to navigate paths within a transit station.
 
     [:octicons-arrow-right-24: Learn more](../pathways/#in-station-traversal-time)
 
--   :material-vector-line:{ .lg .middle } __Pathway Signs__
+-   :material-escalator:{ .lg .middle } __Pathway Signs__
 
     Communicate the in-station signage associated with a pathway.
 
