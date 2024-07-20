@@ -73,9 +73,12 @@ extra:
       - name: English
         link: /
         lang: en
-      # - name: Français
-      #   link: /fr/
-      #   lang: fr
+      - name: Français
+        link: /fr/
+        lang: fr
+      - name: Español
+        link: /es/
+        lang: es
 markdown_extensions:
   - attr_list
   - footnotes
@@ -108,11 +111,18 @@ plugins:
       docs_structure: folder
       reconfigure_search: false
       reconfigure_material: true
+      fallback_to_default: true
       languages:
         - locale: en
           name: English
           build: true
           default: true
+        - locale: fr
+          name: Français
+          build: true
+        - locale: es
+          name: Español
+          build: true
 nav:
   - Home: index.md
   - Getting started:
