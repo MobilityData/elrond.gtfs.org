@@ -78,7 +78,7 @@
  - **Email** - Una dirección de correo electrónico.<br> *Ejemplo: `example@example.com`* 
  - **Enum** - Una opción de un conjunto de constantes predefinidas definidas en la columna "Descripción".<br> *Ejemplo: El campo `route_type` contiene un `0` para tranvía, un `1` para metro...* 
  - **ID** - El valor de un campo ID es un ID interno que no debe mostrarse a jinetes, y es una secuencia de caracteres UTF-8. Se recomienda utilizar únicamente caracteres ASCII imprimibles. Una identificación se denomina "identificación única" cuando debe ser única dentro de un archivo. A menudo se hace referencia a los ID definidos en un archivo.txt en otro archivo.txt. Los ID que hacen referencia a un ID en otra tabla se denominan "ID extranjero".<br> *Ejemplo: El campo `stop_id` en [stops.txt](#stopstxt) es una "ID única". El campo `parent_station` en [stops.txt](#stopstxt) es una "ID extranjera que hace referencia a `stops.stop_id`".* 
- - **Código de idioma** - Un código de idioma IETF BCP 47. Para obtener una introducción a IETF BCP 47, consulte [http://www.rfc-editor.org/rfc/bcp/bcp47.txt](http ://www.rfc-editor.org/rfc/bcp/bcp47 .txt) y [http://www.w3.org/International/articles/language-tags/](http ://www.w3.org/International/articles/language-tags/).<br> *Ejemplo: `en` para inglés, `en-US` para inglés americano o `de` para alemán.* 
+ - **Código de idioma** - Un código de idioma IETF BCP 47. Para obtener una introducción a IETF BCP 47, consulte [http://www.rfc-editor.org/rfc/bcp/bcp47.txt](http://www.rfc-editor.org/rfc/bcp/bcp47.txt) y [http://www.w3.org/International/articles/language-tags/](http ://www.w3.org/International/articles/language-tags/).<br> *Ejemplo: `en` para inglés, `en-US` para inglés americano o `de` para alemán.* 
  - **Latitud** - Latitud WGS84 en grados decimales. El valor debe ser mayor o igual a-90,0 y menor o igual a 90,0. *<br> Ejemplo: `41.890169` para el Coliseo de Roma.* 
  - **Longitud** - Longitud WGS84 en grados decimales. El valor debe ser mayor o igual a-180,0 y menor o igual a 180,0.<br> *Ejemplo: `12.492269` para el Coliseo de Roma.* 
  - **Float** - Un número de punto flotante. 
@@ -142,7 +142,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  | [attributions.txt](#attributionstxt) | Opcional | Atribuciones de conjuntos de datos. | 
  
 ## Requisitos de archivo 
- 
+
  Los siguientes requisitos se aplican al formato y contenido de los archivos del conjunto de datos: 
  
  * Todos los archivos deben guardarse como texto delimitado por comas. 
@@ -156,7 +156,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  * Los valores de campo no deben contener etiquetas HTML, comentarios ni secuencias de escape. 
  * Deben eliminarse los espacios adicionales entre campos o nombres de campos. Muchos analizadores consideran que los espacios son parte del valor, lo que puede provocar errores. 
  * Cada línea debe terminar con un carácter de salto de línea CRLF o LF. 
- * Los archivos deben codificarse en UTF-8 para admitir todos los caracteres Unicode. Se aceptan archivos que incluyen el carácter de marca de orden de bytes (BOM) Unicode. Consulte [http://unicode.org/faq/utf_bom.html#BOM](http ://unicode.org/faq/utf_bom.html#BOM) para obtener más información sobre el carácter BOM y UTF-8. 
+ * Los archivos deben codificarse en UTF-8 para admitir todos los caracteres Unicode. Se aceptan archivos que incluyen el carácter de marca de orden de bytes (BOM) Unicode. Consulte [http://unicode.org/faq/utf_bom.html#BOM](http://unicode.org/faq/utf_bom.html#BOM) para obtener más información sobre el carácter BOM y UTF-8. 
  * Todos los archivos del conjunto de datos deben estar comprimidos juntos. Los archivos deben residir directamente en el nivel raíz, no en una subcarpeta. 
  * Todas las cadenas de texto orientadas al cliente (incluidos nombres de paradas, nombres de rutas y letreros) deben usar mayúsculas y minúsculas (no TODO EN MAYÚSCULAS), siguiendo las convenciones locales para el uso de mayúsculas en nombres de lugares en pantallas capaces de mostrar caracteres en minúsculas (por ejemplo, “Brighton Plaza Churchill”, “Villiers-sur-Marne”, “Calle del Mercado”). 
  * Se debe evitar el uso de abreviaturas en todo el feed para nombres y otros textos (por ejemplo, St.para Calle) a menos que una ubicación se llame por su nombre abreviado (por ejemplo, “Aeropuerto JFK”). Las abreviaturas pueden resultar problemáticas para la accesibilidad mediante software lector de pantalla e interfaces de usuario de voz. Se puede diseñar software de consumo para convertir de forma fiable palabras completas en abreviaturas para su visualización, pero la conversión de abreviaturas a palabras completas conlleva un mayor riesgo de error. 
