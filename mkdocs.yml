@@ -78,9 +78,6 @@ extra:
       - name: Français
         link: /fr/
         lang: fr
-      # - name: Français
-      #   link: /fr/
-      #   lang: fr
 markdown_extensions:
   - attr_list
   - footnotes
@@ -113,6 +110,7 @@ plugins:
       docs_structure: folder
       reconfigure_search: false
       reconfigure_material: true
+      fallback_to_default: true
       languages:
         - locale: en
           name: English
@@ -121,9 +119,118 @@ plugins:
         - locale: es
           name: Español
           build: true
+          nav_translations:
+            Home: Inicio
+            Getting started: Comenzando
+            What is GTFS?: ¿Qué es GTFS?
+            Why use GTFS?: ¿Por qué utilizar GTFS?
+            How to produce GTFS?: ¿Cómo producir GTFS?
+            Create: Crear
+            Validate: Validar
+            Publish: Publicar
+            What can GTFS do?: ¿Qué puede hacer GTFS?
+            Overview: Descripción general
+            Base: Base
+            Base add-ons: Complementos
+            Accessibility: Accesibilidad
+            Fares: Tarifas
+            Pathways: Recorridos
+            Flexible services: Servicios Flexibles
+            Example GTFS feed: Ejemplo de un feed GTFS
+            Technical Documentation: Documentación técnica
+            Reference: Referencia
+            Best Practices: Mejores prácticas
+            Data examples: Ejemplos de datos
+            Attributions: Atribuciones
+            Continuous stops: Paradas continuas
+            Demand responsive services: Servicios sobre demanda
+            Fares v1: Tarifas v1
+            Fares v2: Tarifas v2
+            Feed information: Información del feed
+            Frequencies: Frecuencias
+            Pathways: Recorridos (Pathways)
+            Routes, Stops & Trips: Rutas, Paradas y Viajes
+            Text-to-speech: Texto a voz
+            Transfers: Transferencias
+            Translations: Traducciones
+            Change history: Historial de cambios
+            Recent additions: Adiciones recientes
+            Full revision history: Historial completo de revisiones
+            Feed Entities: Entidades del feed
+            Trip Updates: Actualizaciones de viaje (Trip Updates)
+            Service Alerts: Alertas de servicio (Service Alerts)
+            Vehicle Positions: Posiciones del vehículo (Vehicle Positions)
+            Trip Modifications: Modificaciones de viaje (Trip Modifications)
+            Protobuf: Protobuf
+            Language Bindings: Bindings de lenguaje
+            Migration duplicated: Migración duplicada
+            Community: Comunidad
+            Get involved: Involúcrese
+            Governance: Governanza
+            GTFS Schedule Amendment Process: Proceso de modificación GTFS Schedule
+            GTFS Realtime Amendment Process: Proceso de modificación GTFS Realtime
+            Extensions: Extensiones
+            Fares v2: Fares v2
+            Flex: Flex
+            About: Acerca de
+
         - locale: fr
           name: Français
           build: true
+          nav_translations:
+            #Home: 
+            #Getting started: 
+            #What is GTFS?: 
+            #Why use GTFS?: 
+            #How to produce GTFS?: 
+            #Create: 
+            #Validate: 
+            #Publish: 
+            #What can GTFS do?: 
+            #Overview: 
+            #Base: 
+            #Base add-ons: 
+            #Accessibility: 
+            #Fares: 
+            #Pathways: 
+            #Flexible services: 
+            #Example GTFS feed:
+            #Technical Documentation: 
+            #Reference: 
+            #Best Practices: 
+            #Data examples: 
+            #Attributions: 
+            #Continuous stops: 
+            #Demand responsive services: 
+            #Fares v1: 
+            #Fares v2: 
+            #Feed information: 
+            #Frequencies: 
+            #Pathways: 
+            #Routes, Stops & Trips: 
+            #Text-to-speech: 
+            #Transfers: 
+            #Translations: 
+            #Change history: 
+            #Recent additions: 
+            #Full revision history: 
+            #Feed Entities: 
+            #Trip Updates: 
+            #Service Alerts: 
+            #Vehicle Positions: 
+            #Trip Modifications: 
+            #Protobuf: 
+            #Language Bindings: 
+            #Migration duplicated:
+            #Community:
+            #Get involved:
+            #Governance:
+            #GTFS Schedule Amendment Process:
+            #GTFS Realtime Amendment Process:
+            #Extensions:
+            #Fares v2:
+            #Flex:
+            #About:
 nav:
   - Home: index.md
   - Getting started:
