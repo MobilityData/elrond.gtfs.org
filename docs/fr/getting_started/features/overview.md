@@ -11,38 +11,39 @@
  
  - :material-subway-variant:{ .lg.middle } __Agence__ 
  
- Communiquer des détails sur les agences responsables du service de transport en commun. 
+    Communiquer des détails sur les agences responsables du service de transport en commun. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base/#agency) 
+    [:octicons-arrow-right-24: En savoir plus](../base/#agence) 
  
  - :material-subway-variant:{ .lg.middle } __Arrêts__ 
  
- Définir les endroits où un service de transport en commun prend et dépose les passagers. 
+    Définir les endroits où un service de transport en commun prend et dépose les passagers. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base/#stops) 
+    [:octicons-arrow-right-24: En savoir plus](../base/#arrets) 
  
  - :material-subway-variant:{ .lg.middle } __Lignes__ 
  
- Définir les éléments d’un itinéraire de transit tels que le nom et le type de service. 
+    Définir les éléments d’un itinéraire de transit tels que le nom et le type de service. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base/#routes) 
+    [:octicons-arrow-right-24: En savoir plus](../base/#lignes) 
  
  - :material-subway-variant:{ .lg.middle } __Dates de service__ 
  
- Créez la structure pour planifier les déplacements et les exemptions de service. 
+    Créez la structure pour planifier les déplacements et les exemptions de service. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base/#service-dates) 
+    [:octicons-arrow-right-24: En savoir plus](../base/#dates-de-service) 
  
  - :material-subway-variant:{ .lg.middle } __Trajets__ 
- § § Représente les véhicules de transport en commun circulant le long d’un itinéraire défini à des heures programmées. 
+    
+    Représente les véhicules de transport en commun circulant le long d’un itinéraire défini à des heures programmées. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base/#trips) 
+    [:octicons-arrow-right-24: En savoir plus](../base/#trajets) 
  
- - :material-subway-variant:{ .lg.middle } __Horaires d’arrêt__ 
+ - :material-subway-variant:{ .lg.middle } __Horaires d’arrêt__ 
+    
+    Définissez les heures d’arrivée et de départ de chaque trajet pour chaque arrêt. 
  
- Définissez les heures d’arrivée et de départ de chaque trajet pour chaque arrêt. 
- 
- [:octicons-arrow-right-24 : En savoir plus](../base/#stop-times) 
+    [:octicons-arrow-right-24: En savoir plus](../base/#horaires-darret) 
  
 </div> 
  
@@ -53,63 +54,63 @@
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Informations sur le Flux__ 
  
- Communiquer des informations importantes sur le flux lui-même. 
+    Communiquer des informations importantes sur le flux lui-même. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#feed-information) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#informations-sur-le-flux) 
  
- - :material-plus-box-multiple-outline:{ .lg.milieu } __Tracé des lignes__ 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Tracé des lignes__ 
  
- Définir le trajet géographique suivi par un véhicule au cours d’un trajet. 
+    Définir le trajet géographique suivi par un véhicule au cours d’un trajet. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#shapes) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#trace-des-lignes) 
  
- - :material-plus-box-multiple-outline :{ .lg.middle } __Couleurs des lignes__ 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Couleurs des lignes__ 
  
- Décrivez et communiquez avec précision la palette de couleurs attribuée à des itinéraires spécifiques. 
+    Décrivez et communiquez avec précision la palette de couleurs attribuée à des itinéraires spécifiques. 
+
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#couleurs-des-lignes) 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#route-colors) 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Vélo Autorisé__ 
  
- - :material-plus-box-multiple-outline:{ .lg.milieu } __Vélo Autorisé__ 
+    Communiquer si les véhicules peuvent accueillir des vélos ou non. 
  
- Communiquer si les véhicules peuvent accueillir des vélos ou non. 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#velo-autorise) 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#bike-allowed) 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Girouette__ 
  
- - :material-plus-box-multiple-outline:{ .lg.milieu } __Girouette__ 
+    Communiquer la signalisation utilisée par les véhicules indiquant la destination du voyage. 
  
- Communiquer la signalisation utilisée par les véhicules indiquant la destination du voyage. 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#girouette) 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#headsigns) 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Types d’emplacement__ 
  
- - :material-plus-box-multiple-outline :{ .lg.middle } __Types d’emplacement__ 
+    Classez les zones clés dans les gares de transport en commun telles que les entrées et les sorties. 
  
- Classez les zones clés dans les gares de transport en commun telles que les entrées et les sorties. 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#types-demplacement) 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#location-types) 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Fréquences__ 
  
- - :material-plus-box-multiple-outline:{ .lg.milieu } __Fréquences__ 
+    Représentent les services qui fonctionnent sur une fréquence régulière ou des intervalles spécifiques. 
  
- Représentent les services qui fonctionnent sur une fréquence régulière ou des intervalles spécifiques. 
- 
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/# Frequency-based-service) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#frequences) 
  
  - :material-plus-box-multiple-outline:{. lg.middle } __Transferts__ 
  
- Décrire les transferts autorisés entre différents services de transport en commun. 
+    Décrire les transferts autorisés entre différents services de transport en commun. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#transfers) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#transfers) 
  
- - :material-plus-box-multiple-outline :{ .lg.middle } __Traductions__ 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Traductions__ 
  
- Communiquer des informations de service dans plusieurs langues. 
+    Communiquer des informations de service dans plusieurs langues. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#translations) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#traductions) 
  
- - :material-plus-box-multiple-outline :{ .lg.middle } __Attributions__ 
+ - :material-plus-box-multiple-outline:{ .lg.middle } __Attributions__ 
  
- Indiquer qui a été impliqué dans la création de l’ensemble de données. 
+    Indiquer qui a été impliqué dans la création de l’ensemble de données. 
  
- [:octicons-arrow-right-24 : En savoir plus](../base_add-ons/#attributions) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#attributions) 
  
 </div> 
  
@@ -119,22 +120,23 @@
 
 <div class="grid cards" markdown> 
  
- - :material-wheelchair:{ .lg.middle } __Arrêts Accessibilité en fauteuil roulant__ 
+ - :material-wheelchair:{ .lg.middle } __Accessibilité aux Personnes en Fauteuil Roulant aux Arrêts__ 
  
- Indiquez si l’embarquement en fauteuil roulant est possible à partir d’un endroit. 
+    Indiquez si l’embarquement en fauteuil roulant est possible à partir d’un endroit. 
  
- [:octicons-arrow-right-24 : En savoir plus](../accessibility/#stops-wheelchair-accessibility) 
+    [:octicons-arrow-right-24: En savoir plus](../accessibility/#accessibilite-aux-personnes-en-fauteuil-roulant-aux-arrets) 
  
- - :material-wheelchair:{ .lg.middle } __Trips Accessibilité en fauteuil roulant__ § § 
- Indiquer si un véhicule peut accueillir des passagers en fauteuil roulant. 
+ - :material-wheelchair:{ .lg.middle } __Accessibilité aux Personnes en Fauteuil Roulant lors des Trajets__  
  
- [:octicons-arrow-right-24 : En savoir plus](../accessibility/#trips-wheelchair-accessibility) 
+    Indiquer si un véhicule peut accueillir des passagers en fauteuil roulant. 
  
- - :material-wheelchair:{ .lg.middle } __Synthèse Vocale__ 
+    [:octicons-arrow-right-24: En savoir plus](../accessibility/#accessibilite-aux-personnes-en-fauteuil-roulant-lors-des-trajets) 
  
- Fournissez les entrées nécessaires pour convertir le texte des noms d’arrêt en audio. 
+ - :material-wheelchair:{ .lg.middle } __Synthèse Vocale__ 
  
- [:octicons-arrow-right-24 : En savoir plus](../accessibility/#text-to-speech) 
+    Fournissez les entrées nécessaires pour convertir le texte des noms d’arrêt en audio. 
+ 
+    [:octicons-arrow-right-24: En savoir plus](../accessibility/#synthese-vocale) 
  
 </div> 
  
@@ -146,45 +148,45 @@
  
  - :material-cash:{ .lg.middle } __Produits tarifaires__ 
  
- Définir la liste des billets ou des types de tarifs disponibles pour les utilisateurs. 
+    Définir la liste des billets ou des types de tarifs disponibles pour les utilisateurs. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#fare-products) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#produits-tarifaires) 
  
  - :material-cash:{ .lg.middle } __Tarif Média__ 
  
- Définir les supports pouvant être utilisés pour détenir et/ou valider un produit tarifaire. 
+    Définir les supports pouvant être utilisés pour détenir et/ou valider un produit tarifaire. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#fare-media) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#tarif-media) 
  
  - :material-cash:{ .lg.middle } __Tarifs Basés sur l’Itinéraire__ 
  
- Décrire les règles utilisées pour appliquer différents tarifs pour des groupes spécifiques d’itinéraires. 
+    Décrire les règles utilisées pour appliquer différents tarifs pour des groupes spécifiques d’itinéraires. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#route-based-fares) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#tarifs-bases-sur-litineraire) 
  
  - :material-cash:{ .lg.middle } __Tarifs Basés sur le Temps__ 
  
- Décrire les tarifs différenciés selon l’heure de la journée ou le jour de la semaine. 
+    Décrire les tarifs différenciés selon l’heure de la journée ou le jour de la semaine. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#time-based-fares) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#tarifs-bases-sur-le-temps) 
  
  - :material-cash:{ .lg.middle } __Tarifs Basés sur les Zones__ 
  
- Décrire les tarifs différenciés lors des déplacements d’une zone à une autre. 
+    Décrire les tarifs différenciés lors des déplacements d’une zone à une autre. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#zone-based-fares) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#tarifs-bases-sur-les-zones) 
  
- - :material-cash:{ .lg.middle } __Tarifs Transferts__ 
+ - :material-cash:{ .lg.middle } __Transferts Tarifaires__ 
  
- Définir les frais applicables lors du transfert d’une étape du voyage à une autre. 
+    Définir les frais applicables lors du transfert d’une étape du voyage à une autre. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#fares-transfers) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#transferts-tarifaires) 
  
  - :material-cash:{ .lg.middle } __Tarifs V1__ 
  
- Fonctionnalité héritée qui permet une représentation plus simple des informations tarifaires. 
+    Fonctionnalité héritée qui permet une représentation plus simple des informations tarifaires. 
  
- [:octicons-arrow-right-24 : En savoir plus](../fares/#fares-v1) 
+    [:octicons-arrow-right-24: En savoir plus](../fares/#tarifs-v1) 
  
 </div> 
  
@@ -197,32 +199,33 @@
  
  - :material-escalator:{ .lg.middle } __Connexions du Parcours__ 
  
- Modélisez des chemins reliant les points pertinents dans une station de transport en commun. 
+    Modélisez des chemins reliant les points pertinents dans une station de transport en commun. 
  
- [:octicons-arrow-right-24 : En savoir plus](../pathways/#pathway-connections) 
+    [:octicons-arrow-right-24: En savoir plus](../pathways/#connexions-du-parcours) 
  
  - :material-escalator:{ .lg.middle } __Détails du Parcours__ 
  
- Fournir des détails supplémentaires concernant les caractéristiques physiques d’un parcours. 
+    Fournir des détails supplémentaires concernant les caractéristiques physiques d’un parcours. 
  
- [:octicons-arrow-right-24 : En savoir plus](../pathways/#pathway-details) 
+    [:octicons-arrow-right-24: En savoir plus](../pathways/#details-du-parcours) 
  
  - :material-escalator:{ .lg.middle } __Niveaux__ 
  
- Décrire et répertoriez tous les différents niveaux d’une station de transport en commun. 
+    Décrire et répertoriez tous les différents niveaux d’une station de transport en commun. 
  
- [:octicons-arrow-right-24 : En savoir plus](../pathways/#levels) 
+    [:octicons-arrow-right-24: En savoir plus](../pathways/#niveaux) 
  
- - :material-escalator:{ .lg.middle } __In-Station Traversal Time__ 
- § § Communiquer le temps estimé pour parcourir les chemins dans une station de transport en commun. 
+ - :material-escalator:{ .lg.middle } __Temps de Parcours en Station__ 
  
- [:octicons-arrow-right-24 : En savoir plus](../pathways/#in-station-traversal-time) 
+    Communiquer le temps estimé pour parcourir les chemins dans une station de transport en commun. 
+ 
+    [:octicons-arrow-right-24: En savoir plus](../pathways/#temps-de-parcours-en-station) 
  
  - :material-escalator:{ .lg.middle } __Signalisation du Parcours__ 
  
- Communiquer la signalétique en station associée à un parcours. 
+    Communiquer la signalétique en station associée à un parcours. 
  
- [:octicons-arrow-right-24 : En savoir plus](../pathways/#pathway-signs) 
+    [:octicons-arrow-right-24: En savoir plus](../pathways/#signalisation-du-parcours) 
  
 </div> 
  
@@ -233,32 +236,32 @@
  
  - :material-transit-detour:{ .lg.middle } __Arrêts Continus__ 
  
- Indiquer si un utilisateur·rice peut être pris en charge et/ou déposé entre les arrêts. 
+    Indiquer si un utilisateur·rice peut être pris en charge et/ou déposé entre les arrêts. 
  
- [:octicons-arrow-right-24 : En savoir plus](../flexible_services/#continuous-stops) 
+    [:octicons-arrow-right-24: En savoir plus](../flexible_services/#arrets-continus) 
  
  - :material-transit-detour:{ .lg.middle } __Règles de réservation__ 
  
- Indiquer si les utilisateurs peuvent réserver un voyage sur un service à la demande. 
+    Indiquer si les utilisateurs peuvent réserver un voyage sur un service à la demande. 
  
- [:octicons-arrow-right-24 : En savoir plus](../flexible_services/#booking-rules) 
+    [:octicons-arrow-right-24: En savoir plus](../flexible_services/#regles-de-reservation) 
  
- - :material-transit-detour:{ .lg.middle } Lignes prédéfinis avec déviation__ 
+ - :material-transit-detour:{ .lg.middle } __Itinéraires Prédéfinis avec Détours__ 
  
- Véhicules pouvant s’écarter brièvement d’un itinéraire pour être pris en charge ou déposé. 
+    Véhicules pouvant s’écarter brièvement d’un itinéraire pour être pris en charge ou déposé. 
  
- [:octicons-arrow-right-24 : En savoir plus](../flexible_services/#predefined-routes-with-deviation) 
+    [:octicons-arrow-right-24: En savoir plus](../flexible_services/#itineraires-predefinis-avec-detours) 
  
- - :material-transit-detour :{ .lg.middle } __Services à la Demande Basés sur les Zones__ 
+ - :material-transit-detour:{ .lg.middle } __Services à la Demande Basés sur les Zones__ 
  
- Services qui permettent la prise en charge/le dépôt à n’importe quel endroit dans une zone spécifique. 
+    Services qui permettent la prise en charge/le dépôt à n’importe quel endroit dans une zone spécifique. 
  
- [:octicons-arrow-right-24 : En savoir plus](../flexible_services/#zone-based-demand-responsive-services) 
+    [:octicons-arrow-right-24: En savoir plus](../flexible_services/#services-a-la-demande-bases-sur-les-zones) 
  
- - :material-transit-detour:{ .lg.milieu } __Services à la Demande avec Arrêts Fixes__ 
+ - :material-transit-detour:{ .lg.middle } __Services à la Demande avec Arrêts Fixes__ 
  
- Services qui permettent de prendre en charge/déposer à n’importe quel endroit au sein d’un groupe d’arrêts. 
+    Services qui permettent de prendre en charge/déposer à n’importe quel endroit au sein d’un groupe d’arrêts. 
  
- [:octicons-arrow-right-24 : En savoir plus](../flexible_services/#fixed-stops-demand-responsive-services) 
+    [:octicons-arrow-right-24: En savoir plus](../flexible_services/#services-a-la-demande-avec-arrets-fixes) 
  
 </div> 
