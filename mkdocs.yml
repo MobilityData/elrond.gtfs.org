@@ -178,7 +178,7 @@ plugins:
           name: Français
           build: true
           nav_translations:
-            #Home: 
+            Home: Accueil
             #Getting started: 
             #What is GTFS?: 
             #Why use GTFS?: 
