@@ -1,4 +1,6 @@
-# Création d’un ensemble de données GTFS## Présentation d’un flux GTFS 
+# Création d’un ensemble de données GTFS
+
+## Présentation d’un flux GTFS 
  Tous les flux GTFS commencent par un ensemble de données au format GTFS Reference, qui est une série de fichiers CSV enregistrés avec une extension de fichier.txt [^1]. Dans sa mise en œuvre la plus basique, un ensemble de données GTFS commence généralement avec sept fichiers de base, combinés dans un fichier.zip hébergé sur une URL stable et publique : il s’agit du flux GTFS. 
 
 <img class="center" width="560" height="100%" src="../../../assets/create_001.png"> 
@@ -7,7 +9,7 @@
  
 <img class="center" width="560" height="100%" src="../../../assets/create_002.png"> 
  
- Les fichiers de base d’un jeu de données GTFS peuvent être décrits comme suit : Un jeu de données de planification GTFS comporte une ou plusieurs routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), chaque itinéraire comporte un ou plusieurs trajets ([trips.txt](../../documentation/schedule/reference/#tripstxt)), chaque trajet visite une série d’arrêts ([stops.txt](../../documentation/schedule/reference/#stopstxt)) à des heures spécifiées ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Les Trajets et les horaires d’arrêts contiennent uniquement des informations sur l’heure de la journée ; le calendrier est utilisé pour déterminer les jours auxquels un voyage donné a lieu ([calendar.txt](../../documentation/schedule/reference/#calendartxt) et [calendar_dates.txt](../../documentation/planning/référence/#calendar_datestxt)). De plus, plusieurs agences ([agency.txt](../../documentation/schedule/reference/#agencytxt)) peuvent exploiter plusieurs itinéraires. Ces fichiers sont liés les uns aux autres avec des champs qui font l’objet de références croisées entre eux. 
+ Les fichiers de base d’un jeu de données GTFS peuvent être décrits comme suit : Un jeu de données de planification GTFS comporte une ou plusieurs routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), chaque itinéraire comporte un ou plusieurs trajets ([trips.txt](../../documentation/schedule/reference/#tripstxt)), chaque trajet visite une série d’arrêts ([stops.txt](../../documentation/schedule/reference/#stopstxt)) à des heures spécifiées ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Les Trajets et les horaires d’arrêts contiennent uniquement des informations sur l’heure de la journée ; le calendrier est utilisé pour déterminer les jours auxquels un voyage donné a lieu ([calendar.txt](../../documentation/schedule/reference/#calendartxt) et [calendar_dates.txt](../../documentation/planning/reference/#calendar_datestxt)). De plus, plusieurs agences ([agency.txt](../../documentation/schedule/reference/#agencytxt)) peuvent exploiter plusieurs itinéraires. Ces fichiers sont liés les uns aux autres avec des champs qui font l’objet de références croisées entre eux. 
 
 <img class="center" width="560" height="100%" src="../../../assets/create_003.png"> 
  
@@ -17,7 +19,7 @@
  - [pathways.txt](../../documentation/schedule/reference/#pathwaystxt) qui fournit des informations permettant de générer des itinéraires pour aider les utilisateurs à naviguer dans les stations, 
  - [frequencies.txt](../../documentation/schedule/reference/#frequenciestxt) qui fournit une autre façon de spécifier les horaires d’arrêts. 
  
- Pour plus d’informations sur toutes les fonctionnalités GTFS pouvant être activées, consultez la section [« Que peut faire GTFS ? »](../fonctionnalités/overview/). 
+ Pour plus d’informations sur toutes les fonctionnalités GTFS pouvant être activées, consultez la section [« Que peut faire GTFS ? »](../features/overview/). 
  
  Un ensemble de données GTFS Schedule peut être complété par des informations en temps réel telles que la position des véhicules et les mises à jour de service. Pour ce faire, un flux GTFS Realtime doit être créé séparément de l’ensemble de données GTFS Schedule existant. 
  
@@ -29,7 +31,7 @@
  
  Si vous êtes une agence souhaitant produire votre premier flux GTFS, la première chose à faire est de lire la documentation existante. 
  
- Commencez par explorer les capacités de GTFS dans la section ["Que peut faire GTFS ?"](../fonctionnalités/overview) et déterminez les différentes fonctionnalités de votre service de transport en commun que vous souhaitez représenter à l’aide du format GTFS. Pour une exploration plus approfondie, la documentation de référence officielle de [GTFS Schedule](../../documentation/schedule/reference) et [GTFS Realtime](../../documentation/realtime/reference) propose des des conseils sur la modélisation de ces fonctionnalités et la garantie de leur conformité. 
+ Commencez par explorer les capacités de GTFS dans la section ["Que peut faire GTFS ?"](../features/overview) et déterminez les différentes fonctionnalités de votre service de transport en commun que vous souhaitez représenter à l’aide du format GTFS. Pour une exploration plus approfondie, la documentation de référence officielle de [GTFS Schedule](../../documentation/schedule/reference) et [GTFS Realtime](../../documentation/realtime/reference) propose des des conseils sur la modélisation de ces fonctionnalités et la garantie de leur conformité. 
  
  Ensuite, collectez toutes les données requises de votre système. Cela inclut des informations sur tous les arrêts, itinéraires, horaires, tarifs, etc., car bon nombre de ces détails constitueront les entrées qui alimenteront l’ensemble de données GTFS. 
  
@@ -41,4 +43,4 @@
  
  <a href="https://www.flaticon.com/authors/freepik" title="Icônes par Freepik">Icônes créées par Freepik- Flaticon</a> 
  
- [^1] : En plus des fichiers texte, le format [GeoJSON](https://geojson.org/) est désormais également supporté en GTFS pour représenter certains éléments de services à la demande. 
+ [^1]: En plus des fichiers texte, le format [GeoJSON](https://geojson.org/) est désormais également supporté en GTFS pour représenter certains éléments de services à la demande. 
