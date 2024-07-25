@@ -15,7 +15,7 @@
  - [fonctionnalités de Base](../base) 
  - [Types d’emplacement](../base_add-ons/#types-demplacement) lors de la définition des informations d’accessibilité pour les emplacements des gares tels que les entrées/sorties ou les zones d’embarquement. 
 
-??? note "Sample Data"
+??? note "Exemples de données"
 
     <p style="font-size:16px">
     L’exemple suivant montre que l’embarquement en fauteuil roulant est disponible à l’arrêt `TAS001` en utilisant `wheelchair_boarding=1`.
@@ -42,7 +42,7 @@
  
  - [fonctionnalités de Base](../base) 
  
-??? note "Sample Data"
+??? note "Exemples de données"
 
     <p style="font-size:16px">
     L’exemple suivant montre que le véhicule utilisé lors du voyage « AWE1» est équipé pour accueillir au moins un fauteuil roulant, et que le véhicule utilisé lors du voyage «AWE2» ne l’est pas. 
@@ -70,7 +70,7 @@
  
  - [fonctionnalités de Base](../base) 
 
-??? note "Sample Data"
+??? note "Exemples de données"
 
     <p style="font-size:16px">
     L’exemple suivant fournit une version lisible du nom de l’arrêt, permettant aux outils de synthèse vocale de lire le nom à haute voix. 
