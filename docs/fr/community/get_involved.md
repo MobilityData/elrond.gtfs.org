@@ -2,10 +2,10 @@
  
 <div class="grid cards" markdown> 
  
- - :simple-slack : Rejoignez [__Slack__](https://share.mobilitydata.org/slack) et présentez-vous à la communauté. 
- - :material-newspaper-variant : Abonnez-vous au [__GTFS Digest__](https://groups.google.com/g/gtfs-digest) pour des mises à jour mensuelles sur tout ce qui concerne GTFS. 
- - :fontawesome-solid-user-group : rejoignez le [__GTFS Changes__](https://groups.google.com/g/gtfs-changes) groupe Google pour rester informé des développements. 
- - :simple-github : visitez [__GitHub__](https://github.com/google/transit) pour publier des problèmes, participer aux discussions autour des changements et proposer des changements. 
+ - :simple-slack: Rejoignez [__Slack__](https://share.mobilitydata.org/slack) et présentez-vous à la communauté. 
+ - :material-newspaper-variant: Abonnez-vous au [__GTFS Digest__](https://groups.google.com/g/gtfs-digest) pour des mises à jour mensuelles sur tout ce qui concerne GTFS. 
+ - :fontawesome-solid-user-group: Rejoignez le [__GTFS Changes__](https://groups.google.com/g/gtfs-changes) groupe Google pour rester informé des développements. 
+ - :simple-github: visitez [__GitHub__](https://github.com/google/transit) pour publier des problèmes, participer aux discussions autour des changements et proposer des changements. 
 
 </div> 
  
@@ -17,13 +17,13 @@
 
 <div class="grid cards" markdown> 
  
- - :material-file-document-edit:{ .lg.middle } __GTFS Schedule- Processus de modification des spécifications__ 
+ -   :material-file-document-edit:{ .lg .middle } __GTFS Schedule- Processus de modification des spécifications__ 
  
- [:octicons-arrow-right-24 : En savoir plus](../../community/governance/gtfs_schedule_amendment_process) 
+     [:octicons-arrow-right-24: En savoir plus](../../community/governance/gtfs_schedule_amendment_process) 
  
- - :material-file-document-edit:{ .lg.middle } __GTFS Realtime- Processus d’amendement des spécifications__ 
+ -   :material-file-document-edit:{ .lg .middle } __GTFS Realtime- Processus d’amendement des spécifications__ 
  
- [:octicons-arrow-right-24 : En savoir plus](../../community/governance/gtfs_realtime_amendment_process) 
+     [:octicons-arrow-right-24: En savoir plus](../../community/governance/gtfs_realtime_amendment_process) 
  
 </div> 
  
@@ -33,17 +33,17 @@
 
 <div class="grid cards" markdown> 
  
- - :material-bus:{ .lg.middle } __GTFS Schedule Extensions__ 
+ -   :material-bus:{ .lg .middle } __GTFS Schedule Extensions__ 
  
- --- 
+    --- 
  
- [:octicons-arrow-right-24 : En savoir plus](../../community/extensions/overview/#__tabbed_1_1) 
+    [:octicons-arrow-right-24: En savoir plus](../../community/extensions/overview/#__tabbed_1_1) 
  
- - :material-bus-marker:{ .lg.middle } __GTFS Realtime Extensions__ 
+ -   :material-bus-marker:{ .lg .middle } __GTFS Realtime Extensions__ 
  
- --- 
+    --- 
  
- [:octicons-arrow-right-24 : En savoir plus](../../community/extensions/overview/#__tabbed_1_2) 
+    [:octicons-arrow-right-24: En savoir plus](../../community/extensions/overview/#__tabbed_1_2) 
  
 </div> 
  
@@ -53,21 +53,21 @@
 
 <div class="grid cards" markdown> 
  
- - :fontawesome-solid-money-check-dollar:{ .lg.middle } __GTFS-Fares v2__ 
+ -   :fontawesome-solid-money-check-dollar:{ .lg. middle } __GTFS-Fares v2__ 
  
- --- 
+    --- 
  
- GTFS-Fares v2 vise à améliorer la représentation des tarifs dans GTFS, en introduisant des fonctionnalités telles que les produits tarifaires et les catégories de passagers. 
+    GTFS-Fares v2 vise à améliorer la représentation des tarifs dans GTFS, en introduisant des fonctionnalités telles que les produits tarifaires et les catégories de passagers. 
  
- [:octicons-arrow-right-24 : En savoir plus](../../community/extensions/fares-v2) 
+    [:octicons-arrow-right-24: En savoir plus](../../community/extensions/fares-v2) 
  
- - :material-file-document-edit:{ .lg.milieu } __GTFS Governance__ 
+ -    :material-file-document-edit:{ .lg. middle } __GTFS Governance__ 
  
- --- 
+    --- 
  
- Un groupe de travail a été formé pour modifier le processus actuel d’amendement des spécifications GTFS. 
+    Un groupe de travail a été formé pour modifier le processus actuel d’amendement des spécifications GTFS. 
  
- [:octicons-arrow-right-24 : En savoir plus](https://github.com/google/transit/issues/436) 
+    [:octicons-arrow-right-24: En savoir plus](https://github.com/google/transit/issues/436) 
  
 </div> 
  
@@ -79,11 +79,11 @@
 
 <div class="grid cards" markdown> 
  
- - :material-file-document-multiple:{ .lg.middle } __Resources__ 
+ - :material-file-document-multiple:{ .lg. middle } __Resources__ 
  
- --- 
+    --- 
  
- [:octicons-arrow-right-24 : En savoir plus](../../ressources/aperçu) 
+    [:octicons-arrow-right-24: En savoir plus](../../ressources/aperçu) 
  
 </div> 
  
@@ -95,18 +95,20 @@
  * [GTFS Realtime](https://groups.google.com/group/gtfs-realtime) : ce groupe est le forum officiel pour discuter de GTFS Realtime, poser des questions et proposer des modifications comme indiqué dans la [Spécification GTFS Realtime Processus d’amendement](../../community/governance/gtfs_realtime_amendment_process). 
  * [transit-developers](https://groups.google.com/group/transit-developers) : discussions générales développeur·euse de transports en commun. 
  * De nombreuses agences de transports en commun disposent également de leurs propres listes de diffusion de développeur·euse spécifiques à l’agence. Par exemple : 
- * [NYC MTA](https://groups.google.com/group/mtadeveloperresources) 
- * [Portland, OR](https://groups.google.com/group/transit-developers- pdx) 
- * [MBTA](https://groups.google.com/group/massdotdevelopers) 
- * [Atlanta, région de Géorgie](https://groups.google.com/forum/#!forum/atl-transit-developers) 
- * [511 Ressources pour les développeurs de la région de la baie de San Francisco](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources) 
+    * [NYC MTA](https://groups.google.com/group/mtadeveloperresources) 
+    * [Portland, OR](https://groups.google.com/group/transit-developers- pdx) 
+    * [MBTA](https://groups.google.com/group/massdotdevelopers) 
+    * [Atlanta, région de Géorgie](https://groups.google.com/forum/#!forum/atl-transit-developers) 
+    * [511 Ressources pour les développeurs de la région de la baie de San Francisco](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources) 
  - [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner) Communauté 
- - [Liste de diffusion des utilisateurs OpenTripPlanner](https://groups.google.com/forum/#!forum/opentripplanner-users) 
+    - [Liste de diffusion des utilisateurs OpenTripPlanner](https://groups.google.com/forum/#!forum/opentripplanner-users) 
  Vérifiez auprès de votre agence de transports en commun locale pour voir si elle a un liste de diffusion qui leur est propre. 
  
  
 ### Autres ressources communautaires 
- Trouvez d’autres communautés et ressources liées à GTFS- [Meetup German Open Transport](https://github.com/transportkollektiv/meetup/wiki) - Vous peuvent participer à une rencontre [bimensuelle](https://hackmd.okfn.de/opentransportmeetup#) de la communauté germanophone des transports ouverts. 
+ Trouvez d’autres communautés et ressources liées à GTFS
+
+ - [Meetup German Open Transport](https://github.com/transportkollektiv/meetup/wiki) - Vous peuvent participer à une rencontre [bimensuelle](https://hackmd.okfn.de/opentransportmeetup#) de la communauté germanophone des transports ouverts. 
  - Communauté [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner). 
  - [TransitWiki](http://transitwiki.org) - Un wiki communautaire pour les planificateurs de transports en commun. 
  - [Transit Techies NYC](https://transittechies.nyc/) - Rencontre basée à New York pour les passionnés de technologie et de transport. 

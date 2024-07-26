@@ -10,7 +10,7 @@
  
  🔮 MobilityData s’attend à ce que GTFS-Flex ouvre la porte à une standardisation plus approfondie du transport réactif à la demande, y compris une expansion dans les composants transactionnels et en temps réel utilisant GTFS-OnDemand. Nous préparons une proposition de stratégie pour gérer au mieux le nombre croissant de modes de transport et la complexité des concepts dans ce domaine. 
  
- [Voir la proposition complète](https://github.com/MobilityData/gtfs-flex){ .md-button.md-button--primary } 
+ [Voir la proposition complète](https://github.com/MobilityData/gtfs-flex){ .md-button .md-button--primary } 
  
 ## Dernière demande de tirage 
  Ce L’extension décrit les services qui fonctionnent selon un horaire, mais incluent également une ou plusieurs fonctionnalités flexibles, telles que : 
@@ -26,13 +26,15 @@
  
  Les changements dans ce PR sont : 
  
- - Modifier le fichier : 
- -- Modifier `stop_areas.txt` pour permettre le regroupement d’emplacements et/ou d’arrêts GeoJSON qui permettent de spécifier des groupes prédéterminés de ces fonctionnalités sur lignes individuelles de `stop_times.txt`. 
- -- Modifier `stop_times.txt` pour clarifier les éléments de la spécification actuelle nécessaires pour informer les consommateurs de données sur la façon d’interpréter les fichiers et champs ajoutés et étendus- Étendre le fichier : 
- -- Étendre `stop_times.txt` avec `start_pickup_drop_off_window` et `end_pickup_drop_off_window` pour définir l’heure à laquelle le service de transport à la demande devient disponible/se termine dans un emplacement GeoJSON, une zone d’arrêt ou un arrêt. 
- -- Étendre `stop_times.txt` avec `pickup_booking_rule_id` et `drop_off_booking_rule_id` pour définir des liens vers les règles de réservation- Ajouter un nouveau fichier : 
- -- `locations.geojson`, pour définir des zones (`Polygon` ou `Multipolygon`) où les passagers peuvent demander une prise en charge ou un retour. 
- -- `booking_rules.txt`, pour définir les règles de réservation qui fournissent aux passagers des informations sur la manière de demander un service. 
+- Modifier le fichier : 
+    - Modifier `stop_areas.txt` pour permettre le regroupement d’emplacements et/ou d’arrêts GeoJSON qui permettent de spécifier des groupes prédéterminés de ces fonctionnalités sur lignes individuelles de `stop_times.txt`. 
+    - Modifier `stop_times.txt` pour clarifier les éléments de la spécification actuelle nécessaires pour informer les consommateurs de données sur la façon d’interpréter les fichiers et champs ajoutés et étendus
+- Étendre le fichier : 
+    - Étendre `stop_times.txt` avec `start_pickup_drop_off_window` et `end_pickup_drop_off_window` pour définir l’heure à laquelle le service de transport à la demande devient disponible/se termine dans un emplacement GeoJSON, une zone d’arrêt ou un arrêt. 
+    - Étendre `stop_times.txt` avec `pickup_booking_rule_id` et `drop_off_booking_rule_id` pour définir des liens vers les règles de réservation
+- Ajouter un nouveau fichier : 
+    - `locations.geojson`, pour définir des zones (`Polygon` ou `Multipolygon`) où les passagers peuvent demander une prise en charge ou un retour. 
+    - `booking_rules.txt`, pour définir les règles de réservation qui fournissent aux passagers des informations sur la manière de demander un service. 
  
  Voici un [exemple de données](https://docs.google.com/spreadsheets/d/1w5EHuHfxvejqApJFHA1Z0K2KytD9zahwbf8zyRlP_Ls/edit#gid=1451132209) pour [RufBus](https://uvg-online.com/rufbus-angermuende/) à Angermünde et Gartzer, Allemagne. L’image ci-dessous est un exemple illustrant la façon dont les données pourraient être présentées dans un planificateur de voyage : 
  
@@ -40,11 +42,12 @@
  
  Visitez la page Pull Request pour lire le message complet et contribuer à la conversation. 
  
- [Voir la Pull Request](https://github.com/google/transit/pull/388){ .md-button.md-button--primary } 
+ [Voir la Pull Request](https://github.com/google/transit/pull/388){ .md-button .md-button--primary } 
  
- [Rejoignez#gtfs-flex sur Slack](https://share.mobilitydata.org/slack){ .md-button.md-button--primary } 
+ [Rejoignez #gtfs-flex sur Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary } 
  
-## Premières mises en œuvre- [Projet pilote MDoT Flex : Trillium, IBI, Transit, MNDoT, Cambridge Systematics et Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
+## Premières mises en œuvre
+- [Projet pilote MDoT Flex : Trillium, IBI, Transit, MNDoT, Cambridge Systematics et Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
  - [Open Trip Planner](https://www.opentripplanner.org/) 
  - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/) 
  - [Tulare County Area Transit](https://ridetcat.org/) 
@@ -57,18 +60,22 @@
  
  <a class="md-button md-button--primary" href=mailto:specification@mobilitydata.org >Contactez-nous</a> 
  
-## Suivi des adoptions### Actuel 
+## Suivi des adoptions
+### Actuel 
 
  <iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid#ccc;"></iframe> 
  
- [Demander une modification](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button.md-button--primary } 
- [Ajoutez votre organisation (consommateurs)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button.md-button--primary } 
- [Ajoutez votre organisation (producteurs)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button.md-button--primary } 
+ [Demander une modification](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary } 
+ [Ajoutez votre organisation (consommateurs)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button .md-button--primary } 
+ [Ajoutez votre organisation (producteurs)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button .md-button--primary } 
  
-## Historique- **2013** : Proposition originale écrite par Brian Ferris (Google) 
+## Historique
+- **2013** : Proposition originale écrite par Brian Ferris (Google) 
  - **2016** : <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">Début des discussions GTFS-Flex GitHub</a> 
- - **2017* * : <a href="https://www.oregon.gov/odot/RPTD/RPTD%20Document%20Library/GTFS-Flex-N-CATT.pdf" target="_blank">Programme sandbox Mobility on Demand (MOD) (FTA, Vermont DOT, OTP)</a> 
- - **2018** : MobilityData devient steward GTFS-Flex et propose GTFS-Flex v2- **Novembre 2020** : Référentiel la version à jour de GTFS-Flex et OTP2 ingère les données GTFS-Flex v2- **Mai 2022** : Début du pilote MnDoT (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus). 
+ - **2017** : <a href="https://www.oregon.gov/odot/RPTD/RPTD%20Document%20Library/GTFS-Flex-N-CATT.pdf" target="_blank">Programme sandbox Mobility on Demand (MOD) (FTA, Vermont DOT, OTP)</a> 
+ - **2018** : MobilityData devient steward GTFS-Flex et propose GTFS-Flex v2
+ - **Novembre 2020** : Référentiel la version à jour de GTFS-Flex et OTP2 ingère les données GTFS-Flex v2
+ - **Mai 2022** : Début du pilote MnDoT (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus)). 
  - **Mai 2023** : <a href="https://github.com/google/transit/issues/382" target="_blank">Travaux sur GTFS-Flex : Début de la découverte du service</a> 
  - **Juin 2023** : <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Réunion de travail conceptuelle sur GTFS-Flex</a> 
  - **Juillet 2023** : <a href="https://github.com/google/transit/pull/388" target="_blank">Publication de la Pull Request#388</a> 
