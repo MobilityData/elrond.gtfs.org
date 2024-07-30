@@ -1,17 +1,19 @@
-# Arrêts continus## Prise en charge et retour partout 
+# Arrêts continus
+
+## Prise en charge et retour partout 
  
  L’agence de transport The Current (Rockingham, US-VT) applique une politique d’arrêt continu sur les itinéraires 2, 53 et 55. Un passager peut être sélectionné monter et descendre entre les arrêts prévus tout au long du parcours, à condition qu’il y ait un endroit sûr où le bus peut s’arrêter. 
  
- Le fichier [routes.txt](../../reference/#routestxt) permet de décrire ce service à l’aide des champs `continuous_pickup` et `continuous_drop_off`. Les champs sont définis sur « 0 » pour indiquer que les ramassages et dépôts continus sont autorisés. 
+ Le fichier [routes.txt](../../reference/#routestxt) permet de décrire ce service à l’aide des champs `continuous_pickup` et `continuous_drop_off`. Les champs sont définis sur `0` pour indiquer que les ramassages et dépôts continus sont autorisés. 
  
  [** routes.txt**](../../reference/#routestxt) 
  
- ``` 
- route_id,route_short_name,route_long_name,route_type,continuous_pickup,continuous_drop_off 
- 2,2,Bellows Falls en ville,3,0,0 
- 53,53,Bellows Falls/Battleboro Commuter,3,0,0 
- 55,55,Bellows Falls/Springfield Shuttle,3,0,0 
- `` ` 
+```
+route_id,route_short_name,route_long_name,route_type,continuous_pickup,continuous_drop_off
+2,2,Bellows Falls In-Town,3,0,0
+53,53,Bellows Falls / Battleboro Commuter,3,0,0
+55,55,Bellows Falls / Springfield Shuttle,3,0,0
+```
 
 <hr> 
  
@@ -23,39 +25,41 @@
  
  ![](../../../assets/victor-valley-transit.svg) 
  
- Ceci est décrit à l’aide des fichiers [stop.txt](../../reference/#stopstxt) et [stop_times.txt](../../reference/#stop_timestxt) : 
+ Ceci est décrit à l’aide des fichiers [stop.txt](../../reference/#stopstxt) et [stop_times.txt](../../reference/#stop_timestxt): 
  
- - Le premier fichier définit les arrêts le long du parcours- Le deuxième fichier définit la prise en charge et le retour en continu règles entre les arrêts. 
+ - Le premier fichier définit les arrêts le long du parcours
+ - Le deuxième fichier définit la prise en charge et le retour en continu règles entre les arrêts. 
  
  [**stop.txt**](../../reference/#stopstxt) 
  
- ``` 
- stop_id,stop_name,stop_lat,stop_lon 
- A, Station de transfert de Victoriaville, 34.514356,-117.318323 
- B, Dante St &amp; Venus Ave, 34.564499,-117.287097 
- C, Centre de transport de Victorville, 34.538433,-117.294703 
- X, Limite tarifaire locale/comté, 34.566224,-117.318357 
- D, National Trails Highway- Air Expressway,34.567536,-117.319716 
- E,Bureau de poste d’Oro Grande,34.599292,-117.334452 
- F,Silver Lakes Market,34.744662,-117.335407 
- ``` 
+```
+stop_id,stop_name,stop_lat,stop_lon
+A,Victoriaville Transfer Station,34.514356,-117.318323
+B,Dante St & Venus Ave,34.564499,-117.287097
+C,Victorville Transportation Center,34.538433,-117.294703
+X,Local/County Fare Boundary,34.566224,-117.318357
+D,National Trails Highway - Air Expressway,34.567536,-117.319716
+E,Oro Grande Post Office,34.599292,-117.334452
+F,Silver Lakes Market,34.744662,-117.335407
+```
  
  Dans [stop_times.txt](../../reference/#stop_timestxt), pour un trajet donné : 
  
- - Un enregistrement avec `continuous_pickup=0` indique que les ramassages continus sont autorisés depuis cet arrêt jusqu’à l’arrêt suivant- Un enregistrement avec `continuous_pickup=0` =1` indique que les ramassages continus sont interdits à partir de cet arrêt jusqu’à l’arrêt suivant 
+ - Un enregistrement avec `continuous_pickup=0` indique que les ramassages continus sont autorisés depuis cet arrêt jusqu’à l’arrêt suivant
+ - Un enregistrement avec `continuous_pickup=0` =1` indique que les ramassages continus sont interdits à partir de cet arrêt jusqu’à l’arrêt suivant 
  
  [** stop_times.txt**](../../reference/#stop_timestxt) 
  
- ``` 
- trip_id, stop_id, stop_sequence,departure_time,arrival_time,continuous_pickup,continuous_drop_off,timepoint 
- 22NB9AM,A,1,09:00:00,09:00:00,1,1,1 
- 22NB9AM,B,2,09 : 14:00,09:14:00,1,1,1 
- 22NB9AM,C,3,09:21:00,09:21:00,1,1,1 
- 22NB9AM,X,4,,, 0,0,0 
- 22NB9AM,D,5,09:25:00,09:25:00,0,0,1 
- 22NB9AM,E,6,09:31:00,09:31:00, 0,0,1 
- 22NB9AM,F,7,09:46:00,09:46:00,0,0,1 
- ``` 
+```
+trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,continuous_drop_off,timepoint
+22NB9AM,A,1,09:00:00,09:00:00,1,1,1
+22NB9AM,B,2,09:14:00,09:14:00,1,1,1
+22NB9AM,C,3,09:21:00,09:21:00,1,1,1
+22NB9AM,X,4,,,0,0,0
+22NB9AM,D,5,09:25:00,09:25:00,0,0,1
+22NB9AM,E,6,09:31:00,09:31:00,0,0,1
+22NB9AM,F,7,09:46:00,09:46:00,0,0,1
+``` 
  
  La même logique s’applique pour le champ `continuous_drop_off` mais pour le cas de dépôts. 
  

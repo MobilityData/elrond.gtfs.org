@@ -11,13 +11,15 @@
  
  [** fare_attributes.txt**](../../reference/#fare_attributestxt) 
  
- ``` 
- fare_id,price,currency_type,payment_method,transfers,transfer_duration 
- presto_fare,3.2,CAD,1,,7200 
- ``` 
- § § - Le prix du tarif est indiqué sous prix et `currency_type` 
+```
+fare_id,price,currency_type,payment_method,transfers,transfer_duration
+presto_fare,3.2,CAD,1,,7200
+```
+
+- Le prix du tarif est indiqué sous prix et `currency_type` 
  - Les usagers doivent payer leur tarif aux portes tarifaires de la gare avant de monter dans le métro. Ceci est représenté par `payment_method=1` 
- - Le champ transferts est laissé vide pour représenter les transferts illimités- Le champ `transfer_duration` correspond à la fenêtre de transfert de 2 heures (en secondes) 
+ - Le champ transferts est laissé vide pour représenter les transferts illimités
+ - Le champ `transfer_duration` correspond à la fenêtre de transfert de 2 heures (en secondes) 
  
  Le deuxième fichier, [fare_rules.txt](../../reference/#fare_rulestxt) attribue des tarifs aux trajets en liant un tarif à un itinéraire ainsi qu’une origine/destination sur cet itinéraire. 
  
@@ -25,21 +27,21 @@
  
  [** routes.txt**](../../reference/#routestxt) 
  
- ``` 
- Agency_id, route_id,route_type 
- TTC,Line1,1 
- TTC,Line2,1 
- ``` 
+```
+agency_id,route_id,route_type
+TTC,Line1,1
+TTC,Line2,1
+``` 
  
  Dans cet exemple, les transferts à La station Bloor-Yonge est modélisée. Pour cela, cette station est modélisée comme deux arrêts distincts, le premier est la station Bloor qui est desservie par la ligne 1, et le second est la station Yonge, qui est desservie par la ligne 2. Les deux ont `zone_id=ttc_subway_stations` afin de regrouper tous stations de métro dans une zone tarifaire unique. 
  
  [** stops.txt**](../../reference/#stopstxt) 
  
- ``` 
- stop_id,stop_name,stop_lat,stop_lon,zone_id 
- Bloor,Bloor Station,,43.670049,-79.385389,ttc_subway_stations 
- Yonge,Station Yonge,,43.671049,-79.386789,ttc_subway_stations 
- ``` 
+```
+stop_id,stop_name,stop_lat,stop_lon,zone_id
+Bloor,Bloor Station,,43.670049,-79.385389,ttc_subway_stations
+Yonge,Yonge Station,,43.671049,-79.386789,ttc_subway_stations
+```
  
  Dans [fare_rules.txt](../../reference/#fare_rulestxt), le Le tarif PRESTO est associé à la fois aux lignes et aux stations de métro en utilisant les relations suivantes : 
  
@@ -47,22 +49,24 @@
  
  [** fare_rules.txt**](../../reference/#fare_rulestxt) 
  
- ``` 
- fare_id, route_id,origin_id,destination_id 
- presto_fare,line1,ttc_subway_stations,ttc_subway_stations 
- presto_fare,line2,ttc_subway_stations,ttc_subway_stations 
- ``` 
+```
+fare_id,route_id,origin_id,destination_id
+presto_fare,line1,ttc_subway_stations,ttc_subway_stations
+presto_fare,line2,ttc_subway_stations,ttc_subway_stations
+```
  
  Le troisième fichier, [transfers.txt](../../reference/#transferstxt) définit les points de transfert entre les différents itinéraires. Pour modéliser les transferts à la gare de Bloor-Yonge, deux entrées sont requises : 
  
  [** transfers.txt**](../../reference/#transferstxt) 
  
- ``` 
- from_stop_id, to_stop_id,from_route_id,to_route_id,transfer_type 
- Bloor,Yonge,line1,line2,0 
- Yonge,Bloor,line2,line1,0 
- ``` 
+```
+from_stop_id,to_stop_id,from_route_id,to_route_id,transfer_type
+Bloor,Yonge,line1,line2,0
+Yonge,Bloor,line2,line1,0
+```
  
- - Les premiers modèles transfèrent de la ligne 1 à la ligne 2 en utilisant `from_route_id` et `to_route_id` de la station Bloor à la station Yonge- Le deuxième modèle transfère de la ligne 2 à la ligne 1 en utilisant `from_route_id` et `to_route_id` de la station Yonge à la station Bloor- La valeur de `transfer_type` est `0` puisqu’il n’y a pas d’exigences ou de considérations spécifiques pour les transferts 
+ - Les premiers modèles transfèrent de la ligne 1 à la ligne 2 en utilisant `from_route_id` et `to_route_id` de la station Bloor à la station Yonge
+ - Le deuxième modèle transfère de la ligne 2 à la ligne 1 en utilisant `from_route_id` et `to_route_id` de la station Yonge à la station Bloor
+ - La valeur de `transfer_type` est `0` puisqu’il n’y a pas d’exigences ou de considérations spécifiques pour les transferts 
  
  <sup>[Exemple de source](https://www.ttc.ca/Fares-and-passes)</sup> 
