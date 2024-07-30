@@ -1,32 +1,32 @@
 # Bonnes pratiques du calendrier GTFS 
  
- Il s’agit de pratiques recommandées pour décrire les services de transport public dans la [General Transit Feed Specification (GTFS)](../référence). Ces pratiques ont été synthétisées à partir de l’expérience des membres du [groupe de travail sur les meilleures pratiques GTFS](#gtfs-best-practices-working-group) et des [recommandations de pratiques GTFS spécifiques à l’application](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
+ Il s’agit de pratiques recommandées pour décrire les services de transport public dans la [General Transit Feed Specification (GTFS)](../reference). Ces pratiques ont été synthétisées à partir de l’expérience des membres du [groupe de travail sur les meilleures pratiques GTFS](#groupe-de-travail-sur-les-meilleures-pratiques-gtfs) et des [recommandations de pratiques GTFS spécifiques à l’application](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
  
- Pour plus d’informations, consultez la [Foire aux questions](#frequently-asked-questions-faq). 
+ Pour plus d’informations, consultez la [Foire aux questions](#foire-aux-questions-faq). 
  
 ## Structure du document 
  
  Les pratiques sont organisées en quatre sections principales : 
  
- * __[Publication des ensembles de données et pratiques générales](#dataset-publishing-general-practices) :__ Ces pratiques concernent la structure globale de l’ensemble de données GTFS et à la manière dont les ensembles de données GTFS sont publiés. 
- * __[Recommandations pratiques organisées par fichier](#practice-recommendations-organized-by-file) :__ Les recommandations sont organisées par fichier et par champ dans le GTFS pour faciliter la cartographie des pratiques vers la référence officielle du GTFS. 
- * __[Recommandations pratiques organisées par cas](#practice-recommendations-organized-by-case) :__ Dans des cas particuliers, tels que les itinéraires en boucle, les pratiques peuvent devoir être appliquées à plusieurs fichiers et champs. Ces recommandations sont regroupées dans cette section. 
+ * __[Publication des ensembles de données et pratiques générales](#publication-des-ensembles-de-donnees-et-pratiques-generales) :__ Ces pratiques concernent la structure globale de l’ensemble de données GTFS et à la manière dont les ensembles de données GTFS sont publiés. 
+ * __[Recommandations pratiques organisées par fichier](#recommandations-de-pratiques-organisees-par-fichier) :__ Les recommandations sont organisées par fichier et par champ dans le GTFS pour faciliter la cartographie des pratiques vers la référence officielle du GTFS. 
+ * __[Recommandations pratiques organisées par cas](#recommandations-pratiques-organisees-par-cas) :__ Dans des cas particuliers, tels que les itinéraires en boucle, les pratiques peuvent devoir être appliquées à plusieurs fichiers et champs. Ces recommandations sont regroupées dans cette section. 
  
 ## Publication des ensembles de données et pratiques générales 
  
  * Les ensembles de données doivent être publiés sur une URL publique et permanente, y compris le nom du fichier zip. (par exemple, www.agency.org/gtfs/gtfs.zip). Idéalement, l’URL devrait être directement téléchargeable sans nécessiter de connexion pour accéder au fichier, afin de faciliter le téléchargement en consommant des applications logicielles. Bien qu’il soit recommandé (et constitue la pratique la plus courante) de rendre un ensemble de données GTFS librement téléchargeable, si un fournisseur de données doit contrôler l’accès à GTFS pour des raisons de licence ou pour d’autres raisons, il est recommandé de contrôler l’accès à l’ensemble de données GTFS à l’aide de clés API. ce qui facilitera les téléchargements automatiques. 
  * Les données GTFS sont publiées par itérations afin qu’un seul fichier situé à un emplacement stable contienne toujours la dernière description officielle du service d’une ou plusieurs agences de transport en commun. 
  * Conserver des identifiants persistants (champs d’identification) pour `stop_id`, `route_id` et `agency_id` à travers les itérations de données chaque fois que possible. 
- * Un ensemble de données GTFS doit contenir le service actuel et à venir (parfois appelé ensemble de données « fusionné »). La [fonction de fusion](https:) peut être utilisée pour créer un ensemble de données fusionné à partir de deux flux GTFS différents. 
- * À tout moment, l’ensemble de données GTFS publié doit être valide pendant au moins les 7 prochains jours, et idéalement aussi longtemps que l’opérateur est convaincu que l’horaire continuera à être exploité. 
- * Si possible, l’ensemble de données GTFS doit couvrir au moins les 30 prochains jours de service. 
+ * Un ensemble de données GTFS doit contenir le service actuel et à venir (parfois appelé ensemble de données « fusionné »). La [fonction de fusion](https://github.com/google/transitfeed/wiki/Merge) peut être utilisée pour créer un ensemble de données fusionné à partir de deux flux GTFS différents. 
+    * À tout moment, l’ensemble de données GTFS publié doit être valide pendant au moins les 7 prochains jours, et idéalement aussi longtemps que l’opérateur est convaincu que l’horaire continuera à être exploité. 
+    * Si possible, l’ensemble de données GTFS doit couvrir au moins les 30 prochains jours de service. 
  * Supprimez les anciens services (calendriers expirés) du flux. 
  * Si une modification de service entre en vigueur dans 7 jours ou moins, exprimez cette modification de service via un flux [GTFS-realtime](../../realtime/reference) (avis de service ou mises à jour de trajet) plutôt que statique. Ensemble de données GTFS. 
- * Le serveur Web hébergeant les données GTFS doit être configuré pour signaler correctement la date de modification du fichier (voir [HTTP/1.1- Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29 ), en vertu de l’article 14.29). 
+ * Le serveur Web hébergeant les données GTFS doit être configuré pour signaler correctement la date de modification du fichier (voir [HTTP/1.1- Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29), en vertu de l’article 14.29). 
  
 ## Recommandations de pratiques organisées par fichier 
  
- Cette section présente les pratiques organisées par fichier et par champ, en s’alignant sur la [référence GTFS](../référence). 
+ Cette section présente les pratiques organisées par fichier et par champ, en s’alignant sur la [référence GTFS](../reference). 
  
 ### Tous les fichiers 
  
@@ -61,25 +61,25 @@
  | | Par défaut, `stop_name` ne doit pas contenir de mots génériques ou redondants comme « Station » ou « Stop », mais certains cas extrêmes sont autorisés.<ul><li> Alors qu’il fait réellement partie du nom (Union Station, Central Station<li> Lorsque le `stop_name` est trop générique (par exemple s’il s’agit du nom de la ville). « Station », « Terminal » ou d’autres termes expliquent clairement la signification.</ul> | 
  | `stop_lat` et `stop_lon` | Les emplacements des arrêts doivent être aussi précis que possible. Les emplacements d’arrêt doivent avoir une erreur de __pas plus__ de quatre mètres par rapport à la position d’arrêt réelle. | 
  | | Les arrêts doivent être placés très près de l’emprise piétonne où un passager embarquera (c’est-à-dire du bon côté de la rue). | 
- | | Si l’emplacement d’un arrêt est partagé entre des flux de données distincts (c’est-à-dire que deux agences utilisent exactement le même arrêt/installation d’embarquement), indiquez que l’arrêt est partagé en utilisant exactement les mêmes « `stop_lat` » et « `stop_lon` » pour les deux arrêts. | 
- | `parent_station` &amp; `location_type` | De nombreuses gares ou terminaux disposent de plusieurs installations d’embarquement (selon le mode, elles peuvent être appelées quai de bus, quai, quai, porte ou autre terme). Dans de tels cas, les producteurs d’aliments doivent décrire les gares, les installations d’embarquement (également appelées haltes pour enfants) et leurs relations.<ul><li> La station ou le terminal doit être défini comme un enregistrement dans `stops.txt` avec `location_type = 1`.</li><li> Chaque installation d’embarquement doit être définie comme un arrêt avec `location_type = 0`. Le champ « `parent_station` » doit faire référence au « `stop_id` » de la gare dans laquelle se trouve l’établissement d’embarquement.</li></ul> | 
- | | Lorsque vous nommez la gare et les arrêts pour enfants, définissez des noms bien reconnus par les usagers et qui peuvent aider les usagers à identifier la gare et l’installation d’embarquement (quai de bus, quai, quai, porte, etc.).<table class=’example’><thead><tr><th> Nom de la station mère</th><th> Nom de l’arrêt enfant</th></tr></thead><tbody><tr><td> Gare Union de Chicago</td><td> Quai 19 de la gare Union de Chicago</td></tr><tr><td> Terminal du ferry de San Francisco</td><td> Porte E du terminal du ferry de San Francisco</td></tr><tr><td> Centre de transport en commun du centre-ville</td><td> Centre de transport en commun du centre-ville, baie B</td></tr></tbody></table> | 
+ | | Si l’emplacement d’un arrêt est partagé entre des flux de données distincts (c’est-à-dire que deux agences utilisent exactement le même arrêt/installation d’embarquement), indiquez que l’arrêt est partagé en utilisant exactement les mêmes `stop_lat` et `stop_lon` pour les deux arrêts. | 
+ | `parent_station` &amp; `location_type` | De nombreuses gares ou terminaux disposent de plusieurs installations d’embarquement (selon le mode, elles peuvent être appelées quai de bus, quai, quai, porte ou autre terme). Dans de tels cas, les producteurs d’aliments doivent décrire les gares, les installations d’embarquement (également appelées haltes pour enfants) et leurs relations.<ul><li> La station ou le terminal doit être défini comme un enregistrement dans `stops.txt` avec `location_type = 1`.</li><li> Chaque installation d’embarquement doit être définie comme un arrêt avec `location_type = 0`. Le champ `parent_station` doit faire référence au `stop_id` de la gare dans laquelle se trouve l’établissement d’embarquement.</li></ul> |
+| | Lorsque vous nommez la gare et les arrêts pour enfants, définissez des noms bien reconnus par les usagers et qui peuvent aider les usagers à identifier la gare et l’installation d’embarquement (quai de bus, quai, quai, porte, etc.).<table class='example'><thead><tr><th>Nom de la station mère</th><th>Nom de l’arrêt enfant</th></tr></thead><tbody><tr><td>Gare Union de Chicago</td><td>Quai 19 de la gare Union de Chicago</td></tr><tr><td>Terminal du ferry de San Francisco</td><td>Porte E du terminal du ferry de San Francisco</td></tr><tr><td>Centre de transport en commun du centre-ville</td><td>Centre de transport en commun du centre-ville, baie B</td></tr></tbody></table> | 
  
 ### routes.txt 
  
  | Nom du champ | Recommandation | 
  |---|---| 
- | `route_long_name` | La définition de la référence de spécification : <q>ce nom est généralement plus descriptif que le <code>route_short_name</code> et inclut souvent la destination ou l’arrêt de l’itinéraire. Au moins l’un des <code>route_short_name</code> ou <code>route_long_name</code> doit être spécifié, ou potentiellement les deux, le cas échéant. Si la route n’a pas de nom long, veuillez spécifier un <code>route_short_name</code> et utiliser une string vide comme valeur pour ce champ.</q><br> Des exemples de types de noms longs sont ci-dessous :<table class=’example’><thead><tr><th colspan=’3’> Chemin de déplacement ou couloir principal</th></tr><tr><th> Nom de l’itinéraire</th><th> Formulaire</th><th> Agence</th></tr></thead><tbody><tr><td> <a href=’https://www.sfmta.com/getting-around/transit/routes-stops/n-judah’>« N »/« Juda »</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td> <a href=’https://www.sfmta.com/’>Muni</a>, à San Francisco</td></tr><tr><td> <a href=’https://trimet.org/schedules/r006.htm’>« 6 »/« Boulevard ML King Jr »</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td> <a href=’https://trimet.org/’>TriMet</a>, à Portland, Oregon.</td></tr><tr><td> <a href=’http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6’>« 6 »/« Nation- Étoile »</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td> <a href=’http://www.ratp.fr/’>RATP</a>, à Paris France.</td></tr><tr><td> <a href=’http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf’>«U2»-«Pankow – Ruhleben»</a></td><td> <code>route_short_name</code> -<br> <code>route_long_name</code></td><td> <a href=’http://www.bvg.de/’>BVG</a>, à Berlin, Allemagne</td></tr></tbody></table><table class=’example’><thead><tr><th> Description du service</th></tr></thead><tbody><tr><td> <a href=’https://128bc.org/schedules/rev-bus-hartwell-area/’>« Navette de la région de Hartwell »</a></td></tr></tbody></table> 
+ | `route_long_name` | La définition de la référence de spécification : <q>ce nom est généralement plus descriptif que le <code>route_short_name</code> et inclut souvent la destination ou l’arrêt de l’itinéraire. Au moins l’un des <code>route_short_name</code> ou <code>route_long_name</code> doit être spécifié, ou potentiellement les deux, le cas échéant. Si la route n’a pas de nom long, veuillez spécifier un <code>route_short_name</code> et utiliser une string vide comme valeur pour ce champ.</q><br> Des exemples de types de noms longs sont ci-dessous :<table class='example'><thead><tr><th colspan='3'>Chemin de déplacement ou couloir principal</th></tr><tr><th>Nom de l’itinéraire</th><th> Formulaire</th><th>Agence</th></tr></thead><tbody><tr><td> <a href='https://www.sfmta.com/getting-around/transit/routes-stops/n-judah'>«N»/«Judah»</a></td><td><code>route_short_name</code>/<br> <code>route_long_name</code></td><td><a href='https://www.sfmta.com/'>Muni</a>, à San Francisco</td></tr><tr><td><a href='https://trimet.org/schedules/r006.htm'>«6»/«Boulevard ML King Jr»</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>, à Portland, Oregon.</td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>«6»/«Nation-Étoile»</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='http://www.ratp.fr/'>RATP</a>, à Paris France.</td></tr><tr><td><a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>«U2»-«Pankow–Ruhleben»</a></td><td><code>route_short_name</code>-<br><code>route_long_name</code></td><td> <a href='http://www.bvg.de/'>BVG</a>, à Berlin, Allemagne</td></tr></tbody></table><table class='example'><thead><tr><th>Description du service</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>«Navette de la région de Hartwell»</a></td></tr></tbody></table> 
  | | `route_long_name` ne doit pas contenir le `route_short_name`. | 
- | | Incluez la désignation complète, y compris une identité de service, lors du remplissage de `route_long_name`. Exemples:<table class=’example’><thead><tr><th> Identité du service</th><th> Recommandation</th><th> Exemples</th></tr></thead><tbody><tr><td> « Train léger MAX »<br> TriMet, à Portland, Oregon</td><td> Le <code>route_long_name</code> doit inclure la marque (MAX) et la désignation spécifique de l’itinéraire</td><td> "Ligne rouge MAX" "Ligne bleue MAX"</td></tr><tr><td> "Tour rapide"<br> ABQ Ride, à Albuquerque, Nouveau-Mexique</td><td> Le <code>route_long_name</code> doit inclure la marque (Rapid Ride) et la désignation spécifique de l’itinéraire</td><td> "Ligne rouge rapide"<br> "Ligne bleue rapide"</td></tr></tbody></table> 
+ | | Incluez la désignation complète, y compris une identité de service, lors du remplissage de `route_long_name`. Exemples:<table class='example'><thead><tr><th>Identité du service</th><th> Recommandation</th><th>Exemples</th></tr></thead><tbody><tr><td> «Train léger MAX»<br>TriMet, à Portland, Oregon</td><td>Le <code>route_long_name</code> doit inclure la marque (MAX) et la désignation spécifique de l’itinéraire</td><td>"Ligne rouge MAX" "Ligne bleue MAX"</td></tr><tr><td>"Tour rapide"<br>ABQ Ride, à Albuquerque, Nouveau-Mexique</td><td>Le <code>route_long_name</code> doit inclure la marque (Rapid Ride) et la désignation spécifique de l’itinéraire</td><td>"Ligne rouge rapide"<br> "Ligne bleue rapide"</td></tr></tbody></table> 
  | `route_id` | Tous les trajets sur un itinéraire nommé donné doivent faire référence au même `route_id`.<li> Les différentes directions d’un itinéraire ne doivent pas être séparées en différentes valeurs `route_id` .</li><li> Les différentes périodes d’exploitation d’une route ne doivent pas être séparées en différentes valeurs `route_id`. c’est-à-dire ne créez pas d’enregistrements différents dans `routes.txt` pour les services « Downtown AM » et « Downtown PM »).</li> | 
  | | Si un groupe de routes comprend des branches nommées distinctement (par exemple 1A et 1B), suivez les recommandations dans le cas route [branches](#branches) pour déterminer `route_short_name` et `route_long_name`. | 
  | `route_color` &amp; `route_text_color` | Doit être cohérent avec la signalisation et les informations client imprimées et en ligne (et donc non incluses si elles n’existent pas ailleurs). | 
  
 ### trips.txt 
  
- * __Voir cas particulier pour les itinéraires en boucle :__ Les itinéraires en boucle sont des cas où les trajets commencent et se terminent au même arrêt, par opposition aux itinéraires linéaires, qui ont deux terminaisons distinctes. Les itinéraires en boucle doivent être décrits selon des pratiques spécifiques. [Voir Cas d’itinéraire en boucle.](#loop-routes) 
- * __Voir cas particulier pour les itinéraires en lasso :__ Les itinéraires en lasso sont un hybride de géométries linéaires et en boucle, dans lesquelles les véhicules circulent en boucle sur une partie seulement de l’itinéraire. Les itinéraires du lasso doivent être décrits selon des pratiques spécifiques. [Voir le cas de la route Lasso.](#lasso-routes) 
+ * __Voir cas particulier pour les itinéraires en boucle :__ Les itinéraires en boucle sont des cas où les trajets commencent et se terminent au même arrêt, par opposition aux itinéraires linéaires, qui ont deux terminaisons distinctes. Les itinéraires en boucle doivent être décrits selon des pratiques spécifiques. [Voir Cas d’itinéraire en boucle.](#lignes-en-boucle) 
+ * __Voir cas particulier pour les itinéraires en lasso :__ Les itinéraires en lasso sont un hybride de géométries linéaires et en boucle, dans lesquelles les véhicules circulent en boucle sur une partie seulement de l’itinéraire. Les itinéraires du lasso doivent être décrits selon des pratiques spécifiques. [Voir le cas de la route Lasso.](#lignes-lasso) 
  
  | Nom du champ | Recommandation | 
  |---|---| 
@@ -98,7 +98,7 @@
  |---|---| 
  | `pickup_type` et `drop_off_type` | Les voyages non payants (deadhead) qui ne fournissent pas de service aux passagers doivent être marqués avec `pickup_type` et `drop_off_type` d’une valeur de `1` pour toutes les lignes `stop_times`. 
  | | Lors des voyages payants, les « points de synchronisation » internes pour surveiller les performances opérationnelles et d’autres endroits tels que les garages dans lesquels un passager ne peut pas monter à bord doivent être marqués avec `pickup_type = 1` (pas de prise en charge disponible) et `drop_off_type = 1` (pas de dépôt disponible). | 
- | `arrival_time` et `departure_time` | Les champs « `arrival_time` » et « `departure_time` » doivent spécifier des valeurs de temps dans la mesure du possible, y compris des temps estimés ou interpolés non contraignants entre des points temporels. | 
+ | `arrival_time` et `departure_time` | Les champs `arrival_time` et `departure_time` doivent spécifier des valeurs de temps dans la mesure du possible, y compris des temps estimés ou interpolés non contraignants entre des points temporels. | 
  | `stop_headsign` | En général, les valeurs des enseignes doivent également correspondre aux panneaux présents dans les gares.<br><br> Dans les cas ci-dessous, « Southbound » induirait les clients en erreur car il n’est pas utilisé dans les panneaux des gares. 
  | |<table class="example"><thead><tr><th colspan="2"> À New York, pour les 2 en direction sud :</th></tr><tr><th> Pour les lignes <code>stop_times.txt</code> :</th><th> Utilisez la valeur <code>stop_headsign</code> :</th></tr></thead><tbody><tr><td> Jusqu’à ce que Manhattan soit atteint</td><td> <code>Manhattan &amp; Brooklyn</code></td></tr><tr><td> Jusqu’à ce que le centre-ville soit atteint</td><td> <code>Downtown &amp; Brooklyn</code></td></tr><tr><td> Jusqu’à ce que Brooklyn soit atteinte</td><td> <code>Brooklyn</code></td></tr><tr><td> Une fois Brooklyn atteinte</td><td> <code>Brooklyn (New Lots Av)</code></td></tr></tbody></table> | 
  | |<table class="example"><thead><tr><th colspan="2"> À Boston, pour la ligne rouge en direction sud, pour l’agence Braintree :</th></tr><tr><th> Pour les lignes <code>stop_times.txt</code> :</th><th> Utilisez la valeur <code>stop_headsign</code> :</th></tr></thead><tbody><tr><td> Jusqu’à ce que le centre-ville soit atteint</td><td> <code>Inbound to Braintree</code></td></tr><tr><td> Une fois le centre-ville atteint</td><td> <code>Braintree</code></td></tr><tr><td> Après le centre-ville</td><td> <code>Outbound to Braintree</code></td></tr></tbody></table> | 
@@ -107,7 +107,7 @@
  
  | Nom du champ | Recommandation | 
  |---|---| 
- | Tous les champs | L’inclusion d’un champ « `calendar.service_name` » peut également augmenter la lisibilité humaine de GTFS, bien que cela ne soit pas adopté dans la spécification. | 
+ | Tous les champs | L’inclusion d’un champ `calendar.service_name` peut également augmenter la lisibilité humaine de GTFS, bien que cela ne soit pas adopté dans la spécification. | 
  
 ### calendar_dates.txt 
  
@@ -169,7 +169,7 @@
  
  Les recommandations en Girouette doivent donc être appliquées afin d’indiquer aux usagers la direction dans laquelle va le véhicule. 
  
- Pour indiquer le changement de direction de déplacement, fournissez `stop_headsigns` dans le fichier `stop_times.txt`. Le `stop_headsign` décrit la direction des trajets au départ de l’arrêt pour lequel il est défini. L’ajout de « `stop_headsigns` » à chaque arrêt d’un voyage vous permet de modifier les informations du headsign tout au long du voyage. 
+ Pour indiquer le changement de direction de déplacement, fournissez `stop_headsigns` dans le fichier `stop_times.txt`. Le `stop_headsign` décrit la direction des trajets au départ de l’arrêt pour lequel il est défini. L’ajout de `stop_headsigns` à chaque arrêt d’un voyage vous permet de modifier les informations du headsign tout au long du voyage. 
  
  Ne définissez pas un seul trajet circulaire dans le fichier stop_times.txt pour un itinéraire qui fonctionne entre deux points d’arrivée (par exemple lorsque le même bus fait l’aller et le retour). Au lieu de cela, divisez le voyage en deux directions distinctes. 
  
@@ -177,26 +177,26 @@
  
  - Trajet circulaire avec changement de phare à chaque arrêt 
  
- | trip_id | heure_arrivée | heure_depart | stop_id | stop_sequence | stop_headsign | 
- |---------|--------------|----------------|---------|---------------|---------------| 
- | voyage_1 | 06:10:00 | 06:10:00 | arrêt_A | 1 | "B" | 
- | voyage_1 | 06:15:00 | 06:15:00 | arrêt_B | 2 | "C" | 
- | voyage_1 | 06:20:00 | 06:20:00 | arrêt_C | 3 | "D" | 
- | voyage_1 | 06:25:00 | 06:25:00 | stop_D | 4 | "E" | 
- | voyage_1 | 06:30:00 | 06:30:00 | stop_E | 5 | "Un" | 
- | voyage_1 | 06:35:00 | 06:35:00 | arrêt_A | 6 | "" | 
+| trip_id | arrival_time | departure_time | stop_id | stop_sequence | stop_headsign |
+|---------|--------------|----------------|---------|---------------|---------------|
+| trip_1  | 06:10:00     | 06:10:00       | stop_A  | 1             | "B"           |
+| trip_1  | 06:15:00     | 06:15:00       | stop_B  | 2             | "C"           |
+| trip_1  | 06:20:00     | 06:20:00       | stop_C  | 3             | "D"           |
+| trip_1  | 06:25:00     | 06:25:00       | stop_D  | 4             | "E"           |
+| trip_1  | 06:30:00     | 06:30:00       | stop_E  | 5             | "A"           |
+| trip_1  | 06:35:00     | 06:35:00       | stop_A  | 6             | ""            |
  
  - Voyage circulaire avec deux panneaux 
  
- | trip_id | heure_arrivée | heure_depart | stop_id | stop_sequence | stop_headsign | 
- |---------|--------------|----------------|---------|---------------|---------------| 
- | voyage_1 | 06:10:00 | 06:10:00 | arrêt_A | 1 | "sortant" | 
- | voyage_1 | 06:15:00 | 06:15:00 | arrêt_B | 2 | "sortant" | 
- | voyage_1 | 06:20:00 | 06:20:00 | arrêt_C | 3 | "sortant" | 
- | voyage_1 | 06:25:00 | 06:25:00 | stop_D | 4 | "entrant" | 
- | voyage_1 | 06:30:00 | 06:30:00 | stop_E | 5 | "entrant" | 
- | voyage_1 | 06:35:00 | 06:35:00 | stop_F | 6 | "entrant" | 
- | voyage_1 | 06:40:00 | 06:40:00 | arrêt_A | 7 | "" | 
+ | trip_id | arrival_time | departure_time | stop_id | stop_sequence | stop_headsign |
+|---------|--------------|----------------|---------|---------------|---------------|
+| trip_1  | 06:10:00     | 06:10:00       | stop_A  | 1             | "outbound"    |
+| trip_1  | 06:15:00     | 06:15:00       | stop_B  | 2             | "outbound"    |
+| trip_1  | 06:20:00     | 06:20:00       | stop_C  | 3             | "outbound"    |
+| trip_1  | 06:25:00     | 06:25:00       | stop_D  | 4             | "inbound"     |
+| trip_1  | 06:30:00     | 06:30:00       | stop_E  | 5             | "inbound"     |
+| trip_1  | 06:35:00     | 06:35:00       | stop_F  | 6             | "inbound"     |
+| trip_1  | 06:40:00     | 06:40:00       | stop_A  | 7             | ""            |
  
  | Nom du champ | Recommandation | 
  |---|---| 
@@ -220,7 +220,7 @@
  | Nom du champ | Recommandation | 
  |---|---| 
  | `trips.trip_id` | L’étendue complète d’un « aller-retour en véhicule » (voir l’illustration [ci-dessus](#lasso-routes)) consiste en un voyage de A à B vers B et retour à A. Un aller-retour complet en véhicule peut être exprimé par :<li> Une valeur/un enregistrement __single__ `trip_id` dans `trips.txt`</li><li> __Plusieurs__ valeurs/enregistrements `trip_id` dans `trips.txt`, avec un déplacement continu indiqué par `block_id`.</li> | 
- | `stop_times.stop_headsign` | Les arrêts le long du tronçon AB seront traversés dans les deux sens. `stop_headsign` facilite la distinction de la direction du déplacement. Par conséquent, il est recommandé de fournir `stop_headsign` pour ces trips.example_table :<table class="example"><thead><tr><th> Exemples:</th></tr></thead><tbody><tr><td> "A via B"</td></tr><tr><td> "UN"</td></tr></tbody></table><table class="example"><thead><tr><th> <a href="http://www.transitchicago.com/purpleline/">Ligne violette</a> de la Chicago Transit Authority</th></tr></thead><tbody><tr><td> "En direction sud vers la boucle"</td></tr><tr><td> "En direction nord via la boucle"</td></tr><tr><td> "En direction nord vers Linden"</td></tr></tbody></table><table class="example"><thead><tr><th> Lignes de bus du service de transport en commun d’Edmonton, ici <a href="http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">le 39</a></th></tr></thead><tbody><tr><td> "Rutherford"</td></tr><tr><td> "Parc du siècle"</td></tr></tbody></table> 
+ | `stop_times.stop_headsign` | Les arrêts le long du tronçon AB seront traversés dans les deux sens. `stop_headsign` facilite la distinction de la direction du déplacement. Par conséquent, il est recommandé de fournir `stop_headsign` pour ces trips.example_table :<table class="example"><thead><tr><th> Exemples:</th></tr></thead><tbody><tr><td> "A via B"</td></tr><tr><td> "A"</td></tr></tbody></table><table class="example"><thead><tr><th> <a href="http://www.transitchicago.com/purpleline/">Ligne violette</a> de la Chicago Transit Authority</th></tr></thead><tbody><tr><td> "En direction sud vers la boucle"</td></tr><tr><td> "En direction nord via la boucle"</td></tr><tr><td> "En direction nord vers Linden"</td></tr></tbody></table><table class="example"><thead><tr><th> Lignes de bus du service de transport en commun d’Edmonton, ici <a href="http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">le 39</a></th></tr></thead><tbody><tr><td> "Rutherford"</td></tr><tr><td> "Parc du siècle"</td></tr></tbody></table> 
  | `trip.trip_headsign` | L’enseigne du voyage doit être une description globale du voyage, telle qu’elle apparaît dans les horaires. Cela pourrait être « Linden to Linden via Loop » (exemple de Chicago) ou « A to A via B » (exemple générique). | 
  
 ### Branches 
@@ -232,10 +232,8 @@
  | Nom du champ | Recommandation | 
  |---|---| 
  | Tous les champs | Lors de la dénomination des itinéraires secondaires, il est recommandé de suivre d’autres documents d’information pour les passagers. Vous trouverez ci-dessous des descriptions et des exemples de deux cas : | 
- | | Si les horaires et la signalisation sur rue représentent deux itinéraires nommés distinctement (par exemple 1A et 1B), présentez-les comme tels dans le GTFS, en utilisant le « `route_short_name` » comme
-
-nd/ou champs `route_long_name`. Exemple : GoDurham Transit [itinéraires 2, 2A et 2B](https:) partagent un tracé commun sur la majorité de l’itinéraire, mais ils varient sous plusieurs aspects différents.<ul><li> La route 2 est un service de base, fonctionnant la plupart des heures.</li><li> L’itinéraire 2 comprend une déviation les nuits, les dimanches et les jours fériés de la rue Main.</li><li> Les Lignes 2A et 2B fonctionnent pendant la journée du lundi au samedi.</li><li> La route 2B dessert des arrêts supplémentaires dans une déviation du chemin d’alignement partagé.</li></ul> | 
- | | Si les informations fournies par l’agence décrivent les succursales avec le même itinéraire nommé, utilisez les champs `trips.trip_headsign`, `stop_times.stop_headsign` et/ou `trips.trip_short_name`. Exemple : GoTriangle [route 300](https:) se déplace vers différents endroits en fonction de l’heure de la journée. Pendant les heures de pointe, des trajets supplémentaires sont ajoutés à l’itinéraire standard pour accueillir les travailleurs entrant et sortant de la ville. | 
+ | | Si les horaires et la signalisation sur rue représentent deux itinéraires nommés distinctement (par exemple 1A et 1B), présentez-les comme tels dans le GTFS, en utilisant le `route_short_name` et/ou champs `route_long_name`. Exemple : GoDurham Transit [itinéraires 2, 2A et 2B](https://gotriangle.org/sites/default/files/brochure/godurham-route2-2a-2b_1.pdf) partagent un tracé commun sur la majorité de l’itinéraire, mais ils varient sous plusieurs aspects différents.<ul><li> La route 2 est un service de base, fonctionnant la plupart des heures.</li><li> L’itinéraire 2 comprend une déviation les nuits, les dimanches et les jours fériés de la rue Main.</li><li> Les Lignes 2A et 2B fonctionnent pendant la journée du lundi au samedi.</li><li> La route 2B dessert des arrêts supplémentaires dans une déviation du chemin d’alignement partagé.</li></ul> | 
+ | | Si les informations fournies par l’agence décrivent les succursales avec le même itinéraire nommé, utilisez les champs `trips.trip_headsign`, `stop_times.stop_headsign` et/ou `trips.trip_short_name`. Exemple : GoTriangle [route 300](https://gotriangle.org/sites/default/files/brochure/godurham-route2-2a-2b_1.pdf) se déplace vers différents endroits en fonction de l’heure de la journée. Pendant les heures de pointe, des trajets supplémentaires sont ajoutés à l’itinéraire standard pour accueillir les travailleurs entrant et sortant de la ville. | 
  
 ## Foire aux questions (FAQ) 
  
@@ -251,13 +249,13 @@ nd/ou champs `route_long_name`. Exemple : GoDurham Transit [itinéraires 2, 2A 
  
 ### Comment ont-ils été élaborés ? Qui les a développés ? 
  
- Ces meilleures pratiques ont été développées par un groupe de travail de 17 organisations impliquées dans GTFS, y compris des fournisseurs d’applications et des consommateurs de données, des fournisseurs de transport en commun et des consultants largement impliqués dans GTFS. Le groupe de travail a été convoqué et animé par le [Rocky Mountain Institute](http:). 
+ Ces meilleures pratiques ont été développées par un groupe de travail de 17 organisations impliquées dans GTFS, y compris des fournisseurs d’applications et des consommateurs de données, des fournisseurs de transport en commun et des consultants largement impliqués dans GTFS. Le groupe de travail a été convoqué et animé par le [Rocky Mountain Institute](http://www.rmi.org/mobility). 
  
  Les membres du groupe de travail ont voté sur chaque meilleure pratique. La plupart des meilleures pratiques ont été approuvées à l’unanimité. Dans une minorité de cas, les meilleures pratiques ont été approuvées par une grande majorité d’organisations. 
  
 ### Pourquoi ne pas simplement changer la référence GTFS ? 
  
- Bonne question! Le processus d’examen de la spécification, de l’utilisation des données et des besoins a en effet déclenché certaines modifications de la spécification (voir [demandes d’extraction fermées dans GitHub](https://github.com/google/transit/pulls?q=is%3Apr+is %3Afermé)). 
+ Bonne question! Le processus d’examen de la spécification, de l’utilisation des données et des besoins a en effet déclenché certaines modifications de la spécification (voir [demandes d’extraction fermées dans GitHub](https://github.com/google/transit/pulls?q=is%3Apr+is%3Aclosed)). 
  Les modifications de référence de spécification sont soumises à un niveau d’examen et de commentaires plus élevé que les meilleures pratiques. Certaines bonnes pratiques sont fusionnées dans la spécification en fonction de leur niveau d’adoption et du consensus communautaire. À terme, toutes les meilleures pratiques GTFS pourraient faire partie de la référence principale GTFS. 
  
 ### Comment vérifier la conformité à ces Bonnes Pratiques ? 
@@ -270,13 +268,15 @@ nd/ou champs `route_long_name`. Exemple : GoDurham Transit [itinéraires 2, 2A 
  
 ### Que dois-je faire si je remarque qu’un flux de données GTFS n’est pas conforme à ces bonnes pratiques ? 
  
- Identifiez le contact du flux, à l’aide des champs [flux proposé\_contact\_email ou flux\_contact\_url](https://github.com/google/transit/pull/31/files) dans * feed_info.txt* s’ils existent, ou en recherchant les coordonnées sur le site Web de l’agence de transport ou du producteur d’aliments pour animaux. Lorsque vous communiquez le problème au producteur d’aliments pour animaux, établissez un lien vers la meilleure pratique GTFS spécifique en discussion. (Voir ["Lien vers ce document"](#linking-to-this-document)). 
+ Identifiez le contact du flux, à l’aide des champs [flux proposé\_contact\_email ou flux\_contact\_url](https://github.com/google/transit/pull/31/files) dans * feed_info.txt* s’ils existent, ou en recherchant les coordonnées sur le site Web de l’agence de transport ou du producteur d’aliments pour animaux. Lorsque vous communiquez le problème au producteur d’aliments pour animaux, établissez un lien vers la meilleure pratique GTFS spécifique en discussion. (Voir ["Lien vers ce document"](#lien-vers-ce-document)). 
  
 ### Comment m’impliquer ? 
  
- E-mail [spécifications@mobilitydata.org](mailto:spécifications@mobilitydata.org). 
+ E-mail [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org). 
  
-## À propos de ce document### Objectifs 
+## À propos de ce document
+
+### Objectifs 
  
  Les objectifs du maintien des meilleures pratiques GTFS sont les suivants : 
  
@@ -287,7 +287,7 @@ nd/ou champs `route_long_name`. Exemple : GoDurham Transit [itinéraires 2, 2A 
  
 # Comment proposer ou modifier les meilleures pratiques GTFS publiées 
  
- Les meilleures pratiques sont en cours de fusion dans la spécification. Si vous souhaitez suggérer une nouvelle bonne pratique, veuillez accéder au [répertoire GitHub de référence GTFS](https://github.com/google/transit/) pour ouvrir un problème ou créer un PR, ou contacter [spécifications@ Mobilitydata.org](mailto:spécifications@mobilitydata.org). 
+ Les meilleures pratiques sont en cours de fusion dans la spécification. Si vous souhaitez suggérer une nouvelle bonne pratique, veuillez accéder au [répertoire GitHub de référence GTFS](https://github.com/google/transit/) pour ouvrir un problème ou créer un PR, ou contacter [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org). 
  
 ### Lien vers ce document 
  
@@ -301,7 +301,8 @@ nd/ou champs `route_long_name`. Exemple : GoDurham Transit [itinéraires 2, 2A 
  Les membres de ce groupe de travail comprenaient : 
  
  * [Cambridge Systematics](https://www.camsys.com/) 
- * [Capital Metro](https://www.capmetro.org/) § § * [Centre de recherche sur les transports urbains de l’Université de Floride du Sud](https://www.cutr.usf.edu/) 
+ * [Capital Metro](https://www.capmetro.org/)
+ * [Centre de recherche sur les transports urbains de l’Université de Floride du Sud](https://www.cutr.usf.edu/) 
  * [Conveyal](http://conveyal.com/) 
  * [Google](https://www.google.com/) 
  * [Groupe IBI](http://www.ibigroup.com/) 
