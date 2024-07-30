@@ -2,9 +2,9 @@
  
  GTFS Flex est un projet d’extension du GTFS Schedule qui vise à faciliter la découvrabilité des services de transport à la demande. 
  
- Pour l’essentiel, il a été adopté dans GTFS lors du Match 2024. Quelques exemples peuvent être trouvés sur [cette page](../../../documentation/schedule/examples/flex) montrant ce qui peut être modélisé en utilisant la partie officiellement adoptée de GTFS Flex. 
+ Pour l’essentiel, il a été adopté dans GTFS en mars 2024. Quelques exemples peuvent être trouvés sur [cette page](../../../documentation/schedule/examples/flex) montrant ce qui peut être modélisé en utilisant la partie officiellement adoptée de GTFS Flex. 
  
- 🤔 Les services comme Dial-a-Ride sont souvent ignorés par les passagers, qui n’ont parfois même aucune idée de leur existence. Ce manque d’accessibilité est un problème pour les agences de transport en commun, les planificateurs de voyage et les usagers. Imaginez un groupe de touristes arrivant à votre aéroport local et souhaitant rejoindre une zone rurale qui n’offre qu’un service de bus à la demande. Les touristes consultent leur application de planification de voyage préférée et ne trouvent pas d’option de transport public viable. Ils finissent par louer une voiture. En tant que touristes, ils manquent tous vos dépliants papier affichés dans le couloir annonçant le service à la demande. Non seulement votre service est sous-utilisé, mais il ne dispose pas non plus de la visibilité nécessaire pour répondre à la demande actuelle et future des passagers. C’est là qu’intervient GTFS-Flex. GTFS-Flex aide les passagers à découvrir votre service, afin qu’ils profitent des services que vous avez travaillé dur pour promouvoir. 
+ 🤔 Les services comme Dial-a-Ride sont souvent ignorés par les passagers, qui n’ont parfois même aucune idée de leur existence. Ce manque d’accessibilité est un problème pour les agences de transport en commun, les planificateurs d’itinéraires et les usagers. Imaginez un groupe de touristes arrivant à votre aéroport local et souhaitant rejoindre une zone rurale qui n’offre qu’un service de bus à la demande. Les touristes consultent leur application de planification d'itinéraires préférée et ne trouvent pas d’option de transport public viable. Ils finissent par louer une voiture. En tant que touristes, ils manquent tous vos dépliants papier affichés dans le couloir annonçant le service à la demande. Non seulement votre service est sous-utilisé, mais il ne dispose pas non plus de la visibilité nécessaire pour répondre à la demande actuelle et future des passagers. C’est là qu’intervient GTFS-Flex. GTFS-Flex aide les passagers à découvrir votre service, afin qu’ils profitent des services que vous avez travaillé dur pour promouvoir. 
 
 <img src="../../../assets/flex-userjourney-resize.jpg" alt="Parcours utilisateur GTFS-Flex"> 
  
@@ -12,19 +12,19 @@
  
  [Voir la proposition complète](https://github.com/MobilityData/gtfs-flex){ .md-button .md-button--primary } 
  
-## Dernière demande de tirage 
- Ce L’extension décrit les services qui fonctionnent selon un horaire, mais incluent également une ou plusieurs fonctionnalités flexibles, telles que : 
+## Dernière pull request 
+L’extension décrit les services qui fonctionnent selon un horaire, mais incluent également une ou plusieurs fonctionnalités flexibles, telles que : 
  
  - **Service Dial-a-Ride** : le véhicule dessert une zone où les prises en charge et les retours sont autorisés pendant certaines heures de service. 
- - **Services de déviation d’itinéraire** : le véhicule dessert un itinéraire fixe et un ensemble d’arrêts ordonnés, et peut faire un détour pour prendre ou déposer un passager entre les arrêts. 
- - **Service point à zone** : le passager peut embarquer à un arrêt fixe comme une gare, puis descendre n’importe où dans une zone, ou vice versa. Les départs de certains endroits sont programmés ou chronométrés avec d’autres services. 
+ - **Service de déviation d’itinéraire** : le véhicule dessert un itinéraire fixe et un ensemble d’arrêts ordonnés, et peut faire un détour pour prendre ou déposer un passager entre les arrêts. 
+ - **Service point à zone** : le passager peut embarquer à un arrêt fixe comme une gare, puis descendre n’importe où dans une zone, ou vice versa. Les départs de certains endroits sont programmés ou synchronisés avec d’autres services. 
  - **Point de déviation ou service de point de contrôle** : le passager peut embarquer à un arrêt fixe, puis descendre n’importe où parmi une liste d’arrêts non ordonnée, ou l’inverse. Le chauffeur dessert uniquement les arrêts pour lesquels une demande est faite. 
  
  Pour plus d’informations, veuillez consulter [proposition originale](https://github.com/MobilityData/gtfs-flex/blob/master/spec/reference.md) et [issue#382](https://github.com/google/transit/issues/382)(fermé depuis que nous avons modifié la portée). 
  
- Lors de la réunion de travail du 28 juin, il y a eu un accord au sein de la communauté du groupe pour poursuivre une itération qui couvre tous les domaines actuellement produits et consommés. Par conséquent, tous les champs qui apparaissent comme « **en discussion** » dans le [traqueur d’adoption](#adoption-tracker) sont inclus dans ce PR. 
+ Lors de la réunion de travail du 28 juin, il y a eu un accord au sein de la communauté du groupe pour poursuivre une itération qui couvre tous les domaines actuellement produits et consommés. Par conséquent, tous les champs qui apparaissent comme « **en discussion** » dans le [traqueur d’adoption](#adoption-tracker) sont inclus dans cette pull request. 
  
- Les changements dans ce PR sont : 
+ Les changements dans cette pull request sont : 
  
 - Modifier le fichier : 
     - Modifier `stop_areas.txt` pour permettre le regroupement d’emplacements et/ou d’arrêts GeoJSON qui permettent de spécifier des groupes prédéterminés de ces fonctionnalités sur lignes individuelles de `stop_times.txt`. 
@@ -40,11 +40,11 @@
  
  <img src="https://github.com/google/transit/assets/126435471/c986f79a-0164-4e38-a552-7e37405fe133" width="180" height="400"> 
  
- Visitez la page Pull Request pour lire le message complet et contribuer à la conversation. 
+ Visitez la page Pull Request pour lire la description complète et contribuer à la conversation. 
  
  [Voir la Pull Request](https://github.com/google/transit/pull/388){ .md-button .md-button--primary } 
  
- [Rejoignez #gtfs-flex sur Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary } 
+ [Rejoindre #gtfs-flex sur Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary } 
  
 ## Premières mises en œuvre
 - [Projet pilote MDoT Flex : Trillium, IBI, Transit, MNDoT, Cambridge Systematics et Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
@@ -65,7 +65,7 @@
 
  <iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid#ccc;"></iframe> 
  
- [Demander une modification](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary } 
+ [Demandez une modification](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary } 
  [Ajoutez votre organisation (consommateurs)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button .md-button--primary } 
  [Ajoutez votre organisation (producteurs)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button .md-button--primary } 
  
@@ -74,7 +74,7 @@
  - **2016** : <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">Début des discussions GTFS-Flex GitHub</a> 
  - **2017** : <a href="https://www.oregon.gov/odot/RPTD/RPTD%20Document%20Library/GTFS-Flex-N-CATT.pdf" target="_blank">Programme sandbox Mobility on Demand (MOD) (FTA, Vermont DOT, OTP)</a> 
  - **2018** : MobilityData devient steward GTFS-Flex et propose GTFS-Flex v2
- - **Novembre 2020** : Référentiel la version à jour de GTFS-Flex et OTP2 ingère les données GTFS-Flex v2
+ - **Novembre 2020** : Répertoire de la version à jour de GTFS-Flex et OTP2 ingère les données GTFS-Flex v2
  - **Mai 2022** : Début du pilote MnDoT (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus)). 
  - **Mai 2023** : <a href="https://github.com/google/transit/issues/382" target="_blank">Travaux sur GTFS-Flex : Début de la découverte du service</a> 
  - **Juin 2023** : <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Réunion de travail conceptuelle sur GTFS-Flex</a> 
