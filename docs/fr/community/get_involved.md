@@ -4,8 +4,8 @@
  
  - :simple-slack: Rejoignez [__Slack__](https://share.mobilitydata.org/slack) et présentez-vous à la communauté. 
  - :material-newspaper-variant: Abonnez-vous au [__GTFS Digest__](https://groups.google.com/g/gtfs-digest) pour des mises à jour mensuelles sur tout ce qui concerne GTFS. 
- - :fontawesome-solid-user-group: Rejoignez le [__GTFS Changes__](https://groups.google.com/g/gtfs-changes) groupe Google pour rester informé des développements. 
- - :simple-github: visitez [__GitHub__](https://github.com/google/transit) pour publier des problèmes, participer aux discussions autour des changements et proposer des changements. 
+ - :fontawesome-solid-user-group: Rejoignez le groupe Google [__GTFS Changes__](https://groups.google.com/g/gtfs-changes) pour rester informé des développements. 
+ - :simple-github: Visitez [__GitHub__](https://github.com/google/transit) pour publier des problèmes, participer aux discussions autour des changements et proposer des changements. 
 
 </div> 
  
@@ -29,7 +29,7 @@
  
 ## Extensions 
  
- Les extensions sont des propositions visant à modifier la spécification qui sont composées d’un ensemble de fichiers et de champs associés. Des fichiers et des champs supplémentaires peuvent être étendus aux ensembles de données GTFS pour répondre à une variété de besoins spécifiques aux applications communiqués entre les agences de transport en commun et les fournisseurs de logiciels, même si ces champs ne figurent pas dans la spécification officielle. Une fois adoptées, les extensions sont fusionnées et documentées dans la spécification officielle sous la forme d’un ensemble de fonctionnalités. 
+ Les extensions sont des propositions visant à modifier la spécification qui sont composées d’un ensemble de fichiers et de champs associés. Des fichiers et des champs supplémentaires peuvent être étendus aux ensembles de données GTFS pour répondre à une variété de besoins spécifiques des applications communiqués entre les agences de transport en commun et les fournisseurs de logiciels, même si ces champs ne figurent pas dans la spécification officielle. Une fois adoptées, les extensions sont mergées et documentées dans la spécification officielle sous la forme d’un ensemble de fonctionnalités. 
 
 <div class="grid cards" markdown> 
  
@@ -89,26 +89,26 @@
  
 ### Listes de diffusion 
  
- Il existe un certain nombre de listes de diffusion qui peuvent constituer de bonnes ressources lorsque vous avez des questions sur les données des transports en commun, les logiciels, les formats tels que GTFS et GTFS-realtime, et d’autres problèmes : 
+ Il existe un certain nombre de listes de diffusion qui peuvent constituer de bonnes ressources lorsque vous avez des questions sur les données des transports en commun, les logiciels, les formats tels que GTFS et GTFS Realtime, et d’autres problèmes : 
  
  * [Modifications GTFS](https://groups.google.com/group/gtfs-changes) : suivez ce groupe pour obtenir des annonces sur les votes sur le format de GTFS Schedule, comme indiqué dans le [Processus de modification des spécifications de la GTFS Schedule](../../community/governance/gtfs_schedule_amendment_process). 
  * [GTFS Realtime](https://groups.google.com/group/gtfs-realtime) : ce groupe est le forum officiel pour discuter de GTFS Realtime, poser des questions et proposer des modifications comme indiqué dans la [Spécification GTFS Realtime Processus d’amendement](../../community/governance/gtfs_realtime_amendment_process). 
- * [transit-developers](https://groups.google.com/group/transit-developers) : discussions générales développeur·euse de transports en commun. 
- * De nombreuses agences de transports en commun disposent également de leurs propres listes de diffusion de développeur·euse spécifiques à l’agence. Par exemple : 
+ * [transit-developers](https://groups.google.com/group/transit-developers) : discussions générales de développeurs dans le domaine des transports en commun. 
+ * De nombreuses agences de transports en commun disposent également de leurs propres listes de diffusion de développeurs spécifiques à l’agence. Par exemple : 
     * [NYC MTA](https://groups.google.com/group/mtadeveloperresources) 
     * [Portland, OR](https://groups.google.com/group/transit-developers- pdx) 
     * [MBTA](https://groups.google.com/group/massdotdevelopers) 
     * [Atlanta, région de Géorgie](https://groups.google.com/forum/#!forum/atl-transit-developers) 
     * [511 Ressources pour les développeurs de la région de la baie de San Francisco](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources) 
- - [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner) Communauté 
+ - Communauté [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner) 
     - [Liste de diffusion des utilisateurs OpenTripPlanner](https://groups.google.com/forum/#!forum/opentripplanner-users) 
- Vérifiez auprès de votre agence de transports en commun locale pour voir si elle a un liste de diffusion qui leur est propre. 
+ Vérifiez auprès de votre agence de transports en commun locale pour voir si elle a une liste de diffusion qui lui est propre. 
  
  
 ### Autres ressources communautaires 
  Trouvez d’autres communautés et ressources liées à GTFS
 
- - [Meetup German Open Transport](https://github.com/transportkollektiv/meetup/wiki) - Vous peuvent participer à une rencontre [bimensuelle](https://hackmd.okfn.de/opentransportmeetup#) de la communauté germanophone des transports ouverts. 
+ - [Meetup German Open Transport](https://github.com/transportkollektiv/meetup/wiki) - Vous pouvez participer à une rencontre [bimensuelle](https://hackmd.okfn.de/opentransportmeetup#) de la communauté germanophone des transports ouverts. 
  - Communauté [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner). 
  - [TransitWiki](http://transitwiki.org) - Un wiki communautaire pour les planificateurs de transports en commun. 
  - [Transit Techies NYC](https://transittechies.nyc/) - Rencontre basée à New York pour les passionnés de technologie et de transport. 
