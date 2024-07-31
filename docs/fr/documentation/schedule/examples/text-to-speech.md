@@ -1,4 +1,6 @@
-# Synthèse vocale## Abréviations, prononciations inhabituelles, gros chiffres et ordinaux 
+# Synthèse vocale
+
+## Abréviations, prononciations inhabituelles, gros chiffres et ordinaux 
  
  Les abréviations, la prononciation inhabituelle et les grands chiffres sont communs aux champs de texte GTFS. Dans l’exemple ci-dessous pour TriMEt, nous pouvons voir comment le champ de synthèse vocale doit être utilisé : 
  
@@ -10,12 +12,12 @@
  
  [** stops.txt**](../../reference/#stopstxt) 
  
- | stop_id | nom_arrêt | tts_stop_name | 
- |----|----|----| 
- | 9163 | SW 125e et Longhorn | sud-ouest cent vingt-cinquième &amp; longhorn | 
- | 9836 | Station MAX d’Orenco | station max d’orrainkoe ​​| 
- | 9828 | Station MAX de Merlo Rd/SW 158th Ave | murlo road sud-ouest cent cinquante huitième avenue max station | 
- | 10074 | 3300 Bloc NW 35e | trente-trois cents bloc nord-ouest trente-cinquième | 
+| stop_id | stop_name | tts_stop_name |
+| ---- | ---- | ---- |
+| 9163 | SW 125th & Longhorn | southwest one hundred twenty fifth & longhorn |
+| 9836 | Orenco MAX Station | orrainkoe max station |
+| 9828 | Merlo Rd/SW 158th Ave MAX Station | murlo road southwest one hundred fifty eighth avenue max station |
+| 10074 | 3300 Block NW 35th | thirty-three-hundred block northwest thirty fifth |
  
 ## Acronymes 
  
@@ -25,21 +27,21 @@
  
  [** trips.txt**](../../reference/#tripstxt) 
  
- | trip_headsign | tts_trip_headsign | 
- |----|----| 
- | Nord jusqu’à l’UATC | du nord à l’uatc | 
+| trip_headsign | tts_trip_headsign |
+| ---- | ---- |
+| North to UATC | north to u.a.t.c. |
  
  ou 
  
- | trip_headsign | tts_trip_headsign | 
- |----|----| 
- | Nord jusqu’à l’UATC | du nord à l’uatc | 
+| trip_headsign | tts_trip_headsign |
+| ---- | ---- |
+| North to UATC | north to u a t c |
  
  A l’inverse, certains acronymes doivent être lus comme des mots : par exemple OTAN ; NASA. Le champ de synthèse vocale devrait refléter cela. 
  
- !!! Remarque 
+!!! Note
  
- Le champ `trips.tts_trip_headsign` n’est pas encore officiel dans la spécification. 
+    Le champ `trips.tts_trip_headsign` n’est pas encore officiel dans la spécification. 
  
 ## Clarifier les abréviations à sens multiples 
  

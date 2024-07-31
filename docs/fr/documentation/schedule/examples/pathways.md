@@ -1,4 +1,6 @@
-# Parcours et accessibilité physique## Pourquoi afficher des informations sur Accessibilité ? 
+# Parcours et accessibilité physique
+
+## Pourquoi afficher des informations sur Accessibilité ? 
  
  **Impact sur un pourcentage important de la population :** L’Organisation mondiale de la santé estime que [16 % des personnes dans le monde ont un handicap](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) et que les personnes handicapées « trouvent un moyen de transport inaccessible et inabordable 15 fois plus difficilement que pour les personnes non handicapées ». Les personnes handicapées ont également [des taux plus élevés d’acquisition de nouveaux problèmes de santé](https://www.who.int/publications/i/item/9789240063600), en partie à cause d’un accès réduit aux soins et aux services. 
  
@@ -13,10 +15,13 @@
 ## Liste de contrôle Accessibilité 
  
  Voici les étapes nécessaires pour ajouter des informations d’accessibilité à vos données. Les sections suivantes fournissent des informations plus détaillées sur chaque étape. 
- * Étape 1 : Ajoutez des informations sur l’accessibilité en fauteuil roulant à `stops.txt` 
- * Étape 2 : Ajoutez des informations sur l’accessibilité en fauteuil roulant à `trips.txt` 
- * Étape 3 : Ajoutez des informations de navigation audio à `stops.txt` 
- * Étape 4 : Ajoutez des informations d’accessibilité physique sur les stations de transport en commun avec GTFS Parcours## Ajout de Accessibilité en fauteuil roulant dans GTFS 
+
+* Étape 1 : Ajoutez des informations sur l’accessibilité en fauteuil roulant à `stops.txt` 
+* Étape 2 : Ajoutez des informations sur l’accessibilité en fauteuil roulant à `trips.txt` 
+* Étape 3 : Ajoutez des informations de navigation audio à `stops.txt` 
+* Étape 4 : Ajoutez des informations d’accessibilité physique sur les stations de transport en commun avec GTFS Parcours
+
+## Ajout de Accessibilité en fauteuil roulant dans GTFS 
  
  Vous connaissez peut-être déjà la structure de GTFS sous la forme d’une série de fichiers.txt. L’accessibilité en fauteuil roulant peut être affichée en mettant à jour deux champs : `wheelchair_boarding` dans `stops.txt` et `wheelchair_accessible` dans `trips.txt`. 
  
@@ -60,46 +65,46 @@
  
  [** stops.txt**](../../reference/#stopstxt) 
  
- ``` 
- stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding 
- 12034,Waterfront Station,49.285687,-123.111773,1,, 
- 90,Entrée des escaliers de la station Waterfront sur Granville,49.285054,-123.114375,2,12034,2 
- 91,Entrée de l’escalator de la station Waterfront sur Granville,49.285061,-123.114395,2,12034,2 
- 92,Entrée de l’ascenseur de la station Waterfront sur Granville, 49.285257,-123.114163,2,12034,1 
- 93,Entrée de la station Waterfront sur Cordova,49.285607,-123.111993,2,12034,1 
- 94,Entrée de la station Waterfront sur Howe,49.286898,-123.113367,2,12034,2 
- ``` 
+```
+stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
+12034,Waterfront Station,49.285687,-123.111773,1,,
+90,Waterfront Station Stairs Entrance on Granville,49.285054,-123.114375,2,12034,2
+91,Waterfront Station Escalator Entrance on Granville,49.285061,-123.114395,2,12034,2
+92,Waterfront Station Elevator Entrance on Granville,49.285257,-123.114163,2,12034,1
+93,Waterfront Station Entrance on Cordova,49.285607,-123.111993,2,12034,1
+94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
+```
  
- Dans le fichier ci-dessus, le premier enregistrement concerne l’emplacement de la station, par conséquent, le `location_type` est défini sur `1`. Les cinq autres concernent les trois entrées de la gare (cinq enregistrements sont nécessaires puisque l’entrée de Granville comporte en réalité trois entrées distinctes, un escalier, un escalier roulant et un ascenseur). Ces cinq enregistrements sont définis comme des entrées puisque le « `location_type` » est défini sur « 2 ». 
+ Dans le fichier ci-dessus, le premier enregistrement concerne l’emplacement de la station, par conséquent, le `location_type` est défini sur `1`. Les cinq autres concernent les trois entrées de la gare (cinq enregistrements sont nécessaires puisque l’entrée de Granville comporte en réalité trois entrées distinctes, un escalier, un escalier roulant et un ascenseur). Ces cinq enregistrements sont définis comme des entrées puisque le `location_type` est défini sur `2`. 
  
- De plus, le « `stop_id` » de la station Waterfront est répertorié sous « `parent_station` » pour les entrées afin de les associer à la station. Les entrées accessibles ont « `wheelchair_boarding` » défini sur « `1` » et celles non accessibles sont définies sur « 2 ». 
+ De plus, le `stop_id` de la station Waterfront est répertorié sous `parent_station` pour les entrées afin de les associer à la station. Les entrées accessibles ont `wheelchair_boarding` défini sur `1` et celles non accessibles sont définies sur `2`. 
  
 ### Décrire les escaliers et les escaliers mécaniques 
  
- L’entrée de la station Waterfront à la rue Granville a un ascenseur, un escalator et des escaliers, les entrées sont définies comme les nœuds ci-dessus dans [stops.txt](../../reference/#stopstxt). Pour connecter les entrées aux sections intérieures de la station, des nœuds supplémentaires doivent être créés dans [stops.txt](../../reference/#stopstxt) sous le `parent_station` de Waterfront Station. Dans le fichier [stops.txt](../../reference/#stopstxt) ci-dessous, les nœuds génériques (`e` 3`) qui correspondent au bas de l’escalier et de l’escalator sont définis. 
+ L’entrée de la station Waterfront à la rue Granville a un ascenseur, un escalator et des escaliers, les entrées sont définies comme les nœuds ci-dessus dans [stops.txt](../../reference/#stopstxt). Pour connecter les entrées aux sections intérieures de la station, des nœuds supplémentaires doivent être créés dans [stops.txt](../../reference/#stopstxt) sous le `parent_station` de Waterfront Station. Dans le fichier [stops.txt](../../reference/#stopstxt) ci-dessous, les nœuds génériques (`location_type 3`) qui correspondent au bas de l’escalier et de l’escalator sont définis. 
  
  [** stops.txt**](../../reference/#stopstxt) 
  
- ``` 
- stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding 
+```
+stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
 ...
- 95, palier d’escalier de la station Waterfront Granville, 49.285169,-123.114198,3,12034, 
- 96, palier d’escalator de la station Waterfront Granville, 49.285183,-123.114222,3,12034, 
- ``` 
+95,Waterfront Station Granville Stair Landing, 49.285169,-123.114198,3,12034,
+96,Waterfront Station Granville Escalator Landing,49.285183,-123.114222,3,12034,
+```
  
 <img class="center" src="../../../../assets/pathways.png" width=700px> 
  
- Ensuite, le fichier [pathways.txt](../../reference/#pathwaystxt) est utilisé pour relier des nœuds pour créer des chemins, où le premier enregistrement relie les nœuds relatifs au haut et au bas de l’escalier..Le `pathway_mode` est défini sur `2` pour indiquer les escaliers, et le dernier champ décrit que les passagers peuvent aller dans les deux sens (monter et descendre) dans les escaliers. 
+ Ensuite, le fichier [pathways.txt](../../reference/#pathwaystxt) est utilisé pour relier des nœuds pour créer des chemins, où le premier enregistrement relie les nœuds relatifs au haut et au bas de l’escalier. Le `pathway_mode` est défini sur `2` pour indiquer les escaliers, et le dernier champ décrit que les passagers peuvent aller dans les deux sens (monter et descendre) dans les escaliers. 
  
- De même, le deuxième enregistrement décrit l’escalier roulant (`pathway_mode` défini sur `4`). Étant donné que les escaliers mécaniques ne peuvent se déplacer que dans une seule direction, le champ « `is_bidirectional` » est défini sur « 0 », donc l’escalier roulant se déplace dans un sens, du nœud « 96 » à « 91 » (vers le haut). 
+ De même, le deuxième enregistrement décrit l’escalier roulant (`pathway_mode` défini sur `4`). Étant donné que les escaliers mécaniques ne peuvent se déplacer que dans une seule direction, le champ `is_bidirectional` est défini sur `0`, donc l’escalier roulant se déplace dans un sens, du nœud `96` à `91` (vers le haut). 
  
  [** pathways.txt**](../../reference/#pathwaystxt) 
  
- ``` 
- path_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectionnel 
- escaliersA,90,95,2,1 
- escalatorA,96,91,4,0 ​​
- ``` 
+```
+pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional
+stairsA,90,95,2,1
+escalatorA,96,91,4,0
+```
  
 ### Décrire les ascenseurs et les sentiers 
  
@@ -107,30 +112,31 @@
  
  De plus, comme le montre la figure ci-dessous, il existe une passerelle souterraine qui relie le bas des escaliers, l’escalier roulant et l’ascenseur de la rue Granville au bâtiment principal de la gare. Par conséquent, deux nœuds supplémentaires sont créés pour définir les sections de passerelle. 
 
-<img class="center" src="../../../../assets/pathways-2.png" width=500px> 
+<img class="center" src="../../../../assets/pathways-2.png" width=500px>
+
+[**stops.txt**](../../reference/#stopstxt)
+
+```
+stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
+…
+97,Underground walkway turn,49.286253,-123.112660,3,12034,
+98,Underground walkway end,49.286106,-123.112428,3,12034,
+99,Elevator_concourse,49.285257,-123.114163,3,12034,
+```
  
- [** stops.txt**](../../reference/#stopstxt) 
- 
- ``` 
- stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding 
- … 
- 97, Virage du passage souterrain, 49.286253,-123.112660,3,12034, 
- 98, Fin du passage souterrain, 49.286106,-123.112428,3,12034, 
- 99, Concours d’ascenseur, 49.285257,-123.114163,3, 12034, § § ``` 
- 
-<img class="center" src="../../../../assets/pathways-3.png" width=500px> 
- 
- Enfin, les nœuds sont connectés entre eux pour définir le chemin souterrain comme indiqué dans le fichier [pathways.txt](../../reference/#pathwaystxt) ci-dessous : 
- 
- [** pathways.txt**](../../reference/#pathwaystxt) 
- 
- ``` 
- path_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectionnel 
- underground_walkway1,99,96,1,1 
- underground_walkway2,96,95, 1,1 
- underground_walkway3,95,97,1,1 
- underground_walkway4,97,98,1,1 
- ``` 
+<img class="center" src="../../../../assets/pathways-3.png" width=500px>
+
+Lastly, the nodes are connected together to define the underground pathway as shown in the file [pathways.txt](../../reference/#pathwaystxt) below:
+
+[**pathways.txt**](../../reference/#pathwaystxt)
+
+```
+pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional
+underground_walkway1,99,96,1,1
+underground_walkway2,96,95,1,1
+underground_walkway3,95,97,1,1
+underground_walkway4,97,98,1,1
+```
  
 ## Ajouts futurs à GTFS-Pathways 
  
