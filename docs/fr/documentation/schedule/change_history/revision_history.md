@@ -1,9 +1,13 @@
-# Calendrier GTFS### Historique des révisions#### Mai 2024 
+# Calendrier GTFS
+
+### Historique des révisions
+
+#### Mai 2024 
  * Ajout du champ `rule_priority` dans `fare_leg_rules.txt`. Voir [discussion](https://github.com/google/transit/pull/418). 
  * Clarifier la présence de `stops.zone_id`. Voir [discussion](https://github.com/google/transit/pull/432). 
  
 #### Avril 2024 
- *Clarifier la définition du produit tarifaire. Voir [discussion](https://github.com/google/transit/pull/426). 
+ * Clarifier la définition du produit tarifaire. Voir [discussion](https://github.com/google/transit/pull/426). 
  
 #### Mars 2024 
  * Ajout de GTFS Flex. Voir [discussion](https://github.com/google/transit/pull/433). 
@@ -166,8 +170,11 @@
  
 #### 16 mars 2016 
  
- * Transition de la documentation GTFS vers Github sur https://github.com/google/transit#### 3 février 2016 
- § § * Ajout de `agency_email` à la proposition `agency.txt` pour spécifier : [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA) 
+ * Transition de la documentation GTFS vers Github sur https://github.com/google/transit
+ 
+#### 3 février 2016
+
+ * Ajout de `agency_email` à la proposition `agency.txt` pour spécifier : [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA) 
  
 #### 2 février 2015 
  
@@ -205,7 +212,7 @@
 #### 30 mars 2009 
  
  * Une nouvelle section sur la mise à disposition publique d’un flux de transit. Cela n’a pas été discuté auparavant au sein du groupe, car il ne s’agissait pas strictement d’un changement dans la façon dont les données sont interprétées ou écrites. Cependant, certains membres de Google ont pensé qu’il serait instructif d’inclure une discussion sur les utilisations de GTFS par des tiers, car il existe un nombre croissant d’applications pouvant utiliser des données au format GTFS. 
- * Clarifications du format CSV : [discussion](https:). 
+ * Clarifications du format CSV : [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk). 
  * Conseils supplémentaires sur la façon de choisir des couleurs contrastées dans les descriptions des champs route_color et route_text_color. 
  * trip_short_name, tel que proposé et testé dans ces fils de discussion : a et b. 
  * Un correctif pour une erreur mineure dans les exemples de données inclus à la fin du document (donnant à l’arrêt S7 la station_parent S8). 
@@ -222,7 +229,9 @@
  
  * Restauration du champ stop_url, qui a été accidentellement omis dans la version du 6 août 
  * Ajout de l’agence_phone aux exemples de données 
- * Ajout d’une mention de l’accord d’utilisation des données lors de la soumission d’un flux à Google#### 6 août 2008 
+ * Ajout d’une mention de l’accord d’utilisation des données lors de la soumission d’un flux à Google
+ 
+#### 6 août 2008 
  
  * Ajout du fichier transfers.txt, permettant aux éditeurs de flux de fournir des conseils sur le comportement de transfert préféré ([proposition originale](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw)) 
  * Ajout des champs location_type et parent_station à stops.txt, permettant de regrouper les points d’arrêt en stations ([proposition originale](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw)) 
@@ -231,25 +240,35 @@
  * Ajout de précisions sur le format CSV, age_timezone, age_lang, route_color, route_text_color, Arrival_time, Depart_time, calendar.txt par rapport à calendar_dates.txt, tarifs et frequencies.txt 
  * Ajout d’un lien vers le document d’historique du flux et correction de certains liens de flux publics 
  * Mise à jour d’exemples d’images pour décrire l’interface utilisateur actuelle de Google Maps 
- * Mise à jour/corrigé exemples de données dans le document#### 29 février 2008 
+ * Mise à jour/corrigé exemples de données dans le document
+ 
+#### 29 février 2008 
  
  * Ajout du champ stop_code dans stops.txt pour permettre la spécification des codes d’arrêt face au passager ([proposition originale](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc)) 
  * Clarification des descriptions de route_short_name et route_long_name dans routes.txt 
  * Clarification des descriptions de Arrival_time et depart_time dans stop_times.txt 
- * Correction de fautes de frappe dans la section Exemples de données#### 20 novembre 2007 
+ * Correction de fautes de frappe dans la section Exemples de données
+ 
+#### 20 novembre 2007 
  
  * Description clarifiée du block_id 
  * Modification de la langue pour minimiser l’importance de Google Transit (puisque les applications non Google utilisent GTFS et Transit l’itinéraire est désormais une fonctionnalité intégrée de Google Maps), et pour corriger diverses fautes de frappe 
  * Mise à jour d’exemples de captures d’écran pour refléter la présentation des champs GTFS dans l’interface utilisateur actuelle de Google Maps 
  * Mise à jour de l’adresse e-mail de contact Google pour les fournisseurs de données de transit 
- * Formatage mis à jour#### 5 octobre 2007 
+ * Formatage mis à jour
+ 
+#### 5 octobre 2007 
  
  * Modification de stop_sequence et shape_pt_sequence pour permettre l’augmentation des entiers non négatifs 
- * Descriptions clarifiées et correction des fautes de frappe#### Mai 31, 2007 
+ * Descriptions clarifiées et correction des fautes de frappe
+ 
+#### Mai 31, 2007 
  
  * Style de page mis à jour, rendu HTML plus propre et plus accessible 
  * Ajout de liens vers des exemples de flux publics et d’autres sites utiles 
- * Suppression d’exemples des descriptions de champs individuels#### 9 avril, 2007 
+ * Suppression d’exemples des descriptions de champs individuels
+ 
+#### 9 avril, 2007 
  
  * Ajout d’une section sur [soumettre un flux](https://developers.google.com/transit/google-transit#SubmitFeedToGoogle). 
  * Ajout du [Exemple de flux Agence de transport en commun](https://developers.google.com/transit/gtfs/examples/gtfs-feed). 
@@ -282,14 +301,18 @@
  
  * Ajout de la prise en charge des informations sur la forme du trajet via shapes.txt 
  * Clarification de la définition de stop_sequence 
- * Marqué pickup_type et drop_off_type facultatifs#### 31 octobre 2006 
+ * Marqué pickup_type et drop_off_type facultatifs
+ 
+#### 31 octobre 2006 
  
  * Ajout de la prise en charge des informations tarifaires 
  * Dates supprimées des noms de fichiers individuels 
  * Modification des définitions de valeur route_type 
  * Autorisation de publier plusieurs fichiers de flux en même temps, à condition que car leurs périodes de service ne se chevauchaient pas 
  * Correction de block_id dans trips.txt afin qu’il soit correctement marqué Optionnel 
- * A noté que les en-têtes de colonnes doivent être inclus#### 29 septembre 2006 
+ * A noté que les en-têtes de colonnes doivent être inclus
+ 
+#### 29 septembre 2006 
  
  * Modification mineure pour corriger quelques erreurs dans les exemples. 
  
