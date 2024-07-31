@@ -4,7 +4,9 @@
  
  La version 2.0 de la spécification du flux est discutée et documentée sur ce site. Les versions valides sont "2.0", "1.0". 
  
-## Définitions des termes### Requis 
+## Définitions des termes
+
+### Requis 
  
  Dans GTFS-realtime v2.0 et versions ultérieures, la colonne * Requis* décrit les champs qui doivent être fournis par un producteur pour que les données de transit pour être valide et avoir un sens pour une application consommatrice. 
  
@@ -30,55 +32,58 @@
  Les types de données du tampon de protocole suivants sont utilisés pour décrire les éléments de flux : 
  
  * **message** : type complexe 
- * **enum** : Liste des valeurs fixes### Champs expérimentaux 
+ * **enum** : Liste des valeurs fixes
+ 
+### Champs expérimentaux 
  
  Les champs étiquetés comme **expérimentaux** sont sujets à changement et ne sont pas encore formellement adoptés dans la spécification. Un champ **expérimental** pourrait être formellement adopté à l’avenir. 
  
 ## Index des éléments 
  
  * [FeedMessage](#message-feedmessage) 
- * [FeedHeader](#message-feedheader) 
- * [Incrementality](#enum-incrementality) 
- * [FeedEntity](#message-feedentity) 
- * [TripUpdate](#message-tripupdate) 
- * [TripDescriptor](#message-tripdescriptor) 
- * [ScheduleRelationship](#enum-schedulerelationship_1) 
- * [VehicleDescriptor](#message-vehicledescriptor) 
- * [WheelchairAccessible](#enum-wheelchairaccessible) 
- * [StopTimeUpdate](#message-stoptimeupdate) 
- * [StopTimeEvent](#message-stoptimeevent) 
- * [ScheduleRelationship](# enum-schedulerelationship) 
- * [StopTimeProperties](#message-stoptimeproperties) 
- * [TripProperties](#message-tripproperties) 
- * [VehiclePosition](#message-vehicleposition) 
- * [TripDescriptor](#message- tripdescriptor) 
- * [ScheduleRelationship](#enum-schedulerelationship_1) 
- * [VehicleDescriptor](#message-vehicledescriptor) 
- * [WheelchairAccessible](#enum-wheelchairaccessible) 
- * [Position](#message-position) 
- * [VehicleStopStatus](#enum-vehiclestopstatus) 
- * [CongestionLevel](#enum-congestionlevel) 
- * [OccupancyStatus](#enum-occupancystatus) 
- * [CarriageDetails](#message-carriagedetails) 
- * [Alerte](#message-alert) 
- * [TimeRange](#message-timerange) 
- * [EntitySelector](#message-entityselector) 
- * [TripDescriptor](#message-tripdescriptor) 
- * [ScheduleRelationship](#enum-schedulerelationship_1) 
- * [Cause](#enum-cause) 
- * [Effet](#enum-effect) 
- * [TranslatedString](#message-translatedstring) 
- * [Traduction](#message-translation) 
- * [SeverityLevel](#enum-severitylevel) 
- * [Forme](#message-shape) 
- * [Stop](#message-stop) 
- * [WheelchairBoarding](# enum-wheelchairboarding) 
- * [TripModifications](#message-tripmodifications) 
- * [Modification](#message-modification) 
- * [ReplacementStop](#message-replacementsstop) 
+    * [FeedHeader](#message-feedheader) 
+        * [Incrementality](#enum-incrementality) 
+    * [FeedEntity](#message-feedentity) 
+        * [TripUpdate](#message-tripupdate) 
+            * [TripDescriptor](#message-tripdescriptor) 
+                * [ScheduleRelationship](#enum-schedulerelationship_1) 
+            * [VehicleDescriptor](#message-vehicledescriptor) 
+                * [WheelchairAccessible](#enum-wheelchairaccessible) 
+            * [StopTimeUpdate](#message-stoptimeupdate) 
+                * [StopTimeEvent](#message-stoptimeevent) 
+                * [ScheduleRelationship](# enum-schedulerelationship) 
+                * [StopTimeProperties](#message-stoptimeproperties) 
+            * [TripProperties](#message-tripproperties) 
+        * [VehiclePosition](#message-vehicleposition) 
+            * [TripDescriptor](#message- tripdescriptor) 
+                * [ScheduleRelationship](#enum-schedulerelationship_1) 
+            * [VehicleDescriptor](#message-vehicledescriptor) 
+                * [WheelchairAccessible](#enum-wheelchairaccessible) 
+            * [Position](#message-position) 
+            * [VehicleStopStatus](#enum-vehiclestopstatus) 
+            * [CongestionLevel](#enum-congestionlevel) 
+            * [OccupancyStatus](#enum-occupancystatus) 
+            * [CarriageDetails](#message-carriagedetails) 
+        * [Alert](#message-alert) 
+            * [TimeRange](#message-timerange) 
+            * [EntitySelector](#message-entityselector) 
+                * [TripDescriptor](#message-tripdescriptor) 
+                    * [ScheduleRelationship](#enum-schedulerelationship_1) 
+        * [Cause](#enum-cause) 
+        * [Effet](#enum-effect) 
+        * [TranslatedString](#message-translatedstring) 
+            * [Translation](#message-translation) 
+        * [SeverityLevel](#enum-severitylevel) 
+    * [Shape](#message-shape) 
+    * [Stop](#message-stop) 
+        * [WheelchairBoarding](# enum-wheelchairboarding) 
+    * [TripModifications](#message-tripmodifications) 
+        * [Modification](#message-modification) 
+        * [ReplacementStop](#message-replacementsstop) 
  
  
-## Elements § § 
+## Elements
+
 ### _message_ FeedMessage 
  
  Le contenu d’un message de flux. Chaque message du flux est obtenu en réponse à une requête HTTP GET appropriée. Un flux en temps réel est toujours défini par rapport à un flux GTFS existant. Tous les identifiants d’entité sont résolus par rapport au flux GTFS. 
@@ -145,9 +150,10 @@
  
  Les mises à jour peuvent concerner des événements d’arrivée/départ futurs et prévus, ou des événements passés déjà survenus. Dans la plupart des cas, les informations sur les événements passés sont une valeur mesurée, il est donc recommandé que sa valeur d’incertitude soit 0\. Bien qu’il puisse y avoir des cas où cela ne soit pas le cas, il est donc permis d’avoir une valeur d’incertitude différente de 0 pour les événements passés. Si l’incertitude d’une mise à jour n’est pas 0, soit la mise à jour est une prédiction approximative pour un voyage qui n’est pas terminé, soit la mesure n’est pas précise, soit la mise à jour est une prédiction pour le passé qui n’a pas été vérifiée après que l’événement s’est produit. 
  
- Si un véhicule effectue plusieurs trajets dans le même bloc (pour plus d’informations sur les trajets et les blocs, veuillez vous référer à [GTFS trips.txt](../../schedule/reference/#tripstxt)) : § § 
- * le flux doit inclure une TripUpdate pour le trajet actuellement effectué par le véhicule. Les producteurs sont encouragés à inclure des TripUpdates pour un ou plusieurs voyages après le voyage en cours dans le bloc de ce véhicule s’ils sont confiants dans la qualité des prévisions pour ces futurs voyages. L’inclusion de plusieurs TripUpdates pour le même véhicule évite les « pop-in » de prédiction pour les usagers lorsque le véhicule passe d’un trajet à un autre et donne également aux usagers un préavis des retards qui ont un impact sur les trajets en aval (par exemple, lorsque le retard connu dépasse les temps d’escale prévus entre les trajets). ). 
- * Il n’est pas nécessaire que les entités TripUpdate respectives soient ajoutées au flux dans le même ordre dans lequel elles sont planifiées dans le bloc. Par exemple, s’il y a des trajets avec les « `trip_ids` » 1, 2 et 3 qui appartiennent tous à un seul bloc, et que le véhicule effectue le trajet 1, puis le trajet 2, puis le trajet 3, les entités « `trip_update` » peuvent apparaître dans n’importe quel ordre. - par exemple, ajouter le trajet 2, puis le trajet 1, puis le trajet 3 est autorisé. 
+ Si un véhicule effectue plusieurs trajets dans le même bloc (pour plus d’informations sur les trajets et les blocs, veuillez vous référer à [GTFS trips.txt](../../schedule/reference/#tripstxt)) :
+
+ * le flux doit inclure une TripUpdate pour le trajet actuellement effectué par le véhicule. Les producteurs sont encouragés à inclure des TripUpdates pour un ou plusieurs voyages après le voyage en cours dans le bloc de ce véhicule s’ils sont confiants dans la qualité des prévisions pour ces futurs voyages. L’inclusion de plusieurs TripUpdates pour le même véhicule évite les « pop-in » de prédiction pour les usagers lorsque le véhicule passe d’un trajet à un autre et donne également aux usagers un préavis des retards qui ont un impact sur les trajets en aval (par exemple, lorsque le retard connu dépasse les temps d’escale prévus entre les trajets). 
+ * Il n’est pas nécessaire que les entités TripUpdate respectives soient ajoutées au flux dans le même ordre dans lequel elles sont planifiées dans le bloc. Par exemple, s’il y a des trajets avec les `trip_ids` 1, 2 et 3 qui appartiennent tous à un seul bloc, et que le véhicule effectue le trajet 1, puis le trajet 2, puis le trajet 3, les entités `trip_update` peuvent apparaître dans n’importe quel ordre. - par exemple, ajouter le trajet 2, puis le trajet 1, puis le trajet 3 est autorisé. 
  
  A noter que la mise à jour peut décrire un trajet déjà effectué. Pour cela, il suffit de fournir une mise à jour pour la dernière étape du trajet. Si l’heure d’arrivée au dernier arrêt est dans le passé, le client conclura que tout le voyage est dans le passé (il est possible, bien que sans conséquence, de fournir également des mises à jour pour les arrêts précédents). Cette option est plus pertinente pour un voyage qui s’est terminé plus tôt que prévu, mais selon le calendrier, le voyage est toujours en cours à l’heure actuelle. La suppression des mises à jour pour ce voyage pourrait faire supposer au client que le voyage est toujours en cours. Notez que le fournisseur de flux est autorisé, mais pas obligé, à purger les mises à jour passées- c’est un cas où cela serait utile en pratique. 
  
@@ -227,18 +233,16 @@
  
  Définit les propriétés mises à jour du voyage 
  
- **Attention :**ce message est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.<br>. 
+ **Attention :** ce message est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.<br>. 
  
  **Champs** 
  
  | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
  |--------|------------|----------------|----------------------------------|-------------------| 
- | **trip_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Définit l’identifiant d’un nouveau voyage qui est un doublon d’un voyage existant défini dans (CSV) GTFS trips.txt mais qui commencera à une date et/ou une heure de service différente (définie à l’aide de `TripProperties.start_date` et `TripProperties.start_time`). Voir la définition de « `trips.trip_id` » dans (CSV) GTFS. Sa valeur doit être différente de celles utilisées dans le (CSV) GTFS. Ce champ est obligatoire si `schedule_relationship` est `DUPLICATED`, sinon ce champ ne doit pas être renseigné et sera ignoré par les consommateurs.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **trip_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Définit l’identifiant d’un nouveau voyage qui est un doublon d’un voyage existant défini dans (CSV) GTFS trips.txt mais qui commencera à une date et/ou une heure de service différente (définie à l’aide de `TripProperties.start_date` et `TripProperties.start_time`). Voir la définition de `trips.trip_id` dans (CSV) GTFS. Sa valeur doit être différente de celles utilisées dans le (CSV) GTFS. Ce champ est obligatoire si `schedule_relationship` est `DUPLICATED`, sinon ce champ ne doit pas être renseigné et sera ignoré par les consommateurs.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  | **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | date de prestation à laquelle le trajet dupliqué sera effectué. Doit être fourni au format AAAAMMJJ. Ce champ est obligatoire si `schedule_relationship` est `DUPLICATED`, sinon ce champ ne doit pas être renseigné et sera ignoré par les consommateurs.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- | **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Définit l’heure de début de départ du trajet lorsqu’il est dupliqué. Voir la définition de « `stop_times.departure_time` » dans (CSV) GTFS. Les heures d’arrivée et de départ prévues pour le voyage dupliqué sont calculées en fonction du décalage entre le voyage d’origine « `departure_time` » et ce champ. Par exemple, si un trajet GTFS a l’arrêt A avec une « `departure_time` » de « `10:00:00` » et l’arrêt B avec une « `departure_time` » de « `10:01:00` », et que ce champ est renseigné avec la valeur « `10:30:00`, l’arrêt B du trajet dupliqué aura une `departure_time` programmée de `10:31:00`. Des valeurs de « `delay` » de prédiction en temps réel sont appliquées à cette heure programmée calculée pour déterminer l’heure prédite. Par exemple, si un « `delay` » de départ de « `30` » est prévu pour l’arrêt B, alors l’heure de départ prévue est « `10:31:30` ». Les valeurs « `time` » ​​de prédiction en temps réel ne sont soumises à aucun décalage et indiquent l’heure prédite telle que fournie. Par exemple, si une « `time` » de départ représentant 10:31:30 est fournie pour l’arrêt B, alors l’heure de départ prévue est « `10:31:30` ». Ce champ est obligatoire si « `schedule_relationship` » est « `DUPLICATED` », sinon ce champ est obligatoire. Le champ ne doit pas être renseigné et sera ignoré par les consommateurs.<br><br> **Attention :**t
-
-son domaine est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. | 
- | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Spécifie la forme du trajet du véhicule pour ce trajet lorsqu’il diffère de l’original. Fait référence à une forme définie dans le GTFS (CSV) ou à une nouvelle entité de forme dans un flux en temps réel. Voir la définition de « `trips.shape_id` » dans (CSV) GTFS.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Définit l’heure de début de départ du trajet lorsqu’il est dupliqué. Voir la définition de `stop_times.departure_time` dans (CSV) GTFS. Les heures d’arrivée et de départ prévues pour le voyage dupliqué sont calculées en fonction du décalage entre le voyage d’origine `departure_time` et ce champ. Par exemple, si un trajet GTFS a l’arrêt A avec une `departure_time` de `10:00:00` et l’arrêt B avec une `departure_time` de `10:01:00`, et que ce champ est renseigné avec la valeur `10:30:00`, l’arrêt B du trajet dupliqué aura une `departure_time` programmée de `10:31:00`. Des valeurs de `delay` de prédiction en temps réel sont appliquées à cette heure programmée calculée pour déterminer l’heure prédite. Par exemple, si un `delay` de départ de `30` est prévu pour l’arrêt B, alors l’heure de départ prévue est `10:31:30`. Les valeurs `time` ​​de prédiction en temps réel ne sont soumises à aucun décalage et indiquent l’heure prédite telle que fournie. Par exemple, si une `time` de départ représentant 10:31:30 est fournie pour l’arrêt B, alors l’heure de départ prévue est `10:31:30`. Ce champ est obligatoire si `schedule_relationship` est `DUPLICATED`, sinon ce champ est obligatoire. Le champ ne doit pas être renseigné et sera ignoré par les consommateurs.<br><br> **Attention :** son domaine est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. | 
+ | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Spécifie la forme du trajet du véhicule pour ce trajet lorsqu’il diffère de l’original. Fait référence à une forme définie dans le GTFS (CSV) ou à une nouvelle entité de forme dans un flux en temps réel. Voir la définition de `trips.shape_id` dans (CSV) GTFS.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
 ### _message_ VehiclePosition 
  
@@ -293,38 +297,38 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  Pour décrire les niveaux d’occupation des passagers sur une échelle linéaire, voir `occupancy_percentage`. 
  
- **Attention :**ce champ est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
+ **Attention :** ce champ est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
  
  ***Valeurs*** 
  
  | _**Valeur**_ | _**Commentaire**_ | 
  |-------------|--------------------| 
- | _ **EMPTY**_ | _Le véhicule est considéré comme vide par la plupart des mesures et a peu ou pas de passagers à bord, mais accepte toujours des passagers._ | 
- | _ **MANY_SEATS_AVAILABLE**_ | _Le véhicule ou la voiture dispose d’un grand nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment important pour entrer dans cette catégorie est déterminé à la discrétion du producteur._ | 
- | _ **FEW_SEATS_AVAILABLE**_ | _Le véhicule ou la voiture dispose d’un petit nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment petit pour entrer dans cette catégorie est déterminé à la discrétion du producteur._ | 
- | _ **STANDING_ROOM_ONLY**_ | _Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout._ | 
- | _ **CRUSHED_STANDING_ROOM_ONLY**_ | _Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout et dispose d’un espace limité pour eux._ | 
- | _ **FULL**_ | _Le véhicule est considéré comme plein selon la plupart des mesures, mais il se peut qu’il permette toujours aux passagers de monter à bord._ | 
- | _ **NOT_ACCEPTING_PASSENGERS**_ | _Le véhicule ou la voiture n’accepte pas de passagers. Le véhicule ou la voiture accepte généralement des passagers pour l’embarquement._ | 
- | _ **NO_DATA_AVAILABLE**_ | _Le véhicule ou la voiture ne dispose d’aucune donnée d’occupation disponible à ce moment-là._ | 
- | _ **NOT_BOARDABLE**_ | _Le véhicule ou la calèche n’est pas embarquable et n’accepte jamais de passagers. Utile pour les véhicules ou chariots spéciaux (moteur, chariot de maintenance, etc…)._ | 
+ | _**EMPTY**_ | _Le véhicule est considéré comme vide par la plupart des mesures et a peu ou pas de passagers à bord, mais accepte toujours des passagers._ | 
+ | _**MANY_SEATS_AVAILABLE**_ | _Le véhicule ou la voiture dispose d’un grand nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment important pour entrer dans cette catégorie est déterminé à la discrétion du producteur._ | 
+ | _**FEW_SEATS_AVAILABLE**_ | _Le véhicule ou la voiture dispose d’un petit nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment petit pour entrer dans cette catégorie est déterminé à la discrétion du producteur._ | 
+ | _**STANDING_ROOM_ONLY**_ | _Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout._ | 
+ | _**CRUSHED_STANDING_ROOM_ONLY**_ | _Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout et dispose d’un espace limité pour eux._ | 
+ | _**FULL**_ | _Le véhicule est considéré comme plein selon la plupart des mesures, mais il se peut qu’il permette toujours aux passagers de monter à bord._ | 
+ | _**NOT_ACCEPTING_PASSENGERS**_ | _Le véhicule ou la voiture n’accepte pas de passagers. Le véhicule ou la voiture accepte généralement des passagers pour l’embarquement._ | 
+ | _**NO_DATA_AVAILABLE**_ | _Le véhicule ou la voiture ne dispose d’aucune donnée d’occupation disponible à ce moment-là._ | 
+ | _**NOT_BOARDABLE**_ | _Le véhicule ou la calèche n’est pas embarquable et n’accepte jamais de passagers. Utile pour les véhicules ou chariots spéciaux (moteur, chariot de maintenance, etc…)._ | 
  
  
 ### _message_ CarriageDetails 
  
  Détails spécifiques au chariot, utilisés pour les véhicules composés de plusieurs wagons. 
  
- **Attention :**ce message est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
+ **Attention :** ce message est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
  
  **Champs** 
  
  | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
  |--------|------------|----------------|----------------------------------|-------------------| 
- | **id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Identification du chariot. Doit être unique par véhicule.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- | **label** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Étiquette visible par l’utilisateur qui peut être montrée au passager pour aider à identifier le transport. Exemple : "7712", "Voiture ABC-32", etc...<br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- | **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | Optionnel | Un | Statut d’occupation pour ce transport donné, dans ce véhicule. La valeur par défaut est `NO_DATA_AVAILABLE`.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.| 
- | **occupancy_percentage** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Pourcentage d’occupation pour ce transport donné, dans ce véhicule. Suit les mêmes règles que "VehiclePosition.occupancy_percentage". Utilisez-1 au cas où les données ne seraient pas disponibles pour ce transport donné.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- | **carriage_sequence** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Identifie l’ordre de ce transport par rapport aux autres wagons dans la liste CarriageStatus du véhicule. Le premier chariot dans le sens de déplacement doit avoir la valeur 1. La deuxième valeur correspond au deuxième chariot dans le sens de déplacement et doit avoir la valeur 2, et ainsi de suite. Par exemple, le premier chariot dans le sens du déplacement a une valeur de 1. Si le deuxième chariot dans le sens du déplacement a une valeur de 3, les consommateurs ignoreront les données de tous les chariots (c’est-à-dire le champ multi_carriage_details). Les chariots sans données doivent être représentés avec un numéro de séquence de transport valide et les champs sans données doivent être omis (alternativement, ces champs pourraient également être inclus et définis sur les valeurs « pas de données »).<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Identification du chariot. Doit être unique par véhicule.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **label** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Étiquette visible par l’utilisateur qui peut être montrée au passager pour aider à identifier le transport. Exemple : "7712", "Voiture ABC-32", etc...<br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | Optionnel | Un | Statut d’occupation pour ce transport donné, dans ce véhicule. La valeur par défaut est `NO_DATA_AVAILABLE`.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.| 
+ | **occupancy_percentage** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Pourcentage d’occupation pour ce transport donné, dans ce véhicule. Suit les mêmes règles que "VehiclePosition.occupancy_percentage". Utilisez-1 au cas où les données ne seraient pas disponibles pour ce transport donné.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **carriage_sequence** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Identifie l’ordre de ce transport par rapport aux autres wagons dans la liste CarriageStatus du véhicule. Le premier chariot dans le sens de déplacement doit avoir la valeur 1. La deuxième valeur correspond au deuxième chariot dans le sens de déplacement et doit avoir la valeur 2, et ainsi de suite. Par exemple, le premier chariot dans le sens du déplacement a une valeur de 1. Si le deuxième chariot dans le sens du déplacement a une valeur de 3, les consommateurs ignoreront les données de tous les chariots (c’est-à-dire le champ multi_carriage_details). Les chariots sans données doivent être représentés avec un numéro de séquence de transport valide et les champs sans données doivent être omis (alternativement, ces champs pourraient également être inclus et définis sur les valeurs « pas de données »).<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
 ### _message_ Alerte 
  
@@ -337,17 +341,17 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  | **active_period** | [TimeRange](#message-timerange) | Optionnel | Beaucoup | Heure à laquelle l’alerte doit être affichée à l’ utilisateur·rice. En cas d’absence, l’alerte sera affichée tant qu’elle apparaîtra dans le flux. Si plusieurs plages sont données, l’alerte sera affichée pendant chacune d’elles. | 
  | **informed_entity** | [EntitySelector](#message-entityselector) | Requis | Beaucoup | Entités dont nous devons informer les utilisateurs de cette alerte. Au moins une entité informée doit être fournie. | 
  | **cause** | [Cause](#enum-cause) | Requis sous condition | Un | Si cause_detail est inclus, alors Cause doit également être inclus. 
- | **cause_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de la cause de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que la Cause. Si cause_detail est inclus, alors Cause doit également être inclus.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
+ | **cause_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de la cause de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que la Cause. Si cause_detail est inclus, alors Cause doit également être inclus.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  | **effect** | [Effet](#enum-effect) | Requis sous condition | Un | Si effect_detail est inclus, alors Effect doit également être inclus. 
- | **effect_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de l’effet de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que l’effet. Si effect_detail est inclus, alors Effect doit également être inclus.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
+ | **effect_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de l’effet de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que l’effet. Si effect_detail est inclus, alors Effect doit également être inclus.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  | **url** | [TranslatedString](#message-translatedstring) | Optionnel | Un | L’URL qui fournit des informations supplémentaires sur l’alerte. | 
  | **header_text** | [TranslatedString](#message-translatedstring) | Requis | Un | En-tête de l’alerte. Cette string de texte brut sera mise en évidence, par exemple en gras. | 
  | **description_text** | [TranslatedString](#message-translatedstring) | Requis | Un | Description de l’alerte. Cette string de texte brut sera formatée comme le corps de l’alerte (ou affichée sur une demande "d’expansion" explicite de l’ utilisateur·rice). Les informations contenues dans la description doivent s’ajouter aux informations de l’en-tête. | 
  | **tts_header_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text contenant l’en-tête de l’alerte à utiliser pour les implémentations de synthèse vocale. Ce champ est la version synthèse vocale de header_text. Il doit contenir les mêmes informations que header_text mais formaté de manière à pouvoir être lu sous forme de synthèse vocale (par exemple, les abréviations supprimées, les chiffres épelés, etc.) | 
  | **tts_description_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text contenant une description de l’alerte à utiliser pour les implémentations de synthèse vocale. Ce champ est la version synthèse vocale de description_text. Il doit contenir les mêmes informations que description_text mais formaté de manière à pouvoir être lu sous forme de synthèse vocale (par exemple, les abréviations supprimées, les chiffres épelés, etc.) | 
  | **severity_level** | [SeverityLevel](#enum-severitylevel) | Optionnel | Un | Gravité de l’alerte. | 
- | **image** | [TranslatedImage](#message-image traduite) | Optionnel | Un | TranslatedImage à afficher avec le texte de l’alerte. Utilisé pour expliquer visuellement l’effet d’alerte d’un détour, d’une fermeture de gare, etc. L’image doit améliorer la compréhension de l’alerte et ne doit pas être le seul emplacement d’informations essentielles. Les types d’images suivants sont déconseillés : image contenant principalement du texte, images marketing ou de marque n’ajoutant aucune information supplémentaire.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- | **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text décrivant l’apparence de l’image liée dans le champ « `image` » (par exemple, dans le cas où l’image ne peut pas être affichée ou si l’ utilisateur·rice ne peut pas voir l’image pour des raisons d’accessibilité). Voir le HTML [spécification pour le texte de l’image alternative](https://html.spec.whatwg.org/#alt).<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **image** | [TranslatedImage](#message-image traduite) | Optionnel | Un | TranslatedImage à afficher avec le texte de l’alerte. Utilisé pour expliquer visuellement l’effet d’alerte d’un détour, d’une fermeture de gare, etc. L’image doit améliorer la compréhension de l’alerte et ne doit pas être le seul emplacement d’informations essentielles. Les types d’images suivants sont déconseillés : image contenant principalement du texte, images marketing ou de marque n’ajoutant aucune information supplémentaire.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text décrivant l’apparence de l’image liée dans le champ « `image` » (par exemple, dans le cas où l’image ne peut pas être affichée ou si l’ utilisateur·rice ne peut pas voir l’image pour des raisons d’accessibilité). Voir le HTML [spécification pour le texte de l’image alternative](https://html.spec.whatwg.org/#alt).<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
  
 ### _enum_ Cause 
@@ -395,7 +399,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  La gravité de l’alerte. 
  
- **Attention :**ce champ est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
+ **Attention :** ce champ est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
  
  **Valeurs** 
  
@@ -408,7 +412,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
 ### _message_ TimeRange 
  
- Un intervalle de temps. L’intervalle est considéré comme actif à l’instant « `t` » si « `t` » est supérieur ou égal à l’heure de début et inférieur à l’heure de fin. 
+ Un intervalle de temps. L’intervalle est considéré comme actif à l’instant `t` si `t` est supérieur ou égal à l’heure de début et inférieur à l’heure de fin. 
  
  **Champs** 
  
@@ -435,7 +439,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  Un descripteur qui identifie une instance unique d’un voyage GTFS. 
  
- Pour spécifier une seule instance de voyage, dans de nombreux cas, un « `trip_id` » à lui seul suffit. Cependant, les cas suivants nécessitent des informations supplémentaires pour être résolus en une seule instance de voyage : 
+ Pour spécifier une seule instance de voyage, dans de nombreux cas, un `trip_id` à lui seul suffit. Cependant, les cas suivants nécessitent des informations supplémentaires pour être résolus en une seule instance de voyage : 
  
  * Pour les voyages définis dans le frequencies.txt, `start_date` et `start_time` sont requis en plus de `trip_id` 
  * Si le voyage dure plus de 24 heures, ou est retardé de telle sorte qu’il entre en collision avec un voyage prévu le jour suivant, alors `start_date` est requis en plus de `trip_id` 
@@ -455,7 +459,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  |--------|------------|----------------|----------------------------------|-------------------| 
  | **trip_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Le trip_id du flux GTFS auquel ce sélecteur fait référence. Pour les déplacements non basés sur la fréquence (trajets non définis dans GTFS frequencies.txt), ce champ suffit à identifier de manière unique le déplacement. Pour les trajets basés sur la fréquence définis dans GTFS frequencies.txt, trip_id, start_time et start_date sont tous requis. Pour les trajets planifiés (trajets non définis dans GTFS frequencies.txt), trip_id ne peut être omis que si le trajet peut être identifié de manière unique par une combinaison de route_id, direction_id, start_time et start_date, et que tous ces champs sont fournis. Lorsque Schedule_relationship est DUPLICATED dans un TripUpdate, le trip_id identifie le voyage à partir du GTFS statique à dupliquer. Lorsque Schedule_relationship est DUPLICATED dans un VehiclePosition, le trip_id identifie le nouveau voyage en double et doit contenir la valeur du TripUpdate correspondant. TripProperties.trip_id. | 
  | **route_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Le route_id du GTFS auquel ce sélecteur fait référence. Si trip_id est omis, route_id, direction_id, start_time et planning_relationship=SCHEDULED doivent tous être définis pour identifier une instance de voyage. TripDescriptor.route_id ne doit pas être utilisé dans un Alert EntitySelector pour spécifier une alerte à l’échelle de l’itinéraire qui affecte tous les trajets d’un itinéraire- utilisez EntitySelector.route_id à la place. | 
- | **direction_id** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Le direction_id du fichier trips.txt du flux GTFS, indiquant la direction du déplacement pour les trajets auxquels ce sélecteur fait référence. Si trip_id est omis, direction_id doit être fourni.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.<br> | 
+ | **direction_id** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Le direction_id du fichier trips.txt du flux GTFS, indiquant la direction du déplacement pour les trajets auxquels ce sélecteur fait référence. Si trip_id est omis, direction_id doit être fourni.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.<br> | 
  | **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Heure de début initialement prévue de cette instance de voyage. Lorsque le trip_id correspond à un voyage non basé sur la fréquence, ce champ doit être omis ou être égal à la valeur du flux GTFS. Lorsque le trip_id correspond à un trajet basé sur la fréquence défini dans GTFS frequencies.txt, start_time est requis et doit être spécifié pour les mises à jour du trajet et les positions des véhicules. Si le trajet correspond à l’enregistrement GTFS exact_times=1, alors start_time doit être un multiple (y compris zéro) de headway_secs après frequencies.txt start_time pour la période correspondante. Si le trajet correspond à exact_times=0, alors son heure de début peut être arbitraire et devrait initialement être le premier départ du voyage. Une fois établi, le start_time de ce trajet exact_times=0 basé sur la fréquence doit être considéré comme immuable, même si la première heure de départ change- ce changement d’heure peut plutôt être reflété dans un StopTimeUpdate. Si trip_id est omis, start_time doit être fourni. Le format et la sémantique du champ sont les mêmes que ceux de GTFS/frequencies.txt/start_time, par exemple 11:15:35 ou 25:15:35. | 
  | **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | La date de début de cette instance de voyage au format AAAAMMJJ. Pour les trajets programmés (trajets non définis dans GTFS frequencies.txt), ce champ doit être fourni pour lever l’ambiguïté des trajets qui sont si tardifs qu’ils entrent en collision avec un trajet programmé le jour suivant. Par exemple, pour un train qui part à 8h00 et à 20h00 tous les jours et qui a 12 heures de retard, il y aurait deux trajets distincts à la même heure. Ce champ peut être fourni mais n’est pas obligatoire pour les horaires dans lesquels de telles collisions sont impossibles- par exemple, un service fonctionnant selon un horaire horaire où un véhicule en retard d’une heure n’est plus considéré comme étant lié à l’horaire. Ce champ est obligatoire pour les trajets basés sur la fréquence définis dans GTFS frequencies.txt. Si trip_id est omis, start_date doit être fourni. | 
  | **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship_1) | Optionnel | Un | La relation entre ce déplacement et l’horaire statique. Si TripDescriptor est fourni dans une alerte `EntitySelector`, le champ `schedule_relationship` est ignoré par les consommateurs lors de l’identification de l’instance de voyage correspondante. 
@@ -473,7 +477,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  | **UNSCHEDULED** | Un voyage en cours sans horaire associé - cette valeur est utilisée pour identifier les voyages définis dans GTFS frequencies.txt avec exact_times = 0. Elle ne doit pas être utilisée pour décrire des voyages non définis dans GTFS frequencies.txt ou des voyages dans GTFS. frequencies.txt avec exact_times = 1. Les Trajets avec `schedule_relationship: UNSCHEDULED` doivent également définir toutes les StopTimeUpdates `schedule_relationship: UNSCHEDULED`| 
  | **CANCELED** | Un voyage qui existait dans le planning mais qui a été supprimé. | 
  | **DUPLICATED** | Un nouveau trajet identique à un trajet programmé existant, à l’exception de la date et de l’heure de début du service. Utilisé avec `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date` et `TripUpdate.TripProperties.start_time` pour copier un voyage existant à partir de GTFS statique mais commencer à une date et/ou une heure de service différente. La duplication d’un voyage est autorisée si le service lié au voyage d’origine au format (CSV) GTFS (dans `calendar.txt` ou `calendar_dates.txt`) fonctionne dans les 30 prochains jours. Le voyage à dupliquer est identifié via `TripUpdate.TripDescriptor.trip_id`.<br><br> Cette énumération ne modifie pas le voyage existant référencé par `TripUpdate.TripDescriptor.trip_id` - si un producteur souhaite annuler le voyage d’origine, il doit publier un `TripUpdate` séparé avec la valeur CANCELED. Les Trajets définis dans GTFS `frequencies.txt` avec `exact_times` vide ou égal à `0` ne peuvent pas être dupliqués. Le `VehiclePosition.TripDescriptor.trip_id` pour le nouveau voyage doit contenir la valeur correspondante de `TripUpdate.TripProperties.trip_id` et `VehiclePosition.TripDescriptor.ScheduleRelationship` doit également être défini sur `DUPLICATED`.<br><br> *Les producteurs et consommateurs existants qui utilisaient l’énumération ADDED pour représenter les voyages en double doivent suivre le [guide de migration](../../realtime/examples//migration-duplicated) pour passer à l’énumération DUPLICATED.* | 
- | **DELETED** | Un trajet qui existait dans le planning mais qui a été supprimé et qui ne doit pas être montré aux utilisateurs.<br><br> DELETED doit être utilisé au lieu de CANCELED pour indiquer qu’un fournisseur de transport souhaite supprimer entièrement les informations sur le trajet correspondant des applications consommatrices, afin que le trajet ne soit pas affiché comme annulé aux usagers, par exemple un trajet qui est entièrement remplacé par un autre trajet. Cette désignation devient particulièrement importante si plusieurs voyages sont annulés et remplacés par un service de substitution. Si les consommateurs devaient afficher des informations explicites sur les annulations, cela les détournerait des prévisions en temps réel les plus importantes.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **DELETED** | Un trajet qui existait dans le planning mais qui a été supprimé et qui ne doit pas être montré aux utilisateurs.<br><br> DELETED doit être utilisé au lieu de CANCELED pour indiquer qu’un fournisseur de transport souhaite supprimer entièrement les informations sur le trajet correspondant des applications consommatrices, afin que le trajet ne soit pas affiché comme annulé aux usagers, par exemple un trajet qui est entièrement remplacé par un autre trajet. Cette désignation devient particulièrement importante si plusieurs voyages sont annulés et remplacés par un service de substitution. Si les consommateurs devaient afficher des informations explicites sur les annulations, cela les détournerait des prévisions en temps réel les plus importantes.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
 ### _message_ VehicleDescriptor 
  
@@ -483,9 +487,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
  |--------|------------|----------------|----------------------------------|-------------------| 
- | **id** | [string](https://protobuf.dev/programming-guides/proto
-
-2/#scalaire) | Optionnel | Un | Identification du système interne du véhicule. Doit être **unique** par véhicule et est utilisé pour suivre le véhicule à mesure qu’il progresse dans le système. Cet identifiant ne doit pas être rendu visible à l’utilisateur final ; utilisez pour cela le champ **label** | 
+ | **id** | [string](https://protobuf.dev/programming-guides/proto2/#scalaire) | Optionnel | Un | Identification du système interne du véhicule. Doit être **unique** par véhicule et est utilisé pour suivre le véhicule à mesure qu’il progresse dans le système. Cet identifiant ne doit pas être rendu visible à l’utilisateur final ; utilisez pour cela le champ **label** | 
  | **label** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Étiquette visible par l’utilisateur, c’est-à-dire quelque chose qui doit être montré au passager pour l’aider à identifier le bon véhicule. | 
  | **license_plate** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | La plaque d’immatriculation du véhicule. | 
  | **wheelchair_accessible** | [WheelchairAccessible](#enum-wheelchairaccessible) | Optionnel | Un | Si fourni, peut écraser la valeur *wheelchair_accessible* du GTFS statique. | 
@@ -505,7 +507,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
 ### _message_ EntitySelector 
  
- Un sélecteur pour une entité dans un flux GTFS. Les valeurs des champs doivent correspondre aux champs appropriés dans le flux GTFS. Au moins un spécificateur doit être indiqué. Si plusieurs sont donnés, ils doivent être interprétés comme étant joints par l’opérateur logique « ET ». De plus, la combinaison de spécificateurs doit correspondre aux informations correspondantes dans le flux GTFS. En d’autres termes, pour qu’une alerte s’applique à une entité dans GTFS, elle doit correspondre à tous les champs EntitySelector fournis. Par exemple, un EntitySelector qui inclut les champs `route_id: "5"` et `route_type: "3"` s’applique uniquement au bus `route_id: "5"` - il ne s’applique à aucune autre route de `route_type: "3"`"’. Si un producteur souhaite qu’une alerte s’applique à `route_id: "5"` ainsi qu’à `route_type: "3"`, il doit fournir deux EntitySelectors distincts, l’un faisant référence à `route_id: "5"` et l’autre faisant référence à `route_type: "3"`"’. 
+ Un sélecteur pour une entité dans un flux GTFS. Les valeurs des champs doivent correspondre aux champs appropriés dans le flux GTFS. Au moins un spécificateur doit être indiqué. Si plusieurs sont donnés, ils doivent être interprétés comme étant joints par l’opérateur logique « ET ». De plus, la combinaison de spécificateurs doit correspondre aux informations correspondantes dans le flux GTFS. En d’autres termes, pour qu’une alerte s’applique à une entité dans GTFS, elle doit correspondre à tous les champs EntitySelector fournis. Par exemple, un EntitySelector qui inclut les champs `route_id: "5"` et `route_type: "3"` s’applique uniquement au bus `route_id: "5"` - il ne s’applique à aucune autre route de `route_type: "3"`. Si un producteur souhaite qu’une alerte s’applique à `route_id: "5"` ainsi qu’à `route_type: "3"`, il doit fournir deux EntitySelectors distincts, l’un faisant référence à `route_id: "5"` et l’autre faisant référence à `route_type: "3"`"’. 
  
  Au moins un spécificateur doit être donné - tous les champs d’un EntitySelector ne peuvent pas être vides. 
  
@@ -543,7 +545,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  Un message internationalisé contenant des versions par langue d’une image. L’une des images d’un message sera récupérée. La résolution se déroule comme suit : Si la langue de l’interface utilisateur correspond au code de langue d’une traduction, la première traduction correspondante est sélectionnée. Si une langue par défaut de l’interface utilisateur (par exemple l’anglais) correspond au code de langue d’une traduction, la première traduction correspondante est sélectionnée. Si une traduction a un code de langue non spécifié, cette traduction est sélectionnée. 
  
- **Attention :**ce message est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
+ **Attention :** ce message est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
  
  **Champs** 
  
@@ -565,7 +567,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  Décrit le chemin physique qu’emprunte un véhicule lorsque la forme ne fait pas partie du GTFS (CSV), comme pour un détour ad hoc. Les Tracé des lignes appartiennent à Trajets et consistent en une polyligne codée pour une transmission plus efficace. Les Tracé des lignes n’ont pas besoin d’intercepter exactement l’emplacement des Arrêts, mais tous les Arrêts d’un trajet doivent se trouver à une petite distance de la forme pour ce trajet, c’est-à-dire à proximité des segments de ligne droite reliant les points de la forme. 
 
-<br><br> **Attention :**ce message est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
+<br><br> **Attention :** ce message est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  
  **Champs** 
  
@@ -578,7 +580,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  Représente un nouveau Stop ajouté dynamiquement au flux. Tous les champs sont tels que décrits dans la spécification (CSV) GTFS. Le type d’emplacement du nouvel arrêt est « 0 » (arrêt routable). 
 
-<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
+<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  
  **Champs** 
  
@@ -613,7 +615,7 @@ son domaine est encore **expérimental** et sujet à changement. Il pourrait êt
  
  Un message `TripModifications` identifie une liste de trajets similaires qui sont tous concernés par des modifications particulières, comme un détour. 
 
-<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
+<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  
  [En savoir plus sur les modifications de voyage...](../../../documentation/realtime/feed_entities/trip-modifications) 
  
