@@ -23,7 +23,7 @@
  
  Parmi les formats de données des transports publics, GTFS se distingue car il a été conçu pour répondre à des besoins spécifiques et pratiques de communication d’informations de service aux passagers, et non comme un vocabulaire exhaustif pour gérer les détails opérationnels. Il est conçu pour être relativement simple à créer et à lire, tant pour les personnes que pour les machines. 
  
- Pour plus d’informations sur les origines du GTFS, voir [Pioneering Open Data Standards: The GTFS Story](https://beyondtransparency.org/chapters/part-2/pioneering-open-data-standards-the-gtfs-story/) et [Comment Google et TriMet de Portland établissent la norme en matière de données de transport ouvertes dans Streetsblog SF](https://sf.streetsblog.org/2010/01/05/how-google-and-portlands-trimet-set-la-norme-pour-les-données-de-transit-ouvertes). 
+ Pour plus d’informations sur les origines du GTFS, voir [Pioneering Open Data Standards: The GTFS Story](https://beyondtransparency.org/chapters/part-2/pioneering-open-data-standards-the-gtfs-story/) et [Comment Google et TriMet de Portland établissent la norme en matière de données de transport ouvertes dans Streetsblog SF](https://sf.streetsblog.org/2010/01/05/how-google-and-portlands-trimet-set-the-standard-for-open-transit-data). 
  
 ## Licence 
  
