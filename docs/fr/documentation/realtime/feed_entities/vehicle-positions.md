@@ -14,10 +14,11 @@
  
  * **Latitude** - degrés Nord, dans le système de coordonnées WGS-84 
  * **Longitude** - degrés Est, dans le système de coordonnées WGS-84 
- * * *Relèvement** - direction vers laquelle le véhicule fait face 
+ * **Relèvement** - direction vers laquelle le véhicule fait face 
  * **Compteur kilométrique** - la distance parcourue par le véhicule 
  * **Vitesse** - vitesse momentanée mesurée par le véhicule, en mètres par seconde 
- § §## CongestionLevel 
+ 
+## CongestionLevel 
  
  La position du véhicule permet également à l’agence de préciser le niveau de congestion que connaît actuellement le véhicule. Les embouteillages peuvent être classés dans les catégories suivantes : 
  

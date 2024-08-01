@@ -8,19 +8,19 @@
  
  Si un véhicule effectue plusieurs trajets dans le même bloc (pour plus d’informations sur les trajets et les blocages, veuillez vous référer à [GTFS trips.txt](../../../schedule/reference/#tripstxt) ) : 
  
- * le flux doit inclure une TripUpdate pour le trajet actuellement desservi par le véhicule. Les producteurs sont encouragés à inclure des TripUpdates pour un ou plusieurs voyages après le voyage en cours dans le bloc de ce véhicule s’ils sont confiants dans la qualité des prévisions pour ces futurs voyages. L’inclusion de plusieurs TripUpdates pour le même véhicule évite les « pop-in » de prédiction pour les usagers lorsque le véhicule passe d’un trajet à un autre et donne également aux usagers un préavis des retards qui ont un impact sur les trajets en aval (par exemple, lorsque le retard connu dépasse les temps d’escale prévus entre les trajets). ). 
- * Il n’est pas nécessaire que les entités TripUpdate respectives soient ajoutées au flux dans le même ordre dans lequel elles sont planifiées dans le bloc. Par exemple, s’il y a des trajets avec les « `trip_ids` » 1, 2 et 3 qui appartiennent tous à un seul bloc, et que le véhicule effectue le trajet 1, puis le trajet 2, puis le trajet 3, les entités « `trip_update` » peuvent apparaître dans n’importe quel ordre. - par exemple, ajouter le trajet 2, puis le trajet 1, puis le trajet 3 est autorisé. 
+ * le flux doit inclure une TripUpdate pour le trajet actuellement desservi par le véhicule. Les producteurs sont encouragés à inclure des TripUpdates pour un ou plusieurs voyages après le voyage en cours dans le bloc de ce véhicule s’ils sont confiants dans la qualité des prévisions pour ces futurs voyages. L’inclusion de plusieurs TripUpdates pour le même véhicule évite les « pop-in » de prédiction pour les usagers lorsque le véhicule passe d’un trajet à un autre et donne également aux usagers un préavis des retards qui ont un impact sur les trajets en aval (par exemple, lorsque le retard connu dépasse les temps d’escale prévus entre les trajets). 
+ * Il n’est pas nécessaire que les entités TripUpdate respectives soient ajoutées au flux dans le même ordre dans lequel elles sont planifiées dans le bloc. Par exemple, s’il y a des trajets avec les `trip_ids` 1, 2 et 3 qui appartiennent tous à un seul bloc, et que le véhicule effectue le trajet 1, puis le trajet 2, puis le trajet 3, les entités `trip_update` peuvent apparaître dans n’importe quel ordre. - par exemple, ajouter le trajet 2, puis le trajet 1, puis le trajet 3 est autorisé. 
  
 ## StopTimeUpdate 
  
- Une mise à jour de trajet consiste en une ou plusieurs mises à jour des horaires d’arrêts du véhicule, appelées [StopTimeUpdates](../../reference/#message-stoptimeupdate). Ceux-ci peuvent être fournis pour les horaires d’arrêts passés et futurs. Vous êtes autorisé, mais pas obligé, à dépasser les horaires d’arrêts. Les producteurs ne doivent pas supprimer un « `StopTimeUpdate` » passé s’il fait référence à un arrêt avec une heure d’arrivée prévue dans le futur pour le trajet donné (c’est-à-dire que le véhicule a dépassé l’arrêt plus tôt que prévu), sinon il sera conclu qu’il n’y a pas d’arrêt.mise à jour pour cet arrêt. 
+ Une mise à jour de trajet consiste en une ou plusieurs mises à jour des horaires d’arrêts du véhicule, appelées [StopTimeUpdates](../../reference/#message-stoptimeupdate). Ceux-ci peuvent être fournis pour les horaires d’arrêts passés et futurs. Vous êtes autorisé, mais pas obligé, à dépasser les horaires d’arrêts. Les producteurs ne doivent pas supprimer un `StopTimeUpdate` passé s’il fait référence à un arrêt avec une heure d’arrivée prévue dans le futur pour le trajet donné (c’est-à-dire que le véhicule a dépassé l’arrêt plus tôt que prévu), sinon il sera conclu qu’il n’y a pas d’arrêt.mise à jour pour cet arrêt. 
  
  Par exemple, si les données suivantes apparaissent dans le flux GTFS-rt : 
  
  * Arrêt 4 – Prédit à 10h18 (programmé à 10h20 – 2 min en avance) 
  * Arrêt 5 – Prédit à 10h30 (prévu à 10h30 – à l’heure) 
  
-...la prédiction pour l’arrêt 4 ne peut pas être supprimée du flux avant 10h21, même si le bus passe effectivement l’arrêt à 10h18. Si le « `StopTimeUpdate` » pour l’arrêt 4 a été supprimé du flux à 10 h 18 ou 10 h 19 et que l’heure d’arrivée prévue est 10 h 20, alors le application réutilisatrice doit supposer qu’aucune information en temps réel n’existe pour l’arrêt 4 à ce moment-là., et les données de planification de GTFS doivent être utilisées. 
+...la prédiction pour l’arrêt 4 ne peut pas être supprimée du flux avant 10h21, même si le bus passe effectivement l’arrêt à 10h18. Si le `StopTimeUpdate` pour l’arrêt 4 a été supprimé du flux à 10 h 18 ou 10 h 19 et que l’heure d’arrivée prévue est 10 h 20, alors le application réutilisatrice doit supposer qu’aucune information en temps réel n’existe pour l’arrêt 4 à ce moment-là., et les données de planification de GTFS doivent être utilisées. 
  
  Chaque [StopTimeUpdate](../../reference/#message-stoptimeupdate) est lié à un arrêt. Habituellement, cela peut être fait en utilisant soit un stop_sequence GTFS, soit un stop_id GTFS. Cependant, dans le cas où vous fournissez une mise à jour pour un voyage sans GTFS trip_id, vous devez spécifier stop_id car stop_sequence n’a aucune valeur. Le stop_id doit toujours faire référence à un stop_id dans GTFS. Si le même stop_id est visité plus d’une fois au cours d’un trajet, alors stop_sequence doit être fourni dans toutes les StopTimeUpdates pour ce stop_id lors de ce trajet. 
  
@@ -30,7 +30,7 @@
  
  **Les mises à jour doivent être triées par stop_sequence** (ou stop_ids dans l’ordre dans lequel elles se produisent dans le voyage). 
  
- Si un ou plusieurs arrêts manquent tout au long du trajet, le « `delay` » de la mise à jour (ou, si seul « `time` » est fourni dans la mise à jour, un délai calculé en comparant le « `time` » avec l’heure du programme GTFS) est propagé à tous les arrêts suivants. Cela signifie que la mise à jour d’une heure d’arrêt pour un certain arrêt modifiera tous les arrêts suivants en l’absence de toute autre information. Notez que les mises à jour avec une relation de planification de `SKIPPED` n’arrêteront pas la propagation du délai, mais les mises à jour avec des relations de planification de `SCHEDULED` (également la valeur par défaut si la relation de planification n’est pas fournie) ou `NO_DATA` le feront. 
+ Si un ou plusieurs arrêts manquent tout au long du trajet, le `delay` de la mise à jour (ou, si seul `time` est fourni dans la mise à jour, un délai calculé en comparant le `time` avec l’heure du programme GTFS) est propagé à tous les arrêts suivants. Cela signifie que la mise à jour d’une heure d’arrêt pour un certain arrêt modifiera tous les arrêts suivants en l’absence de toute autre information. Notez que les mises à jour avec une relation de planification de `SKIPPED` n’arrêteront pas la propagation du délai, mais les mises à jour avec des relations de planification de `SCHEDULED` (également la valeur par défaut si la relation de planification n’est pas fournie) ou `NO_DATA` le feront. 
  
  **Exemple 1** 
  
@@ -71,9 +71,9 @@
  spécifique. Afin d’identifier de manière unique de tels voyages dans un 
  TripDescriptor, un triple d’identifiants doit être fourni : 
  
- * __trip_id__ 
- * __start_time__ 
- * __start_date__ 
+*    __trip_id__
+*    __start_time__
+*    __start_date__ 
  
  start_time doit être d’abord publié, ainsi que toutes les mises à jour ultérieures du flux.devrait utiliser 
  la même heure de départ pour faire référence au même voyage. StopTimeUpdates 
@@ -93,10 +93,10 @@
  Les Trajets qui ne sont pas basés sur la fréquence peuvent également être identifiés de manière unique par un 
  TripDescriptor comprenant la combinaison de : 
  
- * __route_id__ 
- * __direction_id__ 
- * __start_time__ 
- * __start_date__ 
+ *    __route_id__
+*    __direction_id__
+*    __start_time__
+*    __start_date__
  
  où start_time est l’heure de début prévue telle que définie dans le programme statique, à condition que la combinaison d’identifiants fournis donne lieu à un voyage unique. 
  
