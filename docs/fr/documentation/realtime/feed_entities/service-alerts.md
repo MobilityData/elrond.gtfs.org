@@ -4,9 +4,9 @@
  
  Vous avez la possibilité de fournir les éléments suivants : 
  
- * URL- lien vers votre site expliquant plus en détail l’alerte 
- * Texte d’en-tête- un résumé de l’alerte 
- * Description- une description complète de l’alerte alerte, qui sera toujours affichée à côté de l’en-tête (il ne faut donc pas répéter cette information). 
+ * URL - lien vers votre site expliquant plus en détail l’alerte 
+ * Texte d’en-tête - un résumé de l’alerte 
+ * Description - une description complète de l’alerte alerte, qui sera toujours affichée à côté de l’en-tête (il ne faut donc pas répéter cette information). 
  
 ## TimeRange 
  
@@ -20,13 +20,13 @@
  
  Les entités sont sélectionnées à l’aide de leurs identifiants GTFS, et vous pouvez sélectionner l’un des éléments suivants : 
  
- * Agence- affecte l’ensemble du réseau 
- * Route- affecte l’ensemble de la route 
- * Type de route- affecte n’importe quelle route de ce type.par exemple tous les métros. 
- * Trajet- affecte un trajet particulier 
- * Arrêt- affecte un arrêt particulier 
+ * Agence - affecte l’ensemble du réseau 
+ * Route - affecte l’ensemble de la route 
+ * Type de route - affecte n’importe quelle route de ce type.par exemple tous les métros. 
+ * Trajet - affecte un trajet particulier 
+ * Arrêt - affecte un arrêt particulier 
  
- Vous pouvez inclure plus d’un des champs répertoriés ci-dessus dans une seule `informed_entity`. Lorsque plusieurs champs sont inclus dans une seule « `informed_entity` », ils doivent être interprétés comme étant joints par l’opérateur logique « ET ». En d’autres termes, l’alerte ne doit être appliquée que dans un contexte qui répond à tous les champs fournis dans une `informed_entity`. Par exemple, si `route_id: "1"` et `stop_id: "5"` sont tous deux inclus dans une seule `informed_entity`, alors l’alerte ne doit s’appliquer qu’à l’itinéraire 1 à l’arrêt 5. Elle ne doit PAS être appliquée à un autre arrêt.sur l’itinéraire 1, et il ne doit PAS être appliqué à un autre itinéraire à l’arrêt 5. 
+ Vous pouvez inclure plus d’un des champs répertoriés ci-dessus dans une seule `informed_entity`. Lorsque plusieurs champs sont inclus dans une seule `informed_entity`, ils doivent être interprétés comme étant joints par l’opérateur logique « ET ». En d’autres termes, l’alerte ne doit être appliquée que dans un contexte qui répond à tous les champs fournis dans une `informed_entity`. Par exemple, si `route_id: "1"` et `stop_id: "5"` sont tous deux inclus dans une seule `informed_entity`, alors l’alerte ne doit s’appliquer qu’à l’itinéraire 1 à l’arrêt 5. Elle ne doit PAS être appliquée à un autre arrêt.sur l’itinéraire 1, et il ne doit PAS être appliqué à un autre itinéraire à l’arrêt 5. 
  
  Si vous souhaitez représenter une alerte qui affecte plus d’une entité (par exemple une alerte pour l’itinéraire 1 et l’arrêt 5), vous devrait ajouter plusieurs « `informed_entity` » à votre « `alert` », chacune d’elles s’appliquant à l’entité affectée (par exemple une « `informed_entity` » qui inclut la route 1 et une autre « `informed_entity` » qui inclut l’arrêt 5). 
  
@@ -45,7 +45,9 @@
  * Maintenance 
  * Construction 
  * Activité de police 
- * Urgence médicale## Effet 
+ * Urgence médicale
+ 
+## Effet 
  
  Quel effet ce problème a-t-il sur l’entité spécifiée ? Vous pouvez spécifier l’un des éléments suivants : 
  

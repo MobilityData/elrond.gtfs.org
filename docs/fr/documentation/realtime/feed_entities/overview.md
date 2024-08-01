@@ -4,7 +4,9 @@
  combinées dans un seul flux en temps réel. Des résumés sont donnés ci-dessous, avec une documentation complète 
  donnée dans la section correspondante. 
  
-## Mises à jour des trajets#### "Le bus X est retardé de 5 minutes" 
+## Mises à jour des trajets
+
+#### "Le bus X est retardé de 5 minutes" 
  
  Les mises à jour des trajets représentent des fluctuations dans l’horaire. Nous nous attendons à recevoir 
  des mises à jour de voyage pour tous les voyages que vous avez programmés et qui sont compatibles en temps réel. Ces mises à jour 
@@ -14,7 +16,9 @@
  
  [En savoir plus sur les mises à jour de voyage...](../trip-updates) 
  
-## Alertes de service#### "La gare Y est fermée en raison de travaux" 
+## Alertes de service
+
+#### "La gare Y est fermée en raison de travaux" 
  
  Les alertes de service représentent des problèmes de niveau supérieur avec une entité particulière et se présentent généralement 
  sous la forme d’une description textuelle de la perturbation. 
@@ -32,7 +36,9 @@
  
  [En savoir plus sur les alertes de service...](../service-alerts) 
  
-## Positions des véhicules#### "Ce bus est à la position X à l’instant Y" 
+## Positions des véhicules
+
+#### "Ce bus est à la position X à l’instant Y" 
  La position 
  du véhicule représente quelques informations de base sur un véhicule 
  particulier sur le réseau. 
@@ -40,9 +46,11 @@
  Les plus importantes sont la latitude et la longitude auxquelles se trouve le véhicule, mais nous pouvons également 
  utiliser les données sur la vitesse actuelle et les relevés du compteur kilométrique du véhicule. 
  
- [En savoir plus sur les mises à jour de Position du véhicule...](../positions-véhicules) 
+ [En savoir plus sur les mises à jour de Position du véhicule...](../vehicle-positions) 
  
-## Modifications de trajet#### "Ces trajets sont affectés par un détour certains jours" 
+## Modifications de trajet
+
+#### "Ces trajets sont affectés par un détour certains jours" 
  
  Les modifications de trajet permettent de décrire des détours qui affectent un ensemble de trajets. 
  
