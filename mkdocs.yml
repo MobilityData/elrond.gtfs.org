@@ -179,58 +179,58 @@ plugins:
           build: true
           nav_translations:
             Home: Accueil
-            #Getting started: 
-            #What is GTFS?: 
-            #Why use GTFS?: 
-            #How to produce GTFS?: 
-            #Create: 
-            #Validate: 
-            #Publish: 
-            #What can GTFS do?: 
-            #Overview: 
-            #Base: 
-            #Base add-ons: 
-            #Accessibility: 
-            #Fares: 
-            #Pathways: 
-            #Flexible services: 
-            #Example GTFS feed:
-            #Technical Documentation: 
-            #Reference: 
-            #Best Practices: 
-            #Data examples: 
-            #Attributions: 
-            #Continuous stops: 
-            #Demand responsive services: 
-            #Fares v1: 
-            #Fares v2: 
-            #Feed information: 
-            #Frequencies: 
-            #Pathways: 
-            #Routes, Stops & Trips: 
-            #Text-to-speech: 
-            #Transfers: 
-            #Translations: 
-            #Change history: 
-            #Recent additions: 
-            #Full revision history: 
-            #Feed Entities: 
-            #Trip Updates: 
+            Getting started: Premiers pas
+            What is GTFS?: Qu’est-ce que GTFS ?
+            Why use GTFS?: Pourquoi utiliser GTFS ?
+            How to produce GTFS?: Comment produire du GTFS ?
+            Create: Créer
+            Validate: Valider
+            Publish: Publier
+            What can GTFS do?: Que peut faire GTFS ?
+            Overview: Aperçu
+            Base: Base
+            Base add-ons: Modules Complémentaires à Base
+            Accessibility: Accessibilité
+            Fares: Tarifs
+            Pathways: Parcours
+            Flexible services: Services flexibles
+            Example GTFS feed: Exemple de flux GTFS
+            Technical Documentation: Documentation technique
+            Reference: Référence
+            Best Practices: Bonnes pratiques
+            Data examples: Exemples de données
+            Attributions: Attributions
+            Continuous stops: Arrêts continus
+            Demand responsive services: Services réactifs à la demande
+            Fares v1: Tarifs v1
+            Fares v2: Tarifs v2
+            Feed information: Informations sur le flux
+            Frequencies: Fréquences
+            Pathways: Parcours
+            Routes, Stops & Trips: Lignes, arrêts et trajets 
+            Text-to-speech: Synthèse vocale
+            Transfers: Transferts
+            Translations: Traductions
+            Change history: Historique des changements
+            Recent additions: Ajouts récents
+            Full revision history: Historique complet des révisions 
+            Feed Entities: Entités de flux
+            #Trip Updates: Mises à jour du voyage
             #Service Alerts: 
             #Vehicle Positions: 
             #Trip Modifications: 
             #Protobuf: 
             #Language Bindings: 
-            #Migration duplicated:
-            #Community:
-            #Get involved:
-            #Governance:
+            #Migration duplicated:Migration dupliquée
+            Community: Communauté
+            Get involved: S'impliquer
+            Governance:  Governance
             #GTFS Schedule Amendment Process:
             #GTFS Realtime Amendment Process:
-            #Extensions:
-            #Fares v2:
-            #Flex:
-            #About:
+            Extensions: Extensions
+            Fares v2: Tarifs v2
+            Flex: Flex
+            About: À propos
 nav:
   - Home: index.md
   - Getting started:
