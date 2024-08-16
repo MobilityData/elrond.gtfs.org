@@ -122,7 +122,7 @@ plugins:
           build: true
           nav_translations:
             Home: Inicio
-            Getting started: Comenzando
+            Getting started: Primeros pasos
             What is GTFS?: ¿Qué es GTFS?
             Why use GTFS?: ¿Por qué utilizar GTFS?
             How to produce GTFS?: ¿Cómo producir GTFS?
