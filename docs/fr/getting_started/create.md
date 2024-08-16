@@ -3,15 +3,15 @@
 ## Présentation d’un flux GTFS 
  Tous les flux GTFS commencent par un ensemble de données au format GTFS Reference, qui est une série de fichiers CSV enregistrés avec une extension de fichier.txt [^1]. Dans sa mise en œuvre la plus basique, un ensemble de données GTFS commence généralement avec sept fichiers de base, combinés dans un fichier.zip hébergé sur une URL stable et publique : il s’agit du flux GTFS. 
 
-<img class="center" width="560" height="100%" src="../../../assets/create_001.png"> 
+<img class="center" width="560" height="100%" src="../../assets/create_001.png"> 
  
  Chaque fichier est constitué d’une liste de plusieurs enregistrements (lignes de données) avec plusieurs champs d’information. Par exemple, chaque ligne répertoriée dans [routes.txt](../../documentation/schedule/reference/#routestxt) représente un itinéraire de transport public et ses champs décrivent plusieurs éléments de cet itinéraire, comme son nom, sa description, son mode d’exploitation.agence, etc. 
  
-<img class="center" width="560" height="100%" src="../../../assets/create_002.png"> 
+<img class="center" width="560" height="100%" src="../../assets/create_002.png"> 
  
  Les fichiers de base d’un jeu de données GTFS peuvent être décrits comme suit : Un jeu de données de planification GTFS comporte une ou plusieurs routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), chaque itinéraire comporte un ou plusieurs trajets ([trips.txt](../../documentation/schedule/reference/#tripstxt)), chaque trajet visite une série d’arrêts ([stops.txt](../../documentation/schedule/reference/#stopstxt)) à des heures spécifiées ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Les Trajets et les horaires d’arrêts contiennent uniquement des informations sur l’heure de la journée ; le calendrier est utilisé pour déterminer les jours auxquels un voyage donné a lieu ([calendar.txt](../../documentation/schedule/reference/#calendartxt) et [calendar_dates.txt](../../documentation/planning/reference/#calendar_datestxt)). De plus, plusieurs agences ([agency.txt](../../documentation/schedule/reference/#agencytxt)) peuvent exploiter plusieurs itinéraires. Ces fichiers sont liés les uns aux autres avec des champs qui font l’objet de références croisées entre eux. 
 
-<img class="center" width="560" height="100%" src="../../../assets/create_003.png"> 
+<img class="center" width="560" height="100%" src="../../assets/create_003.png"> 
  
  Une fois ces fichiers configurés pour créer un ensemble de données GTFS de base, des fichiers supplémentaires (facultatifs) peuvent être ajoutés pour activer d’autres fonctionnalités ou des besoins spécifiques entre les agences de transport en commun et les fournisseurs. Quelques exemples de ces fichiers incluent : 
  
