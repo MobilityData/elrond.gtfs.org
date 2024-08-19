@@ -2,6 +2,15 @@
 
 ### Historial de revisiones
 
+#### Agosto de 2024
+* Se modificó la presencia de stops.txt debido a los servicios bajo demanda. Ver [discusión](https://github.com/google/transit/pull/472).
+* Se aclaró el uso previsto para el timepoint en stop_times.txt. Ver [discusión](https://github.com/google/transit/pull/474).
+* Se agregó que se recomiendan los carteles de destino (Headsigns). Ver [discusión](https://github.com/google/transit/pull/485).
+
+#### Julio de 2024
+* Se actualizó los requisitos de prescencia de feed_info.txt. Ver [discusión](https://github.com/google/transit/pull/460).
+* Se agregó que shapes.txt debería ser incluido. Ver [discusión](https://github.com/google/transit/pull/470).
+
 #### Mayo de 2024 
 
  * Se agregó el campo `rule_priority` en `fare_leg_rules.txt`. Consulte la [discusión](https://github.com/google/transit/pull/418). 
