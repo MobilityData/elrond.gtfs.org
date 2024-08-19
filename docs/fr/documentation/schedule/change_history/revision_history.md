@@ -2,6 +2,15 @@
 
 ### Historique des révisions
 
+#### Août 2024
+* Modifier la présence de stops.txt en raison des services à la demande. Voir [discussion](https://github.com/google/transit/pull/472).
+* Clarifier l'utilisation prévue du timepoint dans stop_times.txt. Voir [discussion](https://github.com/google/transit/pull/474).
+* Ajout que les Girouettes sont recommandés. Voir [discussion](https://github.com/google/transit/pull/485).
+
+#### Juillet 2024
+* Mettre à jour l'exigence pour feed_info.txt. Voir [discussion](https://github.com/google/transit/pull/460).
+* Ajout que shapes.txt doit être inclus. Voir [discussion](https://github.com/google/transit/pull/470).
+
 #### Mai 2024 
  * Ajout du champ `rule_priority` dans `fare_leg_rules.txt`. Voir [discussion](https://github.com/google/transit/pull/418). 
  * Clarifier la présence de `stops.zone_id`. Voir [discussion](https://github.com/google/transit/pull/432). 
