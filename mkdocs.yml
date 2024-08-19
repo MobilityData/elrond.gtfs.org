@@ -110,6 +110,8 @@ plugins:
   - redirects:
       redirect_maps:
         'redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'fr/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'es/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
   - i18n:
       docs_structure: folder
       reconfigure_search: false
