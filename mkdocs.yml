@@ -107,6 +107,9 @@ plugins:
   - external-markdown
   - search:
       lang: en
+  - redirects:
+      redirect_maps:
+        'redirections_only/blog/index.md': 'https://blog.gtfs.org/'
   - i18n:
       docs_structure: folder
       reconfigure_search: false
@@ -174,6 +177,7 @@ plugins:
             Fares v2: Fares v2
             Flex: Flex
             About: Acerca de
+            Blog: Blog
 
         - locale: fr
           name: Français
@@ -232,6 +236,7 @@ plugins:
             Fares v2: Tarifs v2
             Flex: Flex
             About: À propos
+            Blog: Blogue
 nav:
   - Home: index.md
   - Getting started:
@@ -324,3 +329,5 @@ nav:
     - Other: resources/other.md
   - About:
       - about/index.md
+  - Blog:
+      - redirections_only/blog/index.md
