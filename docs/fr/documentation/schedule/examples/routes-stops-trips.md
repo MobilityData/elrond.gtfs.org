@@ -49,8 +49,8 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
  - `stop_code` et `stop_name` contiennent généralement des informations destinées au passager
  - L’emplacement exact est fourni à l’aide de coordonnées (`stop_lat` et `stop_lon`) 
  - Le sixième champ (`location_type`) est utilisé pour différencier les arrêts de stations
- - Le premier enregistrement correspond à un arrêt de bus, donc `location_type=0` 
- - Le deuxième enregistrement correspond à une station, donc `location_type=1` 
+ - La première entrée correspond à un arrêt de bus, donc `location_type=0` 
+ - La deuxième entrée correspond à une station, donc `location_type=1` 
  - Une liste complète des valeurs pour `location_type `t` être trouvé [ici](../../reference/#stopstxt). 
 
 <hr> 

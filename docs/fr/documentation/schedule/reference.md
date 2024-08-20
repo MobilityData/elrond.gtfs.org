@@ -68,7 +68,7 @@
  * **Optionnel** - Le champ ou le fichier peut être omis du jeu de données. 
  * **Requis sous condition** - Le champ ou le fichier doit être inclus dans les conditions décrites dans la description du champ ou du fichier. 
  * **Interdit sous condition** - Le champ ou le fichier ne doit pas être inclus dans les conditions décrites dans la description du champ ou du fichier. 
- * **Recommandé** - Le champ ou le fichier peut être omis du jeu de données, mais il est recommandé de l’inclure. Avant d’omettre ce champ ou ce fichier, les meilleures pratiques doivent être soigneusement évaluées et toutes les implications d’une omission doivent être comprises. 
+ * **Recommandé** - Le champ ou le fichier peut être omis du jeu de données, mais il est recommandé de l’inclure. Avant d’omettre ce champ ou ce fichier, les bonnes pratiques doivent être soigneusement évaluées et toutes les implications d’une omission doivent être comprises. 
  
 ### Types de champs
 
@@ -159,11 +159,11 @@
  * Les fichiers doivent être codés en UTF-8 pour prendre en charge tous les caractères Unicode. Les fichiers qui incluent le caractère de marque d’ordre d’octet (BOM) Unicode sont acceptables. Voir [http://unicode.org/faq/utf_bom.html#BOM](http://unicode.org/faq/utf_bom.html#BOM) pour plus d’informations sur le caractère BOM et UTF-8. 
  * Tous les fichiers du jeu de données doivent être compressés ensemble. Les fichiers doivent résider directement au niveau racine, et non dans un sous-dossier. 
  * Toutes les chaînes de texte destinées aux clients (y compris les noms d’arrêts, les noms d’itinéraires et les panneaux de direction) doivent utiliser une casse mixte (et non TOUTES LES MAJUSCULES), en suivant les conventions locales pour la mise en majuscule des noms de lieux sur les écrans capables d’afficher des caractères minuscules (par exemple « Brighton, Place Churchill », « Villiers-sur-Marne », « Rue du Marché »). 
- * L’utilisation d’abréviations doit être évitée tout au long du flux pour les noms et autres textes (par exemple St.pour Street), à moins qu’un emplacement ne soit appelé par son nom abrégé (par exemple « Aéroport JFK »). Les abréviations peuvent poser problème en termes d’accessibilité par les logiciels de lecture d’écran et les interfaces utilisateur·rice vocales. Un logiciel consommateur peut être conçu pour convertir de manière fiable des mots complets en abréviations à afficher, mais la conversion d’abréviations en mots complets est sujette à un plus grand risque d’erreur. 
+ * L’utilisation d’abréviations doit être évitée tout au long du flux pour les noms et autres textes (par exemple St.pour Street), à moins qu’un emplacement ne soit appelé par son nom abrégé (par exemple « Aéroport JFK »). Les abréviations peuvent poser problème en termes d’accessibilité par les logiciels de lecture d’écran et les interfaces utilisateur vocales. Un logiciel consommateur peut être conçu pour convertir de manière fiable des mots complets en abréviations à afficher, mais la conversion d’abréviations en mots complets est sujette à un plus grand risque d’erreur. 
  
 ## Publication des jeux de données et pratiques générales 
  
- * Les jeux de données doivent être publiés sur une URL publique et permanente, y compris le nom du fichier zip. (par exemple, www.agency.org/gtfs/gtfs.zip). Idéalement, l’URL devrait être directement téléchargeable sans nécessiter de connexion pour accéder au fichier, afin de faciliter le téléchargement en consommant des applications logicielles. Bien qu’il soit recommandé (et constitue la pratique la plus courante) de rendre un jeu de données GTFS librement téléchargeable, si un fournisseur de données doit contrôler l’accès à GTFS pour des raisons de licence ou pour d’autres raisons, il est recommandé de contrôler l’accès au jeu de données GTFS à l’aide de clés API. ce qui facilitera les téléchargements automatiques. 
+ * Les jeux de données doivent être publiés sur une URL publique et permanente, y compris le nom du fichier zip. (par exemple, www.agence.org/gtfs/gtfs.zip). Idéalement, l’URL devrait être directement téléchargeable sans nécessiter de connexion pour accéder au fichier, afin de faciliter le téléchargement en consommant des applications logicielles. Bien qu’il soit recommandé (et constitue la pratique la plus courante) de rendre un jeu de données GTFS librement téléchargeable, si un fournisseur de données doit contrôler l’accès à GTFS pour des raisons de licence ou pour d’autres raisons, il est recommandé de contrôler l’accès au jeu de données GTFS à l’aide de clés API. ce qui facilitera les téléchargements automatiques. 
  * Les données GTFS doivent être publiées par itérations afin qu’un seul fichier situé à un emplacement stable contienne toujours la dernière description officielle du service d’une ou plusieurs agences de transport en commun. 
  * Les jeux de données doivent conserver des identifiants persistants (champs d’identification) pour `stop_id`, `route_id` et `agency_id` à travers les itérations de données dans la mesure du possible. 
  * Un jeu de données GTFS doit contenir le service actuel et à venir (parfois appelé jeu de données « fusionné »). Il existe plusieurs [outils de fusion](../../../resources/gtfs/#gtfs-merge-tools) disponibles qui peuvent être utilisés pour créer un jeu de données fusionné à partir de deux flux GTFS différents. 
@@ -201,7 +201,7 @@
  | Nom du champ | Tapez | Présence | Descriptif | 
  |------|------|------|------| 
  | `stop_id` | Identifiant unique | **Requis** | Identifie un emplacement : arrêt/quai, station, entrée/sortie, nœud générique ou zone d’embarquement (voir `location_type`).<br><br> L’ID doit être unique parmi toutes les valeurs `stops.stop_id`, locations.geojson `id` et `location_groups.location_group_id` .<br><br> Plusieurs routes peuvent utiliser le même `stop_id`. | 
- | `stop_code` | Text | Optionnel | Un texte court ou un numéro qui identifie l’emplacement pour les passagers. Ces codes sont souvent utilisés dans les systèmes d’information sur les transports en commun par téléphone ou imprimés sur la signalisation pour permettre aux usagers d’obtenir plus facilement des informations sur un emplacement particulier. Le « `stop_code` » peut être le même que « `stop_id` » s’il est public. Ce champ doit être laissé vide pour les emplacements sans code présenté aux coureurs. | 
+ | `stop_code` | Text | Optionnel | Un texte court ou un numéro qui identifie l’emplacement pour les passagers. Ces codes sont souvent utilisés dans les systèmes d’information sur les transports en commun par téléphone ou imprimés sur la signalisation pour permettre aux usagers d’obtenir plus facilement des informations sur un emplacement particulier. Le « `stop_code` » peut être le même que « `stop_id` » s’il est public. Ce champ doit être laissé vide pour les emplacements sans code présenté aux passagers. | 
  | `stop_name` | Text | **Requis sous condition** | Nom de l’emplacement. Le « `stop_name` » doit correspondre au nom de l’agence destiné aux usagers de l’emplacement, tel qu’imprimé sur un horaire, publié en ligne ou représenté sur la signalisation. Pour les traductions dans d’autres langues, utilisez [translations.txt](#translationstxt).<br><br> Lorsque l’emplacement est une zone d’embarquement (`location_type=4`), le `stop_name` doit contenir le nom de la zone d’embarquement tel qu’affiché par l’agence. Il peut s’agir d’une simple lettre (comme dans certaines gares ferroviaires interurbaines européennes) ou d’un texte comme « Zone d’embarquement pour fauteuils roulants » (métro de New York) ou « Chef des trains courts » (RER de Paris).<br><br> Requis sous condition:<br> - **Requis** pour les emplacements qui sont des arrêts (`location_type=0`), des gares (`location_type=1`) ou des entrées/sorties (`location_type=2`).<br> - Optionnel pour les emplacements qui sont des nœuds génériques (`location_type=3`) ou des zones d’embarquement (`location_type=4`).| 
  | `tts_stop_name` | Text | Optionnel | Version lisible du `stop_name`. Voir « Champ de synthèse vocale » dans les [Définitions des termes](#term-definitions) pour en savoir plus. | 
  | `stop_desc` | Text | Optionnel | Description du lieu qui fournit des informations utiles et de qualité. Ne doit pas être un double de `stop_name`.| 
@@ -349,7 +349,7 @@
  Clé primaire (`fare_id`) 
  
  **Versions**<br> 
- Il existe deux options de modélisation pour décrire les tarifs. GTFS- Tarifs V1 est l’option héritée pour décrire les informations tarifaires minimales. GTFS-Fares V2 est une méthode mise à jour qui permet un compte rendu plus détaillé de la structure tarifaire d’une agence. Les deux peuvent être présentes dans un jeu de données, mais une seule méthode doit être utilisée par un application réutilisatrice de données pour un jeu de données donné. Il est recommandé que GTFS-Fares V2 soit prioritaire sur GTFS- Tarifs V1.<br><br> Les fichiers associés à GTFS- Tarifs V1 sont :<br> - [fare_attributes.txt](#fare_attributestxt)<br> - [fare_rules.txt](#fare_rulestxt)<br><br> Les fichiers associés à GTFS-Fares V2 sont :<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
+ Il existe deux options de modélisation pour décrire les tarifs. GTFS-Fares v1 est l’option héritée pour décrire les informations tarifaires minimales. GTFS-Fares V2 est une méthode mise à jour qui permet un compte rendu plus détaillé de la structure tarifaire d’une agence. Les deux peuvent être présentes dans un jeu de données, mais une seule méthode doit être utilisée par un application réutilisatrice de données pour un jeu de données donné. Il est recommandé que GTFS-Fares V2 soit prioritaire sur GTFS-Fares v1.<br><br> Les fichiers associés à GTFS-Fares v1 sont :<br> - [fare_attributes.txt](#fare_attributestxt)<br> - [fare_rules.txt](#fare_rulestxt)<br><br> Les fichiers associés à GTFS-Fares V2 sont :<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
  
 <br> 
  
@@ -359,7 +359,7 @@
  | `price` | float non négatif | **Requis** | Prix ​​du tarif, dans l’unité spécifiée par `currency_type`. | 
  | `currency_type` | Code devise | **Requis** | Monnaie utilisée pour payer le voyage. | 
  | `payment_method` | Énumération | **Requis** | Indique quand le tarif doit être payé. Les options valides sont :<br><br> `0` - Le tarif est payé à bord.<br> `1` - Le tarif doit être payé avant l’embarquement. | 
- | `transfers` | Énumération | **Requis** | Indique le nombre de transferts autorisés sur ce tarif. Les options valides sont :<br><br> `0` - Aucun transfert autorisé sur ce tarif.<br> `1` - Les coureurs peuvent être transférés une seule fois.<br> `2` - Les coureurs peuvent transférer deux fois.<br> vide- Les transferts illimités sont autorisés. | 
+ | `transfers` | Énumération | **Requis** | Indique le nombre de transferts autorisés sur ce tarif. Les options valides sont :<br><br> `0` - Aucun transfert autorisé sur ce tarif.<br> `1` - Les passagers peuvent être transférés une seule fois.<br> `2` - Les passagers peuvent transférer deux fois.<br> vide- Les transferts illimités sont autorisés. | 
  | `agency_id` | Clé étrangère faisant référence à `agency.agency_id` | **Requis sous condition** | Identifie l’agence concernée pour un tarif.<br><br> Requis sous condition:<br> - **Requis** si plusieurs agences sont définies dans [agency.txt](#agencytxt).<br> - Recommandé autrement. | 
  | `transfer_duration` | Entier non négatif | Optionnel | Durée en secondes avant l’expiration d’un transfert. Lorsque `transfers`=`0`, ce champ peut être utilisé pour indiquer la durée de validité d’un billet ou il peut être laissé vide. | 
  
@@ -391,12 +391,12 @@
  
  Clé primaire (`*`) 
  
- Utilisée pour décrire les tarifs qui peuvent varier en fonction de l’heure de la journée, le jour de la semaine ou un jour particulier de l’année. Les délais peuvent être associés aux produits tarifaires dans [fare_leg_rules.txt](#fare_leg_rulestxt).<br> 
+ Utilisée pour décrire les tarifs qui peuvent varier en fonction de l’heure de la journée, le jour de la semaine ou un jour particulier de l’année. Les périodes horaires peuvent être associées aux produits tarifaires dans [fare_leg_rules.txt](#fare_leg_rulestxt).<br> 
  Il ne doit pas y avoir d’intervalles de temps qui se chevauchent pour les mêmes valeurs `timeframe_group_id` et `service_id`. 
  
  | Nom du champ | Tapez | Présence | Descriptif | 
  |------|------|------|------| 
- | `timeframe_group_id` | ID | **Requis** | Identifie un délai ou un ensemble de délais. | 
+ | `timeframe_group_id` | ID | **Requis** | Identifie une période horaire ou un ensemble de périodes horaires. | 
  | `start_time` | Temps | **Requis sous condition** | Définit le début d’une période. L’intervalle inclut l’heure de début.<br> Les valeurs supérieures à `24:00:00` sont interdites. Une valeur vide dans `start_time` est considérée comme `00:00:00`.<br><br> Requis sous condition:<br> - **Requis** si `timeframes.end_time` est défini.<br> - **Interdit** sinon | 
  | `end_time` | Temps | **Requis sous condition** | Définit la fin d’une période. L’intervalle n’inclut pas l’heure de fin.<br> Les valeurs supérieures à `24:00:00` sont interdites. Une valeur vide dans `end_time` est considérée comme `24:00:00`.<br><br> Requis sous condition:<br> - **Requis** si `timeframes.start_time` est défini.<br> - **Interdit** sinon | 
  | `service_id` | Clé étrangère faisant référence à `calendar.service_id` ou `calendar_dates.service_id` | **Requis** | Identifie un ensemble de dates auxquelles une période est en vigueur. | 
@@ -535,7 +535,7 @@
  | Nom du champ | Tapez | Présence | Descriptif | 
  |------|------|------|------| 
  | `area_id` | Identifiant unique | **Requis** | Identifie une zone. Doit être unique dans [areas.txt](#areastxt). | 
- | `area_name` | Text | **Optionnel** | Le nom de la zone tel qu’affiché au coureur. | 
+ | `area_name` | Text | **Optionnel** | Le nom de la zone tel qu’affiché au passager. | 
  
 ### stop_areas.txt 
  
@@ -759,8 +759,8 @@ Trip B              /
  | &nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `type` | Chaîne | **Requis** | `"Fonctionnalité"` | 
  | &nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `id` | Chaîne | **Requis** | Identifie un emplacement. L’ID doit être unique parmi toutes les valeurs `stops.stop_id`, locations.geojson `id` et `location_groups.location_group_id`. | 
  |&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `properties` | Objet | **Requis** | Clés de propriété d’emplacement. | 
- | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `stop_name` | Chaîne | Optionnel | Indique le nom de l’emplacement tel qu’affiché aux coureurs. | 
- | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `stop_desc` | Chaîne | Optionnel | Description significative de l’emplacement pour aider à orienter les coureurs. | 
+ | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `stop_name` | Chaîne | Optionnel | Indique le nom de l’emplacement tel qu’affiché aux passagers. | 
+ | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `stop_desc` | Chaîne | Optionnel | Description significative de l’emplacement pour aider à orienter les passagers. | 
  | &nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `geometry` | Objet | **Requis** | Géométrie du lieu. | 
  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `type` | Chaîne | **Requis** | Doit être du type :<br> - `"Polygone"`<br> - `"MultiPolygone"` | 
  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\-&nbsp; `coordinates` | Tableau | **Requis** | Coordonnées géographiques (latitude et longitude) définissant la géométrie du lieu. | 
@@ -784,7 +784,7 @@ Trip B              /
  | `prior_notice_start_day` | Entier | **Interdit sous condition** | Au plus tôt la veille du voyage pour faire la demande de réservation.<br><br> Exemple : « Le trajet peut être réservé au plus tôt une semaine à l’avance à minuit » sera codé comme `prior_notice_start_day=7`.<br><br> **Interdit sous condition** :<br> - **Interdit** pour `booking_type=0`.<br> - **Interdit** pour `booking_type=1` si `prior_notice_duration_max` est défini.<br> - Optionnel sinon. | 
  | `prior_notice_start_time` | Temps | **Requis sous condition** | Le plus tôt possible le jour précédant le voyage pour faire la demande de réservation.<br><br> Exemple : « Le trajet peut être réservé au plus tôt une semaine à l’avance à minuit » sera codé comme `prior_notice_start_time=00:00:00`.<br><br> **Requis sous condition** :<br> - **Requis** si `prior_notice_start_day` est défini.<br> - **Interdit** sinon. | 
  | `prior_notice_service_id` | Clé étrangère faisant référence à `calendar.service_id` | **Interdit sous condition** | Indique les jours de service pendant lesquels `prior_notice_last_day` ou `prior_notice_start_day` sont comptés.<br><br> Exemple : s’il est vide, `prior_notice_start_day=2` sera deux jours calendaires à l’avance. S’il est défini comme un `service_id` contenant uniquement des jours ouvrables (jours de la semaine sans jours fériés), `prior_notice_start_day=2` sera deux jours ouvrables à l’avance.<br><br> **Interdit sous condition** :<br> - Optionnel si `booking_type=2`.<br> - **Interdit** sinon. | 
- | `message` | Text | Optionnel | Message destiné aux passagers utilisant le service à une `stop_time` lors de la réservation d’un ramassage et d’un retour à la demande. Destiné à fournir un minimum d’informations à transmettre dans une interface utilisateur·rice sur l’action qu’un passager doit entreprendre pour utiliser le service. | 
+ | `message` | Text | Optionnel | Message destiné aux passagers utilisant le service à une `stop_time` lors de la réservation d’un ramassage et d’un retour à la demande. Destiné à fournir un minimum d’informations à transmettre dans une interface utilisateur sur l’action qu’un passager doit entreprendre pour utiliser le service. | 
  | `pickup_message` | Text | Optionnel | Fonctionne de la même manière que `message`, mais utilisé lorsque les passagers bénéficient d’un ramassage à la demande uniquement. | 
  | `drop_off_message` | Text | Optionnel | Fonctionne de la même manière que `message`, mais utilisé lorsque les passagers bénéficient d’un dépôt à la demande uniquement. | 
  | `phone_number` | Numéro de téléphone | Optionnel | Numéro de téléphone à appeler pour faire la demande de réservation. | 

@@ -1,7 +1,7 @@
-# Tarifs v1 
+# Fares v1 
  
- Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_rules.txt](../../reference/#fare_rulestxt), Tarifs v1 a historiquement été la méthode officielle pour décrire les informations tarifaires dans GTFS. Cependant, les deux fichiers sont limités dans l’étendue des facteurs qu’ils peuvent décrire efficacement et sont ambigus à mettre en œuvre. 
- [Tarifs v2](../../examples/fares-v2/) est un projet d’extension en cours de développement actif et vise à remédier aux limitations de Tarifs v1. 
+ Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 a historiquement été la méthode officielle pour décrire les informations tarifaires dans GTFS. Cependant, les deux fichiers sont limités dans l’étendue des facteurs qu’ils peuvent décrire efficacement et sont ambigus à mettre en œuvre. 
+ [Fares v2](../../examples/fares-v2/) est un projet d’extension en cours de développement actif et vise à remédier aux limitations de Fares v1. 
  
 ## Définir les règles tarifaires d’une agence 
  
@@ -17,8 +17,8 @@ presto_fare,3.2,CAD,1,,7200
 ```
 
 - Le prix du tarif est indiqué sous prix et `currency_type` 
- - Les usagers doivent payer leur tarif aux portes tarifaires de la gare avant de monter dans le métro. Ceci est représenté par `payment_method=1` 
- - Le champ transferts est laissé vide pour représenter les transferts illimités
+ - Les usagers doivent payer leur titre de transport aux portiques de la station avant de monter dans le métro. Ceci est représenté par `payment_method=1` 
+ - Le champ `transferts` est laissé vide pour représenter les transferts illimités
  - Le champ `transfer_duration` correspond à la fenêtre de transfert de 2 heures (en secondes) 
  
  Le deuxième fichier, [fare_rules.txt](../../reference/#fare_rulestxt) attribue des tarifs aux trajets en liant un tarif à un itinéraire ainsi qu’une origine/destination sur cet itinéraire. 
@@ -33,7 +33,7 @@ TTC,Line1,1
 TTC,Line2,1
 ``` 
  
- Dans cet exemple, les transferts à La station Bloor-Yonge est modélisée. Pour cela, cette station est modélisée comme deux arrêts distincts, le premier est la station Bloor qui est desservie par la ligne 1, et le second est la station Yonge, qui est desservie par la ligne 2. Les deux ont `zone_id=ttc_subway_stations` afin de regrouper tous stations de métro dans une zone tarifaire unique. 
+ Dans cet exemple, les transferts à La station Bloor-Yonge sont modélisés. Pour cela, cette station est modélisée comme deux arrêts distincts, le premier est la station Bloor qui est desservie par la ligne 1, et le second est la station Yonge, qui est desservie par la ligne 2. Les deux ont `zone_id=ttc_subway_stations` afin de regrouper toutes les stations de métro dans une zone tarifaire unique. 
  
  [** stops.txt**](../../reference/#stopstxt) 
  
@@ -65,8 +65,8 @@ Bloor,Yonge,line1,line2,0
 Yonge,Bloor,line2,line1,0
 ```
  
- - Les premiers modèles transfèrent de la ligne 1 à la ligne 2 en utilisant `from_route_id` et `to_route_id` de la station Bloor à la station Yonge
- - Le deuxième modèle transfère de la ligne 2 à la ligne 1 en utilisant `from_route_id` et `to_route_id` de la station Yonge à la station Bloor
+ - La première entrée modélise les transferts de la ligne 1 à la ligne 2 en utilisant `from_route_id` et `to_route_id` de la station Bloor à la station Yonge
+ - La deuxième entrée modélise les transferts de la ligne 2 à la ligne 1 en utilisant `from_route_id` et `to_route_id` de la station Yonge à la station Bloor
  - La valeur de `transfer_type` est `0` puisqu’il n’y a pas d’exigences ou de considérations spécifiques pour les transferts 
  
- <sup>[Exemple de source](https://www.ttc.ca/Fares-and-passes)</sup> 
+ <sup>[Source de l'exemple](https://www.ttc.ca/Fares-and-passes)</sup> 

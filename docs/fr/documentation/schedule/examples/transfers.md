@@ -34,7 +34,7 @@
  
  Dans cet exemple : 
  
- - Un utilisateur·rice qui recherche un itinéraire de l’arrêt A à l’arrêt E est invité à embarquer à l’arrêt A à 12h00 sur l’itinéraire A et à rester sur le véhicule lorsqu’il atteint l’arrêt. C après la fin de `RouteATrip1`. En effet, le même véhicule dessert `RouteBTrip1` pour la route B. 
+ - Un utilisateur qui recherche un itinéraire de l’arrêt A à l’arrêt E est invité à embarquer à l’arrêt A à 12h00 sur l’itinéraire A et à rester sur le véhicule lorsqu’il atteint l’arrêt. C après la fin de `RouteATrip1`. En effet, le même véhicule dessert `RouteBTrip1` pour la route B. 
  - Les passagers de `RouteATrip1` qui souhaitent continuer jusqu’à un arrêt sur `RouteBTrip1` peuvent rester dans le véhicule pour ce transfert. 
  - Les passagers d’autres voyages effectués à bord d’autres véhicules sur ces mêmes itinéraires n’ont pas cette possibilité car ils utilisent des véhicules différents pour chaque voyage. 
  

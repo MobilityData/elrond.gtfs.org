@@ -1,27 +1,27 @@
-# Tarifs v2 
+# Fares v2 
  
- Tarifs v2 est un projet d’extension GTFS qui vise à remédier aux limitations de Tarifs v1. Ce projet d’extension est adopté par itérations. Les exemples ci-dessous expliquent comment modéliser les concepts de base, y compris les produits tarifaires et comment les passagers peuvent utiliser leur tarif pour les transferts. Voir plus d’informations sur [le projet d’extension Tarifs v2 ici](../../../../community/extensions/fares-v2). 
+ Fares v2 est un projet d’extension GTFS qui vise à remédier aux limitations de Fares v1. Ce projet d’extension est adopté par itérations. Les exemples ci-dessous expliquent comment modéliser les concepts de base, y compris les produits tarifaires et comment les passagers peuvent utiliser leur tarif pour les transferts. Voir plus d’informations sur [le projet d’extension Fares v2 ici](../../../../community/extensions/fares-v2). 
  
- Entre-temps, les producteurs peuvent mettre en œuvre Tarifs v2 parallèlement à la mise en œuvre de Tarifs v1 dans le même ensemble de données, car il n’y a pas de conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. 
- Avec l’adoption et l’approbation suffisante de Tarifs v2, Tarifs v1 pourrait être obsolète à l’avenir. 
- En attendant, les producteurs peuvent implémenter Tarifs v2 parallèlement à l’implémentation de Tarifs v1 dans le même ensemble de données car il n’existe aucun conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. 
+ Entre-temps, les producteurs peuvent mettre en œuvre Fares v2 parallèlement à la mise en œuvre de Fares v1 dans le même ensemble de données, car il n’y a pas de conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. 
+ Avec l’adoption et l’approbation suffisante de Fares v2, Fares v1 pourrait être obsolète à l’avenir. 
+ En attendant, les producteurs peuvent implémenter Fares v2 parallèlement à l’implémentation de Fares v1 dans le même ensemble de données car il n’existe aucun conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. 
  
- Les exemples ci-dessous décrivent comment modéliser les données à l’aide de Tarifs v2 et peuvent être complétés par des fonctionnalités expérimentales décrites dans le [document de proposition](https://share.mobilitydata.org/gtfs-fares-v2). 
+ Les exemples ci-dessous décrivent comment modéliser les données à l’aide de Fares v2 et peuvent être complétés par des fonctionnalités expérimentales décrites dans le [document de proposition](https://share.mobilitydata.org/gtfs-fares-v2). 
  
-## Formation Tarifs v2 et ressources gratuites 
+## Formation Fares v2 et ressources gratuites 
  
- Pour démarrer avec GTFS Fares-v2, vous pouvez regarder ces quatre didacticiels vidéo et suivre [cette ressource écrite](https://share.mobilitydata.org/Fares-v2-writing-resource-guide-for-videos). 
+ Pour démarrer avec GTFS-Fares v2, vous pouvez regarder ces quatre didacticiels vidéo et suivre [cette ressource écrite](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos). 
  
- - [Vidéo 1](https://share.mobilitydata.org/faresv2-intro) : GTFS Fares-v2 : Une introduction
- - [Vidéo 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets) : Tarifs GTFS v2 : Configuration de Google Sheets
- - [Vidéo 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data) : Tarifs GTFS v2 : Création et maintenance des données
- - [Vidéo 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing) : Exportation et publication des Tarifs GTFS v2 
+ - [Vidéo 1](https://share.mobilitydata.org/faresv2-intro) : GTFS-Fares v2 : Une introduction
+ - [Vidéo 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets) : GTFS-Fares v2 : Configuration de Google Sheets
+ - [Vidéo 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data) : GTFS-Fares v2 : Création et maintenance des données
+ - [Vidéo 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing) : Exportation et publication des GTFS-Fares v2 
  
  Ils ont été créés pour les agences de transport en commun pour comprendre l’objectif de GTFS-Fares v2, ainsi que comment utiliser Google Sheets pour créer, modifier et télécharger des données GTFS-Fares v2. 
  
- Ce [modèle Tarifs v2](https://share.mobilitydata.org/faresv2-template) peut être utilisé pour créer les fichiers de tarifs nécessaires à partir de zéro. 
+ Ce [modèle Fares v2](https://share.mobilitydata.org/faresv2-template) peut être utilisé pour créer les fichiers de tarifs nécessaires à partir de zéro. 
  
-## Exemples de modélisation de données Tarifs v2
+## Exemples de modélisation de données Fares v2
 
 ### Définir un titre de transport 
  
@@ -50,9 +50,9 @@
  
 ### Créer des règles pour les trajets aller simple 
  
- Dans GTFS, un trajet tarifaire correspond à un trajet effectué par un passager sans transfert entre différents modes, itinéraires, réseaux ou agences. Dans le flux de la Maryland Transit Administration, un tarif unique permet aux usagers de voyager dans n’importe quelle paire d’arrêts et de stations de métro au sein du réseau «principal» des bus BaltimoreLink, des itinéraires Light RailLink et Metro SubwayLink. 
+ Dans GTFS, un trajet tarifaire correspond à un trajet effectué par un passager sans transfert entre différents modes, itinéraires, réseaux ou agences. Dans le flux de la Maryland Transit Administration, un tarif unique permet aux usagers de voyager entre n’importe quels arrêts et stations de métro au sein du réseau «principal» des bus BaltimoreLink, des itinéraires Light RailLink et Metro SubwayLink. 
  
- Les groupes d’étapes définissent des trajets au sein d’un réseau depuis une origine vers une destination (ou un ensemble d’origines vers un ensemble de destinations si les identifiants de zone correspondent à des arrêts groupés). Le fichier ci-dessous décrit les règles pour voyager n’importe où au sein du réseau central de la Maryland Transit Administration. Chaque règle correspond à l’un des produits tarifaires réguliers dans [Définir un exemple de tarif de transport](/#definir-un-titre-de-transport). 
+ Les groupes de trajets tarifaires définissent des trajets au sein d’un réseau depuis une origine vers une destination (ou un ensemble d’origines vers un ensemble de destinations si les identifiants de zone correspondent à des arrêts groupés). Le fichier ci-dessous décrit les règles pour voyager n’importe où au sein du réseau central de la Maryland Transit Administration. Chaque règle correspond à l’un des produits tarifaires réguliers dans [Définir un exemple de tarif de transport](/#definir-un-titre-de-transport). 
  
  [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
@@ -80,12 +80,12 @@
  
  Le fichier ci-dessus représente cela en GTFS avec les champs suivants : 
  
- - Un transfert est possible vers et depuis des étapes qui sont un aller simple (`core_local_one_way_trip`) 
+ - Un transfert est possible vers et depuis des trajets qui sont un aller simple (`core_local_one_way_trip`) 
  - Le `transfer_count` est réglé à `-1` car il n’y a pas de limite sur le nombre de transferts autorisés
  - La `duration_limit` est fixée à `5400` secondes, ce qui équivaut à 90 minutes
- - La `duration_limit_type` est fixée à `1` puisque le temps de transfert commence lorsque le passager part sur n’importe quel itinéraire dans le segment tarifaire `core_local_one_way_trip` et se termine lorsqu’il part sur un segment tarifaire différent. 
+ - La `duration_limit_type` est fixée à `1` puisque le temps de transfert commence lorsque le passager débarque de n’importe quel itinéraire dans le segment tarifaire `core_local_one_way_trip` et se termine lorsqu’il débarque d'un segment tarifaire différent. 
  - Le `fare_transfer_type` est défini sur `0` puisque les passagers ne paient que le premier tarif. Il n’y a pas de frais de transfert ni de deuxième tarif pour un transfert dans la fenêtre de 90 minutes. Par conséquent, le coût peut être modélisé comme la somme du premier tarif et la somme des frais de transfert. 
- - Le `transfer_count` est réglé sur `-1` car le coureur peut transférer un nombre illimité de fois dans la fenêtre `duration_limit` de 90 minutes. 
+ - Le `transfer_count` est réglé sur `-1` car le passager peut transférer un nombre illimité de fois dans la fenêtre `duration_limit` de 90 minutes. 
  
  Après avoir défini le tarif, créé le `fare_leg_rule` approprié et défini le `fare_transfer_rule`, vous pouvez voir le `core_local_oneway_fare` de 2,00 $ USD apparaître dans les planificateurs de voyage. Voici un exemple de Transit : 
  
@@ -160,7 +160,7 @@
  
  Vous trouverez ci-dessous un exemple d’extrait du <a href="https://511.org/open-data/transit" target="_blank">flux régional de la région de la baie de San Francisco</a> accessible avec l’API 511 SF Bay. 
  
- `Clipper` est décrit comme une carte de transport physique avec `fare_media_type=2`. `SFMTA Munimobile` est décrit comme une application mobile avec `fare_media_type=2`. Le `cash` n’a pas de support tarifaire, puisqu’il est remis directement au conducteur sans ticket. Par conséquent, `Cash` vaut `fare_media_type=0`. 
+ `Clipper` est décrit comme une carte de transport physique avec `fare_media_type=2`. `SFMTA Munimobile` est décrit comme une application mobile avec `fare_media_type=2`. Le paiement en espèces n’a pas de support tarifaire, puisqu’il est remis directement au conducteur sans ticket. Par conséquent, `Cash` vaut `fare_media_type=0`. 
  
  [** fare_media.txt**](../../reference/#fare_mediatxt) 
  
@@ -208,7 +208,7 @@
 | SF:local:single | Muni single local fare | 3     | USD | cash |
 | SF:local:single | Muni single local fare  | 2.5   |USD | clipper |
  
- Dans Apple Maps, les passagers peuvent voir l’évolution du prix de leur billet. Vous pouvez comparer les prix des billets sous l’instruction « Monter à bord du train Muni J Church » : 
+ Dans Apple Maps, les passagers peuvent voir l’évolution du prix de leur billet. Vous pouvez comparer les prix des billets sous l’instruction « Board the Muni J Church train » : 
  
 <div class="flex-photos"> 
 <img src="../../../../assets/apple-muni-cash.jpg" alt="tarif en espèces de 3 $ USD"> 
@@ -220,7 +220,7 @@
  
 ### Décrire une option de support tarifaire sans contact 
  
- <a href="https://vimeo.com/539436401" target="_blank">Le Clean Air Express dans le nord du comté de Santa Barbara accepte les paiements sans contact</a> par carte de crédit, Google Pay et Apple Payer. 
+ <a href="https://vimeo.com/539436401" target="_blank">Le Clean Air Express dans le nord du comté de Santa Barbara accepte les paiements sans contact</a> par carte de crédit, Google Pay et Apple Pay. 
  
  Dans le flux Clean Air Express, il existe un média tarifaire `tap_to_ride` avec un `fare_media_type=3`, puisqu’il s’agit d’une option cEMV (Europay, Mastercard et Visa sans contact). 
  
@@ -257,7 +257,7 @@
 | sunday_service   | 0      | 0       | 0         | 0        | 0      | 0        | 1      | 20220708   | 20221231 |
  
  
- Ensuite, les délais souhaités sont définis dans `timeframes.txt`, en fournissant un identifiant, les jours applicables via une référence à `calendar.service_id`, et le cas échéant, l’heure de début et l’heure de fin pour chaque heure période. 
+ Ensuite, les périodes horaires souhaitées sont définies dans `timeframes.txt`, en fournissant un identifiant, les jours applicables via une référence à `calendar.service_id`, et le cas échéant, l’heure de début et l’heure de fin pour chaque période horaire. 
  
  [** timeframes.txt**](../../reference/#timeframestxt) 
  
@@ -283,8 +283,8 @@
 | weekend_fare    | Weekend Metrorail one-way fare                | 2      | USD      |
 | late_night_fare | Late Night flat fare (Mon - Fri after 9:30pm) | 2      | USD      |
  
- Enfin, les délais sont associés aux produits tarifaires dans `fare_leg_rules.txt` à l’aide des champs `from_timeframe_group_id` et `to_timeframe_group_id`. Ces champs déterminent si un tarif s’applique uniquement au début de l’étape ou à la fois au début et à la fin de l’étape. 
- Pour cet exemple, basé sur les tarifs WMATA, le tarif dépend uniquement de l’heure de départ de l’étape, donc `to_timeframe_group_id` est laissé vide. 
+ Enfin, les périodes horaires sont associées aux produits tarifaires dans `fare_leg_rules.txt` à l’aide des champs `from_timeframe_group_id` et `to_timeframe_group_id`. Ces champs déterminent si un tarif s’applique uniquement au début du trajet ou à la fois au début et à la fin du trajet. 
+ Pour cet exemple, basé sur les tarifs WMATA, le tarif dépend uniquement de l’heure de départ du trajet, donc `to_timeframe_group_id` est laissé vide. 
  
  [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
@@ -295,9 +295,9 @@
 | 1          | peak_fare       | weekday_peak            |                       |
 | 1          | regular_fare    | weekday_offpeak         |                       |
  
- Notez que `network_id` fait référence à l’ID étranger `networks.network_id` ou `routes.network_id`, et que la sélection du produit tarifaire correct pour chaque voyage sera une combinaison d’heures d’arrivée et de départ de `stop_times.txt` ainsi que les heures définies dans `timeframes.txt`. 
+ Notez que `network_id` fait référence à la clé étrangère `networks.network_id` ou `routes.network_id`, et que la sélection du produit tarifaire correct pour chaque voyage sera une combinaison d’heures d’arrivée et de départ de `stop_times.txt` ainsi que les heures définies dans `timeframes.txt`. 
  
- Dans ce cas, un utilisateur·rice payant pour un trajet partant à 7h30 devrait payer 5,00 USD (tarif pointe) tandis qu’un autre utilisateur·rice partant à 11h30 ne devrait payer qu’un tarif de 3,00 USD ( Tarif heures creuses). 
+ Dans ce cas, un utilisateur payant pour un trajet partant à 7h30 devrait payer 5,00 USD (tarif pointe) tandis qu’un autre utilisateur partant à 11h30 ne devrait payer qu’un tarif de 3,00 USD ( Tarif heures creuses). 
  
  
 ### Définir des tarifs variables dans le temps ainsi que des tarifs basés sur la zone 
@@ -351,7 +351,7 @@
 |------------|-----------------|
 | mnr_hudson | MNR Hudson Line |
  
- Les jours de service pour les trains 3 et 13 sont définis à l’aide de `calendar.txt`. Notamment, d’autres enregistrements avec des jours génériques (c’est-à-dire les jours de la semaine, le week-end et n’importe quel jour) qui ne sont associés à aucun voyage sont définis, et ceux-ci seront associés à des délais afin de modéliser des `time-variable fares`. 
+ Les jours de service pour les trains 3 et 13 sont définis à l’aide de `calendar.txt`. Notamment, d’autres entrées avec des jours génériques (c’est-à-dire les jours de la semaine, le week-end et n’importe quel jour) qui ne sont associées à aucun voyage sont définies, et celles-ci seront associées à des périodes horaires afin de modéliser des `time-variable fares`. 
  
  [** calendar.txt**](../../reference/#calendartxt) 
  
@@ -364,7 +364,7 @@
 | anyday     | 1      | 1       | 1         | 1        | 1      | 1        | 1      | 20220101   | 20240101 |
  
  
- Les enregistrements sont créés dans `timeframes.txt`, y compris les cas où l’heure couvre la période de 24 heures (« à tout moment », « jours de la semaine » et « week-end ») et les périodes de pointe et hors pointe : 
+ Les entrées sont créés dans `timeframes.txt`, y compris les cas où l’heure couvre la période de 24 heures (« à tout moment », « jours de la semaine » et « week-end ») et les périodes de pointe et hors pointe : 
  
  * AM Peak : de 6h à 10h en semaine 
  * AM2PM Peak : de 6h à 9h et de 16h à 20h en semaine 
@@ -388,7 +388,7 @@
 | mnr_notam2pmpeak   | 20:00:00   | 24:00:00 | weekdays   |
  
  
- Chaque produit tarifaire individuel est défini dans `fare_products.txt`. Étant donné que Cold Spring est situé dans la zone 7, cet exemple répertorie uniquement les trajets entre les zones 1 et 7. L’ensemble de données complet comprendrait un enregistrement pour chaque prix défini par une combinaison d’heure et de zone. De plus, l’exemple n’affiche qu’un seul support tarifaire (`paper`), mais des combinaisons supplémentaires pourraient être créées si les prix variaient également en fonction du support tarifaire. 
+ Chaque produit tarifaire individuel est défini dans `fare_products.txt`. Étant donné que Cold Spring est situé dans la zone 7, cet exemple répertorie uniquement les trajets entre les zones 1 et 7. Le jeu de données complet comprendrait un enregistrement pour chaque prix défini par une combinaison d’heure et de zone. De plus, l’exemple n’affiche qu’un seul support tarifaire (`paper`), mais des combinaisons supplémentaires pourraient être créées si les prix variaient également en fonction du support tarifaire. 
  
  [** fare_products.txt**](../../reference/#fare_productstxt) 
  
@@ -399,7 +399,7 @@
 | mnr_HUD-7:1_adult_peak | Inbound Adult Peak Zonal Fare      | paper         | 20.00  | USD      |
 | mnr_HUD-7:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 15.00  | USD      |
  
- Enfin, les combinaisons de zones d’origine et de destination, ainsi que leurs délais respectifs sont associés au produit tarifaire correspondant dans `fare_leg_rules.txt`. Ici, les voyages commençant ou arrivant dans la zone 1 (c’est-à-dire `area_id=mnr_1`) pendant les heures de pointe sont soumis à un tarif de pointe spécifique correspondant aux zones d’arrivée et de départ du voyage (c’est-à-dire `fare_product_id=mnr_1:HUD-7_adult_peak`). 
+ Enfin, les combinaisons de zones d’origine et de destination, ainsi que leurs périodes horaires respectives sont associées au produit tarifaire correspondant dans `fare_leg_rules.txt`. Ici, les voyages commençant ou arrivant dans la zone 1 (c’est-à-dire `area_id=mnr_1`) pendant les heures de pointe sont soumis à un tarif de pointe spécifique correspondant aux zones d’arrivée et de départ du voyage (c’est-à-dire `fare_product_id=mnr_1:HUD-7_adult_peak`). 
  
  [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
@@ -413,9 +413,9 @@
 | mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult_peak | weekdays                | mnr_ampeak            |
  
  
- En utilisant cet ensemble de données, un utilisateur·rice embarquant dans le train#869 (`service_id=3`) dont le départ est prévu de Grand Central (zone `mnr_1`) à 18h45 devrait payer un tarif de zone de pointe pour adultes sortants de 20,00 USD, puisque le voyage est originaire de la période `mnr_am2pmpeak` et de la `zone mnr_1`. 
+ En utilisant cet ensemble de données, un utilisateur embarquant dans le train#869 (`service_id=3`) dont le départ est prévu de Grand Central (zone `mnr_1`) à 18h45 devrait payer un tarif "Outbound Adult Peak Zonal Fare" de 20,00 USD, puisque le voyage est originaire de la période `mnr_am2pmpeak` et de la `zone mnr_1`. 
  
- Alternativement, un utilisateur·rice voyageant dans le train n° 883 (`service_id= 13`) paierait un tarif de zone hors pointe pour adultes sortants de seulement 15,00 USD, car ce train doit partir de Grand Central (zone `mnr_1`) à 21h04. 
+ Alternativement, un utilisateur voyageant dans le train n° 883 (`service_id= 13`) paierait un tarif "Outbound Adult Off Peak Zonal Fare" de seulement 15,00 USD, car ce train doit partir de Grand Central (zone `mnr_1`) à 21h04. 
  
  Dans <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, les passagers peuvent voir l’évolution du prix de leur billet et comparer les prix en fonction du départ prévu du train : 
  
