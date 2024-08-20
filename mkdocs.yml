@@ -73,12 +73,37 @@ extra:
       - name: English
         link: /
         lang: en
-      - name: Español
-        link: /es/
-        lang: es
       - name: Français
         link: /fr/
         lang: fr
+      - name: Español
+        link: /es/
+        lang: es
+      - name: Deutsch (wird bald verfügbar sein)
+        link: /de/
+        lang: de
+      - name: 日本語 (今後追加予定)
+        link: /ja/
+        lang: ja
+      - name: Português (em breve)
+        link: /pt/
+        lang: pt
+      - name: Русский (будет добавлен позже)
+        link: /ru/
+        lang: ru
+      - name: Bahasa Indonesia (akan segera hadir)
+        link: /id/
+        lang: id
+      - name: 한국어 (곧 제공 예정)
+        link: /ko/
+        lang: ko
+      - name: 中文 - 简体（即将推出）
+        link: /zh/
+        lang: zh
+      - name: 中文 - 繁體（即將推出）
+        link: /zh-TW/
+        lang: zh-TW
+
 markdown_extensions:
   - attr_list
   - footnotes
@@ -239,6 +264,39 @@ plugins:
             Flex: Flex
             About: À propos
             Blog: Blogue
+
+        - locale: de
+          name: Deutsch
+          build: true
+
+        - locale: ja
+          name: 日本語
+          build: true
+
+        - locale: pt
+          name: Português
+          build: true
+
+        - locale: ru
+          name: Русский
+          build: true
+
+        - locale: id
+          name: Bahasa Indonesia
+          build: true
+
+        - locale: ko
+          name: 한국어
+          build: true
+
+        - locale: zh
+          name: 中文 - 简体
+          build: true
+
+        - locale: zh-TW
+          name: 中文 - 繁體
+          build: true
+
 nav:
   - Home: index.md
   - Getting started:
