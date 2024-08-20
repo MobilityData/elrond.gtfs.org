@@ -55,7 +55,7 @@
  
 ## Règles de réservation 
  
- Les règles de réservation peuvent être utilisées pour permettre aux utilisateurs de réserver un voyage sur un service répondant à la demande. Ces règles décrivent les conditions préalables nécessaires à une réservation réussie et fournissent des informations de contact auprès desquelles les utilisateurs peuvent effectuer des réservations de voyage. Cette fonctionnalité doit être utilisée conjointement avec [Lignes prédéfinis avec déviation](#lignes-predefinis-avec-deviation), [Services à la demande basés sur la zone](#services-de-reponse-a-la-demande-bases-sur-la-zone) et [Arrêts fixes fonctionnalités à la Services à la Demande avec Arrêts Fixes](#services-a-la-demande-avec-arrets-fixes), si ces services nécessitent une réservation. 
+ Les règles de réservation peuvent être utilisées pour permettre aux utilisateurs de réserver un voyage sur un service répondant à la demande. Ces règles décrivent les conditions préalables nécessaires à une réservation réussie et fournissent des informations de contact auprès desquelles les utilisateurs peuvent effectuer des réservations de voyage. Cette fonctionnalité doit être utilisée conjointement avec [Lignes prédéfinis avec déviation](#itineraires-predefinis-avec-detours), [Services à la demande basés sur la zone](#services-a-la-demande-bases-sur-les-zones) et [Arrêts fixes fonctionnalités à la Services à la Demande avec Arrêts Fixes](#services-a-la-demande-avec-arrets-fixes), si ces services nécessitent une réservation. 
  
  | Fichiers inclus | Champs inclus | 
  |------------------------|-------------------| 

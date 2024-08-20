@@ -8,8 +8,8 @@
  
  Les pratiques Recommandé sont organisées en deux sections principales 
  
- * __[Recommandations pratiques organisées par message](#practice-recommendations-organized-by-message) :__ Les recommandations sont organisés par message et champ dans le même ordre décrit dans la référence officielle GTFS Realtime. 
- * __[Recommandations pratiques organisées par cas](#practice-recommendations-organized-by-use-case) :__ Dans des cas particuliers, tels que le service basé sur les fréquences (par rapport au service basé sur les horaires), les pratiques peuvent devoir être appliqué à plusieurs messages et champs ainsi qu’aux données de planification GTFS correspondantes. Ces recommandations sont regroupées dans cette section. 
+ * __[Recommandations pratiques organisées par message](#recommandations-pratiques-organisees-par-message) :__ Les recommandations sont organisés par message et champ dans le même ordre décrit dans la référence officielle GTFS Realtime. 
+ * __[Recommandations pratiques organisées par cas](#recommandations-pratiques-organisees-par-cas-dutilisation) :__ Dans des cas particuliers, tels que le service basé sur les fréquences (par rapport au service basé sur les horaires), les pratiques peuvent devoir être appliqué à plusieurs messages et champs ainsi qu’aux données de planification GTFS correspondantes. Ces recommandations sont regroupées dans cette section. 
  
 ### Publication de flux et pratiques générales 
  

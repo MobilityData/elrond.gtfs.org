@@ -51,11 +51,11 @@
                 * [WheelchairAccessible](#enum-wheelchairaccessible) 
             * [StopTimeUpdate](#message-stoptimeupdate) 
                 * [StopTimeEvent](#message-stoptimeevent) 
-                * [ScheduleRelationship](# enum-schedulerelationship) 
+                * [ScheduleRelationship](#enum-schedulerelationship) 
                 * [StopTimeProperties](#message-stoptimeproperties) 
             * [TripProperties](#message-tripproperties) 
         * [VehiclePosition](#message-vehicleposition) 
-            * [TripDescriptor](#message- tripdescriptor) 
+            * [TripDescriptor](#message-tripdescriptor) 
                 * [ScheduleRelationship](#enum-schedulerelationship_1) 
             * [VehicleDescriptor](#message-vehicledescriptor) 
                 * [WheelchairAccessible](#enum-wheelchairaccessible) 
@@ -70,16 +70,16 @@
                 * [TripDescriptor](#message-tripdescriptor) 
                     * [ScheduleRelationship](#enum-schedulerelationship_1) 
         * [Cause](#enum-cause) 
-        * [Effet](#enum-effect) 
+        * [Effect](#enum-effect) 
         * [TranslatedString](#message-translatedstring) 
             * [Translation](#message-translation) 
         * [SeverityLevel](#enum-severitylevel) 
     * [Shape](#message-shape) 
     * [Stop](#message-stop) 
-        * [WheelchairBoarding](# enum-wheelchairboarding) 
+        * [WheelchairBoarding](#enum-wheelchairboarding) 
     * [TripModifications](#message-tripmodifications) 
         * [Modification](#message-modification) 
-        * [ReplacementStop](#message-replacementsstop) 
+        * [ReplacementStop](#message-replacementstop) 
  
  
 ## Elements
@@ -132,9 +132,9 @@
  | **id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Identifiant unique du flux pour cette entité. Les identifiants sont utilisés uniquement pour fournir une prise en charge de l’incrémentalité. Les entités réelles référencées par le flux doivent être spécifiées par des sélecteurs explicites (voir EntitySelector ci-dessous pour plus d’informations). | 
  | **is_deleted** | [bool](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Si cette entité doit être supprimée. Doit être fourni uniquement pour les flux avec une Incrementality de DIFFERENTIAL ; ce champ ne doit PAS être fourni pour les flux avec une Incrementality de FULL_DATASET. | 
  | **trip_update** | [TripUpdate](#message-tripupdate) | Requis sous condition | Un | Données sur les retards de départ en temps réel d’un voyage. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides. | 
- | **vehicle** | [VehiclePosition](#message-position du véhicule) | Requis sous condition | Un | Données sur la position en temps réel d’un véhicule. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides. | 
+ | **vehicle** | [VehiclePosition](#message-vehicleposition) | Requis sous condition | Un | Données sur la position en temps réel d’un véhicule. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides. | 
  | **alert** | [Alerte](#message-alert) | Requis sous condition | Un | Données sur l’alerte en temps réel. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides. | 
- | **shape** | [Forme](#message-forme) | Requis sous condition | Un | Données sur les formes ajoutées en temps réel, par exemple pour un détour. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **shape** | [Forme](#message-shape) | Requis sous condition | Un | Données sur les formes ajoutées en temps réel, par exemple pour un détour. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
  
 ### _message_ TripUpdate 
@@ -162,7 +162,7 @@
  | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
  |--------|------------|----------------|----------------------------------|-------------------| 
  | **trip** | [TripDescriptor](#message-tripdescriptor) | Requis | Un | Le voyage auquel ce message s’applique. Il peut y avoir au plus une entité TripUpdate pour chaque instance de voyage réelle. S’il n’y en a pas, cela signifie qu’aucune information de prédiction n’est disponible. Cela ne signifie *pas* que le voyage se déroule comme prévu. | 
- | **vehicle** | [VehicleDescriptor](#message-descripteur de véhicule) | Optionnel | Un | Informations complémentaires sur le véhicule qui assure ce trajet. | 
+ | **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) | Optionnel | Un | Informations complémentaires sur le véhicule qui assure ce trajet. | 
  | **stop_time_update** | [StopTimeUpdate](#message-stoptimeupdate) | Requis sous condition | Beaucoup | Mises à jour des StopTimes pour le voyage (à la fois futures, c’est-à-dire les prévisions, et dans certains cas, passées, c’est-à-dire celles qui se sont déjà produites). Les mises à jour doivent être triées par stop_sequence et s’appliquer à tous les arrêts suivants du trajet jusqu’au prochain stop_time_update spécifié. Au moins un stop_time_update doit être fourni pour le voyage, sauf si trip.schedule_relationship est CANCELED, DELETED ou DUPLICATED. Si le voyage est annulé ou supprimé, aucun stop_time_updates ne doit être fourni. Si des stop_time_updates sont fournis pour un voyage annulé ou supprimé, alors trip.schedule_relationship a priorité sur tous les stop_time_updates et leur planning_relationship associé. Si le trajet est dupliqué, stop_time_updates peut être fourni pour indiquer des informations en temps réel pour le nouveau trajet. | 
  | **timestamp** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Moment le plus récent auquel la progression en temps réel du véhicule a été mesurée pour estimer les StopTimes dans le futur. Lorsque des StopTimes passés sont fournis, les heures d’arrivée/départ peuvent être antérieures à cette valeur. En temps POSIX (c’est-à-dire le nombre de secondes depuis le 1er janvier 1970 00:00:00 UTC). | 
  | **delay** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | L’écart d’horaire actuel pour le voyage. Le délai ne doit être spécifié que lorsque la prédiction est donnée par rapport à un calendrier existant dans GTFS.<br> Le retard (en secondes) peut être positif (ce qui signifie que le véhicule est en retard) ou négatif (ce qui signifie que le véhicule est en avance sur l’horaire prévu). Un retard de 0 signifie que le véhicule est exactement à l’heure.<br> Les informations de retard dans StopTimeUpdates ont priorité sur les informations de retard au niveau du déclenchement, de sorte que le retard au niveau du déclenchement se propage uniquement jusqu’au prochain arrêt du trajet avec une valeur de délai StopTimeUpdate spécifiée.<br> Les fournisseurs de flux sont fortement encouragés à fournir une valeur TripUpdate.timestamp indiquant la dernière fois que la valeur du délai a été mise à jour, afin d’évaluer la fraîcheur des données.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.| 
@@ -253,8 +253,8 @@
  | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
  |--------|------------|----------------|----------------------------------|-------------------| 
  | **trip** | [TripDescriptor](#message-tripdescriptor) | Optionnel | Un | Le voyage que ce véhicule dessert. Peut être vide ou partiel si le véhicule ne peut pas être identifié avec une instance de trajet donnée. | 
- | **vehicle** | [VehicleDescriptor](#message-descripteur de véhicule) | Optionnel | Un | Informations complémentaires sur le véhicule qui assure ce trajet. Chaque entrée doit avoir un identifiant de véhicule **unique**. | 
- | **position** | [Position](#position-message) | Optionnel | Un | Position actuelle de ce véhicule. | 
+ | **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) | Optionnel | Un | Informations complémentaires sur le véhicule qui assure ce trajet. Chaque entrée doit avoir un identifiant de véhicule **unique**. | 
+ | **position** | [Position](#message-position) | Optionnel | Un | Position actuelle de ce véhicule. | 
  | **current_stop_sequence** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | L’index de séquence d’arrêt de l’arrêt actuel. La signification de current_stop_sequence (c’est-à-dire l’arrêt auquel elle fait référence) est déterminée par current_status. Si current_status est manquant, IN_TRANSIT_TO est supposé. | 
  | **stop_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Identifie l’arrêt actuel. La valeur doit être la même que dans le fichier stops.txt du flux GTFS correspondant. Si `StopTimeProperties.assigned_stop_id` est utilisé pour attribuer un `stop_id`, ce champ doit également refléter le changement dans `stop_id`. | 
  | **current_status** | [VehicleStopStatus](#enum-vehiclestopstatus) | Optionnel | Un | L’état exact du véhicule par rapport à l’arrêt en cours. Ignoré si current_stop_sequence est manquant. | 
@@ -262,7 +262,7 @@
  | **congestion_level** | [CongestionLevel](#enum-congestionlevel) | Optionnel | Un | 
  | **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | _Facultatif_ | Un | L’état d’occupation des passagers du véhicule ou du transport. Si multi_carriage_details est renseigné avec OccupancyStatus par voiture, alors ce champ doit décrire l’ensemble du véhicule avec toutes les voitures acceptant des passagers prises en compte.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.| 
  | **occupancy_percentage** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Une valeur en pourcentage indiquant le degré d’occupation des passagers dans le véhicule. La valeur 100 doit représenter l’occupation maximale totale pour laquelle le véhicule a été conçu, y compris le nombre de places assises et debout, et les réglementations d’exploitation en vigueur le permettent. La valeur peut dépasser 100 s’il y a plus de passagers que la capacité maximale prévue. La précision de occupancy_percentage doit être suffisamment faible pour que les passagers individuels ne puissent pas être suivis à l’embarquement ou à la descente du véhicule. Si multi_carriage_details est renseigné avec occupancy_percentage par voiture, alors ce champ doit décrire l’ensemble du véhicule avec toutes les voitures acceptant des passagers prises en compte.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- | **multi_carriage_details** | [CarriageDetails](#message-détails du transport) | Optionnel | Beaucoup | Détails des multiples wagons de ce véhicule donné. La première occurrence représente le premier transport du véhicule, **étant donné le sens de déplacement actuel**. Le nombre d’occurrences du champ multi_carriage_details représente le nombre de wagons du véhicule. Cela inclut également les wagons non embarquables, comme les moteurs, les wagons de maintenance, etc… car ils fournissent des informations précieuses aux passagers sur l’endroit où se tenir sur une plate-forme.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **multi_carriage_details** | [CarriageDetails](#message-carriagedetails) | Optionnel | Beaucoup | Détails des multiples wagons de ce véhicule donné. La première occurrence représente le premier transport du véhicule, **étant donné le sens de déplacement actuel**. Le nombre d’occurrences du champ multi_carriage_details représente le nombre de wagons du véhicule. Cela inclut également les wagons non embarquables, comme les moteurs, les wagons de maintenance, etc… car ils fournissent des informations précieuses aux passagers sur l’endroit où se tenir sur une plate-forme.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
  
 ### _enum_ VehicleStopStatus 
@@ -330,7 +330,7 @@
  | **occupancy_percentage** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Pourcentage d’occupation pour ce transport donné, dans ce véhicule. Suit les mêmes règles que "VehiclePosition.occupancy_percentage". Utilisez-1 au cas où les données ne seraient pas disponibles pour ce transport donné.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  | **carriage_sequence** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Identifie l’ordre de ce transport par rapport aux autres wagons dans la liste CarriageStatus du véhicule. Le premier chariot dans le sens de déplacement doit avoir la valeur 1. La deuxième valeur correspond au deuxième chariot dans le sens de déplacement et doit avoir la valeur 2, et ainsi de suite. Par exemple, le premier chariot dans le sens du déplacement a une valeur de 1. Si le deuxième chariot dans le sens du déplacement a une valeur de 3, les consommateurs ignoreront les données de tous les chariots (c’est-à-dire le champ multi_carriage_details). Les chariots sans données doivent être représentés avec un numéro de séquence de transport valide et les champs sans données doivent être omis (alternativement, ces champs pourraient également être inclus et définis sur les valeurs « pas de données »).<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
-### _message_ Alerte 
+### _message_ Alert 
  
  Une alerte, indiquant une sorte d’incident dans le réseau de transport en commun. 
  
@@ -342,7 +342,7 @@
  | **informed_entity** | [EntitySelector](#message-entityselector) | Requis | Beaucoup | Entités dont nous devons informer les utilisateurs de cette alerte. Au moins une entité informée doit être fournie. | 
  | **cause** | [Cause](#enum-cause) | Requis sous condition | Un | Si cause_detail est inclus, alors Cause doit également être inclus. 
  | **cause_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de la cause de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que la Cause. Si cause_detail est inclus, alors Cause doit également être inclus.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
- | **effect** | [Effet](#enum-effect) | Requis sous condition | Un | Si effect_detail est inclus, alors Effect doit également être inclus. 
+ | **effect** | [Effect](#enum-effect) | Requis sous condition | Un | Si effect_detail est inclus, alors Effect doit également être inclus. 
  | **effect_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de l’effet de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que l’effet. Si effect_detail est inclus, alors Effect doit également être inclus.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  | **url** | [TranslatedString](#message-translatedstring) | Optionnel | Un | L’URL qui fournit des informations supplémentaires sur l’alerte. | 
  | **header_text** | [TranslatedString](#message-translatedstring) | Requis | Un | En-tête de l’alerte. Cette string de texte brut sera mise en évidence, par exemple en gras. | 
@@ -350,7 +350,7 @@
  | **tts_header_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text contenant l’en-tête de l’alerte à utiliser pour les implémentations de synthèse vocale. Ce champ est la version synthèse vocale de header_text. Il doit contenir les mêmes informations que header_text mais formaté de manière à pouvoir être lu sous forme de synthèse vocale (par exemple, les abréviations supprimées, les chiffres épelés, etc.) | 
  | **tts_description_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text contenant une description de l’alerte à utiliser pour les implémentations de synthèse vocale. Ce champ est la version synthèse vocale de description_text. Il doit contenir les mêmes informations que description_text mais formaté de manière à pouvoir être lu sous forme de synthèse vocale (par exemple, les abréviations supprimées, les chiffres épelés, etc.) | 
  | **severity_level** | [SeverityLevel](#enum-severitylevel) | Optionnel | Un | Gravité de l’alerte. | 
- | **image** | [TranslatedImage](#message-image traduite) | Optionnel | Un | TranslatedImage à afficher avec le texte de l’alerte. Utilisé pour expliquer visuellement l’effet d’alerte d’un détour, d’une fermeture de gare, etc. L’image doit améliorer la compréhension de l’alerte et ne doit pas être le seul emplacement d’informations essentielles. Les types d’images suivants sont déconseillés : image contenant principalement du texte, images marketing ou de marque n’ajoutant aucune information supplémentaire.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+ | **image** | [TranslatedImage](#message-translatedimage) | Optionnel | Un | TranslatedImage à afficher avec le texte de l’alerte. Utilisé pour expliquer visuellement l’effet d’alerte d’un détour, d’une fermeture de gare, etc. L’image doit améliorer la compréhension de l’alerte et ne doit pas être le seul emplacement d’informations essentielles. Les types d’images suivants sont déconseillés : image contenant principalement du texte, images marketing ou de marque n’ajoutant aucune information supplémentaire.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  | **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text décrivant l’apparence de l’image liée dans le champ « `image` » (par exemple, dans le cas où l’image ne peut pas être affichée ou si l’ utilisateur·rice ne peut pas voir l’image pour des raisons d’accessibilité). Voir le HTML [spécification pour le texte de l’image alternative](https://html.spec.whatwg.org/#alt).<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
  
@@ -375,7 +375,7 @@
  | **POLICE_ACTIVITY** | 
  | **MEDICAL_EMERGENCY** | 
  
-### _enum_ Effet 
+### _enum_ Effect 
  
  L’effet de ce problème sur l’entité affectée. 
  
@@ -532,7 +532,7 @@
  |--------|------------|----------------|----------------------------------|-------------------| 
  | **translation** | [Traduction](#message-translation) | Requis | Beaucoup | Au moins une traduction doit être fournie. | 
  
-### _message_ Traduction 
+### _message_ Translation 
  
  Une string localisée mappée à une langue. 
  
@@ -597,7 +597,7 @@
  | **stop_url** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Voir la définition de [stops.stop_url](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
  | **parent_station** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Voir la définition de [stops.parent_station](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
  | **stop_timezone** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Voir la définition de [stops.stop_timezone](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
- | **wheelchair_boarding** | [WheelchairBoarding](#enum-embarquement en fauteuil roulant) | Optionnel | Un | Voir la définition de [stops.wheelchair_boarding](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
+ | **wheelchair_boarding** | [WheelchairBoarding](#enum-wheelchairboarding) | Optionnel | Un | Voir la définition de [stops.wheelchair_boarding](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
  | **level_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Voir la définition de [stops.level_id](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
  | **platform_code** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Voir la définition de [stops.platform_code](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) dans (CSV) GTFS. | 
  
@@ -647,10 +647,10 @@
  
  | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
  |--------|------------|----------------|----------------------------------|-------------------| 
- | **start_stop_selector** | [StopSelector](#message-stopselector) | Requis | Un | Le sélecteur d’arrêt du premier arrêt du trajet d’origine qui doit être affecté par cette modification. Utilisé en conjonction avec `end_stop_selector`. `start_stop_selector` est requis et est utilisé pour définir l’arrêt de référence utilisé avec `travel_time_to_stop`. Voir [`travel_time_to_stop`](#message-replacementsstop) pour plus de détails | 
+ | **start_stop_selector** | [StopSelector](#message-stopselector) | Requis | Un | Le sélecteur d’arrêt du premier arrêt du trajet d’origine qui doit être affecté par cette modification. Utilisé en conjonction avec `end_stop_selector`. `start_stop_selector` est requis et est utilisé pour définir l’arrêt de référence utilisé avec `travel_time_to_stop`. Voir [`travel_time_to_stop`](#message-replacementstop) pour plus de détails | 
  | **end_stop_selector** | [StopSelector](#message-stopselector) | Requis sous condition | Un | Le sélecteur d’arrêt du dernier arrêt du trajet d’origine qui doit être affecté par cette modification. La sélection est inclusive, donc si un seul stop_time est remplacé par cette modification, `start_stop_selector` et `end_stop_selector` doivent être équivalents. Si aucun stop_time n’est remplacé, `end_stop_selector` ne doit pas être fourni. C’est par ailleurs obligatoire. | 
  | **propagated_modification_delay** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Le nombre de secondes de retard à ajouter à toutes les heures de départ et d’arrivée postérieures au dernier arrêt inséré par une modification. Si une modification affecte uniquement la forme (c’est-à-dire que ni `end_stop_selector` ni `replacement_stops` ne sont fournis), alors la propagation du retard commence à l’arrêt suivant après `start_stop_selector`. Peut être un nombre positif ou négatif. Si plusieurs modifications s’appliquent à un même voyage, les retards s’accumulent au fur et à mesure que le voyage avance.<br/><br/> Si la valeur n’est pas fournie, les consommateurs PEUT interpoler ou déduire le « propagated_modification_delay » sur la base d’autres données. | 
- | **replacement_stops** | [ReplacementStop](#message-replacementsstop) | Optionnel | Beaucoup | Une liste d’arrêts de remplacement, remplaçant ceux du voyage d’origine. La durée des nouveaux horaires d’arrêts peut être inférieure, identique ou supérieure au nombre de horaires d’arrêts remplacés. | 
+ | **replacement_stops** | [ReplacementStop](#message-replacementstop) | Optionnel | Beaucoup | Une liste d’arrêts de remplacement, remplaçant ceux du voyage d’origine. La durée des nouveaux horaires d’arrêts peut être inférieure, identique ou supérieure au nombre de horaires d’arrêts remplacés. | 
  | **service_alert_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Une valeur « `id` » du message « `FeedEntity` » qui contient l ’« `Alert` » décrivant cette Modification pour la communication destinée à l’utilisateur. | 
  | **last_modified_time** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Cet horodatage identifie le moment où la modification a été modifiée pour la dernière fois. En temps POSIX (c’est-à-dire nombre de secondes depuis le 1er janvier 1970 00:00:00 UTC). | 
  
