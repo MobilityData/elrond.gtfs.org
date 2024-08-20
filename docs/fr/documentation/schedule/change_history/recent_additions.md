@@ -1,8 +1,8 @@
-# Modifications du calendrier GTFS 
+# Modifications de GTFS Schedule 
  
- La référence du calendrier GTFS n’est pas gravée dans le marbre. Il s’agit plutôt d’une spécification ouverte développée et maintenue par la communauté des agences de transport en commun, des développeurs et d’autres parties prenantes qui utilisent GTFS. On s’attend à ce que cette communauté de producteurs et de consommateurs de données GTFS ait des propositions pour étendre la spécification afin de permettre de nouvelles capacités. 
+ La référence de GTFS Schedule n’est pas gravée dans le marbre. Il s’agit plutôt d’une spécification ouverte développée et maintenue par la communauté des agences de transport en commun, des développeurs et d’autres parties prenantes qui utilisent GTFS. On s’attend à ce que cette communauté de producteurs et de consommateurs de données GTFS ait des propositions pour étendre la spécification afin de permettre de nouvelles capacités. 
  
- Pour contribuer au GTFS, lisez le [Processus de modification du calendrier GTFS](../../../../community/governance/gtfs_schedule_amendment_process) et suivez les discussions dans les <a href="https://github.com/google/transit/issues" target="_blank">numéros</a> ouverts et <a href="https://github.com/google/transit/pulls" target="_blank">les pull request</a> sur le GTFS répertoire Github ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ). ![](../../../assets/mark-github.svg) 
+ Pour contribuer au GTFS, lisez le [Processus de modification de GTFS Schedule](../../../../community/governance/gtfs_schedule_amendment_process) et suivez les discussions dans les <a href="https://github.com/google/transit/issues" target="_blank">numéros</a> ouverts et <a href="https://github.com/google/transit/pulls" target="_blank">les pull request</a> sur le GTFS répertoire Github ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ). ![](../../../assets/mark-github.svg) 
  
  <!-- <div class="row"> 
      <div class="active-container"> 
@@ -22,7 +22,7 @@
  
 ## Propositions récemment adoptées <img src="../../../../assets/pr-merged.svg" style="height:1em;"/> 
  
- Propositions récemment fusionnées qui font désormais fonctionnalités de la [référence officielle du calendrier GTFS](../../reference). Consultez l’[Historique des révisions](../revision_history) complet pour en savoir plus. 
+ Propositions récemment fusionnées qui font désormais fonctionnalités de la [référence officielle de GTFS Schedule](../../reference). Consultez l’[Historique des révisions](../revision_history) complet pour en savoir plus. 
 
 <div class="row"> 
     <div class="leftcontainer"> 
@@ -52,12 +52,12 @@
 
 <div class="row"> 
     <div class="leftcontainer"> 
-        <h3 class="title"> <a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">Bonnes pratiques : ajouter des directives de publication d’ensembles de données<br> et recommandations pratiques pour tous les dossiers</a></h3> 
+        <h3 class="title"> <a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">Bonnes pratiques : ajouter des directives de publication d’ensembles de données<br> et bonnes pratiques pour tous les dossiers</a></h3> 
         <p class="maintainer"> Le n°406 de <a href="https://github.com/Sergiodero" class="no-icon" target="_blank">Sergiodero</a> a été fusionné le 16 novembre 2023</p> 
     </div> 
     <div class="featurelist"> 
         <ul> 
-            <li> Ajoute deux sections des meilleures pratiques GTFS à la spécification : directives de publication d’ensembles de données et recommandations pratiques pour tous les fichiers.</li> 
+            <li> Ajoute deux sections des bonnes pratiques GTFS à la spécification : directives de publication d’ensembles de données et bonnes pratiques pour tous les fichiers.</li> 
             <li> Met à jour une référence à la fonction de fusion de l’outil transitfeed de Google, de sorte qu’il référence une liste d’outils de fusion à la place</li> 
         </ul> 
     </div> 
@@ -72,7 +72,7 @@
         <ul> 
             <li> Ajoute une nouvelle présence Recommandé dans la spécification qui est conforme aux conventions RFC</li> 
             <li> Permet d’indiquer clairement qu’un champ ou un fichier n’est pas obligatoire, mais l’ajouter est une bonne pratique à considérer</li> 
-            <li> Met à jour les informations de plusieurs fichiers et champs pour refléter leur présence recommandée en fonction des meilleures pratiques GTFS.</li> 
+            <li> Met à jour les informations de plusieurs fichiers et champs pour refléter leur présence recommandée en fonction des bonnes pratiques GTFS.</li> 
         </ul> 
     </div> 
 </div> 
@@ -84,7 +84,7 @@
     </div> 
     <div class="featurelist"> 
         <ul> 
-            <li> Les tarifs variables dans le temps sont une fonctionnalité importante développée dans le cadre de la <a href="../../../../community/extensions/fares-v2">proposition d’extension GTFS Fares-v2.</a></li> 
+            <li> Les tarifs variables dans le temps sont une fonctionnalité importante développée dans le cadre de la <a href="../../../../community/extensions/fares-v2">proposition d’extension GTFS-Fares v2.</a></li> 
             <li> Permet de représenter des tarifs différenciés en fonction de l’heure de la journée ou du jour de la semaine, tels que les tarifs pointes et heures creuses.</li> 
             <li> Ajoute un nouveau fichier : <code>timeframes.txt</code>, pour définir les moments dans le temps où le tarif s’applique</li> 
             <li> Étend <code>fare_leg_rules.txt</code> avec <code>from_timeframe_id</code> et <code>to_timeframe_id</code> pour spécifier qu’une règle de segment tarifaire s’applique uniquement si le début ou la fin du segment se situe dans une période spécifiée.</li> 
@@ -99,7 +99,7 @@
     </div> 
     <div class="featurelist"> 
         <ul> 
-            <li> Tarif Média est un élément clé de la <a href="../../../../community/extensions/fares-v2">proposition d’extension GTFS Fares-v2</a></li> 
+            <li> Tarif Média est un élément clé de la <a href="../../../../community/extensions/fares-v2">proposition d’extension GTFS-Fares v2</a></li> 
             <li> Il représente ce qu’un passager peut utiliser pour valider son trajet (par exemple, une carte de transport en commun, une application mobile ou un paiement sans contact à l’aide d’une carte bancaire sans contact).</li> 
             <li> Un produit tarifaire peut être associé à un Tarif Média spécifique (par exemple, un abonnement mensuel n’est disponible que sur une carte de transport)</li> 
             <li> Le prix d’un produit tarifaire peut être défini en fonction du Tarif Média (par exemple, le billet est moins cher s’il est acheté via une application mobile)</li> 

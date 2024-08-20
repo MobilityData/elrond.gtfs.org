@@ -1,4 +1,4 @@
-# Attributions des ensembles de données
+# Attributions des jeux de données
 
 ## Attribuer des données à un producteur de données dans un ensemble de données GTFS agrégé 
  

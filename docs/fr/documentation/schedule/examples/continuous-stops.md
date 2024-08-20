@@ -1,8 +1,8 @@
 # Arrêts continus
 
-## Prise en charge et retour partout 
+## Montée et descente tout au long de l’itinéraire  
  
- L’agence de transport The Current (Rockingham, US-VT) applique une politique d’arrêt continu sur les itinéraires 2, 53 et 55. Un passager peut être sélectionné monter et descendre entre les arrêts prévus tout au long du parcours, à condition qu’il y ait un endroit sûr où le bus peut s’arrêter. 
+ L’agence de transport The Current (Rockingham, US-VT) applique une politique d’arrêt continu sur les itinéraires 2, 53 et 55. Un passager peut monter et descendre entre les arrêts prévus tout au long du parcours, à condition qu’il y ait un endroit sûr où le bus peut s’arrêter. 
  
  Le fichier [routes.txt](../../reference/#routestxt) permet de décrire ce service à l’aide des champs `continuous_pickup` et `continuous_drop_off`. Les champs sont définis sur `0` pour indiquer que les ramassages et dépôts continus sont autorisés. 
  
@@ -17,18 +17,18 @@ route_id,route_short_name,route_long_name,route_type,continuous_pickup,continuou
 
 <hr> 
  
-## Prise en charge et retour sur une section de l’itinéraire 
+## Montée et descente sur une section de l’itinéraire 
  
- L’agence de transport en commun Victor Valley Transit (Victorville, US-CA) applique une politique d’arrêt continu uniquement sur une partie de l’itinéraire 22. Un usager peut Montez à bord et descendez du bus dans n’importe quel endroit sûr dans la zone tarifaire du comté uniquement. Les prises en charge et les retours continus ne sont pas possibles dans la zone tarif local. 
+ L’agence de transport en commun Victor Valley Transit (Victorville, US-CA) applique une politique d’arrêt continu uniquement sur une partie de l’itinéraire 22. Un usager peut monter à bord et descendre du bus dans n’importe quel endroit sûr dans la zone tarifaire du comté uniquement. Les montées et descentes en continu ne sont pas possibles dans la zone tarif local. 
  
- La zone tarifaire locale et la zone tarifaire départementale sont séparées par l’Air Expressway, comme le montre la figure ci-dessous. L’arrêt prévu National Trails Highway- Air Expressway est situé légèrement au nord de cette limite. Pour être précis, l’agence de transport en commun peut ajouter un arrêt à l’intersection réelle de la ligne de bus avec la limite, à partir duquel la prise en charge et le débarquement continus sont disponibles. Cet arrêt peut rester imprévu. 
+ La zone tarifaire locale et la zone tarifaire départementale sont séparées par l’Air Expressway, comme le montre la figure ci-dessous. L’arrêt prévu National Trails Highway- Air Expressway est situé légèrement au nord de cette limite. Pour être précis, l’agence de transport en commun peut ajouter un arrêt à l’intersection réelle de la ligne de bus avec la limite, à partir duquel la montée et descente en continu sont disponibles. Cet arrêt peut rester invisible dans les horaires. 
  
  ![](../../../assets/victor-valley-transit.svg) 
  
  Ceci est décrit à l’aide des fichiers [stop.txt](../../reference/#stopstxt) et [stop_times.txt](../../reference/#stop_timestxt): 
  
  - Le premier fichier définit les arrêts le long du parcours
- - Le deuxième fichier définit la prise en charge et le retour en continu règles entre les arrêts. 
+ - Le deuxième fichier définit les règles de montée et descente en continu entre les arrêts. 
  
  [**stop.txt**](../../reference/#stopstxt) 
  
@@ -45,8 +45,8 @@ F,Silver Lakes Market,34.744662,-117.335407
  
  Dans [stop_times.txt](../../reference/#stop_timestxt), pour un trajet donné : 
  
- - Un enregistrement avec `continuous_pickup=0` indique que les ramassages continus sont autorisés depuis cet arrêt jusqu’à l’arrêt suivant
- - Un enregistrement avec `continuous_pickup=0` =1` indique que les ramassages continus sont interdits à partir de cet arrêt jusqu’à l’arrêt suivant 
+ - Une entrée avec `continuous_pickup=0` indique que les ramassages continus sont autorisés depuis cet arrêt jusqu’à l’arrêt suivant
+ - Une entrée avec `continuous_pickup=1` indique que les ramassages continus sont interdits à partir de cet arrêt jusqu’à l’arrêt suivant 
  
  [** stop_times.txt**](../../reference/#stop_timestxt) 
  
@@ -61,8 +61,8 @@ trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,cont
 22NB9AM,F,7,09:46:00,09:46:00,0,0,1
 ``` 
  
- La même logique s’applique pour le champ `continuous_drop_off` mais pour le cas de dépôts. 
+ La même logique s’applique pour le champ `continuous_drop_off` mais pour le cas de descente de passagers. 
  
- Dans l’exemple ci-dessus, les arrêts A, B, C ontcontinuous_pickup et `continuous_drop_off` définis sur `1`, ce qui interdit les ramassages et dépôts continus entre eux. Les arrêts `X`, `D`, `E` et `F` ont les champs `continuous_pickup` et `continuous_drop_off` définis sur `0`, ce qui permet des ramassages et des dépôts continus entre eux. 
+ Dans l’exemple ci-dessus, les arrêts A, B, C ont `continuous_pickup` et `continuous_drop_off` définis sur `1`, ce qui interdit les montées et descentes en continu entre eux. Les arrêts `X`, `D`, `E` et `F` ont les champs `continuous_pickup` et `continuous_drop_off` définis sur `0`, ce qui permet les montées et descentes en continu entre eux. 
  
- <sup>[Exemple de source](https://vvta.org/routes/route-22/)</sup>
+ <sup>[Source de l'exemple](https://vvta.org/routes/route-22/)</sup>

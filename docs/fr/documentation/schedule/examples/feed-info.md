@@ -1,8 +1,8 @@
 # Informations sur le flux
 
-## Fournir des informations sur l’ensemble de données GTFS 
+## Fournir des informations sur le jeu de données GTFS 
  
- En plus de fournir des informations sur les agences et leurs services, il est possible de fournir des informations sur l’ensemble de données GTFS à l’aide du fichier [feed_info.txt](../../reference/#feed_infotxt). Cela inclut : 
+ En plus de fournir des informations sur les agences et leurs services, il est possible de fournir des informations sur le jeu de données GTFS à l’aide du fichier [feed_info.txt](../../reference/#feed_infotxt). Cela inclut : 
  
  - Détails de l’éditeur
  - Langue du flux

@@ -47,7 +47,7 @@
  
  Bien que `tts_stop_name` soit actuellement le seul champ de synthèse vocale officiellement adopté dans le Spécification GTFS, d’autres champs ont été discutés et peuvent être ajoutés. Ceux-ci incluent `tts_agency_name`, `tts_route_short_name`, `tts_route_long_name`, `tts_trip_headsign`, `tts_trip_short_name` et `tts_stop_headsign`. 
  
- Les coureurs devront utiliser une application prenant en charge la fonctionnalité de synthèse vocale, afin de bénéficier de ces informations. Certaines applications, telles que [NaviLensGo](https:), sont spécifiquement conçues pour aider les conducteurs malvoyants à naviguer dans les stations et à trouver le bon véhicule. 
+ Les passagers devront utiliser une application prenant en charge la fonctionnalité de synthèse vocale, afin de bénéficier de ces informations. Certaines applications, telles que [NaviLensGo](https:), sont spécifiquement conçues pour aider les conducteurs malvoyants à naviguer dans les stations et à trouver le bon véhicule. 
  
 ## Ajout d’informations Accessibilité physique sur une station 
  

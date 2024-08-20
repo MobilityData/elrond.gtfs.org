@@ -1,4 +1,4 @@
-# Calendrier GTFS
+# GTFS Schedule
 
 ### Historique des révisions
 
@@ -22,7 +22,7 @@
  * Ajout de GTFS Flex. Voir [discussion](https://github.com/google/transit/pull/433). 
  
 #### Novembre 2023 
- * Bonnes pratiques : ajoutez des directives de publication d’ensembles de données et des recommandations pratiques pour tous les fichiers. Voir [discussion](https://github.com/google/transit/pull/406). 
+ * Bonnes pratiques : ajoutez des directives de publication d’ensembles de données et des bonnes pratiques pour tous les fichiers. Voir [discussion](https://github.com/google/transit/pull/406). 
  * Ajoutez les networks.txt et route_networks.txt. Voir [discussion](https://github.com/google/transit/pull/405). 
  
 #### Août 2023 
@@ -61,11 +61,11 @@
  
 #### 13 septembre 2021 
  
- * Mise à jour des meilleures pratiques `stop_name`. Voir [discussion](https://github.com/google/transit/pull/282). 
+ * Mise à jour des bonnes pratiques `stop_name`. Voir [discussion](https://github.com/google/transit/pull/282). 
  
 #### 27 août 2021 
  
- * Mise à jour du calendrier GTFS vers [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119). Voir [discussion](https://github.com/google/transit/pull/277). 
+ * Mise à jour de GTFS Schedule vers [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119). Voir [discussion](https://github.com/google/transit/pull/277). 
  
 #### 4 janvier 2021 
  
@@ -110,9 +110,9 @@
  
 #### 9 juillet 2019 
  
- * Ajout des meilleures pratiques en matière d’heures d’arrivée et de départ. Voir [discussion](https://github.com/google/transit/pull/165). 
- * Ajout des meilleures pratiques de headsign. Voir [discussion](https://github.com/google/transit/pull/167). 
- * Ajout des meilleures pratiques `stop_id`. Voir [discussion](https://github.com/google/transit/pull/169). 
+ * Ajout des bonnes pratiques en matière d’heures d’arrivée et de départ. Voir [discussion](https://github.com/google/transit/pull/165). 
+ * Ajout des bonnes pratiques de headsign. Voir [discussion](https://github.com/google/transit/pull/167). 
+ * Ajout des bonnes pratiques `stop_id`. Voir [discussion](https://github.com/google/transit/pull/169). 
  
 #### 25 juin 2019 
  
