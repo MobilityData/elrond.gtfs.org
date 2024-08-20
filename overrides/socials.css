@@ -73,4 +73,8 @@
     .mdx-resource__element {
         width: 100%;
     }
+
+    .mdx-socials__element svg{
+        width: 150px;
+    }
 }

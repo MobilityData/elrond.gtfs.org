@@ -279,12 +279,12 @@ table.example {
 }
 
 /* external link icon */
-.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button):after {
+.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button, :has(img)):after {
     content: '';
     display: inline-block;
     width: 16px;
     height: 16px;
-    margin-left: 15px;
+    margin-left: 6px;
     background: url(../external.svg);
     background-size: contain;
 }
