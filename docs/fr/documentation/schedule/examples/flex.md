@@ -1,6 +1,6 @@
-# Transport à la Demande 
+# Transport à la demande 
  
- GTFS Flex est un projet d’extension GTFS qui a été officiellement adopté dans la spécification GTFS en mars 2024, ses objectifs sont de faciliter la découverte des services de Transport à la Demande (TAD). 
+ GTFS Flex est un projet d’extension GTFS qui a été officiellement adopté dans la spécification GTFS en mars 2024, ses objectifs sont de faciliter la découverte des services de transport à la demande (TAD). 
  Notez qu’il existe différents termes pour les services répondant à la demande en fonction de la région du monde. Consultez le [Glossaire](#glossaire) pour en savoir plus. 
  
  L’exemple suivant montre comment modéliser différents cas d’utilisation de services à la demande à l’aide de Flex. **Veuillez noter que les exemples suivants ne constituent pas nécessairement une représentation précise ou complète des services des agences.** 
@@ -324,7 +324,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  🇨🇭 En Suisse, cela relèverait du terme Rufbus/On-call bus. Le [système PubliCar de CarPostal](https://www.postauto.ch/fr/horaire-et-reseau/publicar) est aussi disponible. Dans le cadre de cette proposition, l’application et le service PubliCar seraient visibles dans l’application d'itinéraire de l’utilisateur. 
  
- 🇦🇹 En Autriche, le service de transport à la demande serait également Rufbus et plus largement Bedarfsverkehr (Transport à la Demande) et Mikro-ÖV (Microtransit). 
+ 🇦🇹 En Autriche, le service de transport à la demande serait également Rufbus et plus largement Bedarfsverkehr (transport à la demande) et Mikro-ÖV (Microtransit). 
  
  - [bedarfsverkehr.at](https://www.bedarfsverkehr.at/) 
  - [Wiener Linien](https://www.wienerlinien.at/documents/843721/4770179/Anleitung_Rufbus_359531.pdf/df430b95-9dd4-0d13-ffdf-bdace15932a8?t=1614165175643) 
@@ -336,7 +336,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  - flextur (anglais : flex trip) 
  - anciennement flextrafik (anglais : flex transit) 
  
- 🇫🇷 ⚠️ En France les termes TAD (Transport à la Demande) et PMR (Personnes à Mobilité Réduite) pour les services de Transport adapté 
+ 🇫🇷 ⚠️ En France les termes TAD (Transport À la Demande) et PMR (Personnes à Mobilité Réduite) pour les services de Transport adapté 
  
  - [Réseau Mistral](https://www.reseaumistral.com/services/service-appel-bus) 
  - Appel bus (anglais : call bus) 
