@@ -20,7 +20,7 @@
     - 6:15 a.m. – 5:45 p.m. (solo zona Nueva Ulm) 
  - Domingo: 8:00 a.m. - mediodía (Nueva Sólo zona de Ulm) 
  
- La zona de la ciudad de New Ulm está incluida dentro de la zona del condado de Brown. Para evitar el problema de ["restricción de superposición de zona"](#constraint-superposición de zona), Heartland Express se puede definir con cuatro viajes: 
+ La zona de la ciudad de New Ulm está incluida dentro de la zona del condado de Brown. Para evitar el problema de ["restricción de superposición de zona"](#restriccion-de-superposicion-de-zona), Heartland Express se puede definir con cuatro viajes: 
  
  - Servicio en la zona de New Ulm de 6:15 a.m.a 8:00 a.m.entre semana. 
  - Servicio en todo el condado de 8:00 a.m.a 5:00 p.m.de lunes a viernes. 
