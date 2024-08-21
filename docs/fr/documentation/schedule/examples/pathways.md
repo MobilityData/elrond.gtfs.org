@@ -1,4 +1,4 @@
-# Parcours et accessibilité physique
+# Pathways et accessibilité physique
 
 ## Pourquoi afficher des informations sur Accessibilité ? 
  
@@ -126,7 +126,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
  
 <img class="center" src="../../../../assets/pathways-3.png" width=500px>
 
-Lastly, the nodes are connected together to define the underground pathway as shown in the file [pathways.txt](../../reference/#pathwaystxt) below:
+Enfin, les nœuds sont connectés entre eux pour définir le chemin souterrain comme indiqué dans le fichier [pathways.txt](../../reference/#pathwaystxt) ci-dessous :
 
 [**pathways.txt**](../../reference/#pathwaystxt)
 

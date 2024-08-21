@@ -51,7 +51,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
  - Le sixième champ (`location_type`) est utilisé pour différencier les arrêts de stations
  - La première entrée correspond à un arrêt de bus, donc `location_type=0` 
  - La deuxième entrée correspond à une station, donc `location_type=1` 
- - Une liste complète des valeurs pour `location_type `t` être trouvé [ici](../../reference/#stopstxt). 
+ - Une liste complète des valeurs pour `location_type ` peut être trouvée [ici](../../reference/#stopstxt). 
 
 <hr> 
  
@@ -137,4 +137,4 @@ weekend_service,20220717,2
  - La date du service supprimé ou ajouté est répertoriée sous `date` (17 juillet 2022) 
  - Le champ `exception_type` est défini sur 2, ce qui signifie que le service est supprimé pour ce jour 
  
- <sup>[Exemple source](https:)</sup>
+ <sup>[Source de l'exemple](https:)</sup>

@@ -224,7 +224,7 @@ plugins:
             Base add-ons: Modules Complémentaires à Base
             Accessibility: Accessibilité
             Fares: Tarifs
-            Pathways: Parcours
+            Pathways: Pathways
             Flexible services: Services flexibles
             Example GTFS feed: Exemple de flux GTFS
             Technical Documentation: Documentation technique
@@ -238,7 +238,7 @@ plugins:
             Fares v2: Fares v2
             Feed information: Informations sur le flux
             Frequencies: Fréquences
-            Pathways: Parcours
+            Pathways: Pathways
             Routes, Stops & Trips: Lignes, arrêts et trajets 
             Text-to-speech: Synthèse vocale
             Transfers: Transferts

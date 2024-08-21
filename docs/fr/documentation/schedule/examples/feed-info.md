@@ -18,4 +18,4 @@ feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,f
 Transport for Cairo,http://transportforcairo.com/,en,20160101,20161201,0.5
 ```
  
- <sup>[Source exemple](https://github.com/transportforcairo/Metro-GTFS/archive/master.zip#Metro-GTFS-master)</sup>
+ <sup>[Source de l'exemple](https://github.com/transportforcairo/Metro-GTFS/archive/master.zip#Metro-GTFS-master)</sup>
