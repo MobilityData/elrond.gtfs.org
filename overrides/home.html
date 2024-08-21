@@ -1,4 +1,8 @@
 <!-- Custom HTML site displayed as the Home chapter -->
+
+{% set lang = config.theme.language %}
+{% import "./locales/"+lang+".html" as text %}
+
 {% extends "main.html" %}
 {% block tabs %}
 {{ super() }}
@@ -16,14 +20,14 @@
         <div class="tx-hero">
             <div>
                 <p class="hero-text">
-                    GTFS is a community-driven open standard for rider-facing transit information.
+                    {{text.t("title")}}
                 </p>
                 <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
                     class="md-button md-button--primary" style="margin-right: 40px;">
-                    Get started
+                    {{text.t("getStarted")}}
                 </a>
                 <a href="documentation/overview/" title="{{ lang.t('source.link.title') }}" class="md-button md-button--primary">
-                    Documentation
+                    {{text.t("documentation")}}
                 </a>
             </div>
         </div>
@@ -33,7 +37,7 @@
 <section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>Why use GTFS?</h1>
+            <h1>{{text.t("whyUseGtfs")}}</h1>
         </header>
 
         <ul class="mdx-list md-typeset">
