@@ -212,6 +212,7 @@ plugins:
           nav_translations:
             Home: Accueil
             Getting started: Premiers pas
+            Getting Started: Premiers pas
             What is GTFS?: Qu’est-ce que GTFS ?
             Why use GTFS?: Pourquoi utiliser GTFS ?
             How to produce GTFS?: Comment produire du GTFS ?
@@ -245,25 +246,33 @@ plugins:
             Translations: Traductions
             Change history: Historique des changements
             Recent additions: Ajouts récents
+            Recent Additions: Ajouts récents
             Full revision history: Historique complet des révisions 
             Feed Entities: Entités de flux
-            #Trip Updates: Mises à jour du voyage
-            #Service Alerts: 
-            #Vehicle Positions: 
-            #Trip Modifications: 
-            #Protobuf: 
-            #Language Bindings: 
-            #Migration duplicated:Migration dupliquée
+            Trip Updates: Mises à jour du voyage
+            Trip updates: Mises à jour du voyage
+            Service Alerts: Alertes de service
+            Service alerts: Alertes de service
+            Vehicle Positions: Positions des véhicules
+            Trip Modifications: Trip Modifications
+            Protobuf: Protobuf
+            Language Bindings: Binding de langage
+            Migration duplicated: Migration dupliquée
             Community: Communauté
+            Software for Creating APIs: Logiciel de création d'API
+            Data: Données
+            Agency Tools: Outils pour les agences
+            Hardware: Matériel
+            Visualizations: Visualisations
+            Other: Autre
             Get involved: S'impliquer
-            Governance:  Governance
-            #GTFS Schedule Amendment Process:
-            #GTFS Realtime Amendment Process:
+            Governance: Gouvernance
+            GTFS Schedule Amendment Process: Processus de modification GTFS Schedule
+            GTFS Realtime Amendment Process: Processus de modification GTFS Realtime
             Extensions: Extensions
             Fares v2: Fares v2
             Flex: Flex
             About: À propos
-            Blog: Blogue
 
         - locale: de
           name: Deutsch
