@@ -16,7 +16,7 @@
  
 ## EntitySelector 
  
- Le sélecteur d’entité vous permet de spécifier exactement quelles parties du réseau cette alerte affecte, afin que nous puissions afficher uniquement les alertes les plus appropriées à l’ utilisateur·rice. Vous pouvez inclure plusieurs sélecteurs d’entités pour les alertes qui affectent plusieurs entités. 
+ Le sélecteur d’entité vous permet de spécifier exactement quelles parties du réseau cette alerte affecte, afin que nous puissions afficher uniquement les alertes les plus appropriées à l'utilisateur. Vous pouvez inclure plusieurs sélecteurs d’entités pour les alertes qui affectent plusieurs entités. 
  
  Les entités sont sélectionnées à l’aide de leurs identifiants GTFS, et vous pouvez sélectionner l’un des éléments suivants : 
  

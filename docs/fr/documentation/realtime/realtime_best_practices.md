@@ -1,4 +1,4 @@
-# Meilleures pratiques GTFS Realtime
+# Bonnes pratiques GTFS Realtime
 
 ## Introduction 
  
@@ -141,12 +141,12 @@
 
 ### Objectifs 
  
- Les objectifs du maintien des meilleures pratiques GTFS Realtime sont les suivants : 
+ Les objectifs du maintien des bonnes pratiques GTFS Realtime sont les suivants : 
  
  * Améliorer l’expérience client de l’utilisateur final dans les applications de transports publics
  * Faciliter le déploiement et la mise à l’échelle des applications, des produits et des services par les développeurs de logiciels
  
-### Comment proposer ou modifier les meilleures pratiques GTFS Realtime publiées 
+### Comment proposer ou modifier les bonnes pratiques GTFS Realtime publiées 
  
  Les applications et pratiques GTFS évoluent, et ce document peut donc doivent être modifiés de temps en temps. Pour proposer un amendement à ce document, ouvrez une pull request [dans le répertoire GitHub GTFS Realtime Best Practices](https://github.com/MobilityData/GTFS_Realtime_Best-Practices) et plaidez en faveur du changement. 
  
@@ -154,6 +154,6 @@
  
  Veuillez créer un lien ici afin de fournir aux producteurs d’aliments pour animaux des conseils pour la formation correcte des données GTFS Realtime. Chaque recommandation individuelle a un lien d’ancrage. Cliquez sur la recommandation pour obtenir l’URL du lien d’ancrage dans la page. 
  
- Si une application consommant GTFS Realtime formule des exigences ou des recommandations concernant les pratiques de données GTFS Realtime qui ne sont pas décrites ici, il est recommandé de publier un document contenant ces exigences ou recommandations pour compléter ces meilleures pratiques communes. 
+ Si une application consommant GTFS Realtime formule des exigences ou des recommandations concernant les pratiques de données GTFS Realtime qui ne sont pas décrites ici, il est recommandé de publier un document contenant ces exigences ou recommandations pour compléter ces bonnes pratiques communes. 
 
 

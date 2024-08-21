@@ -2,7 +2,7 @@
  
  La référence GTFS Realtime n’est pas gravée dans le marbre. Il s’agit plutôt d’une spécification ouverte développée et maintenue par la communauté des agences de transport en commun, des développeurs et d’autres parties prenantes qui utilisent GTFS Realtime. On s’attend à ce que cette communauté de producteurs et de consommateurs de données GTFS Realtime ait des propositions pour étendre la spécification afin de permettre de nouvelles fonctionnalités. 
  
- Pour contribuer à GTFS Realtime, lisez le [GTFS Realtime Amendment Process](../../../../community/governance/gtfs_realtime_amendment_process) et suivez les discussions dans les <a href="https://github.com/google/transit/issues" target="_blank">problèmes</a> ouverts et <a href="https://github.com/google/transit/pulls" target="_blank">les pull request</a> sur le répertoire GTFS Github ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ). ![](../../../assets/mark-github.svg) 
+ Pour contribuer à GTFS Realtime, lisez le [GTFS Realtime Amendment Process](../../../../community/governance/gtfs_realtime_amendment_process) et suivez les discussions dans les <a href="https://github.com/google/transit/issues" target="_blank">issues</a> ouvertes et <a href="https://github.com/google/transit/pulls" target="_blank">les pull request</a> sur le répertoire GTFS Github ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ). ![](../../../assets/mark-github.svg) 
  
  <!-- <div class="row"> 
      <div class="active-container"> 

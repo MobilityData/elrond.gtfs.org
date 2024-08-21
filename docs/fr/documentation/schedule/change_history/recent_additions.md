@@ -2,7 +2,7 @@
  
  La référence de GTFS Schedule n’est pas gravée dans le marbre. Il s’agit plutôt d’une spécification ouverte développée et maintenue par la communauté des agences de transport en commun, des développeurs et d’autres parties prenantes qui utilisent GTFS. On s’attend à ce que cette communauté de producteurs et de consommateurs de données GTFS ait des propositions pour étendre la spécification afin de permettre de nouvelles capacités. 
  
- Pour contribuer au GTFS, lisez le [Processus de modification de GTFS Schedule](../../../../community/governance/gtfs_schedule_amendment_process) et suivez les discussions dans les <a href="https://github.com/google/transit/issues" target="_blank">numéros</a> ouverts et <a href="https://github.com/google/transit/pulls" target="_blank">les pull request</a> sur le GTFS répertoire Github ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ). ![](../../../assets/mark-github.svg) 
+ Pour contribuer au GTFS, lisez le [Processus de modification de GTFS Schedule](../../../../community/governance/gtfs_schedule_amendment_process) et suivez les discussions dans les <a href="https://github.com/google/transit/issues" target="_blank">issues</a> ouvertes et <a href="https://github.com/google/transit/pulls" target="_blank">les pull request</a> sur le GTFS répertoire Github ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ). ![](../../../assets/mark-github.svg) 
  
  <!-- <div class="row"> 
      <div class="active-container"> 

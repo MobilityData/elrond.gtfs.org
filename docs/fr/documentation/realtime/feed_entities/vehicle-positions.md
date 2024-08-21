@@ -57,5 +57,5 @@
  VehicleDescriptor décrit un véhicule physique précis et peut contenir l’un des attributs suivants : 
  
  * **ID** - système interne d’identification du véhicule. Doit être unique au véhicule 
- * **Étiquette** - une étiquette visible par utilisateur·rice- par exemple le nom d’un train 
+ * **Étiquette** - une étiquette visible par utilisateur- par exemple le nom d’un train 
  * **Plaque d’immatriculation** - la plaque d’immatriculation réelle du véhicule 
