@@ -98,7 +98,7 @@
  
     Décrire les transferts autorisés entre différents services de transport en commun. 
  
-    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#transfers) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#transferts) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Traductions__ 
  
