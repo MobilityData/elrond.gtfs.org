@@ -170,7 +170,7 @@
     * À tout moment, le jeu de données GTFS publié doit être valide pendant au moins les 7 prochains jours, et idéalement aussi longtemps que l’opérateur est convaincu que l’horaire continuera à être exploité. 
     * Si possible, le jeu de données GTFS doit couvrir au moins les 30 prochains jours de service. 
  * Les anciens services (calendriers expirés) doivent être supprimés du flux. 
- * Si une modification de service entre en vigueur dans 7 jours ou moins, cette modification de service doit être exprimée via un flux GTFS en temps réel (avis de service ou mises à jour de voyage) plutôt que par un jeu de données GTFS statiques. 
+ * Si une modification de service entre en vigueur dans 7 jours ou moins, cette modification de service doit être exprimée via un flux GTFS Realtime (avis de service ou mises à jour de voyage) plutôt que par un jeu de données GTFS statiques. 
  * Le serveur Web hébergeant les données GTFS doit être configuré pour signaler correctement la date de modification du fichier (voir [HTTP/1.1- Request for Comments 2616, sous la section 14.29](https://tools.ietf.org/html/rfc2616#section-14.29)). 
  
 ## Définitions des champs
@@ -234,7 +234,7 @@
  | `route_url` | URL | Optionnel | URL d’une page Web sur l’itinéraire particulier. Doit être différent de la valeur `agency.agency_url`. | 
  | `route_color` | Couleur | Optionnel | Désignation de couleur de l’itinéraire qui correspond au matériel destiné au public. La valeur par défaut est blanc (`FFFFFF`) lorsqu’elle est omise ou laissée vide. La différence de couleur entre « `route_color` » et « `route_text_color` » devrait fournir un contraste suffisant lorsqu’elle est visualisée sur un écran noir et blanc. | 
  | `route_text_color` | Couleur | Optionnel | Couleur lisible à utiliser pour le texte dessiné sur un fond de `route_color`. La valeur par défaut est noire (`000000`) lorsqu’elle est omise ou laissée vide. La différence de couleur entre « `route_color` » et « `route_text_color` » devrait fournir un contraste suffisant lorsqu’elle est visualisée sur un écran noir et blanc. | 
- | `route_sort_order` | Entier non négatif | Optionnel | Ordonne les itinéraires d’une manière idéale pour la présentation aux clients. Les Lignes avec des valeurs `route_sort_order` plus petites doivent être affichés en premier. | 
+ | `route_sort_order` | Entier non négatif | Optionnel | Ordonne les itinéraires d’une manière idéale pour la présentation aux clients. Les lignes avec des valeurs `route_sort_order` plus petites doivent être affichés en premier. | 
  | `continuous_pickup` | Énumération | **Interdit sous condition** | Indique que l’usager peut monter à bord du véhicule de transport en commun à tout moment le long du trajet du véhicule, tel que décrit par [shapes.txt](#shapestxt), à chaque trajet de l’itinéraire. Les options valides sont :<br><br> `0` - Arrêt continu du ramassage.<br> `1` ou vide- Pas de collecte d’arrêt continu.<br>  `2` - Doit téléphoner à l’agence pour organiser un ramassage avec arrêt continu.<br> `3` - Doit se coordonner avec le conducteur pour organiser le ramassage avec arrêt continu.<br><br> Les valeurs de « `routes.continuous_pickup` » peuvent être remplacées en définissant des valeurs dans « `stop_times.continuous_pickup` » pour des « `stop_time`» spécifiques le long de l’itinéraire.<br><br> **Interdit sous condition** :<br> - **Interdit** si `stop_times.start_pickup_drop_off_window` ou `stop_times.end_pickup_drop_off_window` sont définis pour tout trajet de cet itinéraire.<br> - Optionnel sinon. | 
  | `continuous_drop_off` | Énumération | **Interdit sous condition** | Indique que l’usager peut descendre du véhicule de transport en commun à tout moment le long du trajet du véhicule, tel que décrit par [shapes.txt](#shapestxt), à chaque trajet de l’itinéraire. Les options valides sont :<br><br> `0` - Arrêt continu du dépôt.<br> `1` ou vide- Pas de chute d’arrêt continue.<br> `2` - Doit téléphoner à l’agence pour organiser un dépôt en continu.<br> `3` - Doit se coordonner avec le conducteur pour organiser un arrêt continu du dépôt.<br><br> Les valeurs de « `routes.continuous_drop_off` » peuvent être remplacées en définissant des valeurs dans « `stop_times.continuous_drop_off` » pour des « `stop_time` » spécifiques le long de l’itinéraire.<br><br> **Interdit sous condition** :<br> - **Interdit** si `stop_times.start_pickup_drop_off_window` ou `stop_times.end_pickup_drop_off_window` sont définis pour tout trajet de cet itinéraire.<br> - Optionnel sinon. | 
  | `network_id` | ID | **Interdit sous condition** | Identifie un groupe d’itinéraires. Plusieurs lignes dans [routes.txt](#routestxt) peuvent avoir le même `network_id`.<br><br> Interdit sous condition:<br> - **Interdit** si le fichier [route_networks.txt](#route_networkstxt) existe.<br> - Optionnel sinon. 
@@ -582,7 +582,7 @@
  
  Clé primaire (`shape_id`, `shape_pt_sequence`) 
  
- Les Tracé des lignes décrivent le chemin qu’un véhicule parcourt le long d’un l’alignement de l’itinéraire, et sont définis dans le fichier shapes.txt. Les Tracé des lignes sont associées aux Trajets et consistent en une séquence de points par lesquels le véhicule passe dans l’ordre. Les Tracé des lignes n’ont pas besoin d’intercepter exactement l’emplacement des Arrêts, mais tous les Arrêts d’un trajet doivent se trouver à une petite distance de la forme pour ce trajet, c’est-à-dire à proximité des segments de ligne droite reliant les points de la forme. Le fichier shapes.txt doit être inclus pour tous les services basés sur l'itinéraire (pas pour les services à la demande basés sur les zones).
+ Les Tracé des lignes décrivent le chemin qu’un véhicule parcourt le long d’un l’alignement de l’itinéraire, et sont définis dans le fichier shapes.txt. Les Tracé des lignes sont associées aux trajets et consistent en une séquence de points par lesquels le véhicule passe dans l’ordre. Les Tracé des lignes n’ont pas besoin d’intercepter exactement l’emplacement des arrêts, mais tous les arrêts d’un trajet doivent se trouver à une petite distance de la forme pour ce trajet, c’est-à-dire à proximité des segments de ligne droite reliant les points de la forme. Le fichier shapes.txt doit être inclus pour tous les services basés sur l'itinéraire (pas pour les services à la demande basés sur les zones).
  
  | Nom du champ | Tapez | Présence | Descriptif | 
  |------|------|------|------| 
@@ -652,12 +652,12 @@
  
  Le dernier arrêt de `from_trip_id` DEVRAIT être géographiquement proche du premier arrêt de `to_trip_id`, et la dernière heure d’arrivée de `from_trip_id` DEVRAIT être antérieure mais proche de la première heure de départ de `to_trip_id`. La dernière heure d’arrivée de `from_trip_id` PEUT être postérieure à la première heure de départ de `to_trip_id` dans le cas où le voyage `to_trip_id` a lieu le jour de service suivant. 
  
- Les Trajets PEUT être liés 1 à 1 dans le cas normal, mais PEUT également être liés 1 à n, n à 1 ou n à n pour représenter des continuations de voyage plus complexes. Par exemple, deux trajets en train (trajet A et trajet B dans le schéma ci-dessous) peuvent fusionner en un seul trajet en train (trajet C) après une opération d’attelage de véhicules en gare commune : 
+ Les trajets PEUT être liés 1 à 1 dans le cas normal, mais PEUT également être liés 1 à n, n à 1 ou n à n pour représenter des continuations de voyage plus complexes. Par exemple, deux trajets en train (trajet A et trajet B dans le schéma ci-dessous) peuvent fusionner en un seul trajet en train (trajet C) après une opération d’attelage de véhicules en gare commune : 
  
  - Dans un trajet 1 vers n continuation, le `trips.service_id` pour chaque `to_trip_id` DOIT être identique. 
  - Dans une continuation n vers 1, le `trips.service_id` pour chaque `from_trip_id` DOIT être identique. 
  - Les continuations n vers n doivent respecter les deux contraintes. 
- - Les Trajets peuvent être liés entre eux dans le cadre de plusieurs continuations distinctes, à condition que le `trip.service_id` NE DOIT PAS se chevaucher un jour de service. 
+ - Les trajets peuvent être liés entre eux dans le cadre de plusieurs continuations distinctes, à condition que le `trip.service_id` NE DOIT PAS se chevaucher un jour de service. 
 
 <pre>
 Trip A
