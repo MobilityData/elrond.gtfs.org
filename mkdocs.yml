@@ -407,4 +407,4 @@ nav:
   - About:
       - about/index.md
   - Blog:
-      - redirections_only/blog/index.md
+      - blog/index.md
