@@ -601,6 +601,7 @@ table.example {
   .md-select__inner {
     right: -30px;
     left: auto;
+    transform: none;
   }
 
   .md-select:focus-within .md-select__inner,
@@ -616,7 +617,6 @@ table.example {
 @media only screen and (max-width: 350px) {
   .md-select__inner {
     right: -45px;
-    left: auto;
   }
 
   .md-select__inner:after {
