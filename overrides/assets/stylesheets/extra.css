@@ -295,7 +295,7 @@ table.example {
   filter: grayscale(1) brightness(0);
 }
 
-.md-nav--primary .md-nav__title {
+.md-nav--primary .md-nav__title[for="__drawer"]  {
   height: 7rem;
   white-space: normal;
   line-height: 1.5rem;
