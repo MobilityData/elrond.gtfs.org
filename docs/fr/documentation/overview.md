@@ -1,6 +1,6 @@
 # General Transit Feed Specification (GTFS) 
  
- La General Transit Feed Specification (GTFS) est une [norme ouverte](https://www.interoperablemobility.org/definitions/#open_standard) utilisée pour diffuser des informations pertinentes sur les systèmes de transport en commun aux cavaliers. Il permet agences de transport en commun de publier leurs données de transport en commun dans un format pouvant être utilisé par une grande variété d’applications logicielles. 
+ La General Transit Feed Specification (GTFS) est une [norme ouverte](https://www.interoperablemobility.org/definitions/#open_standard) utilisée pour diffuser des informations pertinentes sur les systèmes de transport en commun aux cavaliers. Il permet aux agences de transport en commun de publier leurs données de transport en commun dans un format pouvant être utilisé par une grande variété d’applications logicielles. 
  
  GTFS se compose de deux parties principales : [GTFS Schedule](../schedule/reference) et [GTFS Realtime](../realtime/reference). 
  
